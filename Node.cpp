@@ -57,8 +57,8 @@ void Node::setPayload(string Payload)
   this->payload=Payload;
 }
 /*Functions*/
-void storeRSSI(char src_id,int rssi)
+void Node::storeRSSI(char src_id,int rssi)
 {
-  this->received_id(src_id);
-  this->RSSI.append(rssi);
+  this->received_id.push_back(src_id);
+  this->RSSI.push_back(rssi);
 }
