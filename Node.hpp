@@ -23,15 +23,20 @@ Atributes :
 
 using namespace std;
 
+strcut data_received{
+  int RSSI;
+  int start, end;
+};
+
 class Node {
 private:
   /* message type 0*/
   char ID = '0';
   char tm = '0';
   string payload= "24.5"; // Temperature of a sensor.
-  vector<int> RSSI;
+  /*vector<int> RSSI;
   vector<char> received_id;
-  vector<char> Fake;
+  vector<char> Fake;*/
 public:
     /*Constructors*/
     Node()=default;
@@ -42,14 +47,12 @@ public:
     char getID()const;
     char getTm()const;
     string getPayload()const;
-    vector<char> getReceived_id()const;
-    vector<char> getFake()const;
-    vector<int> getRSSI()const;
     void setID(char id);
     void setTm(char type);
     void setPayload(string Payload);
     /*Functions*/
-    void storeRSSI(char src_id,int rssi);
+    void Pack(char type);
+    void Unpack(char type,string payload);
     int getSizeListedNodes();
     void Clear();
 };
