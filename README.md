@@ -1,2 +1,4 @@
 # PI_SybilAttack_defense
-Made in order to defend an IoT network from sybil attack.
+
+This approach is made with LoRa heltec devices. In order to perform an IoT network
+LoRa is sending messages as a sensor in the network.
