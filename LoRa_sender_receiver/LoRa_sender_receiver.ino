@@ -45,20 +45,24 @@ void OnReceive(int packetSize)
   if (packetSize == 0) return;  //if there's not packet, return
   char id = LoRa.read();
   char type = LoRa.read();
+  int rssi = LoRa.packetRssi();
   if (type =='0')
   {
     //Receive string
     int rssi = LoRa.packetRssi();
     if (n.IsFull()==1)
     {
-      //Pull
-      //Push
+      n.Pull();
+      n.Push(id,rssi);
+      // Proof-of-RSSI
+      
     }
     else
     {
       //Push
+      n.Push(id,rssi);
     }
-    // Proof-of-RSSI
+
   }
   if (type =='1')
   {

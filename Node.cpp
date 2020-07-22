@@ -112,8 +112,9 @@ void Node::Pull()
   {
     this->queue_received.RSSI[i]=this->queue_received.RSSI[i+1];
     this->queue_received.ID[i]=this->queue_received.ID[i+1];
-    this->queue_received.end--;
+
   }
+  this->queue_received.end--;
 }
 void Node::Push(char id,int rssi)
 {
