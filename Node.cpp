@@ -83,11 +83,55 @@ void Node::Unpack(char type,string payload)
 
   }
 }
-int Node::getSizeListedNodes()
+void Node::CreateQueue()
 {
-  return 0;
+  this->queue_received.start=-1;
+  this->queue_received.end=0;
 }
-void Node::Clear()
+int Node::IsFull()
 {
-
+  if(this->queue_received.end==10)
+    return 1;
+  else
+    return 0;
+}
+int Node::IsVoid()
+{
+  if(this->queue_received.end==0)
+    return 1;
+  else
+    return 0;
+}
+void Node::Pull()
+{
+  int rssi,i;
+  char id;
+  rssi = this->queue_received.RSSI[0];
+  id = this->queue_received.ID[0];
+  for (i=0;i<this->queue_received.end-1;i++)
+  {
+    this->queue_received.RSSI[i]=this->queue_received.RSSI[i+1];
+    this->queue_received.ID[i]=this->queue_received.ID[i+1];
+    this->queue_received.end--;
+  }
+}
+void Node::Push(char id,int rssi)
+{
+  if (IsFull()!=1)
+  {
+    this->queue_received.RSSI[this->queue_received.end]=rssi;
+    this->queue_received.ID[this->queue_received.end]=id;
+    this->queue_received.end++;
+  }
+}
+void Node::PrintQueue()
+{
+  int i;
+  cout<<"Size"<<this->queue_received.end<<endl;
+  for (i=0;i<this->queue_received.end;i++)
+  {
+    cout<<"ID : "<<  this->queue_received.ID[i]<<endl;
+    cout<<"RSSI : "<<  this->queue_received.RSSI[i]<<endl;
+    cout<<"---------------------------"<<endl;
+  }
 }

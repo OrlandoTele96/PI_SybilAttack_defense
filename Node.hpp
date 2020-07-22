@@ -23,17 +23,20 @@ Atributes :
 
 using namespace std;
 
-strcut data_received{
-  int RSSI;
-  int start, end;
+struct Received
+{
+  int RSSI[10];
+  char ID[10];
+  int start,end;
 };
-
+typedef struct Received Queue;
 class Node {
 private:
   /* message type 0*/
   char ID = '0';
   char tm = '0';
   string payload= "24.5"; // Temperature of a sensor.
+  Queue queue_received;
   /*vector<int> RSSI;
   vector<char> received_id;
   vector<char> Fake;*/
@@ -53,8 +56,13 @@ public:
     /*Functions*/
     void Pack(char type);
     void Unpack(char type,string payload);
-    int getSizeListedNodes();
-    void Clear();
+    /*Queue functions*/
+    void CreateQueue();
+    int IsFull();
+    int IsVoid();
+    void Pull();
+    void Push(char id,int rssi);
+    void PrintQueue();
 };
 
 
