@@ -51,6 +51,7 @@ public:
     /*Functions*/
     void storeRSSI(char src_id,int rssi);
     int getSizeListedNodes();
+    void Clear();
 };
 
 
