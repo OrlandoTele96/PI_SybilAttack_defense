@@ -37,9 +37,8 @@ private:
   char tm = '0';
   string payload= "24.5"; // Temperature of a sensor.
   Queue queue_received;
-  /*vector<int> RSSI;
-  vector<char> received_id;
-  vector<char> Fake;*/
+  vector<char> graylist;
+  //vector<char>
 public:
     /*Constructors*/
     Node()=default;
@@ -63,6 +62,9 @@ public:
     void Pull();
     void Push(char id,int rssi);
     void PrintQueue();
+    /*Phase 1*/
+    int CAT_RSSI(int rssi);
+    void DiscardRssi();
 };
 
 

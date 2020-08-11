@@ -136,3 +136,30 @@ void Node::PrintQueue()
     cout<<"---------------------------"<<endl;
   }
 }
+/*Phase 1*/
+
+int Node::CAT_RSSI(int rssi)
+{
+  // si rssi < prom_0.5mtro & rssi >= prom_0.2mtro -> 0.2
+  // si rssi < prom_1mtro & rssi >= prom0.5 -> 0.5
+  // si rssi < prom_2mtro & rssi >= prom1 -> 1
+}
+
+void Node::DiscardRssi()
+{
+  /*
+  int i=0;
+  int aux,prom,comp;
+  float c=0;
+  aux=0;
+  for(i=0;i<this->queue_received.end;i++)
+  {
+    aux =aux+ this->queue_received.RSSI[i];
+    c++;
+  }
+  prom = aux/c;
+  for (i=0;i<this->queue_received.end;i++)
+  {
+    comp = abs(prom-this->queue_received.RSSI[i]);
+  }*/
+}
