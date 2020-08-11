@@ -1,9 +1,12 @@
 #include "heltec.h"
-
+#include "Node.hpp"
 #define BAND 433E6
 
 long lastSendTime = 0;
 int interval = 4000;
+
+Node n;
+char id = '2';
 
 void setup()
 {
@@ -11,6 +14,8 @@ void setup()
   LoRa.onReceive(onReceive);
   LoRa.receive();
   Serial.println("LoRa device init succeeded");
+  n.setID(id);
+  n.CreateQueue();
 }
 
 void loop()
@@ -20,18 +25,9 @@ void loop()
     //n.setMessage_Type(type_message);
     //n.setPacket_Number(msgCount);
     sendMessage(n);
-
     lastSendTime = millis();
     interval = random(2000) + 1000;
-    if (n.getSizeListedNodes()==10)
-    {
-      //Detect RSSI
-      //Clear
-    }
-    else
-    {
     LoRa.receive();
-    }
   }
 }
 
@@ -49,11 +45,24 @@ void OnReceive(int packetSize)
   if (packetSize == 0) return;  //if there's not packet, return
   char id = LoRa.read();
   char type = LoRa.read();
+  int rssi = LoRa.packetRssi();
   if (type =='0')
   {
     //Receive string
     int rssi = LoRa.packetRssi();
-    n.storeRSSI(id,rssi);
+    if (n.IsFull()==1)
+    {
+      n.Pull();
+      n.Push(id,rssi);
+      // Proof-of-RSSI
+      
+    }
+    else
+    {
+      //Push
+      n.Push(id,rssi);
+    }
+
   }
   if (type =='1')
   {

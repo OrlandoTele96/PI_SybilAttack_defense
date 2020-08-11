@@ -32,18 +32,6 @@ string Node::getPayload()const
 {
   return this->payload;
 }
-vector<char>  Node::getReceived_id()const
-{
-  return this->received_id;
-}
-vector<char>  Node::getFake()const
-{
-  return this->Fake;
-}
-vector<int>  Node::getRSSI()const
-{
-  return this->RSSI;
-}
 void Node::setID(char id)
 {
   this->ID=id;
@@ -57,8 +45,94 @@ void Node::setPayload(string Payload)
   this->payload=Payload;
 }
 /*Functions*/
-void Node::storeRSSI(char src_id,int rssi)
+void Node::Pack(char type)
 {
-  this->received_id.push_back(src_id);
-  this->RSSI.push_back(rssi);
+  if (type=='0')
+  {
+    this->payload="21.6";
+  }
+  if(type=='1')
+  {
+
+  }
+  if(type=='2')
+  {
+
+  }
+  if(type=='3')
+  {
+
+  }
+}
+void Node::Unpack(char type,string payload)
+{
+  if (type=='0')
+  {
+      this->payload = payload;
+  }
+  if(type=='1')
+  {
+
+  }
+  if(type=='2')
+  {
+
+  }
+  if(type=='3')
+  {
+
+  }
+}
+void Node::CreateQueue()
+{
+  this->queue_received.start=-1;
+  this->queue_received.end=0;
+}
+int Node::IsFull()
+{
+  if(this->queue_received.end==10)
+    return 1;
+  else
+    return 0;
+}
+int Node::IsVoid()
+{
+  if(this->queue_received.end==0)
+    return 1;
+  else
+    return 0;
+}
+void Node::Pull()
+{
+  int rssi,i;
+  char id;
+  rssi = this->queue_received.RSSI[0];
+  id = this->queue_received.ID[0];
+  for (i=0;i<this->queue_received.end-1;i++)
+  {
+    this->queue_received.RSSI[i]=this->queue_received.RSSI[i+1];
+    this->queue_received.ID[i]=this->queue_received.ID[i+1];
+
+  }
+  this->queue_received.end--;
+}
+void Node::Push(char id,int rssi)
+{
+  if (IsFull()!=1)
+  {
+    this->queue_received.RSSI[this->queue_received.end]=rssi;
+    this->queue_received.ID[this->queue_received.end]=id;
+    this->queue_received.end++;
+  }
+}
+void Node::PrintQueue()
+{
+  int i;
+  cout<<"Size"<<this->queue_received.end<<endl;
+  for (i=0;i<this->queue_received.end;i++)
+  {
+    cout<<"ID : "<<  this->queue_received.ID[i]<<endl;
+    cout<<"RSSI : "<<  this->queue_received.RSSI[i]<<endl;
+    cout<<"---------------------------"<<endl;
+  }
 }
