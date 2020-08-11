@@ -20,15 +20,15 @@ void setup()
 
 void loop()
 {
-  if (millis() - lastSendTime > interval)
-  {
+  //if (millis() - lastSendTime > interval)
+  //{
     //n.setMessage_Type(type_message);
     //n.setPacket_Number(msgCount);
     sendMessage(n);
     lastSendTime = millis();
     interval = random(2000) + 1000;
     LoRa.receive();
-  }
+  //}
 }
 
 void SendMessage(Node n)
@@ -55,14 +55,17 @@ void OnReceive(int packetSize)
       n.Pull();
       n.Push(id,rssi);
       // Proof-of-RSSI
-      
+
     }
     else
     {
       //Push
       n.Push(id,rssi);
     }
-
+    if (n.IsFull()==1)
+    {
+      n.DiscardRssi();
+    }
   }
   if (type =='1')
   {
