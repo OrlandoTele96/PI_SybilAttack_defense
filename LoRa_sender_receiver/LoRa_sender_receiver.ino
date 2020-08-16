@@ -2,9 +2,6 @@
 #include "Node.hpp"
 #define BAND 433E6
 
-long lastSendTime = 0;
-int interval = 4000;
-
 Node n;
 char id = '2';
 
@@ -20,15 +17,8 @@ void setup()
 
 void loop()
 {
-  //if (millis() - lastSendTime > interval)
-  //{
-    //n.setMessage_Type(type_message);
-    //n.setPacket_Number(msgCount);
     sendMessage(n);
-    lastSendTime = millis();
-    interval = random(2000) + 1000;
     LoRa.receive();
-  //}
 }
 
 void SendMessage(Node n)
@@ -46,37 +36,19 @@ void OnReceive(int packetSize)
   char id = LoRa.read();
   char type = LoRa.read();
   int rssi = LoRa.packetRssi();
-  if (type =='0')
+  if (n.SearchID(id)==true)// Revisa si esta en la lista historial
   {
-    //Receive string
-    int rssi = LoRa.packetRssi();
-    if (n.IsFull()==1)
+    /*Si esta, revisa que el tam de la cola sea indicada si no lo
+    es, saca el primer elemento*/
+    if (n.QueueFull(id)==true)
     {
-      n.Pull();
-      n.Push(id,rssi);
-      // Proof-of-RSSI
-
-    }
-    else
-    {
-      //Push
-      n.Push(id,rssi);
-    }
-    if (n.IsFull()==1)
-    {
-      n.DiscardRssi();
+      n.RemoveRSSI(id);
     }
   }
-  if (type =='1')
+  else
   {
-
+    /*Si no esta en el historial, se crea la cola para este id*/
+    n.addIDQueue(id);
   }
-  if (type =='2')
-  {
-
-  }
-  if (type =='3')
-  {
-
-  }
+  n.addRSSI(id,rssi);
 }
