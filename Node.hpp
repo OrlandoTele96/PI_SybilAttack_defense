@@ -25,8 +25,8 @@ using namespace std;
 
 struct Received
 {
+  char ID;
   int RSSI[10];
-  char ID[10];
   int start,end;
 };
 typedef struct Received Queue;
@@ -36,7 +36,7 @@ private:
   char ID = '0';
   char tm = '0';
   string payload= "24.5"; // Temperature of a sensor.
-  Queue queue_received;
+  vector <Queue> received_mjs;
   vector<char> graylist;
   //vector<char>
 public:
@@ -56,16 +56,19 @@ public:
     void Pack(char type);
     void Unpack(char type,string payload);
     /*Queue functions*/
-    void CreateQueue();
-    int IsFull();
-    int IsVoid();
-    void Pull();
-    void Push(char id,int rssi);
-    void PrintQueue();
-    /*Phase 1*/
-    int CAT_RSSI(int rssi);
-    void DiscardRssi();
+    Queue createQueue(char id);
+    int isFull(Queue *q);
+    int isVoid(Queue *q);
+    void Pull(Queue *q);
+    void Push(Queue *q,int rssi);
+    void PrintQueue(Queue *q);
+    /*Storage data*/
+    bool SearchID(char id);
+    void addIDQueue(char id);
+    void addRSSI(char id,int rssi);
+    bool QueueFull(char id);
+    void RemoveRSSI(char id);
+    void PrintHisto();
+    /*RSSI phase 1*/
 };
-
-
 #endif /* Node_hpp */

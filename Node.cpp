@@ -64,6 +64,7 @@ void Node::Pack(char type)
 
   }
 }
+
 void Node::Unpack(char type,string payload)
 {
   if (type=='0')
@@ -83,83 +84,148 @@ void Node::Unpack(char type,string payload)
 
   }
 }
-void Node::CreateQueue()
+/*Queue Functions*/
+Queue Node::createQueue(char id)
 {
-  this->queue_received.start=-1;
-  this->queue_received.end=0;
+  Queue new_queue;
+  new_queue.start=-1;
+  new_queue.end=0;
+  new_queue.ID=id;
+  return new_queue;
 }
-int Node::IsFull()
+int Node::isFull(Queue *q)
 {
-  if(this->queue_received.end==10)
-    return 1;
-  else
-    return 0;
-}
-int Node::IsVoid()
-{
-  if(this->queue_received.end==0)
-    return 1;
-  else
-    return 0;
-}
-void Node::Pull()
-{
-  int rssi,i;
-  char id;
-  rssi = this->queue_received.RSSI[0];
-  id = this->queue_received.ID[0];
-  for (i=0;i<this->queue_received.end-1;i++)
+  if(q->end==10)
   {
-    this->queue_received.RSSI[i]=this->queue_received.RSSI[i+1];
-    this->queue_received.ID[i]=this->queue_received.ID[i+1];
-
+    return 1;
   }
-  this->queue_received.end--;
-}
-void Node::Push(char id,int rssi)
-{
-  if (IsFull()!=1)
+  else
   {
-    this->queue_received.RSSI[this->queue_received.end]=rssi;
-    this->queue_received.ID[this->queue_received.end]=id;
-    this->queue_received.end++;
+    return 0;
   }
 }
-void Node::PrintQueue()
+int Node::isVoid(Queue *q)
+{
+  if(q->end==0)
+  {
+    return 1;
+  }
+  else
+  {
+    return 0;
+  }
+}
+void Pull(Queue *q)
+{
+  int i,rssi;
+  rssi = q->RSSI[0];
+  if(q->end!=0)
+  {
+    for (i=0;i<q->end-1;i++)
+    {
+      q->RSSI[i]=q->RSSI[i+1];
+    }
+    q->end--;
+  }
+}
+void Node::Push(Queue *q,int rssi)
+{
+  if(isFull(q)!=1)
+  {
+    q->RSSI[q->end]=rssi;
+    q->end++;
+  }
+}
+void Node::PrintQueue(Queue *q)
 {
   int i;
-  cout<<"Size"<<this->queue_received.end<<endl;
-  for (i=0;i<this->queue_received.end;i++)
+  cout<<"Size"<<q->end<<endl;
+  for (i=0;i<q->end;i++)
   {
-    cout<<"ID : "<<  this->queue_received.ID[i]<<endl;
-    cout<<"RSSI : "<<  this->queue_received.RSSI[i]<<endl;
+    cout<<"RSSI : "<<  q->RSSI[i]<<endl;
     cout<<"---------------------------"<<endl;
   }
 }
-/*Phase 1*/
-
-int Node::CAT_RSSI(int rssi)
+/*Storage Data*/
+bool Node::SearchID(char id)
 {
-  // si rssi < prom_0.5mtro & rssi >= prom_0.2mtro -> 0.2
-  // si rssi < prom_1mtro & rssi >= prom0.5 -> 0.5
-  // si rssi < prom_2mtro & rssi >= prom1 -> 1
-}
-
-void Node::DiscardRssi()
-{
-  /*
-  int i=0;
-  int aux,prom,comp;
-  float c=0;
-  aux=0;
-  for(i=0;i<this->queue_received.end;i++)
+  int i;
+  if (this->received_mjs.size()!=0)
   {
-    aux =aux+ this->queue_received.RSSI[i];
-    c++;
+    for (i=0;i<this->received_mjs.size();i++)
+    {
+      if (this->received_mjs.at(i).ID==id)
+      {
+        return true;
+      }
+    }
   }
-  prom = aux/c;
-  for (i=0;i<this->queue_received.end;i++)
+  else
   {
-    comp = abs(prom-this->queue_received.RSSI[i]);
-  }*/
+    return false;
+  }
+  return false;
 }
+
+void Node::addIDQueue(char id)
+{
+  Queue new_queue;
+  new_queue=createQueue(id);
+  this->received_mjs.push_back(new_queue);
+}
+void Node::addRSSI(char id,int rssi)
+{
+  int i;
+  for (i=0;i<this->received_mjs.size();i++)
+  {
+    if (id == this->received_mjs.at(i).ID)
+    {
+      Push(&this->received_mjs.at(i),rssi);
+      //PrintQueue(&this->received_mjs.at(i));
+    }
+  }
+}
+bool Node::QueueFull(char id)
+{
+  bool ans;
+  int i;
+  for (i=0;i<this->received_mjs.size();i++)
+  {
+    if (id == this->received_mjs.at(i).ID)
+    {
+      ans=isFull(&this->received_mjs.at(i));
+    }
+  }
+  return ans;
+}
+void Node::RemoveRSSI(char id)
+{
+  int i;
+  int j,rssi;
+  for (i=0;i<this->received_mjs.size();i++)
+  {
+    if (id == this->received_mjs.at(i).ID)
+    {
+      rssi = this->received_mjs.at(i).RSSI[0];
+      if(this->received_mjs.at(i).end!=0)
+      {
+        for (j=0;j<this->received_mjs.at(i).end-1;j++)
+        {
+          this->received_mjs.at(i).RSSI[j]=this->received_mjs.at(i).RSSI[i+1];
+        }
+        this->received_mjs.at(i).end--;
+      }
+      PrintQueue(&this->received_mjs.at(i));
+    }
+  }
+}
+void Node::PrintHisto()
+{
+  cout<<"History..."<<endl;
+  int i=0;
+  for(i=0;i<this->received_mjs.size();i++)
+  {
+    cout<<"ID : "<< this->received_mjs.at(i).ID<<endl;
+  }
+}
+/*RSSI phase 1*/
