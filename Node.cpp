@@ -211,11 +211,11 @@ void Node::RemoveRSSI(char id)
       {
         for (j=0;j<this->received_mjs.at(i).end-1;j++)
         {
-          this->received_mjs.at(i).RSSI[j]=this->received_mjs.at(i).RSSI[i+1];
+          this->received_mjs.at(i).RSSI[j]=this->received_mjs.at(i).RSSI[j+1];
         }
         this->received_mjs.at(i).end--;
       }
-      PrintQueue(&this->received_mjs.at(i));
+      //PrintQueue(&this->received_mjs.at(i));
     }
   }
 }
@@ -229,3 +229,50 @@ void Node::PrintHisto()
   }
 }
 /*RSSI phase 1*/
+void Node::calcProm(Queue *q)
+{
+  int i=0;
+  int aux;
+  float n=10;
+  for(i=0;i<q->end;i++)
+  {
+    aux+=q->RSSI[i];
+  }
+  q->prom=aux/n;
+}
+void Node::calcVar(Queue *q)
+{
+  //Recorre vector
+  //si cola<10 no calcula
+  //Si cola == 10
+  //varianza de rssi
+}
+void Node::generateGrayList()
+{
+  vector<int> proms;
+  vector<int> vars;
+  vector <Queue> IDE;
+  int i=0;
+  int j=0;
+  int N,k;
+  for (i=0;i<this->received_mjs.size();i++)
+  {
+    if (isFull(&this->received_mjs.at(i))==true)
+    {
+      calcProm(&this->received_mjs.at(i));
+      calcVar(&this->received_mjs.at(i));
+      IDE.push_back(this->received_mjs.at(i));
+      //cout<<"ID : "<<this->received_mjs.at(i).ID<<": was added"<<endl;
+      //cout<<"RSSI average : "<<this->received_mjs.at(i).prom<<endl;
+    }
+  }
+  for (i=0;i<IDE.size();i++)
+  {
+    N=IDE.size()-j;
+    for(k=0;k<N;k++)
+    {
+        //
+    }
+    j++;
+  }
+}

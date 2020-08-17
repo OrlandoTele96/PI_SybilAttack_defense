@@ -28,6 +28,8 @@ struct Received
   char ID;
   int RSSI[10];
   int start,end;
+  int prom=0;
+  int var=0;
 };
 typedef struct Received Queue;
 class Node {
@@ -70,5 +72,10 @@ public:
     void RemoveRSSI(char id);
     void PrintHisto();
     /*RSSI phase 1*/
+    void calcProm(Queue *q);
+    void calcVar(Queue *q);
+    void generateGrayList();
+    /*PoW phase 2*/
+    
 };
 #endif /* Node_hpp */
