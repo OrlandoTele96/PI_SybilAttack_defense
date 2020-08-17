@@ -51,4 +51,5 @@ void OnReceive(int packetSize)
     n.addIDQueue(id);
   }
   n.addRSSI(id,rssi);
+  n.generateGrayList();
 }
