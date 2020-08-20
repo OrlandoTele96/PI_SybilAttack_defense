@@ -39,7 +39,7 @@ private:
   char tm = '0';
   string payload= "24.5"; // Temperature of a sensor.
   vector <Queue> received_mjs;
-  vector<char> graylist;
+  vector<vector<char>> graylist;
   //vector<char>
 public:
     /*Constructors*/
@@ -55,6 +55,8 @@ public:
     void setTm(char type);
     void setPayload(string Payload);
     /*Functions*/
+    //void printGrayList()const;
+    int getSizeGrayList()const;
     void Pack(char type);
     void Unpack(char type,string payload);
     /*Queue functions*/

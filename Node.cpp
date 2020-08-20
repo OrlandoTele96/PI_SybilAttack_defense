@@ -45,6 +45,12 @@ void Node::setPayload(string Payload)
   this->payload=Payload;
 }
 /*Functions*/
+int Node::getSizeGrayList()const
+{
+  int n;
+  n=this->graylist.size();
+  return n;
+}
 void Node::Pack(char type)
 {
   if (type=='0')
@@ -242,37 +248,55 @@ void Node::calcProm(Queue *q)
 }
 void Node::calcVar(Queue *q)
 {
-  //Recorre vector
-  //si cola<10 no calcula
-  //Si cola == 10
-  //varianza de rssi
+  int i=0;
+  int aux;
+  float n = 10;
+  for (i=0;i<q->end;i++)
+  {
+    aux += (q->RSSI[i]-q->prom)*(q->RSSI[i]-q->prom);
+  }
+  q->var=aux/n;
 }
 void Node::generateGrayList()
 {
-  vector<int> proms;
-  vector<int> vars;
-  vector <Queue> IDE;
+  vector <Queue> Id;
   int i=0;
   int j=0;
-  int N,k;
+  vector<char> suspected;
+  int inf,sup;
   for (i=0;i<this->received_mjs.size();i++)
   {
     if (isFull(&this->received_mjs.at(i))==true)
     {
       calcProm(&this->received_mjs.at(i));
       calcVar(&this->received_mjs.at(i));
-      IDE.push_back(this->received_mjs.at(i));
-      //cout<<"ID : "<<this->received_mjs.at(i).ID<<": was added"<<endl;
-      //cout<<"RSSI average : "<<this->received_mjs.at(i).prom<<endl;
+      Id.push_back(this->received_mjs.at(i));
+      cout<<"ID : "<<this->received_mjs.at(i).ID<<": was added"<<endl;
+      //cout<<"RSSI var : "<<this->received_mjs.at(i).var<<endl;
     }
   }
-  for (i=0;i<IDE.size();i++)
+  if(Id.size()>=2)
   {
-    N=IDE.size()-j;
-    for(k=0;k<N;k++)
+    for (i=0;i<Id.size();i++)
     {
-        //
+      suspected.clear();
+      for (j=0;j<Id.size();j++)
+      {
+        sup=0;
+        inf=0;
+        if(Id.at(i).ID!=Id.at(j).ID)
+        {
+            inf=Id.at(i).prom-Id.at(i).var;
+            sup=Id.at(i).prom+Id.at(i).var;
+            if (Id.at(j).prom>=(Id.at(i).prom-Id.at(i).var) and Id.at(j).prom<=(Id.at(i).prom+Id.at(i).var))
+            {
+              suspected.push_back(Id.at(i).ID);
+              suspected.push_back(Id.at(j).ID);
+            }
+
+        }
+      }
+      this->graylist.push_back(suspected);
     }
-    j++;
   }
 }

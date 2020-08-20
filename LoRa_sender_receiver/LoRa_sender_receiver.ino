@@ -17,6 +17,17 @@ void setup()
 
 void loop()
 {
+    char type ='0';
+    if(n.getSizeGrayList()>0)
+    {
+      //Generate PoW
+    }
+    else
+    {
+      //Send other message
+      n.setTm(type);
+      n.Pack(type);
+    }
     sendMessage(n);
     LoRa.receive();
 }
@@ -52,4 +63,21 @@ void OnReceive(int packetSize)
   }
   n.addRSSI(id,rssi);
   n.generateGrayList();
+
+  if (type=='0')
+  {
+    //Unpack
+  }
+  if (type=='1')
+  {
+    //Unpack
+  }
+  if (type=='2')
+  {
+    //Unpack
+  }
+  if (type=='3')
+  {
+    //Unpack
+  }
 }
