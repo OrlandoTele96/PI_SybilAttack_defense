@@ -39,8 +39,8 @@ private:
   char tm = '0';
   string payload= "24.5"; // Temperature of a sensor.
   vector <Queue> received_mjs;
-  vector<vector<char>> graylist;
-  //vector<char>
+  //vector<vector<char>> graylist;
+  vector<char> graylist;
 public:
     /*Constructors*/
     Node()=default;
@@ -78,6 +78,6 @@ public:
     void calcVar(Queue *q);
     void generateGrayList();
     /*PoW phase 2*/
-    
+    void generatePoW(vector<char> id_suspect);
 };
 #endif /* Node_hpp */

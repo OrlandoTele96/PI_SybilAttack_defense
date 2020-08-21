@@ -262,7 +262,9 @@ void Node::generateGrayList()
   vector <Queue> Id;
   int i=0;
   int j=0;
+  int k=0;
   vector<char> suspected;
+  vector<vector<char>> list
   int inf,sup;
   for (i=0;i<this->received_mjs.size();i++)
   {
@@ -296,7 +298,20 @@ void Node::generateGrayList()
 
         }
       }
-      this->graylist.push_back(suspected);
+      //this->graylist.push_back(suspected);
+      list.push_back(suspected);
     }
   }
+  for(i=0;i<list.size();i++)
+  {
+    for(j=0;j<list.at(i).size();j++)
+    {
+
+    }
+  }
+}
+/*PoW phase2*/
+void Node::generatePoW(vector<char> id_suspect)
+{
+
 }
