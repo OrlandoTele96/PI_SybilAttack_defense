@@ -20,6 +20,9 @@ Atributes :
 #include <iostream>
 #include <string>
 #include <vector>
+#include <time.h>
+
+#include "sha256.hpp"
 
 using namespace std;
 
@@ -32,7 +35,7 @@ struct Received
   int var=0;
 };
 typedef struct Received Queue;
-class Node {
+class Node : public SHA256{
 private:
   /* message type 0*/
   char ID = '0';
@@ -40,6 +43,8 @@ private:
   string payload= "24.5"; // Temperature of a sensor.
   vector <Queue> received_mjs;
   vector<vector<char>> graylist;
+  vector<int> TIMED;
+  vector <char> ID_tested;
   //vector<char>
 public:
     /*Constructors*/
@@ -51,6 +56,7 @@ public:
     char getID()const;
     char getTm()const;
     string getPayload()const;
+    vector<vector<char>> getGrayList()const;
     void setID(char id);
     void setTm(char type);
     void setPayload(string Payload);
@@ -77,7 +83,11 @@ public:
     void calcProm(Queue *q);
     void calcVar(Queue *q);
     void generateGrayList();
+    bool inGrayList(char id);
     /*PoW phase 2*/
-    
+    void generatePoWs(string num_rand,vector<char> id_suspect);
+    string GenerateTarget(int difficulty);
+    string PoW(char id,string num_rand,int difficulty);
+    string packtohash(char id,string num_rand,string lasthash);
 };
 #endif /* Node_hpp */

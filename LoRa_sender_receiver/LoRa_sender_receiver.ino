@@ -3,7 +3,7 @@
 #define BAND 433E6
 
 Node n;
-char id = '2';
+char id = '1';
 
 void setup()
 {
@@ -18,15 +18,25 @@ void setup()
 void loop()
 {
     char type ='0';
+    int i;
     if(n.getSizeGrayList()>0)
     {
-      //Generate PoW
+      for (i=0;i<n.getSizeGrayList();i++)
+      {
+        n.generatePoWs(n.getGrayList().at(i)); //Generate a PoW for each subset in the history
+        type='1';
+        n.setTm(type);
+        n.Pack(type);
+        sendMessage(n);
+        //Erase this ID from gray list
+      }
     }
     else
     {
       //Send other message
       n.setTm(type);
       n.Pack(type);
+      sendMessage(n);
     }
     sendMessage(n);
     LoRa.receive();
@@ -47,6 +57,7 @@ void OnReceive(int packetSize)
   char id = LoRa.read();
   char type = LoRa.read();
   int rssi = LoRa.packetRssi();
+  String payload;
   if (n.SearchID(id)==true)// Revisa si esta en la lista historial
   {
     /*Si esta, revisa que el tam de la cola sea indicada si no lo
@@ -63,21 +74,5 @@ void OnReceive(int packetSize)
   }
   n.addRSSI(id,rssi);
   n.generateGrayList();
-
-  if (type=='0')
-  {
-    //Unpack
-  }
-  if (type=='1')
-  {
-    //Unpack
-  }
-  if (type=='2')
-  {
-    //Unpack
-  }
-  if (type=='3')
-  {
-    //Unpack
-  }
+  n.Unpack(type,payload);
 }

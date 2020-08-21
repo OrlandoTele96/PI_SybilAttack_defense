@@ -32,6 +32,10 @@ string Node::getPayload()const
 {
   return this->payload;
 }
+vector<vector<char>> Node::getGrayList()const
+{
+  return this->graylist;
+}
 void Node::setID(char id)
 {
   this->ID=id;
@@ -262,6 +266,7 @@ void Node::generateGrayList()
   vector <Queue> Id;
   int i=0;
   int j=0;
+  int k=0;
   vector<char> suspected;
   int inf,sup;
   for (i=0;i<this->received_mjs.size();i++)
@@ -290,13 +295,91 @@ void Node::generateGrayList()
             sup=Id.at(i).prom+Id.at(i).var;
             if (Id.at(j).prom>=(Id.at(i).prom-Id.at(i).var) and Id.at(j).prom<=(Id.at(i).prom+Id.at(i).var))
             {
-              suspected.push_back(Id.at(i).ID);
-              suspected.push_back(Id.at(j).ID);
+              if(inGrayList(Id.at(i).ID)!=true)
+              {
+                cout<<"ID : "<<Id.at(i).ID<<": added to graylist"<<endl;
+                suspected.push_back(Id.at(i).ID);
+              }
+              if(inGrayList(Id.at(j).ID)!=true)
+              {
+                cout<<"ID : "<<Id.at(j).ID<<": added to graylist"<<endl;
+                suspected.push_back(Id.at(j).ID);
+              }
             }
 
         }
       }
-      this->graylist.push_back(suspected);
+      if(suspected.size()>0)
+        this->graylist.push_back(suspected);
     }
   }
+}
+bool Node::inGrayList(char id)
+{
+  int i=0;
+  int j=0;
+  for (i=0;i<this->graylist.size();i++)
+  {
+    for(j=0;j<this->graylist.at(i).size();j++)
+    {
+      if(this->graylist.at(i).at(j)==id)
+        return true;
+    }
+  }
+  return false;
+}
+/*PoW phase 2*/
+void Node::generatePoWs(string num_rand,vector<char> id_suspect)
+{
+  vector <string > pows;
+  string ans;
+  int i;
+  int i_time,f_time,time;
+  for (i=0;i<id_suspect.size();i++)
+  {
+    cout<<"ID tested : "<<id_suspect.at(i)<<endl;
+    i_time = clock();
+    ans=PoW(id_suspect.at(i),num_rand,3);
+    f_time = clock();
+    time = f_time-i_time;
+    cout<<"PoW for \t"<<id_suspect.at(i)<<"took \t"<<time<<"\tseconds"<<endl;
+    //if ID not in ID_tested
+      this->TIMED.push_back(time);
+      this->ID_tested.push_back(id_suspect.at(i));
+  }
+}
+string Node::GenerateTarget(int difficulty)
+{
+  char ctos[difficulty+1];
+  int i =0;
+  for (i=0;i<difficulty;i++)
+  {
+    ctos[i]='0';
+  }
+  ctos[difficulty]='\0';
+  string str(ctos);
+  return str;
+}
+string Node::PoW(char id,string num_rand,int difficulty)
+{
+  /*This is an implementation of proof of work
+  using a hash function as SHA256 standard*/
+  int i=0;
+  string hash,target,input;
+  target= GenerateTarget(difficulty);
+  input = packtohash(id,num_rand,"");
+  do
+  {
+    i++;
+    hash = sha256(input);
+    input = packtohash(id,num_rand,hash);
+  }while(hash.substr(0,difficulty)!=target);
+  cout<<"Pow permformed in :\t "<<i<<": cycles"<<endl;
+  return hash;
+}
+string Node::packtohash(char id,string num_rand,string lasthash)
+{
+  string tohash;
+  tohash = id + num_rand+lasthash;
+  return tohash;
 }
