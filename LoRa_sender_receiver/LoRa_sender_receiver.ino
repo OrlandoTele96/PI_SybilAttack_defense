@@ -23,7 +23,7 @@ void loop()
     {
       for (i=0;i<n.getSizeGrayList();i++)
       {
-        n.generatePoWs(n.getGrayList().at(i)); //Generate a PoW for each subset in the history
+        n.generatePoWs(n.getGrayList().at(i));
         type='1';
         n.setTm(type);
         n.Pack(type);
@@ -31,13 +31,11 @@ void loop()
         //Erase this ID from gray list
       }
     }
-    else
-    {
-      //Send other message
-      n.setTm(type);
-      n.Pack(type);
-      sendMessage(n);
-    }
+    //Send other message
+    type ='0';
+    n.setTm(type);
+    n.Pack(type);
+    sendMessage(n);
     LoRa.receive();
 }
 
@@ -46,21 +44,28 @@ void SendMessage(Node n)
   LoRa.beginPacket();
   LoRa.write(n.getID());
   LoRa.write(n.getTm());
-  LoRa.write(n.getPayload());
+  LoRa.print(n.getPayload());
   LoRa.endPacket();
 }
 
 void OnReceive(int packetSize)
 {
   if (packetSize == 0) return;  //if there's not packet, return
+  /*Read data*/
   char id = LoRa.read();
   char type = LoRa.read();
   int rssi = LoRa.packetRssi();
   String payload;
+  /*Read payload*/
+  while(LoRa.available())
+  {
+    payload = LoRa.readString();
+    Serial.print(payload);
+  }
+  /*Adding to rssi list*/
   if (n.SearchID(id)==true)// Revisa si esta en la lista historial
   {
-    /*Si esta, revisa que el tam de la cola sea indicada si no lo
-    es, saca el primer elemento*/
+    /*if there's an id in the history then it will check if the queue is full*/
     if (n.QueueFull(id)==true)
     {
       n.RemoveRSSI(id);
@@ -68,10 +73,13 @@ void OnReceive(int packetSize)
   }
   else
   {
-    /*Si no esta en el historial, se crea la cola para este id*/
+    /*if there's not in the history will add this id in that queue*/
     n.addIDQueue(id);
   }
   n.addRSSI(id,rssi);
+  /*Compute a gray list*/
   n.generateGrayList();
+  /*Unpack any type of message...*/
   n.Unpack(type,payload);
+  Serial.print("Unpacked successful")
 }
