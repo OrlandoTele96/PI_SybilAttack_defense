@@ -77,19 +77,19 @@ void Node::Pack(char type)
 
 void Node::Unpack(char type,string payload)
 {
-  if (type=='0')
+  if (type=='0')/*Temperature of a sensor*/
   {
       this->payload = payload;
   }
-  if(type=='1')
+  if(type=='1')/*PoW request*/
   {
 
   }
-  if(type=='2')
+  if(type=='2')/*PoW response and solution*/
   {
 
   }
-  if(type=='3')
+  if(type=='3')/*Consensus message*/
   {
 
   }

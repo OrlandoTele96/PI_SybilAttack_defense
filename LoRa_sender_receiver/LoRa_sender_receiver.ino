@@ -38,7 +38,6 @@ void loop()
       n.Pack(type);
       sendMessage(n);
     }
-    sendMessage(n);
     LoRa.receive();
 }
 
