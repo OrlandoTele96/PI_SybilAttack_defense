@@ -63,7 +63,7 @@ public:
     /*Functions*/
     //void printGrayList()const;
     int getSizeGrayList()const;
-    int getSizeTIMED()cons;
+    int getSizeTIMED()const;
     void Pack(char type);
     void Unpack(char type,string payload);
     /*Queue functions*/
