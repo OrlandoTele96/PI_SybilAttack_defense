@@ -23,6 +23,10 @@ int Sybil::getN()const
 {
   return this->N;
 }
+Node Sybil::getNode(int index)
+{
+  return this->sybil_id.at(index);
+}
 /*Setters*/
 void Sybil::setSybilNodes(vector<Node> sn){
   this->sybil_id=sn;

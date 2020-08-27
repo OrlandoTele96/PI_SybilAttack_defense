@@ -24,6 +24,7 @@ public:
     int getN()const;
     void setSybilNodes(vector<Node> sn);
     void setN(int n);
+    Node getNode(int index);
 };
 
 
