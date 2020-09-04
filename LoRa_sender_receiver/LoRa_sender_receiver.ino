@@ -19,6 +19,7 @@ void loop()
 {
     char type ='0';
     int i;
+    /*
     if(n.getSizeGrayList()>0)
     {
       for (i=0;i<n.getSizeGrayList();i++)
@@ -30,7 +31,7 @@ void loop()
         sendMessage(n);
         //Erase this ID from gray list
       }
-    }
+    }*/
     //Send other message
     type ='0';
     n.setTm(type);
@@ -80,6 +81,6 @@ void OnReceive(int packetSize)
   /*Compute a gray list*/
   n.generateGrayList();
   /*Unpack any type of message...*/
-  n.Unpack(type,payload);
-  Serial.print("Unpacked successful")
+  //n.Unpack(type,payload);
+  //Serial.print("Unpacked successful")
 }
