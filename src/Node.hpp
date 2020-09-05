@@ -20,8 +20,16 @@ private:
   unsigned char type = 0x00; // message type by default
   vector<char> payload;
 public:
+    /*Constructor*/
     Node()=default;
     Node (unsigned char Id,unsigned char tm);
     Node (const Node &n);
+    /*Getters & Setters*/
+    unsigned char getID()const;
+    unsigned char getTm()const;
+    vector<char> getPayload()const;
+    void setID(unsigned char id);
+    void setTm(unsigned char tm);
+    void setPayload(vector<char> p);
 };
 #endif /* Node_hpp */
