@@ -63,5 +63,6 @@ void onReceive(int packetSize)
   {
     incoming += (char) LoRa.read();
   }
+  Serial.println("Message received"+incoming);
   
 }
