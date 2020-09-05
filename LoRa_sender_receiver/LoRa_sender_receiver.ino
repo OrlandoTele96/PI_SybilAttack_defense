@@ -1,86 +1,78 @@
 #include "heltec.h"
 #include "Node.hpp"
-#define BAND 433E6
 
+#define BAND    433E6  
+long lastSendTime = 0;        // last send time
+int interval = 2000; 
 Node n;
-char id = '1';
+char id = '2';
 
 void setup()
 {
-  Heltec.begin(true,true,true,true,BAND);
+  
+   //WIFI Kit series V1 not support Vext control
+  Heltec.begin(true /*DisplayEnable Enable*/, true /*Heltec.LoRa Disable*/, true /*Serial Enable*/, true /*PABOOST Enable*/, BAND /*long BAND*/);
   LoRa.onReceive(onReceive);
   LoRa.receive();
-  Serial.println("LoRa device init succeeded");
+  Serial.println("Heltec.LoRa init succeeded.");
   n.setID(id);
-  n.CreateQueue();
 }
 
 void loop()
 {
-    char type ='0';
-    int i;
-    /*
-    if(n.getSizeGrayList()>0)
-    {
-      for (i=0;i<n.getSizeGrayList();i++)
-      {
-        n.generatePoWs(n.getGrayList().at(i));
-        type='1';
-        n.setTm(type);
-        n.Pack(type);
-        sendMessage(n);
-        //Erase this ID from gray list
-      }
-    }*/
-    //Send other message
-    type ='0';
-    n.setTm(type);
-    n.Pack(type);
+  char type = '0';
+  n.setTm(type);
+  if (millis() - lastSendTime > interval)
+  {
+     // send a message
     sendMessage(n);
-    LoRa.receive();
+    lastSendTime = millis();            // timestamp the message
+    interval = random(2000) + 1000;     // 2-3 seconds
+    LoRa.receive();                     // go back into receive mode
+  }                     // go back into receive mode
 }
 
-void SendMessage(Node n)
+void sendMessage(Node n)
 {
-  LoRa.beginPacket();
+  LoRa.beginPacket();                   // start packet
   LoRa.write(n.getID());
   LoRa.write(n.getTm());
-  LoRa.print(n.getPayload());
-  LoRa.endPacket();
+  LoRa.print("25.7");
+  LoRa.endPacket();                     // finish packet and send it
 }
 
-void OnReceive(int packetSize)
+void onReceive(int packetSize)
 {
-  if (packetSize == 0) return;  //if there's not packet, return
-  /*Read data*/
-  char id = LoRa.read();
-  char type = LoRa.read();
-  int rssi = LoRa.packetRssi();
-  String payload;
-  /*Read payload*/
-  while(LoRa.available())
+  if (packetSize == 0) return;          // if there's no packet, return
+  // read packet header bytes:
+  Serial.println("Rx");
+  char id = LoRa.read();          // recipient address
+  char type = LoRa.read();            // sender address
+  String incoming = "";                 // payload of packet
+  while (LoRa.available())             // can't use readString() in callback
   {
-    payload = LoRa.readString();
-    Serial.print(payload);
+    incoming += (char)LoRa.read();      // add bytes one by one
   }
-  /*Adding to rssi list*/
-  if (n.SearchID(id)==true)// Revisa si esta en la lista historial
+
+  Serial.println("RSSI: " + String(LoRa.packetRssi()));
+  //Serial.println("Snr: " + String(LoRa.packetSnr()));
+
+  int rssi = LoRa.packetRssi();
+
+  if (n.SearchID(id)==true)
   {
-    /*if there's an id in the history then it will check if the queue is full*/
-    if (n.QueueFull(id)==true)
+    if(n.QueueFull(id)==1)
     {
-      n.RemoveRSSI(id);
+      Serial.println("ID queue is full");
+      //n.RemoveRSSI(id);
     }
   }
   else
   {
-    /*if there's not in the history will add this id in that queue*/
+    Serial.println("Adding new id");
     n.addIDQueue(id);
   }
   n.addRSSI(id,rssi);
-  /*Compute a gray list*/
   n.generateGrayList();
-  /*Unpack any type of message...*/
-  //n.Unpack(type,payload);
-  //Serial.print("Unpacked successful")
+  Serial.println("Graylist was made");
 }
