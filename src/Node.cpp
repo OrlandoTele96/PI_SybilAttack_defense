@@ -97,3 +97,38 @@ bool Node::isQueueFull(unsigned char id)
   }
   return ans;
 }
+int Node::RemoveRSSI(unsigned char id)
+{
+  int i;
+  int j,rssi;
+  for (i=0;i<this->Hist.size();i++)
+  {
+    if (id == this->Hist.at(i).ID)
+    {
+      rssi = this->Hist.at(i).RSSI[0];
+      if(this->Hist.at(i).end>0)
+      {
+        this->Hist.at(i).RSSI.erase(this->Hist.at(i).RSSI.begin());
+        this->Hist.at(i).end--;
+      }
+      //PrintQueue(&this->received_mjs.at(i));
+    }
+  }
+  return rssi;
+}
+void Node::AddRSSI(unsigned char id,int rssi)
+{
+  int i;
+  for (i=0;i<this->Hist.size();i++)
+  {
+    if (id == this->Hist.at(i).ID)
+    {
+      if(this->Hist.at(i).end<=10)
+      {
+        this->Hist.at(i).RSSI[this->Hist.at(i).end]=rssi;
+        this->Hist.at(i).end++;
+      }
+      //PrintQueue(&this->received_mjs.at(i));
+    }
+  }
+}

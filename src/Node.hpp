@@ -48,5 +48,7 @@ public:
     void AddIDtoHist(unsigned char id);
     bool IsinHist(unsigned char id);
     bool isQueueFull(unsigned char id);
+    int RemoveRSSI(unsigned char id);
+    void AddRSSI(unsigned char id,int rssi);
 };
 #endif /* Node_hpp */
