@@ -59,6 +59,7 @@ void onReceive(int packetSize)
   unsigned char ID = LoRa.read();
   unsigned char type = LoRa.read();
   String incoming="";
+  int rssi = LoRa.packetRssi();
   while(LoRa.available())
   {
     incoming += (char) LoRa.read();
@@ -79,5 +80,6 @@ void onReceive(int packetSize)
     Serial.println("This ID is not in the history, will be added");
     n.AddIDtoHist(ID);
   }
-  
+  n.AddRSSI(ID,rssi);
+  Serial.println("RSSI added succesfuly");
 }

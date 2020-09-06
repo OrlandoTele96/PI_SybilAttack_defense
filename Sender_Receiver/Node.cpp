@@ -108,7 +108,7 @@ int Node::RemoveRSSI(unsigned char id)
       rssi = this->Hist.at(i).RSSI[0];
       if(this->Hist.at(i).end>0)
       {
-        for (j=0;j<this->Hist.at(i).end-1;i++)
+        for (j=0;j<this->Hist.at(i).end-1;j++)
         {
           this->Hist.at(i).RSSI[j]= this->Hist.at(i).RSSI[j+1];
         }
