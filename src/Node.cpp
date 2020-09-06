@@ -7,7 +7,7 @@
 //
 
 #include "Node.hpp"
-
+/*Constructors*/
 Node::Node(unsigned char Id,unsigned char tm):id(Id),type(tm)
 {
   //
@@ -17,7 +17,7 @@ Node::Node(const Node &n)
   this->id = n.id;
   this->type = n.type;
 }
-
+/*Getter & Setter*/
 unsigned char Node::getID()const
 {
   return this->id;
@@ -41,4 +41,59 @@ void Node::setTm(unsigned char tm)
 void Node::setPayload(vector<char> p)
 {
   this->payload = p;
+}
+/*Queue function*/
+queue Node::create(unsigned char id)
+{
+  queue q;
+  q.start = -1;
+  q.end = 0;
+  q.ID = id;
+  return q;
+}
+/*RSSI Storage*/
+void Node::AddIDtoHist(unsigned char id)
+{
+  queue q;
+  q= create(id);
+  this->Hist.push_back(q);
+}
+bool Node::IsinHist(unsigned char id)
+{
+  int i=0;
+  if(this->Hist.size()>0)
+  {
+    for(i=0;i<this->Hist.size();i++)
+    {
+      if(Hist.at(i).ID==id)
+      {
+        return true;
+      }
+    }
+  }
+  else
+  {
+    return false;
+  }
+}
+
+bool Node::isQueueFull(unsigned char id)
+{
+  bool ans;
+  int i;
+  for (i=0;i<this->Hist.size();i++)
+  {
+    if (id == this->Hist.at(i).ID)
+    {
+      if (this->Hist.at(i).end ==10)
+      {
+        ans = true;
+      }
+      else
+      {
+        ans = false;
+      }
+    }
+  }
+  return ans;
 }
