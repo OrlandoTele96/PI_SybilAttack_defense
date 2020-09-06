@@ -56,13 +56,28 @@ void onReceive(int packetSize)
 {
   if (packetSize == 0) return;
   Serial.print("Message Received");
-  unsigned char id = LoRa.read();
+  unsigned char ID = LoRa.read();
   unsigned char type = LoRa.read();
   String incoming="";
   while(LoRa.available())
   {
     incoming += (char) LoRa.read();
   }
-  Serial.println("Message received"+incoming);
+
+  if (n.IsinHist(ID)==true)
+  {
+    Serial.println("This ID is in the history"+ID);
+    if(n.isQueueFull(ID)==true)
+    {
+      Serial.println("Queue is full, remove last rssi");
+      int r = n.RemoveRSSI(ID);
+      Serial.println("Removed : "+String(r));
+    }
+  }
+  else
+  {
+    Serial.println("This ID is not in the history, will be added");
+    n.AddIDtoHist(ID);
+  }
   
 }
