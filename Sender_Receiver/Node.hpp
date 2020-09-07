@@ -21,8 +21,8 @@ struct data
   //vector<int> RSSI;
   int RSSI[10];
   int start,end;
-  //int prom=0;
-  //int var=0;
+  int prom=0;
+  int var=0;
 };
 typedef struct data queue;
 class Node {
@@ -51,5 +51,10 @@ public:
     bool isQueueFull(unsigned char id);
     int RemoveRSSI(unsigned char id);
     void AddRSSI(unsigned char id,int rssi);
+    /*Phase 1: RSSI*/
+    void computeProm(queue *q);
+    void computeVar(queue *q);
+    void Discard();
+    bool isGraylist();
 };
 #endif /* Node_hpp */

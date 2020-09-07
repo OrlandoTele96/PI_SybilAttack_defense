@@ -6,7 +6,7 @@
 long lastSendTime = 0;        // last send time
 int interval = 2000; 
 Node n;
-unsigned char id = 0x01;
+unsigned char id = 0x02;
 
 void setup() {
   // put your setup code here, to run once:
@@ -82,4 +82,6 @@ void onReceive(int packetSize)
   }
   n.AddRSSI(ID,rssi);
   Serial.println("RSSI added succesfuly");
+  n.Discard();
+  Serial.println("Gray list was made");
 }

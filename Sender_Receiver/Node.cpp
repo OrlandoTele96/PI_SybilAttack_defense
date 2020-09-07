@@ -135,3 +135,38 @@ void Node::AddRSSI(unsigned char id,int rssi)
     }
   }
 }
+/*Phase 1 : RSSI*/
+void Node::computeProm(queue *q)
+{
+  int i=0;
+  int aux;
+  float n=10;
+  for(i=0;i<q->end;i++)
+  {
+    aux += q->RSSI[i];
+  }
+  q->prom = aux/n;
+}
+void Node::computeVar(queue *q)
+{
+
+}
+void Node::Discard()
+{
+    int i;
+    vector<queue> id_test;
+    for (i=0;i<this->Hist.size();i++)
+    {
+      if (this->Hist.at(i).end>=10)
+      {
+        //compute average
+        computeProm(&this->Hist.at(i));
+        //calcVar
+        id_test.push_back(this->Hist.at(i));
+      }
+    }
+}
+bool Node::isGraylist()
+{
+
+}
