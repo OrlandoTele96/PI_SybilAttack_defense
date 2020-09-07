@@ -215,7 +215,18 @@ int Node::Discard()
     }
     return ans;
 }
-bool Node::isGraylist()
+int Node::inGraylist(char id)
 {
-
+  int i=0;
+  int j=0;
+  int ans=0;
+  for (i=0;i<this->graylist.size();i++)
+  {
+    for(j=0;j<this->graylist.at(i).size();j++)
+    {
+      if(this->graylist.at(i).at(j)==id)
+        ans=1;
+    }
+  }
+  return ans;
 }
