@@ -16,17 +16,48 @@ int main()
   vector<char> payload;
   n.setID(id);
   n.setTm(tm);
-  cout<<temperature[0]<<endl;
-  payload.push_back(temperature[0]);
-  cout<<payload.at(0)<<endl;
-  n.AddIDtoHist(0x02);
-  payload.push_back('1');
-  payload.push_back('2');
-  payload.push_back('3');
-  cout<<payload.size()<<endl;
-  cout<<payload.at(0)<<endl;
-  payload.erase(payload.begin());
-  cout<<payload.size()<<endl;
-  cout<<payload.at(0)<<endl;
+  int i=0;
+  int rssi=-35;
+  id =0x02;
+  int siz;
+  if (n.IsinHist(id)==true)
+  {
+    cout<<"Está"<<endl;
+  }
+  else
+  {
+    cout<<"no esta"<<endl;
+    n.AddIDtoHist(id);
+  }
+  n.AddRSSI(id,rssi);
+  siz = n.getHistSize();
+  cout<<"tam"<<siz<<endl;
+  id = 0x02;
+  rssi = -40;
+  if (n.IsinHist(id)==true)
+  {
+    cout<<"Está"<<endl;
+  }
+  else
+  {
+    cout<<"no esta"<<endl;
+    n.AddIDtoHist(id);
+  }
+  n.AddRSSI(id,rssi);
+  siz = n.getHistSize();
+  cout<<"tam"<<siz<<endl;
+  id = 0x03;
+  if (n.IsinHist(id)==true)
+  {
+    cout<<"Está"<<endl;
+  }
+  else
+  {
+    cout<<"no esta"<<endl;
+    n.AddIDtoHist(id);
+  }
+  n.AddRSSI(id,rssi);
+  siz = n.getHistSize();
+  cout<<"tam"<<siz<<endl;
   return 0;
 }
