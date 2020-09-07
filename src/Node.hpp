@@ -45,19 +45,22 @@ public:
     void setID(unsigned char id);
     void setTm(unsigned char tm);
     void setPayload(vector<char> p);
+    void clearhist();
     /*Queue function*/
     queue create(unsigned char id);
     /*RSSI Storage*/
     void AddIDtoHist(unsigned char id);
-    bool IsinHist(unsigned char id);
+    int IsinHist(unsigned char id);
     bool isQueueFull(unsigned char id);
     int RemoveRSSI(unsigned char id);
     void AddRSSI(unsigned char id,int rssi);
     int getHistSize();
     /*Phase 1: RSSI*/
+    int getP();
+    int getV();
     void computeProm(queue *q);
     void computeVar(queue *q);
-    void Discard();
+    int Discard();
     bool isGraylist();
 };
 #endif /* Node_hpp */
