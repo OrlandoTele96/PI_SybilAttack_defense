@@ -135,3 +135,30 @@ void Node::AddRSSI(unsigned char id,int rssi)
     }
   }
 }
+/*Phase 1 : RSSI*/
+void Node::computeProm()
+{
+
+}
+void Node::computeVar()
+{
+
+}
+void Node::Discard()
+{
+    int i;
+    vector<queue> id_test;
+    for (i=0;this->Hist.size();i++)
+    {
+      if (this->Hist.at(i).end>=10)
+      {
+        //calcProm
+        //calcVar
+        id_test.push_back(this->Hist.at(i));
+      }
+    }
+}
+bool Node::isGraylist()
+{
+
+}
