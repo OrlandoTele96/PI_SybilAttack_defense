@@ -6,7 +6,7 @@
 long lastSendTime = 0;        // last send time
 int interval = 2000; 
 Node n;
-unsigned char id = 0x02;
+unsigned char id = '2';
 
 void setup() {
   // put your setup code here, to run once:
@@ -15,6 +15,7 @@ void setup() {
     LoRa.receive();
     Serial.println("Heltec.LoRa init succeeded.");
     n.setID(id);
+    n.clearhist();
 }
 
 void loop() {
@@ -48,7 +49,7 @@ void sendMessage(Node n)
     LoRa.print(payload.at(i));
   }
   LoRa.endPacket();
-  Serial.println("Message was sent!");
+  //Serial.println("Message was sent!");
 }
 
 
@@ -56,32 +57,44 @@ void onReceive(int packetSize)
 {
   if (packetSize == 0) return;
   Serial.print("Message Received");
-  unsigned char ID = LoRa.read();
+  unsigned char IDE = LoRa.read();
   unsigned char type = LoRa.read();
   String incoming="";
   int rssi = LoRa.packetRssi();
+  Serial.println("Received from : "+String(IDE));
+  Serial.println("RSSI : "+String(rssi));
   while(LoRa.available())
   {
     incoming += (char) LoRa.read();
   }
-
-  if (n.IsinHist(ID)==true)
+  int a =n.IsinHist(IDE);
+  if (a==1)
   {
-    Serial.println("This ID is in the history"+ID);
-    if(n.isQueueFull(ID)==true)
+    Serial.println("This ID is in the history"+String(a));
+    /*if(n.isQueueFull(IDE)==true)
     {
       Serial.println("Queue is full, remove last rssi");
-      int r = n.RemoveRSSI(ID);
-      Serial.println("Removed : "+String(r));
-    }
+      //int r = n.RemoveRSSI(ID);
+      //Serial.println("Removed : "+String(r));
+    }*/
   }
   else
   {
-    Serial.println("This ID is not in the history, will be added");
-    n.AddIDtoHist(ID);
+    
+    Serial.println("This ID is not in the history, will be added"+String(a));
+    n.AddIDtoHist(IDE);
   }
-  n.AddRSSI(ID,rssi);
+  //n.AddRSSI(ID,rssi);
   Serial.println("RSSI added succesfuly");
-  n.Discard();
-  Serial.println("Gray list was made");
+  int x = n.getHistSize();
+  Serial.println("Historial size = "+String(x));
+  //bool ans= n.Discard();
+  /*if(ans==true)
+  {
+    Serial.println("Gray list was made");
+  }
+  else
+  {
+    Serial.println("Gray list was not made");
+  }*/
 }

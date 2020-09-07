@@ -42,6 +42,9 @@ void Node::setPayload(vector<char> p)
 {
   this->payload = p;
 }
+void Node::clearhist(){
+  this->Hist.clear();
+}
 /*Queue function*/
 queue Node::create(unsigned char id)
 {
@@ -58,23 +61,22 @@ void Node::AddIDtoHist(unsigned char id)
   q= create(id);
   this->Hist.push_back(q);
 }
-bool Node::IsinHist(unsigned char id)
+int Node::IsinHist(unsigned char id)
 {
   int i=0;
+  int ans=0;
   if(this->Hist.size()>0)
   {
+    
     for(i=0;i<this->Hist.size();i++)
     {
-      if(Hist.at(i).ID==id)
+      if(this->Hist.at(i).ID==id)
       {
-        return true;
+        ans = 1;
       }
     }
   }
-  else
-  {
-    return false;
-  }
+  return ans;
 }
 
 bool Node::isQueueFull(unsigned char id)
@@ -135,6 +137,10 @@ void Node::AddRSSI(unsigned char id,int rssi)
     }
   }
 }
+int Node::getHistSize()
+{
+  return this->Hist.size();
+}
 /*Phase 1 : RSSI*/
 void Node::computeProm(queue *q)
 {
@@ -145,26 +151,63 @@ void Node::computeProm(queue *q)
   {
     aux += q->RSSI[i];
   }
-  q->prom = aux/n;
+  q->prom = aux/10;
 }
 void Node::computeVar(queue *q)
 {
-
+  int i=0;
+  int aux;
+  float n = 10;
+  for (i=0;i<q->end;i++)
+  {
+    aux += (q->RSSI[i]-q->prom)*(q->RSSI[i]-q->prom);
+  }
+  q->var=aux/n;
 }
-void Node::Discard()
+bool Node::Discard()
 {
-    int i;
+    int i,j;
     vector<queue> id_test;
+    vector<char> suspected;
+    int sup,inf;
     for (i=0;i<this->Hist.size();i++)
     {
-      if (this->Hist.at(i).end>=10)
+      if (this->Hist.at(i).end==10)
       {
         //compute average
         computeProm(&this->Hist.at(i));
         //calcVar
-        id_test.push_back(this->Hist.at(i));
+        //computeVar(&this->Hist.at(i));
+        //Add to list
+        //id_test.push_back(this->Hist.at(i));
       }
     }
+    if(id_test.size()>1)
+    {
+      return true;
+    }
+    else{
+      return false;
+    }
+    /*if(id_test.size()>=2)
+    {
+      //If size >= discard algorithm
+      for(i=0;i<id_test.size();i++)
+      {
+        suspected.clear();
+        for(j=0; j<id_test.size();j++)
+        {
+          inf = 0;
+          sup = 0;
+          if(id_test.at(i).ID!=id_test.at(j).ID)
+          {
+            inf = id_test.at(i).prom-id_test.at(i).var;
+            sup =  id_test.at(i).prom+id_test.at(i).var;
+          }
+        }
+      }
+    }*/
+    
 }
 bool Node::isGraylist()
 {
