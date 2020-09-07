@@ -31,6 +31,7 @@ private:
   unsigned char type = 0x00; // message type by default
   vector<char> payload;
   vector<queue> Hist;
+  vector<char> graylist;
 public:
     /*Constructor*/
     Node()=default;
@@ -40,6 +41,7 @@ public:
     unsigned char getID()const;
     unsigned char getTm()const;
     vector<char> getPayload()const;
+    vector<char> getGrayList()const;
     void setID(unsigned char id);
     void setTm(unsigned char tm);
     void setPayload(vector<char> p);
@@ -51,9 +53,10 @@ public:
     bool isQueueFull(unsigned char id);
     int RemoveRSSI(unsigned char id);
     void AddRSSI(unsigned char id,int rssi);
+    int getHistSize();
     /*Phase 1: RSSI*/
-    void computeProm();
-    void computeVar();
+    void computeProm(queue *q);
+    void computeVar(queue *q);
     void Discard();
     bool isGraylist();
 };

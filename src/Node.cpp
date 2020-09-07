@@ -135,26 +135,67 @@ void Node::AddRSSI(unsigned char id,int rssi)
     }
   }
 }
-/*Phase 1 : RSSI*/
-void Node::computeProm()
+int Node::getHistSize()
 {
-
+  return this->Hist.size();
 }
-void Node::computeVar()
+/*Phase 1 : RSSI*/
+void Node::computeProm(queue *q)
 {
-
+  int i=0;
+  int aux;
+  float n=10;
+  for(i=0;i<q->end;i++)
+  {
+    aux += q->RSSI[i];
+  }
+  q->prom = aux/n;
+}
+void Node::computeVar(queue *q)
+{
+  int i=0;
+  int aux;
+  float n = 10;
+  for (i=0;i<q->end;i++)
+  {
+    aux += (q->RSSI[i]-q->prom)*(q->RSSI[i]-q->prom);
+  }
+  q->var=aux/n;
 }
 void Node::Discard()
 {
-    int i;
+    int i,j;
     vector<queue> id_test;
-    for (i=0;this->Hist.size();i++)
+    vector<char> suspected;
+    int sup,inf;
+    for (i=0;i<this->Hist.size();i++)
     {
       if (this->Hist.at(i).end>=10)
       {
-        //calcProm
+        //compute average
+        computeProm(&this->Hist.at(i));
         //calcVar
+        computeVar(&this->Hist.at(i));
+        //Add to list
         id_test.push_back(this->Hist.at(i));
+      }
+    }
+    if(id_test.size()>=2)
+    {
+      //If size >= discard algorithm
+      for(i=0;i<id_test.size();i++)
+      {
+        suspected.clear();
+        for(j=0; j<id_test.size();j++)
+        {
+          inf = 0;
+          sup = 0;
+          if(id_test.at(i).ID!=id_test.at(j).ID)
+          {
+            inf = id_test.at(i).prom-id_test.at(i).var;
+            sup =  id_test.at(i).prom+id_test.at(i).var;
+          }
+        }
       }
     }
 }
