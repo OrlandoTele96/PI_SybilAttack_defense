@@ -142,11 +142,19 @@ int Node::getHistSize()
   return this->Hist.size();
 }
 /*Phase 1 : RSSI*/
+int Node::getP()
+{
+  return 0;
+}
+int Node::getV()
+{
+  return 0;
+}
 void Node::computeProm(queue *q)
 {
   int i=0;
   int aux;
-  float n=10;
+  //float n=10;
   for(i=0;i<q->end;i++)
   {
     aux += q->RSSI[i];
@@ -157,39 +165,33 @@ void Node::computeVar(queue *q)
 {
   int i=0;
   int aux;
-  float n = 10;
+  //float n = 10;
   for (i=0;i<q->end;i++)
   {
     aux += (q->RSSI[i]-q->prom)*(q->RSSI[i]-q->prom);
   }
-  q->var=aux/n;
+  q->var=aux/10;
 }
-bool Node::Discard()
+int Node::Discard()
 {
     int i,j;
     vector<queue> id_test;
     vector<char> suspected;
     int sup,inf;
+    int ans;
     for (i=0;i<this->Hist.size();i++)
     {
-      if (this->Hist.at(i).end==10)
+      if (this->Hist.at(i).end>9)
       {
         //compute average
         computeProm(&this->Hist.at(i));
         //calcVar
-        //computeVar(&this->Hist.at(i));
+        computeVar(&this->Hist.at(i));
         //Add to list
-        //id_test.push_back(this->Hist.at(i));
+        id_test.push_back(this->Hist.at(i));
       }
     }
     if(id_test.size()>1)
-    {
-      return true;
-    }
-    else{
-      return false;
-    }
-    /*if(id_test.size()>=2)
     {
       //If size >= discard algorithm
       for(i=0;i<id_test.size();i++)
@@ -206,8 +208,12 @@ bool Node::Discard()
           }
         }
       }
-    }*/
-    
+      ans=1;
+    }
+    else{
+      ans=0;
+    }
+    return ans;
 }
 bool Node::isGraylist()
 {

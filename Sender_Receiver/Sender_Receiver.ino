@@ -6,7 +6,7 @@
 long lastSendTime = 0;        // last send time
 int interval = 2000; 
 Node n;
-unsigned char id = '2';
+unsigned char id = '3';
 
 void setup() {
   // put your setup code here, to run once:
@@ -70,31 +70,31 @@ void onReceive(int packetSize)
   int a =n.IsinHist(IDE);
   if (a==1)
   {
-    Serial.println("This ID is in the history"+String(a));
-    /*if(n.isQueueFull(IDE)==true)
+    //Serial.println("This ID is in the history"+String(a));
+    if(n.isQueueFull(IDE)==true)
     {
       Serial.println("Queue is full, remove last rssi");
-      //int r = n.RemoveRSSI(ID);
-      //Serial.println("Removed : "+String(r));
-    }*/
+      int r = n.RemoveRSSI(IDE);
+      Serial.println("Removed : "+String(r));
+    }
   }
   else
   {
     
-    Serial.println("This ID is not in the history, will be added"+String(a));
+    //Serial.println("This ID is not in the history, will be added"+String(a));
     n.AddIDtoHist(IDE);
   }
-  //n.AddRSSI(ID,rssi);
-  Serial.println("RSSI added succesfuly");
+  n.AddRSSI(IDE,rssi);
+  //Serial.println("RSSI added succesfuly");
   int x = n.getHistSize();
   Serial.println("Historial size = "+String(x));
-  //bool ans= n.Discard();
-  /*if(ans==true)
+  int ans= n.Discard();
+  if(ans==1)
   {
-    Serial.println("Gray list was made");
+    Serial.println("Gray list was made"+String(ans));
   }
   else
   {
-    Serial.println("Gray list was not made");
-  }*/
+    Serial.println("Gray list was not made"+String(ans));
+  }
 }

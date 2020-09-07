@@ -56,9 +56,11 @@ public:
     void AddRSSI(unsigned char id,int rssi);
     int getHistSize();
     /*Phase 1: RSSI*/
+    int getP();
+    int getV();
     void computeProm(queue *q);
     void computeVar(queue *q);
-    bool Discard();
+    int Discard();
     bool isGraylist();
 };
 #endif /* Node_hpp */
