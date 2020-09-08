@@ -46,6 +46,7 @@ public:
     void setTm(unsigned char tm);
     void setPayload(vector<char> p);
     void clearhist();
+    void clearGL();
     /*Queue function*/
     queue create(unsigned char id);
     /*RSSI Storage*/

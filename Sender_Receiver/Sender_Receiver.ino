@@ -7,7 +7,12 @@ long lastSendTime = 0;        // last send time
 int interval = 2000; 
 Node n;
 unsigned char id = '3';
-
+//unsigned char sybil[4]={'1','3','4','5'};
+/*sybil[0]='1';
+sybil[1]='3';
+sybil[2]='4';
+sybil[3]='5';*/
+int c=0;
 void setup() {
   // put your setup code here, to run once:
     Heltec.begin(true, true, true, true , BAND);
@@ -22,9 +27,14 @@ void loop() {
   // put your main code here, to run repeatedly:
   unsigned char type = 0x00;
   n.setTm(type);
-    if (millis() - lastSendTime > interval)
+  /*if(n.getGrayList().size()>10)
+  {
+    n.clearGL();
+  }*/
+  if (millis() - lastSendTime > interval)
   {
      // send a message
+    n.setID(id);
     sendMessage(n);
     lastSendTime = millis();            
     interval = random(2000);    
@@ -95,9 +105,24 @@ void onReceive(int packetSize)
     Serial.println("Gray list was made"+String(ans));
     gl = n.getGrayList();
     Serial.println("Graylist size()"+String(gl.size()));
+    PrintGrayList(gl); 
   }
   else
   {
     Serial.println("Gray list was not made"+String(ans));
+  }
+}
+
+void PrintGrayList(vector<vector<char>> gl)
+{
+  int i,j;
+  Serial.println("Gray List : ");
+  for(i=0;i<gl.size();i++)
+  {
+    Serial.println("Subconjunto : "+String(i));
+    for(j=0;j<gl.at(i).size();j++)
+    {
+      Serial.println("ID : "+String(gl.at(i).at(j)));
+    }
   }
 }

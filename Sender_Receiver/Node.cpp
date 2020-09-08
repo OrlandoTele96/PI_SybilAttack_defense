@@ -145,6 +145,10 @@ int Node::getHistSize()
 {
   return this->Hist.size();
 }
+void Node::clearGL()
+{
+  this->graylist.clear();
+}
 /*Phase 1 : RSSI*/
 int Node::getP()
 {
@@ -209,10 +213,11 @@ int Node::Discard()
           {
             inf = id_test.at(i).prom-id_test.at(i).var;
             sup =  id_test.at(i).prom+id_test.at(i).var;
-            if(id_test.at(i).prom>=inf and id_test.at(i).prom<=sup)
+            if(id_test.at(j).prom>inf and id_test.at(j).prom<sup)
             {
               suspected.push_back(id_test.at(i).ID);
               suspected.push_back(id_test.at(j).ID);
+              //ans=1;
             }
           }
         }
