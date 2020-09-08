@@ -30,6 +30,10 @@ vector<char> Node::getPayload()const
 {
   return this->payload;
 }
+vector<vector<char>> Node::getGrayList()const
+{
+  return this->graylist;
+}
 void Node::setID(unsigned char id)
 {
   this->id = id;
@@ -205,9 +209,18 @@ int Node::Discard()
           {
             inf = id_test.at(i).prom-id_test.at(i).var;
             sup =  id_test.at(i).prom+id_test.at(i).var;
+            if(id_test.at(i).prom>=inf and id_test.at(i).prom<=sup)
+            {
+              suspected.push_back(id_test.at(i).ID);
+              suspected.push_back(id_test.at(j).ID);
+            }
           }
         }
+        this->graylist.push_back(suspected);
       }
+    }
+    if(this->graylist.size()>0)
+    {
       ans=1;
     }
     else{

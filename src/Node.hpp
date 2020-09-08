@@ -41,7 +41,7 @@ public:
     unsigned char getID()const;
     unsigned char getTm()const;
     vector<char> getPayload()const;
-    vector<char> getGrayList()const;
+    vector<vector<char>> getGrayList()const;
     void setID(unsigned char id);
     void setTm(unsigned char tm);
     void setPayload(vector<char> p);
