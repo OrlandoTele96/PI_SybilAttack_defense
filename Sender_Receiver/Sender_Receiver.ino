@@ -7,12 +7,6 @@ long lastSendTime = 0;        // last send time
 int interval = 2000; 
 Node n;
 unsigned char id = '3';
-//unsigned char sybil[4]={'1','3','4','5'};
-/*sybil[0]='1';
-sybil[1]='3';
-sybil[2]='4';
-sybil[3]='5';*/
-int c=0;
 void setup() {
   // put your setup code here, to run once:
     Heltec.begin(true, true, true, true , BAND);
@@ -27,10 +21,6 @@ void loop() {
   // put your main code here, to run repeatedly:
   unsigned char type = 0x00;
   n.setTm(type);
-  /*if(n.getGrayList().size()>10)
-  {
-    n.clearGL();
-  }*/
   if (millis() - lastSendTime > interval)
   {
      // send a message
