@@ -57,6 +57,7 @@ void onReceive(int packetSize)
 {
   if (packetSize == 0) return;
   Serial.print("Message Received");
+  vector<vector<char>> gl;
   unsigned char IDE = LoRa.read();
   unsigned char type = LoRa.read();
   String incoming="";
@@ -92,6 +93,8 @@ void onReceive(int packetSize)
   if(ans==1)
   {
     Serial.println("Gray list was made"+String(ans));
+    gl = n.getGrayList();
+    Serial.println("Graylist size()"+String(gl.size()));
   }
   else
   {

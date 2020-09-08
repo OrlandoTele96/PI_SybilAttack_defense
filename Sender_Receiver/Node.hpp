@@ -31,7 +31,7 @@ private:
   unsigned char type = 0x00; // message type by default
   vector<char> payload;
   vector<queue> Hist;
-  vector<char> graylist;
+  vector<vector<char>> graylist;
 public:
     /*Constructor*/
     Node()=default;
@@ -41,7 +41,7 @@ public:
     unsigned char getID()const;
     unsigned char getTm()const;
     vector<char> getPayload()const;
-    vector<char> getGrayList()const;
+    vector<vector<char>> getGrayList()const;
     void setID(unsigned char id);
     void setTm(unsigned char tm);
     void setPayload(vector<char> p);
@@ -61,6 +61,6 @@ public:
     void computeProm(queue *q);
     void computeVar(queue *q);
     int Discard();
-    bool isGraylist();
+    int inGraylist(char id);
 };
 #endif /* Node_hpp */

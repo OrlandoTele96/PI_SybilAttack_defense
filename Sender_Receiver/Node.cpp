@@ -30,6 +30,10 @@ vector<char> Node::getPayload()const
 {
   return this->payload;
 }
+vector<vector<char>> Node::getGrayList()const
+{
+  return this->graylist;
+}
 void Node::setID(unsigned char id)
 {
   this->id = id;
@@ -67,7 +71,7 @@ int Node::IsinHist(unsigned char id)
   int ans=0;
   if(this->Hist.size()>0)
   {
-    
+
     for(i=0;i<this->Hist.size();i++)
     {
       if(this->Hist.at(i).ID==id)
@@ -205,9 +209,18 @@ int Node::Discard()
           {
             inf = id_test.at(i).prom-id_test.at(i).var;
             sup =  id_test.at(i).prom+id_test.at(i).var;
+            if(id_test.at(i).prom>=inf and id_test.at(i).prom<=sup)
+            {
+              suspected.push_back(id_test.at(i).ID);
+              suspected.push_back(id_test.at(j).ID);
+            }
           }
         }
+        this->graylist.push_back(suspected);
       }
+    }
+    if(this->graylist.size()>0)
+    {
       ans=1;
     }
     else{
@@ -215,7 +228,18 @@ int Node::Discard()
     }
     return ans;
 }
-bool Node::isGraylist()
+int Node::inGraylist(char id)
 {
-
+  int i=0;
+  int j=0;
+  int ans=0;
+  for (i=0;i<this->graylist.size();i++)
+  {
+    for(j=0;j<this->graylist.at(i).size();j++)
+    {
+      if(this->graylist.at(i).at(j)==id)
+        ans=1;
+    }
+  }
+  return ans;
 }
