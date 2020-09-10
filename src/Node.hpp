@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <vector>
+#include <math.h>
 
 using namespace std;
 
@@ -23,6 +24,7 @@ struct data
   int start,end;
   int prom=0;
   int var=0;
+  int desv=0;
 };
 typedef struct data queue;
 class Node {
@@ -60,6 +62,7 @@ public:
     int getV();
     void computeProm(queue *q);
     void computeVar(queue *q);
+    void computeDesv(queue *q);
     int Discard();
     int inGraylist(char id);
 };
