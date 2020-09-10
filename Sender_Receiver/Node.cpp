@@ -145,10 +145,6 @@ int Node::getHistSize()
 {
   return this->Hist.size();
 }
-void Node::clearGL()
-{
-  this->graylist.clear();
-}
 /*Phase 1 : RSSI*/
 int Node::getP()
 {
@@ -180,6 +176,10 @@ void Node::computeVar(queue *q)
   }
   q->var=aux/10;
 }
+void Node::computeDesv(queue *q)
+{
+  q->desv=sqrt(q->var);
+}
 int Node::Discard()
 {
     int i,j;
@@ -195,6 +195,8 @@ int Node::Discard()
         computeProm(&this->Hist.at(i));
         //calcVar
         computeVar(&this->Hist.at(i));
+        //calcDesv
+        computeDesv(&this->Hist.at(i));
         //Add to list
         id_test.push_back(this->Hist.at(i));
       }
@@ -211,13 +213,12 @@ int Node::Discard()
           sup = 0;
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-id_test.at(i).var;
-            sup =  id_test.at(i).prom+id_test.at(i).var;
+            inf = id_test.at(i).prom-id_test.at(i).desv;
+            sup =  id_test.at(i).prom+id_test.at(i).desv;
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
               suspected.push_back(id_test.at(i).ID);
               suspected.push_back(id_test.at(j).ID);
-              //ans=1;
             }
           }
         }
