@@ -18,6 +18,9 @@ using namespace std;
 
 struct data
 {
+  /*
+  Estructura de datos para cada ID que se conoce.
+  */
   unsigned char ID;
   //vector<int> RSSI;
   int RSSI[10];
@@ -29,16 +32,16 @@ struct data
 typedef struct data queue;
 class Node {
 private:
-  unsigned char id = 0x00;  //id by default
-  unsigned char type = 0x00; // message type by default
-  vector<char> payload;
-  vector<queue> Hist;
-  vector<vector<char>> graylist;
+  unsigned char id = 0x00;  //ID por defecto
+  unsigned char type = 0x00; // Tipo de mensaje por defecto (cualquier dato que envie un dispositivo IoT)
+  vector<char> payload; // Payload de longitud variable
+  vector<queue> Hist; // Historial de ID conocidos, en el que se colecciona los últimos 10 RSSI de mensajes recibidos.
+  vector<vector<char>> graylist; // Lista gris (de ID que se sospecha, pudieran ser sybil).
 public:
     /*Constructor*/
-    Node()=default;
-    Node (unsigned char Id,unsigned char tm);
-    Node (const Node &n);
+    Node()=default; // Constructor por defecto
+    Node (unsigned char Id,unsigned char tm); //Constructor con dos argumentos (solo usado en pruebas)
+    Node (const Node &n); // Constructor copia (solo usado en pruebas)
     /*Getters & Setters*/
     unsigned char getID()const;
     unsigned char getTm()const;
@@ -47,7 +50,6 @@ public:
     void setID(unsigned char id);
     void setTm(unsigned char tm);
     void setPayload(vector<char> p);
-    void clearhist();
     /*Queue function*/
     queue create(unsigned char id);
     /*RSSI Storage*/
@@ -58,12 +60,11 @@ public:
     void AddRSSI(unsigned char id,int rssi);
     int getHistSize();
     /*Phase 1: RSSI*/
-    int getP();
-    int getV();
     void computeProm(queue *q);
     void computeVar(queue *q);
     void computeDesv(queue *q);
     int Discard();
     int inGraylist(char id);
+    void clearhist();
 };
 #endif /* Node_hpp */
