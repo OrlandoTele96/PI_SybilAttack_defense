@@ -13,6 +13,8 @@
 #include <vector>
 #include <math.h>
 
+#include "sha256.hpp"
+
 using namespace std;
 
 
