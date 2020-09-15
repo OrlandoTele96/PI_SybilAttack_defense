@@ -68,5 +68,10 @@ public:
     int Discard();
     int inGraylist(char id);
     void clearhist();
+    /*Phase 2 : PoW*/
+    void genPoW(string num,vector<char> id_suspect);
+    string makeTarget(int difficultu);
+    string PoW(char id,string n_rand,int difficulty);
+    string packtoHash(char id,string num_rand,string lasthash);
 };
 #endif /* Node_hpp */
