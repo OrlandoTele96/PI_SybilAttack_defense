@@ -7,6 +7,7 @@ long lastSendTime = 0;        // last send time
 int interval = 2000; 
 Node n;
 unsigned char id = '3';
+unsigned char type = 0x00;
 void setup() {
   // put your setup code here, to run once:
     Heltec.begin(true, true, true, true , BAND);
@@ -19,12 +20,24 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  unsigned char type = 0x00;
   n.setTm(type);
+  int i=0;
+  vector <char> gl = n.getGrayList();
+  if(gl.size()>0)
+  {
+    for (i=0;i<gl.size();i++)
+    {
+      //genPoW
+      //packtomsg
+      //send
+      //remove subset
+    }
+  }
   if (millis() - lastSendTime > interval)
   {
      // send a message
     n.setID(id);
+    n.setTm(type);
     sendMessage(n);
     lastSendTime = millis();            
     interval = random(2000);    
@@ -64,6 +77,7 @@ void onReceive(int packetSize)
   int rssi = LoRa.packetRssi();
   Serial.println("Received from : "+String(IDE));
   Serial.println("RSSI : "+String(rssi));
+  Serial.println("Type : "+String(type))
   while(LoRa.available())
   {
     incoming += (char) LoRa.read();
@@ -74,9 +88,9 @@ void onReceive(int packetSize)
     //Serial.println("This ID is in the history"+String(a));
     if(n.isQueueFull(IDE)==true)
     {
-      Serial.println("Queue is full, remove last rssi");
+      //Serial.println("Queue is full, remove last rssi");
       int r = n.RemoveRSSI(IDE);
-      Serial.println("Removed : "+String(r));
+      //Serial.println("Removed : "+String(r));
     }
   }
   else
@@ -87,20 +101,17 @@ void onReceive(int packetSize)
   }
   n.AddRSSI(IDE,rssi);
   //Serial.println("RSSI added succesfuly");
-  int x = n.getHistSize();
-  Serial.println("Historial size = "+String(x));
+ // int x = n.getHistSize();
+  //Serial.println("Historial size = "+String(x));
   int ans= n.Discard();
   if(ans==1)
   {
-    Serial.println("Gray list was made"+String(ans));
+    //Serial.println("Gray list was made"+String(ans));
     gl = n.getGrayList();
-    Serial.println("Graylist size()"+String(gl.size()));
+    //Serial.println("Graylist size()"+String(gl.size()));
     PrintGrayList(gl); 
   }
-  else
-  {
-    Serial.println("Gray list was not made"+String(ans));
-  }
+  
 }
 
 void PrintGrayList(vector<vector<char>> gl)
