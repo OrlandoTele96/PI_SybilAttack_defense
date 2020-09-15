@@ -66,10 +66,11 @@ public:
     void computeVar(queue *q);
     void computeDesv(queue *q);
     int Discard();
-    int inGraylist(char id);
+    int inGraylist(char id,vector<char> subset);
     void clearhist();
     /*Phase 2 : PoW*/
     void genPoW(string num,vector<char> id_suspect);
+    void removesubset();
     string makeTarget(int difficultu);
     string PoW(char id,string n_rand,int difficulty);
     string packtoHash(char id,string num_rand,string lasthash);

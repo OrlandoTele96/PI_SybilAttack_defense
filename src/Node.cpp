@@ -292,7 +292,7 @@ int Node::Discard()
     }
     return ans;
 }
-int Node::inGraylist(char id)
+int Node::inGraylist(char id,vector<char> subset)
 {
   int i=0;
   int j=0;
