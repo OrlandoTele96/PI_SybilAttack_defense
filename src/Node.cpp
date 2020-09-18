@@ -271,8 +271,12 @@ int Node::Discard()
             sup =  id_test.at(i).prom+(2*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
-              suspected.push_back(id_test.at(i).ID);
-              suspected.push_back(id_test.at(j).ID);
+              if(inGraylist(id_test.at(i).ID,suspected)!=1){
+                suspected.push_back(id_test.at(i).ID);
+              }
+              if(inGraylist(id_test.at(j).ID,suspected)!=1){
+                suspected.push_back(id_test.at(j).ID);
+              }
             }
           }
         }
@@ -294,16 +298,23 @@ int Node::Discard()
 }
 int Node::inGraylist(char id,vector<char> subset)
 {
+  /*Si existe el id en el subconjunto de sospechosos, regresa 1*/
   int i=0;
   int j=0;
   int ans=0;
-  for (i=0;i<this->graylist.size();i++)
+  for (i=0;i<subset.size();i++)
   {
-    for(j=0;j<this->graylist.at(i).size();j++)
-    {
-      if(this->graylist.at(i).at(j)==id)
+    if(subset.at(i)==id)
+      {
         ans=1;
-    }
+      }
   }
   return ans;
+}
+
+/*Phase 2: PoW*/
+
+void Node::removesubset()
+{
+  this->graylist.erase(this->graylist.begin());
 }
