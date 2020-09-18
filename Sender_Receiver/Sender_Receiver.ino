@@ -11,6 +11,9 @@ unsigned char type = 0x00;
 void setup() {
   // put your setup code here, to run once:
     Heltec.begin(true, true, true, true , BAND);
+    LoRa.setSpreadingFactor(7);
+    LoRa.setCodingRate4(5);
+    //LoRa.setSignalBandwidth(62.5E3);
     LoRa.onReceive(onReceive);
     LoRa.receive();
     Serial.println("Heltec.LoRa init succeeded.");
@@ -22,7 +25,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   n.setTm(type);
   int i=0;
-  vector <char> gl = n.getGrayList();
+  vector<vector <char>> gl = n.getGrayList();
   if(gl.size()>0)
   {
     for (i=0;i<gl.size();i++)
@@ -31,6 +34,7 @@ void loop() {
       //packtomsg
       //send
       //remove subset
+      n.removesubset();
     }
   }
   if (millis() - lastSendTime > interval)
@@ -40,7 +44,7 @@ void loop() {
     n.setTm(type);
     sendMessage(n);
     lastSendTime = millis();            
-    interval = random(2000);    
+    interval = random(1000);    
     LoRa.receive();                     
   } 
 }
@@ -77,7 +81,7 @@ void onReceive(int packetSize)
   int rssi = LoRa.packetRssi();
   Serial.println("Received from : "+String(IDE));
   Serial.println("RSSI : "+String(rssi));
-  Serial.println("Type : "+String(type))
+  Serial.println("Type : "+String(type));
   while(LoRa.available())
   {
     incoming += (char) LoRa.read();
@@ -106,7 +110,7 @@ void onReceive(int packetSize)
   int ans= n.Discard();
   if(ans==1)
   {
-    //Serial.println("Gray list was made"+String(ans));
+    Serial.println("Nueva ejecucion Gray list : ");
     gl = n.getGrayList();
     //Serial.println("Graylist size()"+String(gl.size()));
     PrintGrayList(gl); 
