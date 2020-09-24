@@ -1,4 +1,3 @@
-
 #include "heltec.h"
 #include "Node.hpp"
 
@@ -8,12 +7,10 @@ int interval = 2000;
 Node n;
 unsigned char id = '3';
 unsigned char type = 0x00;
+
 void setup() {
   // put your setup code here, to run once:
     Heltec.begin(true, true, true, true , BAND);
-    LoRa.setSpreadingFactor(7);
-    LoRa.setCodingRate4(5);
-    //LoRa.setSignalBandwidth(62.5E3);
     LoRa.onReceive(onReceive);
     LoRa.receive();
     Serial.println("Heltec.LoRa init succeeded.");
@@ -24,19 +21,28 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   n.setTm(type);
-  int i=0;
   vector<vector <char>> gl = n.getGrayList();
-  if(gl.size()>0)
+  int i=0;
+  int tam =gl.size();
+  if(tam>0)
   {
-    for (i=0;i<gl.size();i++)
+    //Serial.println("Size : "+String(tam));
+    for(i=0;i<tam;i++)
     {
-      //genPoW
-      //packtomsg
-      //send
-      //remove subset
-      n.removesubset();
+        //i++;
+        //genPoW
+        //packtomsg
+        //send
+        //remove subset
+        //n.removesubset();
+        Serial.println("Removed subset : "+String(i));
+        //gl = n.getGrayList();
+        //Serial.println("Size : "+String(gl.size()));
     }
+  
+    n.removesubset();
   }
+  //Serial.println("subset clear");
   if (millis() - lastSendTime > interval)
   {
      // send a message
@@ -73,15 +79,15 @@ void sendMessage(Node n)
 void onReceive(int packetSize)
 {
   if (packetSize == 0) return;
-  Serial.print("Message Received");
+  //Serial.print("Message Received");
   vector<vector<char>> gl;
   unsigned char IDE = LoRa.read();
   unsigned char type = LoRa.read();
   String incoming="";
   int rssi = LoRa.packetRssi();
-  Serial.println("Received from : "+String(IDE));
+  /*Serial.println("Received from : "+String(IDE));
   Serial.println("RSSI : "+String(rssi));
-  Serial.println("Type : "+String(type));
+  Serial.println("Type : "+String(type));*/
   while(LoRa.available())
   {
     incoming += (char) LoRa.read();
@@ -108,17 +114,17 @@ void onReceive(int packetSize)
  // int x = n.getHistSize();
   //Serial.println("Historial size = "+String(x));
   int ans= n.Discard();
-  if(ans==1)
+  /*if(ans==1)
   {
-    Serial.println("Nueva ejecucion Gray list : ");
+    //Serial.println("Gray list was made"+String(ans));
     gl = n.getGrayList();
     //Serial.println("Graylist size()"+String(gl.size()));
-    PrintGrayList(gl); 
-  }
+    //PrintGrayList(gl); 
+  }*/
   
 }
 
-void PrintGrayList(vector<vector<char>> gl)
+/*void PrintGrayList(vector<vector<char>> gl)
 {
   int i,j;
   Serial.println("Gray List : ");
@@ -130,4 +136,4 @@ void PrintGrayList(vector<vector<char>> gl)
       Serial.println("ID : "+String(gl.at(i).at(j)));
     }
   }
-}
+}*/
