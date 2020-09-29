@@ -21,28 +21,6 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   n.setTm(type);
-  vector<vector <char>> gl = n.getGrayList();
-  int i=0;
-  int tam =gl.size();
-  if(tam>0)
-  {
-    //Serial.println("Size : "+String(tam));
-    for(i=0;i<tam;i++)
-    {
-        //i++;
-        //genPoW
-        //packtomsg
-        //send
-        //remove subset
-        //n.removesubset();
-        Serial.println("Removed subset : "+String(i));
-        //gl = n.getGrayList();
-        //Serial.println("Size : "+String(gl.size()));
-    }
-  
-    n.removesubset();
-  }
-  //Serial.println("subset clear");
   if (millis() - lastSendTime > interval)
   {
      // send a message
@@ -79,15 +57,15 @@ void sendMessage(Node n)
 void onReceive(int packetSize)
 {
   if (packetSize == 0) return;
-  //Serial.print("Message Received");
   vector<vector<char>> gl;
+  int i=0;
+  int tam;
   unsigned char IDE = LoRa.read();
   unsigned char type = LoRa.read();
   String incoming="";
   int rssi = LoRa.packetRssi();
-  /*Serial.println("Received from : "+String(IDE));
-  Serial.println("RSSI : "+String(rssi));
-  Serial.println("Type : "+String(type));*/
+  Serial.println("Received from : "+String(IDE));
+  Serial.println("RSSI: "+String(rssi));
   while(LoRa.available())
   {
     incoming += (char) LoRa.read();
@@ -95,36 +73,51 @@ void onReceive(int packetSize)
   int a =n.IsinHist(IDE);
   if (a==1)
   {
-    //Serial.println("This ID is in the history"+String(a));
     if(n.isQueueFull(IDE)==true)
     {
-      //Serial.println("Queue is full, remove last rssi");
       int r = n.RemoveRSSI(IDE);
-      //Serial.println("Removed : "+String(r));
     }
   }
   else
   {
-    
-    //Serial.println("This ID is not in the history, will be added"+String(a));
     n.AddIDtoHist(IDE);
   }
   n.AddRSSI(IDE,rssi);
-  //Serial.println("RSSI added succesfuly");
- // int x = n.getHistSize();
-  //Serial.println("Historial size = "+String(x));
   int ans= n.Discard();
-  /*if(ans==1)
+  //Unpack()
+  if(ans==1)
   {
-    //Serial.println("Gray list was made"+String(ans));
     gl = n.getGrayList();
-    //Serial.println("Graylist size()"+String(gl.size()));
-    //PrintGrayList(gl); 
-  }*/
+    PrintGrayList(gl);
+    tam =gl.size();
+    if(tam>0)
+    {
+      //Serial.println("Size : "+String(tam));
+      for(i=0;i<tam;i++)
+      {
+          //i++;
+          //genPoW
+          //packtomsg
+          //send
+          //remove subset
+          //n.removesubset();
+          Serial.println("PoW generated : "+String(i));
+          //gl = n.getGrayList();
+          //Serial.println("Size : "+String(gl.size()));
+      }
+    
+      n.removesubset();
+    }
+  }
   
 }
 
-/*void PrintGrayList(vector<vector<char>> gl)
+void Unpack()
+{
+  
+}
+
+void PrintGrayList(vector<vector<char>> gl)
 {
   int i,j;
   Serial.println("Gray List : ");
@@ -136,4 +129,4 @@ void onReceive(int packetSize)
       Serial.println("ID : "+String(gl.at(i).at(j)));
     }
   }
-}*/
+}
