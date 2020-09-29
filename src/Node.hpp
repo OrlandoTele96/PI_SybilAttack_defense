@@ -13,6 +13,8 @@
 #include <vector>
 #include <math.h>
 
+#include"SHA256.hpp"
+
 using namespace std;
 
 
@@ -27,7 +29,7 @@ struct data
   int desv=0;
 };
 typedef struct data queue;
-class Node {
+class Node : public SHA256{
 private:
   unsigned char id = 0x00;  //id by default
   unsigned char type = 0x00; // message type by default
