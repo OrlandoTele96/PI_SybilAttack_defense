@@ -64,6 +64,7 @@ public:
     void computeVar(queue *q);
     void computeDesv(queue *q);
     int Discard();
-    int inGraylist(char id);
+    int inGraylist(char id,vector<char> suspected);
+    void removesubset();
 };
 #endif /* Node_hpp */

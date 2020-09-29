@@ -16,48 +16,88 @@ int main()
   vector<char> payload;
   n.setID(id);
   n.setTm(tm);
-  int i=0;
-  int rssi=-35;
-  id =0x02;
-  int siz;
-  if (n.IsinHist(id)==true)
-  {
-    cout<<"Está"<<endl;
-  }
-  else
-  {
-    cout<<"no esta"<<endl;
-    n.AddIDtoHist(id);
-  }
-  n.AddRSSI(id,rssi);
-  siz = n.getHistSize();
-  cout<<"tam"<<siz<<endl;
   id = 0x02;
-  rssi = -40;
-  if (n.IsinHist(id)==true)
+  int rssi = -40;
+  int i=0;
+  int j,k;
+  int ans;
+  int siz;
+  vector<vector<char>> gl;
+  /*for(i=0;i<40;i++){
+    cout<<"Id: "<<endl;
+    cin>>id;
+    cout<<"RSSI"<<endl;
+    cin>>rssi;
+    if (n.IsinHist(id)==true)
+    {
+      cout<<"Está"<<endl;
+    }
+    else
+    {
+      cout<<"no esta"<<endl;
+      n.AddIDtoHist(id);
+    }
+    n.AddRSSI(id,rssi);
+    siz = n.getHistSize();
+    cout<<"tam"<<siz<<endl;
+    ans=n.Discard();
+    if(ans==1)
+    {
+      gl = n.getGrayList();
+      for(j=0;i<gl.size();j++)
+      {
+        cout<<"subconjunto :\t"<<j<<endl;
+        for(k=0;k<gl.at(i).size();k++)
+        {
+          cout<<"ID : \t"<<gl.at(i).at(j)<<"\t"<<endl;
+        }
+      }
+    }
+  }*/
+  gl = n.getGrayList();
+  for(i=0;i<gl.size();i++)
   {
-    cout<<"Está"<<endl;
+    cout<<"Subset : \t"<<i<<endl;
+    for(j=0;j<gl.at(i).size();j++)
+    {
+      cout<<"ID:\t"<<gl.at(i).at(j)<<endl;
+    }
   }
-  else
+  n.removesubset();
+  gl = n.getGrayList();
+  cout<<"Gray List:"<<gl.size()<<endl;
+  gl = n.getGrayList();
+  for(i=0;i<gl.size();i++)
   {
-    cout<<"no esta"<<endl;
-    n.AddIDtoHist(id);
+    cout<<"Subset : \t"<<i<<endl;
+    for(j=0;j<gl.at(i).size();j++)
+    {
+      cout<<"ID:\t"<<gl.at(i).at(j)<<endl;
+    }
   }
-  n.AddRSSI(id,rssi);
-  siz = n.getHistSize();
-  cout<<"tam"<<siz<<endl;
-  id = 0x03;
-  if (n.IsinHist(id)==true)
+  n.removesubset();
+  gl = n.getGrayList();
+  cout<<"Gray List:"<<gl.size()<<endl;
+  gl = n.getGrayList();
+  for(i=0;i<gl.size();i++)
   {
-    cout<<"Está"<<endl;
+    cout<<"Subset : \t"<<i<<endl;
+    for(j=0;j<gl.at(i).size();j++)
+    {
+      cout<<"ID:\t"<<gl.at(i).at(j)<<endl;
+    }
   }
-  else
+  n.removesubset();
+  gl = n.getGrayList();
+  cout<<"Gray List:"<<gl.size()<<endl;
+  gl = n.getGrayList();
+  for(i=0;i<gl.size();i++)
   {
-    cout<<"no esta"<<endl;
-    n.AddIDtoHist(id);
+    cout<<"Subset : \t"<<i<<endl;
+    for(j=0;j<gl.at(i).size();j++)
+    {
+      cout<<"ID:\t"<<gl.at(i).at(j)<<endl;
+    }
   }
-  n.AddRSSI(id,rssi);
-  siz = n.getHistSize();
-  cout<<"tam"<<siz<<endl;
   return 0;
 }

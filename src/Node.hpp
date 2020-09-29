@@ -38,7 +38,7 @@ private:
   unsigned char type = 0x00; // Tipo de mensaje por defecto (cualquier dato que envie un dispositivo IoT)
   vector<char> payload; // Payload de longitud variable
   vector<queue> Hist; // Historial de ID conocidos, en el que se colecciona los últimos 10 RSSI de mensajes recibidos.
-  vector<vector<char>> graylist; // Lista gris (de ID que se sospecha, pudieran ser sybil).
+  vector<vector<char>> graylist={{'1','2','5'},{'1','2'},{'5','2'}}; // Lista gris (de ID que se sospecha, pudieran ser sybil).
 public:
     /*Constructor*/
     Node()=default; // Constructor por defecto

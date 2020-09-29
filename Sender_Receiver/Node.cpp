@@ -187,6 +187,7 @@ int Node::Discard()
     vector<char> suspected;
     int sup,inf;
     int ans;
+    int resp;
     for (i=0;i<this->Hist.size();i++)
     {
       if (this->Hist.at(i).end>9)
@@ -217,12 +218,17 @@ int Node::Discard()
             sup =  id_test.at(i).prom+(2*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
-              suspected.push_back(id_test.at(i).ID);
+              //resp = inGraylist(id_test.at(i).ID,suspected);
+              //if(resp!=1)
+              //{
+                //suspected.push_back(id_test.at(i).ID);
+              //}
               suspected.push_back(id_test.at(j).ID);
             }
           }
         }
-        if(suspected.size()>0){
+        if(suspected.size()>1){
+          suspected.push_back(id_test.at(i).ID);
           this->graylist.push_back(suspected);
         }
         
@@ -237,18 +243,21 @@ int Node::Discard()
     }
     return ans;
 }
-int Node::inGraylist(char id)
+int Node::inGraylist(char id,vector<char> suspected)
 {
   int i=0;
-  int j=0;
   int ans=0;
-  for (i=0;i<this->graylist.size();i++)
+  /*for(i=0;i<suspected.size();i++)
   {
-    for(j=0;j<this->graylist.at(i).size();j++)
+    if(suspected.at(i)==id)
     {
-      if(this->graylist.at(i).at(j)==id)
-        ans=1;
+      ans=1;
     }
-  }
+  }*/
   return ans;
+}
+
+void Node::removesubset()
+{
+  this->graylist.clear();
 }

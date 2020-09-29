@@ -1,4 +1,3 @@
-
 #include "heltec.h"
 #include "Node.hpp"
 
@@ -8,6 +7,7 @@ int interval = 2000;
 Node n;
 unsigned char id = '3';
 unsigned char type = 0x00;
+
 void setup() {
   // put your setup code here, to run once:
     Heltec.begin(true, true, true, true , BAND);
@@ -21,18 +21,6 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   n.setTm(type);
-  int i=0;
-  vector <char> gl = n.getGrayList();
-  if(gl.size()>0)
-  {
-    for (i=0;i<gl.size();i++)
-    {
-      //genPoW
-      //packtomsg
-      //send
-      //remove subset
-    }
-  }
   if (millis() - lastSendTime > interval)
   {
      // send a message
@@ -40,7 +28,7 @@ void loop() {
     n.setTm(type);
     sendMessage(n);
     lastSendTime = millis();            
-    interval = random(2000);    
+    interval = random(1000);    
     LoRa.receive();                     
   } 
 }
@@ -69,15 +57,15 @@ void sendMessage(Node n)
 void onReceive(int packetSize)
 {
   if (packetSize == 0) return;
-  Serial.print("Message Received");
   vector<vector<char>> gl;
+  int i=0;
+  int tam;
   unsigned char IDE = LoRa.read();
   unsigned char type = LoRa.read();
   String incoming="";
   int rssi = LoRa.packetRssi();
   Serial.println("Received from : "+String(IDE));
-  Serial.println("RSSI : "+String(rssi));
-  Serial.println("Type : "+String(type))
+  Serial.println("RSSI: "+String(rssi));
   while(LoRa.available())
   {
     incoming += (char) LoRa.read();
@@ -85,32 +73,47 @@ void onReceive(int packetSize)
   int a =n.IsinHist(IDE);
   if (a==1)
   {
-    //Serial.println("This ID is in the history"+String(a));
     if(n.isQueueFull(IDE)==true)
     {
-      //Serial.println("Queue is full, remove last rssi");
       int r = n.RemoveRSSI(IDE);
-      //Serial.println("Removed : "+String(r));
     }
   }
   else
   {
-    
-    //Serial.println("This ID is not in the history, will be added"+String(a));
     n.AddIDtoHist(IDE);
   }
   n.AddRSSI(IDE,rssi);
-  //Serial.println("RSSI added succesfuly");
- // int x = n.getHistSize();
-  //Serial.println("Historial size = "+String(x));
   int ans= n.Discard();
+  //Unpack()
   if(ans==1)
   {
-    //Serial.println("Gray list was made"+String(ans));
     gl = n.getGrayList();
-    //Serial.println("Graylist size()"+String(gl.size()));
-    PrintGrayList(gl); 
+    PrintGrayList(gl);
+    tam =gl.size();
+    if(tam>0)
+    {
+      //Serial.println("Size : "+String(tam));
+      for(i=0;i<tam;i++)
+      {
+          //i++;
+          //genPoW
+          //packtomsg
+          //send
+          //remove subset
+          //n.removesubset();
+          Serial.println("PoW generated : "+String(i));
+          //gl = n.getGrayList();
+          //Serial.println("Size : "+String(gl.size()));
+      }
+    
+      n.removesubset();
+    }
   }
+  
+}
+
+void Unpack()
+{
   
 }
 
