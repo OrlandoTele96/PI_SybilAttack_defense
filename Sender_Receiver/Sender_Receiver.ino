@@ -3,10 +3,11 @@
 
 #define BAND    433E6  
 long lastSendTime = 0;        // last send time
-int interval = 2000; 
+int interval = 3000; 
 Node n;
 unsigned char id = '3';
 unsigned char type = 0x00;
+int isgl=0;
 
 void setup() {
   // put your setup code here, to run once:
@@ -24,11 +25,11 @@ void loop() {
   if (millis() - lastSendTime > interval)
   {
      // send a message
-    n.setID(id);
+    //n.setID(id);
     n.setTm(type);
     sendMessage(n);
     lastSendTime = millis();            
-    interval = random(1000);    
+    interval = random(3000);    
     LoRa.receive();                     
   } 
 }
@@ -57,9 +58,8 @@ void sendMessage(Node n)
 void onReceive(int packetSize)
 {
   if (packetSize == 0) return;
-  vector<vector<char>> gl;
-  int i=0;
-  int tam;
+  Serial.println("**");
+  Serial.println("-----------Receiving-----");
   unsigned char IDE = LoRa.read();
   unsigned char type = LoRa.read();
   String incoming="";
@@ -70,6 +70,24 @@ void onReceive(int packetSize)
   {
     incoming += (char) LoRa.read();
   }
+  storageRSSI(IDE,type,rssi);
+  isgl= n.Discard();
+  if(isgl==1)
+    {
+      GL_pow();
+    }
+  //Unpack()
+  Serial.println("-----------------------");
+  Serial.println("**");
+}
+
+void Unpack()
+{
+  
+}
+
+void storageRSSI(char IDE, char type, int rssi)
+{
   int a =n.IsinHist(IDE);
   if (a==1)
   {
@@ -83,10 +101,14 @@ void onReceive(int packetSize)
     n.AddIDtoHist(IDE);
   }
   n.AddRSSI(IDE,rssi);
-  int ans= n.Discard();
-  //Unpack()
-  if(ans==1)
-  {
+  //Serial.println("Storage!!");
+}
+
+void GL_pow()
+{
+    vector<vector<char>> gl;
+    int i=0;
+    int tam;
     gl = n.getGrayList();
     PrintGrayList(gl);
     tam =gl.size();
@@ -108,19 +130,13 @@ void onReceive(int packetSize)
     
       n.removesubset();
     }
-  }
-  
-}
-
-void Unpack()
-{
-  
 }
 
 void PrintGrayList(vector<vector<char>> gl)
 {
   int i,j;
-  Serial.println("Gray List : ");
+  Serial.println("**");
+  Serial.println("----------Gray List : ");
   for(i=0;i<gl.size();i++)
   {
     Serial.println("Subconjunto : "+String(i));
@@ -129,4 +145,5 @@ void PrintGrayList(vector<vector<char>> gl)
       Serial.println("ID : "+String(gl.at(i).at(j)));
     }
   }
+  Serial.println("**");
 }

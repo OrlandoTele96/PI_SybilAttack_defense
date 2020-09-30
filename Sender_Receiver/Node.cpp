@@ -214,8 +214,8 @@ int Node::Discard()
           sup = 0;
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-(2*(id_test.at(i).desv));
-            sup =  id_test.at(i).prom+(2*(id_test.at(i).desv));
+            inf = id_test.at(i).prom-(0.1*(id_test.at(i).desv));
+            sup =  id_test.at(i).prom+(0.1*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
               //resp = inGraylist(id_test.at(i).ID,suspected);
@@ -227,7 +227,7 @@ int Node::Discard()
             }
           }
         }
-        if(suspected.size()>1){
+        if(suspected.size()>0){
           suspected.push_back(id_test.at(i).ID);
           this->graylist.push_back(suspected);
         }
