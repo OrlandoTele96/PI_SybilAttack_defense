@@ -34,6 +34,7 @@ private:
   vector<char> payload;
   vector<queue> Hist;
   vector<vector<char>> graylist;
+  int r;
 public:
     /*Constructor*/
     Node()=default;
@@ -58,13 +59,15 @@ public:
     void AddRSSI(unsigned char id,int rssi);
     int getHistSize();
     /*Phase 1: RSSI*/
-    int getP();
-    int getV();
+    int getP(unsigned char id);
+    int getV(unsigned char id);
     void computeProm(queue *q);
     void computeVar(queue *q);
     void computeDesv(queue *q);
     int Discard();
     int inGraylist(char id,vector<char> suspected);
     void removesubset();
+    void setr(int r);
+    int getr();
 };
 #endif /* Node_hpp */

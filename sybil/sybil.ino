@@ -6,8 +6,8 @@
 long lastSendTime = 0;        // last send time
 int interval = 500; 
 Node n;
-unsigned char id = '3';
-unsigned char sybil[4]={'1','3','4','5'};
+unsigned char id = 0x00;
+unsigned char sybil[4]={'4','5','6','7'};
 int c=0;
 void setup() {
   // put your setup code here, to run once:

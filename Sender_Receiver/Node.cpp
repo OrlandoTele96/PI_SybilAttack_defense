@@ -146,19 +146,33 @@ int Node::getHistSize()
   return this->Hist.size();
 }
 /*Phase 1 : RSSI*/
-int Node::getP()
+int Node::getP(unsigned char id)
 {
-  return 0;
+  int i;
+  for (i=0;i<this->Hist.size();i++)
+  {
+    if(this->Hist.at(i).ID==id)
+    {
+      return this->Hist.at(i).prom;
+    }
+  }
 }
-int Node::getV()
+int Node::getV(unsigned char id)
 {
-  return 0;
+    int i;
+  for (i=0;i<this->Hist.size();i++)
+  {
+    if(this->Hist.at(i).ID==id)
+    {
+      return this->Hist.at(i).desv;
+    }
+  }
 }
 void Node::computeProm(queue *q)
 {
   int i=0;
   int aux;
-  //float n=10;
+  float n=0;
   for(i=0;i<q->end;i++)
   {
     aux += q->RSSI[i];
@@ -188,17 +202,32 @@ int Node::Discard()
     int sup,inf;
     int ans;
     int resp;
+    int sump,sumdesv,var;
     for (i=0;i<this->Hist.size();i++)
     {
       if (this->Hist.at(i).end>9)
       {
+        sump =0;
+        sumdesv=0;
+        var=0;
         //compute average
-        computeProm(&this->Hist.at(i));
+        //computeProm(&this->Hist.at(i));
         //calcVar
-        computeVar(&this->Hist.at(i));
+        //computeVar(&this->Hist.at(i));
         //calcDesv
-        computeDesv(&this->Hist.at(i));
+        //computeDesv(&this->Hist.at(i));
         //Add to list
+        for (j=0;j<Hist.at(i).end;j++)
+        {
+          sump = sump + this->Hist.at(i).RSSI[j];
+        }
+        this->Hist.at(i).prom = sump/10;
+        for (j=0;j<Hist.at(i).end;j++)
+        {
+          sumdesv= (this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom)*(this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom);
+        }
+        var = sumdesv/10;
+        this->Hist.at(i).desv = sqrt(var);;
         id_test.push_back(this->Hist.at(i));
       }
     }
@@ -210,12 +239,12 @@ int Node::Discard()
         suspected.clear();
         for(j=0; j<id_test.size();j++)
         {
-          inf = 0;
-          sup = 0;
+          //inf = 0;
+          //sup = 0;
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-(0.1*(id_test.at(i).desv));
-            sup =  id_test.at(i).prom+(0.1*(id_test.at(i).desv));
+            inf = id_test.at(i).prom-(2*(id_test.at(i).desv));
+            sup =  id_test.at(i).prom+(2*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
               //resp = inGraylist(id_test.at(i).ID,suspected);

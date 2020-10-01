@@ -5,7 +5,7 @@
 long lastSendTime = 0;        // last send time
 int interval = 3000; 
 Node n;
-unsigned char id = '3';
+unsigned char id = '2';
 unsigned char type = 0x00;
 int isgl=0;
 
@@ -63,7 +63,7 @@ void onReceive(int packetSize)
   unsigned char IDE = LoRa.read();
   unsigned char type = LoRa.read();
   String incoming="";
-  int rssi = LoRa.packetRssi();
+  int rssi = (int )LoRa.packetRssi();
   Serial.println("Received from : "+String(IDE));
   Serial.println("RSSI: "+String(rssi));
   while(LoRa.available())
@@ -72,6 +72,8 @@ void onReceive(int packetSize)
   }
   storageRSSI(IDE,type,rssi);
   isgl= n.Discard();
+  //n.setr(rssi);
+  //Serial.println("rssi"+String(n.getr()));
   if(isgl==1)
     {
       GL_pow();
@@ -135,6 +137,7 @@ void GL_pow()
 void PrintGrayList(vector<vector<char>> gl)
 {
   int i,j;
+  //int prom,desv;
   Serial.println("**");
   Serial.println("----------Gray List : ");
   for(i=0;i<gl.size();i++)
@@ -142,7 +145,11 @@ void PrintGrayList(vector<vector<char>> gl)
     Serial.println("Subconjunto : "+String(i));
     for(j=0;j<gl.at(i).size();j++)
     {
+      //prom = (int)n.getP(gl.at(i).at(j));
+      //desv = (int)n.getV(gl.at(i).at(j));
       Serial.println("ID : "+String(gl.at(i).at(j)));
+      //Serial.println("prom : "+String(prom));
+      //Serial.println("desv : "+String(desv));
     }
   }
   Serial.println("**");
