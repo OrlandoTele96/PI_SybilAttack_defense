@@ -13,8 +13,6 @@
 #include <vector>
 #include <math.h>
 
-#include"SHA256.hpp"
-
 using namespace std;
 
 
@@ -29,13 +27,14 @@ struct data
   int desv=0;
 };
 typedef struct data queue;
-class Node : public SHA256{
+class Node {
 private:
   unsigned char id = 0x00;  //id by default
   unsigned char type = 0x00; // message type by default
   vector<char> payload;
   vector<queue> Hist;
   vector<vector<char>> graylist;
+  int r;
 public:
     /*Constructor*/
     Node()=default;
@@ -60,18 +59,7 @@ public:
     void AddRSSI(unsigned char id,int rssi);
     int getHistSize();
     /*Phase 1: RSSI*/
-    int getP();
-    int getV();
-    void computeProm(queue *q);
-    void computeVar(queue *q);
-    void computeDesv(queue *q);
     int Discard();
-    int inGraylist(char id,vector<char> suspected);
     void removesubset();
-    /*Phase 2 : PoW*/
-    void genPoW(string num,vector<char> id_suspect);
-    string makeTarget(int difficulty);
-    string PoW(char id,string n_rand,int difficulty);
-    string packtoHash(char id,string num_rand,string lasthash);
 };
 #endif /* Node_hpp */

@@ -2,12 +2,16 @@
 //  Node.cpp
 //  PI_SybilAttack_defense
 //
-//  Created by <author> on 05/09/2020.
+//  Created by <Jorge O. Gonzalez> on 05/09/2020.
 //
 //
-
+/*
+--------------------------------------------------------------------------------
+                            Class Node implementation
+--------------------------------------------------------------------------------
+*/
 #include "Node.hpp"
-/*Constructors*/
+/*------------------------------Constructors----------------------------------*/
 Node::Node(unsigned char Id,unsigned char tm):id(Id),type(tm)
 {
   //
@@ -17,7 +21,7 @@ Node::Node(const Node &n)
   this->id = n.id;
   this->type = n.type;
 }
-/*Getter & Setter*/
+/*----------------------------Getter & Setter---------------------------------*/
 unsigned char Node::getID()const
 {
   return this->id;
@@ -49,7 +53,7 @@ void Node::setPayload(vector<char> p)
 void Node::clearhist(){
   this->Hist.clear();
 }
-/*Queue function*/
+/*-----------------------------Queue function---------------------------------*/
 queue Node::create(unsigned char id)
 {
   queue q;
@@ -58,31 +62,6 @@ queue Node::create(unsigned char id)
   q.ID = id;
   return q;
 }
-/*RSSI Storage*/
-void Node::AddIDtoHist(unsigned char id)
-{
-  queue q;
-  q= create(id);
-  this->Hist.push_back(q);
-}
-int Node::IsinHist(unsigned char id)
-{
-  int i=0;
-  int ans=0;
-  if(this->Hist.size()>0)
-  {
-
-    for(i=0;i<this->Hist.size();i++)
-    {
-      if(this->Hist.at(i).ID==id)
-      {
-        ans = 1;
-      }
-    }
-  }
-  return ans;
-}
-
 bool Node::isQueueFull(unsigned char id)
 {
   bool ans;
@@ -120,7 +99,6 @@ int Node::RemoveRSSI(unsigned char id)
         }
         this->Hist.at(i).end--;
       }
-      //PrintQueue(&this->received_mjs.at(i));
     }
   }
   return rssi;
@@ -137,49 +115,38 @@ void Node::AddRSSI(unsigned char id,int rssi)
         this->Hist.at(i).RSSI[this->Hist.at(i).end]=rssi;
         this->Hist.at(i).end++;
       }
-      //PrintQueue(&this->received_mjs.at(i));
     }
   }
+}
+/*-----------------------------RSSI Storage-----------------------------------*/
+void Node::AddIDtoHist(unsigned char id)
+{
+  queue q;
+  q= create(id);
+  this->Hist.push_back(q);
+}
+int Node::IsinHist(unsigned char id)
+{
+  int i=0;
+  int ans=0;
+  if(this->Hist.size()>0)
+  {
+
+    for(i=0;i<this->Hist.size();i++)
+    {
+      if(this->Hist.at(i).ID==id)
+      {
+        ans = 1;
+      }
+    }
+  }
+  return ans;
 }
 int Node::getHistSize()
 {
   return this->Hist.size();
 }
-/*Phase 1 : RSSI*/
-int Node::getP()
-{
-  return 0;
-}
-int Node::getV()
-{
-  return 0;
-}
-void Node::computeProm(queue *q)
-{
-  int i=0;
-  int aux;
-  //float n=10;
-  for(i=0;i<q->end;i++)
-  {
-    aux += q->RSSI[i];
-  }
-  q->prom = aux/10;
-}
-void Node::computeVar(queue *q)
-{
-  int i=0;
-  int aux;
-  //float n = 10;
-  for (i=0;i<q->end;i++)
-  {
-    aux += (q->RSSI[i]-q->prom)*(q->RSSI[i]-q->prom);
-  }
-  q->var=aux/10;
-}
-void Node::computeDesv(queue *q)
-{
-  q->desv=sqrt(q->var);
-}
+/*-----------------------------Phase 1 : RSSI---------------------------------*/
 int Node::Discard()
 {
     int i,j;
@@ -188,46 +155,46 @@ int Node::Discard()
     int sup,inf;
     int ans;
     int resp;
+    int sump,sumdesv,var;
     for (i=0;i<this->Hist.size();i++)
     {
       if (this->Hist.at(i).end>9)
       {
-        //compute average
-        computeProm(&this->Hist.at(i));
-        //calcVar
-        computeVar(&this->Hist.at(i));
-        //calcDesv
-        computeDesv(&this->Hist.at(i));
-        //Add to list
+        sump =0;
+        sumdesv=0;
+        var=0;
+        for (j=0;j<Hist.at(i).end;j++)
+        {
+          sump = sump + this->Hist.at(i).RSSI[j];
+        }
+        this->Hist.at(i).prom = sump/10;
+        for (j=0;j<Hist.at(i).end;j++)
+        {
+          sumdesv= (this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom)*(this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom);
+        }
+        var = sumdesv/10;
+        this->Hist.at(i).desv = sqrt(var);;
         id_test.push_back(this->Hist.at(i));
       }
     }
     if(id_test.size()>1)
     {
-      //If size >= discard algorithm
       for(i=0;i<id_test.size();i++)
       {
         suspected.clear();
         for(j=0; j<id_test.size();j++)
         {
-          inf = 0;
-          sup = 0;
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
             inf = id_test.at(i).prom-(2*(id_test.at(i).desv));
             sup =  id_test.at(i).prom+(2*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
-              //resp = inGraylist(id_test.at(i).ID,suspected);
-              //if(resp!=1)
-              //{
-                //suspected.push_back(id_test.at(i).ID);
-              //}
               suspected.push_back(id_test.at(j).ID);
             }
           }
         }
-        if(suspected.size()>1){
+        if(suspected.size()>0){
           suspected.push_back(id_test.at(i).ID);
           this->graylist.push_back(suspected);
         }
@@ -243,20 +210,6 @@ int Node::Discard()
     }
     return ans;
 }
-int Node::inGraylist(char id,vector<char> suspected)
-{
-  int i=0;
-  int ans=0;
-  /*for(i=0;i<suspected.size();i++)
-  {
-    if(suspected.at(i)==id)
-    {
-      ans=1;
-    }
-  }*/
-  return ans;
-}
-
 void Node::removesubset()
 {
   this->graylist.clear();

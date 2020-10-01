@@ -2,10 +2,14 @@
 //  Node.hpp
 //  PI_SybilAttack_defense
 //
-//  Created by <author> on 05/09/2020.
+//  Created by <Jorge O. Gonzalez> on 05/09/2020.
 //
 //
-
+/*
+--------------------------------------------------------------------------------
+                            Class Node Definition
+--------------------------------------------------------------------------------
+*/
 #ifndef Node_hpp
 #define Node_hpp
 
@@ -59,15 +63,7 @@ public:
     void AddRSSI(unsigned char id,int rssi);
     int getHistSize();
     /*Phase 1: RSSI*/
-    int getP(unsigned char id);
-    int getV(unsigned char id);
-    void computeProm(queue *q);
-    void computeVar(queue *q);
-    void computeDesv(queue *q);
     int Discard();
-    int inGraylist(char id,vector<char> suspected);
     void removesubset();
-    void setr(int r);
-    int getr();
 };
 #endif /* Node_hpp */
