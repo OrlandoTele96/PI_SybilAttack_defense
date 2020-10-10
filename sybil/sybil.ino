@@ -2,13 +2,14 @@
 #include "heltec.h"
 #include "Node.hpp"
 
-#define BAND    433E6  
+#define BAND    433E6
 long lastSendTime = 0;        // last send time
-int interval = 500; 
+int interval = 500;
 Node n;
 unsigned char id = 0x00;
 unsigned char sybil[4]={'4','5','6','7'};
 int c=0;
+int counter[4]=[0,0,0,0];
 void setup() {
   // put your setup code here, to run once:
     Heltec.begin(true, true, true, true , BAND);
@@ -28,17 +29,36 @@ void loop() {
     if (millis() - lastSendTime > interval)
     {
        // send a message
-      n.setID(sybil[c]);
-      sendMessage(n);
-      lastSendTime = millis();            
-      interval = random(500);    
-      LoRa.receive();                     
+      if(counter[c]<=1000)
+      {
+        n.setID(sybil[c]);
+        sendMessage(n);
+      }
+      lastSendTime = millis();
+      interval = random(500);
+      LoRa.receive();
     }
-  } 
+  }
 }
 
 void sendMessage(Node n)
 {
+  if(n.getID()=='4')
+  {
+    counter[0]++;
+  }
+  if(n.getID()=='5')
+  {
+    counter[1]++;
+  }
+  if(n.getID()=='6')
+  {
+    counter[2]++;
+  }
+  if(n.getID()=='7')
+  {
+    counter[3]++;
+  }
   vector<char> payload;
   //payload = n.getPayload();
   payload.push_back('2');
@@ -87,7 +107,7 @@ void onReceive(int packetSize)
   }
   else
   {
-    
+
     //Serial.println("This ID is not in the history, will be added"+String(a));
     n.AddIDtoHist(IDE);
   }
@@ -101,7 +121,7 @@ void onReceive(int packetSize)
     Serial.println("Gray list was made"+String(ans));
     gl = n.getGrayList();
     Serial.println("Graylist size()"+String(gl.size()));
-    PrintGrayList(gl); 
+    PrintGrayList(gl);
   }
   else
   {
