@@ -177,11 +177,7 @@ void PrintGrayList(vector<vector<char>> gl)
     Serial.println("Subconjunto : "+String(i));
     for(j=0;j<gl.at(i).size();j++)
     {
-      //prom = (int)n.getP(gl.at(i).at(j));
-      //desv = (int)n.getV(gl.at(i).at(j));
       Serial.println("ID : "+String(gl.at(i).at(j)));
-      //Serial.println("prom : "+String(prom));
-      //Serial.println("desv : "+String(desv));
     }
   }
   Serial.println("**");
