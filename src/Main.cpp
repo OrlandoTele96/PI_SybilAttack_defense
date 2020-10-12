@@ -23,81 +23,24 @@ int main()
   int ans;
   int siz;
   vector<vector<char>> gl;
-  /*for(i=0;i<40;i++){
-    cout<<"Id: "<<endl;
-    cin>>id;
-    cout<<"RSSI"<<endl;
-    cin>>rssi;
-    if (n.IsinHist(id)==true)
-    {
-      cout<<"Está"<<endl;
-    }
-    else
-    {
-      cout<<"no esta"<<endl;
-      n.AddIDtoHist(id);
-    }
-    n.AddRSSI(id,rssi);
-    siz = n.getHistSize();
-    cout<<"tam"<<siz<<endl;
-    ans=n.Discard();
-    if(ans==1)
-    {
-      gl = n.getGrayList();
-      for(j=0;i<gl.size();j++)
-      {
-        cout<<"subconjunto :\t"<<j<<endl;
-        for(k=0;k<gl.at(i).size();k++)
-        {
-          cout<<"ID : \t"<<gl.at(i).at(j)<<"\t"<<endl;
-        }
-      }
-    }
-  }*/
-  gl = n.getGrayList();
-  for(i=0;i<gl.size();i++)
+  vector<char> subset;
+  subset.push_back('1');
+  subset.push_back('2');
+  subset.push_back('3');
+  gl.push_back(subset);
+  subset.clear();
+  subset.push_back('1');
+  subset.push_back('2');
+  gl.push_back(subset);
+  subset.clear();
+  n.setGrayList(gl);
+  subset.push_back('2');
+  subset.push_back('1');
+  subset.push_back('3');
+  subset.push_back('4');
+  if(n.inGraylist(subset)==1)
   {
-    cout<<"Subset : \t"<<i<<endl;
-    for(j=0;j<gl.at(i).size();j++)
-    {
-      cout<<"ID:\t"<<gl.at(i).at(j)<<endl;
-    }
-  }
-  n.removesubset();
-  gl = n.getGrayList();
-  cout<<"Gray List:"<<gl.size()<<endl;
-  gl = n.getGrayList();
-  for(i=0;i<gl.size();i++)
-  {
-    cout<<"Subset : \t"<<i<<endl;
-    for(j=0;j<gl.at(i).size();j++)
-    {
-      cout<<"ID:\t"<<gl.at(i).at(j)<<endl;
-    }
-  }
-  n.removesubset();
-  gl = n.getGrayList();
-  cout<<"Gray List:"<<gl.size()<<endl;
-  gl = n.getGrayList();
-  for(i=0;i<gl.size();i++)
-  {
-    cout<<"Subset : \t"<<i<<endl;
-    for(j=0;j<gl.at(i).size();j++)
-    {
-      cout<<"ID:\t"<<gl.at(i).at(j)<<endl;
-    }
-  }
-  n.removesubset();
-  gl = n.getGrayList();
-  cout<<"Gray List:"<<gl.size()<<endl;
-  gl = n.getGrayList();
-  for(i=0;i<gl.size();i++)
-  {
-    cout<<"Subset : \t"<<i<<endl;
-    for(j=0;j<gl.at(i).size();j++)
-    {
-      cout<<"ID:\t"<<gl.at(i).at(j)<<endl;
-    }
+    cout<<"Ya existe en graylist"<<endl;
   }
   return 0;
 }
