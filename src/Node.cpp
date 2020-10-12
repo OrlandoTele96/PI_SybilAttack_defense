@@ -53,6 +53,10 @@ void Node::setPayload(vector<char> p)
 void Node::clearhist(){
   this->Hist.clear();
 }
+void Node::setGrayList(vector<vector <char>> gl)
+{
+  this->graylist = gl;
+}
 /*-----------------------------Queue function---------------------------------*/
 queue Node::create(unsigned char id)
 {
@@ -213,4 +217,40 @@ int Node::Discard()
 void Node::removesubset()
 {
   this->graylist.clear();
+}
+
+/*Phase 2 : PoW*/
+
+int Node::inGraylist(vector<char> subset)
+{
+  /*This function return 1 if a subset is already in graylist,
+  return 0 if it is not in graylist*/
+  int ans =0;
+  int i=0;
+  int j=0;
+  int k =0;
+  int counter;
+  for (i=0;i<this->graylist.size();i++)
+  {
+      if(this->graylist.at(i).size()==subset.size())
+      {
+        counter =0;
+        for (j=0;j<subset.size();j++)
+        {
+          for (k=0;k<this->graylist.at(i).size();k++)
+          {
+            if(subset.at(j)==this->graylist.at(i).at(k))
+            {
+              counter ++;
+            }
+          }
+        }
+        if(counter==subset.size())
+        {
+          cout<<counter<<endl;
+          ans =1;
+        }
+      }
+  }
+  return ans;
 }

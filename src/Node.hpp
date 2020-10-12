@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <vector>
 #include <math.h>
+#include<iostream>
 
 using namespace std;
 
@@ -49,6 +50,7 @@ public:
     void setTm(unsigned char tm);
     void setPayload(vector<char> p);
     void clearhist();
+    void setGrayList(vector<vector <char>> gl);
     /*Queue function*/
     queue create(unsigned char id);
     /*RSSI Storage*/
@@ -61,5 +63,7 @@ public:
     /*Phase 1: RSSI*/
     int Discard();
     void removesubset();
+    /*Phase 2 : PoW*/
+    int inGraylist(vector<char> subset);
 };
 #endif /* Node_hpp */
