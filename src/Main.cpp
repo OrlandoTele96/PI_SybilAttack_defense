@@ -42,5 +42,8 @@ int main()
   {
     cout<<"Ya existe en graylist"<<endl;
   }
+
+  vector<char> rand = {'1','2','2','3'};
+  n.genPoW(subset,rand);
   return 0;
 }
