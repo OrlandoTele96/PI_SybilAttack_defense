@@ -275,7 +275,7 @@ void Node::genPoW(vector<char> subset,vector<char> rand_n)
   {
     input = number + subset.at(i);
     i_t = clock();
-    solution=ProofOfWork(input,2);
+    solution=ProofOfWork(input,3);
     f_t = clock();
     t_pow = f_t-i_t;
     cout<<"mined time"<<t_pow<<endl;
@@ -296,14 +296,14 @@ string Node::ProofOfWork(string input,int dif)
     hash = sha256(to_hash);
     to_hash = toHash(to_hash,hash);
   }while(hash.substr(0,dif)!=target);
-  cout<<"Mined"<<endl;
+  //cout<<"Mined"<<endl;
   return solution;
 }
 string Node::toHash(string input,string lhash)
 {
   string to_hash;
   string key = "#Telecom123";
-  to_hash = input+key + lhash;
+  to_hash = input+ lhash.substr(0,5);
   return to_hash;
 }
 string Node::GenerateTarget(int difficulty)
