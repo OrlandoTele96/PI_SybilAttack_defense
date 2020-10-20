@@ -12,11 +12,15 @@
 */
 #include "Node.hpp"
 /*------------------------------Constructors----------------------------------*/
-Node::Node(unsigned char Id,unsigned char tm):id(Id),type(tm)
+Node::Node() : SHA256()
+{
+
+}
+Node::Node(unsigned char Id,unsigned char tm):id(Id),type(tm),SHA256()
 {
   //
 }
-Node::Node(const Node &n)
+Node::Node(const Node &n) : SHA256()
 {
   this->id = n.id;
   this->type = n.type;
@@ -274,11 +278,43 @@ void Node::genPoW(vector<char> subset,vector<char> rand_n)
     solution=ProofOfWork(input,2);
     f_t = clock();
     t_pow = f_t-i_t;
+    cout<<"mined time"<<t_pow<<endl;
     this->pow_t.push_back(t_pow);
     this->pow_sol.push_back(solution);
   }
 }
 string Node::ProofOfWork(string input,int dif)
 {
-
+  string to_hash;
+  string target;
+  string hash="";
+  string solution;
+  to_hash = toHash(input,hash);
+  target = GenerateTarget(dif);
+  do
+  {
+    hash = sha256(to_hash);
+    to_hash = toHash(to_hash,hash);
+  }while(hash.substr(0,dif)!=target);
+  cout<<"Mined"<<endl;
+  return solution;
+}
+string Node::toHash(string input,string lhash)
+{
+  string to_hash;
+  string key = "#Telecom123";
+  to_hash = input+key + lhash;
+  return to_hash;
+}
+string Node::GenerateTarget(int difficulty)
+{
+  char ctos[difficulty+1];
+  int i =0;
+  for (i=0;i<difficulty;i++)
+  {
+    ctos[i]='0';
+  }
+  ctos[difficulty]='\0';
+  string str(ctos);
+  return str;
 }

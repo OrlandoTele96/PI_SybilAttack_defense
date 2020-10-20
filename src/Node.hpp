@@ -14,6 +14,7 @@
 #include <math.h>
 #include<iostream>
 #include <time.h>
+#include "SHA256.hpp"
 
 using namespace std;
 
@@ -29,7 +30,7 @@ struct data
   int desv=0;
 };
 typedef struct data queue;
-class Node {
+class Node:public SHA256 {
 private:
   unsigned char id = 0x00;  //id by default
   unsigned char type = 0x00; // message type by default
@@ -41,7 +42,7 @@ private:
   vector<string> pow_sol;
 public:
     /*Constructor*/
-    Node()=default;
+    Node();
     Node (unsigned char Id,unsigned char tm);
     Node (const Node &n);
     /*Getters & Setters*/
@@ -70,5 +71,7 @@ public:
     /*Phase 2 : PoW*/
     void genPoW(vector<char> subset,vector<char> rand_n);
     string ProofOfWork(string input,int dif);
+    string toHash(string input,string lhash);
+    string GenerateTarget(int difficulty);
 };
 #endif /* Node_hpp */
