@@ -200,7 +200,11 @@ int Node::Discard()
         }
         if(suspected.size()>0){
           suspected.push_back(id_test.at(i).ID);
-          this->graylist.push_back(suspected);
+          if(inGraylist(suspected)!=1)
+          {
+            this->graylist.push_back(suspected);
+          }
+
         }
 
       }
@@ -218,9 +222,6 @@ void Node::removesubset()
 {
   this->graylist.clear();
 }
-
-/*Phase 2 : PoW*/
-
 int Node::inGraylist(vector<char> subset)
 {
   /*This function return 1 if a subset is already in graylist,
@@ -247,10 +248,37 @@ int Node::inGraylist(vector<char> subset)
         }
         if(counter==subset.size())
         {
-          cout<<counter<<endl;
+          //cout<<counter<<endl;
           ans =1;
         }
       }
   }
   return ans;
+}
+/*Phase 2 : PoW*/
+void Node::genPoW(vector<char> subset,vector<char> rand_n)
+{
+  int i;
+  string number ="";
+  string input="";
+  string solution;
+  int i_t,f_t,t_pow;
+  for(i=0;i<rand_n.size();i++)
+  {
+    number = number + rand_n.at(i);
+  }
+  for (i=0;i<subset.size();i++)
+  {
+    input = number + subset.at(i);
+    i_t = clock();
+    solution=ProofOfWork(input,2);
+    f_t = clock();
+    t_pow = f_t-i_t;
+    this->pow_t.push_back(t_pow);
+    this->pow_sol.push_back(solution);
+  }
+}
+string Node::ProofOfWork(string input,int dif)
+{
+
 }

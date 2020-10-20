@@ -13,6 +13,7 @@
 #include <vector>
 #include <math.h>
 #include<iostream>
+#include <time.h>
 
 using namespace std;
 
@@ -36,6 +37,8 @@ private:
   vector<queue> Hist;
   vector<vector<char>> graylist;
   int r;
+  vector<int> pow_t;
+  vector<string> pow_sol;
 public:
     /*Constructor*/
     Node()=default;
@@ -63,7 +66,9 @@ public:
     /*Phase 1: RSSI*/
     int Discard();
     void removesubset();
-    /*Phase 2 : PoW*/
     int inGraylist(vector<char> subset);
+    /*Phase 2 : PoW*/
+    void genPoW(vector<char> subset,vector<char> rand_n);
+    string ProofOfWork(string input,int dif);
 };
 #endif /* Node_hpp */
