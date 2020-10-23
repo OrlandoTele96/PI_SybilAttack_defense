@@ -170,10 +170,10 @@ int Node::Discard()
         this->Hist.at(i).prom = sump/10;
         for (j=0;j<Hist.at(i).end;j++)
         {
-          sumdesv= (this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom)*(this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom);
+          sumdesv= sumdesv + ((this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom)*(this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom));
         }
         var = sumdesv/10;
-        this->Hist.at(i).desv = sqrt(var);;
+        this->Hist.at(i).desv = sqrt(var);
         id_test.push_back(this->Hist.at(i));
       }
     }
