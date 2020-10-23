@@ -35,8 +35,8 @@ void loop() {
     if(counter<=1000)
     {
      // send a message
-    n.setTm(type);
-    sendMessage(n);
+     n.setTm(type);
+     sendMessage(n);
     }
     lastSendTime = millis();
     interval = random(3000);
