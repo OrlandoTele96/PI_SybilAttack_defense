@@ -260,13 +260,14 @@ int Node::inGraylist(vector<char> subset)
   return ans;
 }
 /*Phase 2 : PoW*/
-void Node::genPoW(vector<char> subset,vector<char> rand_n)
+vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
 {
   int i;
   string number ="";
   string input="";
   string solution;
   int i_t,f_t,t_pow;
+  vector<vector <char>> solutions
   for(i=0;i<rand_n.size();i++)
   {
     number = number + rand_n.at(i);
@@ -281,7 +282,11 @@ void Node::genPoW(vector<char> subset,vector<char> rand_n)
     cout<<"mined time"<<t_pow<<endl;
     this->pow_t.push_back(t_pow);
     this->pow_sol.push_back(solution);
+    vector<char> s (solution.begin(),solution.end());
+    //Convert solution in vector<char> format
+    solutions.push_back(s);
   }
+  return solutions;
 }
 string Node::ProofOfWork(string input,int dif)
 {

@@ -45,5 +45,12 @@ int main()
 
   vector<char> rand = {'1','2','2','3'};
   n.genPoW(subset,rand);
+  string st = "Te amo mucho mucho mucho mucho mucho mucho maaaaas <3";
+  vector<char> s (st.begin(),st.end());
+  for (const char &c:s)
+  {
+    cout<<c;
+  }
+  cout<<""<<endl;
   return 0;
 }

@@ -33,7 +33,8 @@ void loop() {
   if (millis() - lastSendTime > interval)
   {
      // send a message
-    n.setTm(type);
+
+    Pack(type);
     sendMessage(n);
     lastSendTime = millis();
     interval = random(3000);
@@ -51,12 +52,6 @@ void sendMessage(Node n)
   Tipo 3 : mensaje de respuesta de PoW
   Tipo 4 : mensaje de consenso
   */
-  vector<char> payload;
-  //payload = n.getPayload();
-  payload.push_back('2');
-  payload.push_back('6');
-  payload.push_back('0');
-  payload.push_back('2');
   int i=0;
   LoRa.beginPacket();
   LoRa.write(n.getID());
@@ -91,9 +86,13 @@ void onReceive(int packetSize)
   storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
   isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
   if(isgl==1) // Si se genero la lista gris entonces se genera PoW
-    {
-      GL_pow(); // Genera PoW
-    }
+  {
+    GL_pow(); // Genera PoW
+  }
+  else
+  {
+    type = 0x00;
+  }
   //Unpack()
   Serial.println("-----------------------");
   Serial.println("**");
@@ -102,7 +101,35 @@ void onReceive(int packetSize)
 void Unpack()
 {
   /*Desempaqueta mensajes*/
+}
 
+void Pack(unsigned char type_m,unsigned char id_dest,vector<char> payload)
+{
+  if(type_m ==0x00)
+  {
+    Serial.println("Packing message for temperature");
+    n.setTm(type_m);
+    //ID dest.
+
+  }
+  if(type_m == 0x01)
+  {
+    Serial.println("Packing message for PoW solicitude");
+    n.setTm(type_m);
+    //ID dest.
+  }
+  if (type_m == 0x02)
+  {
+    Serial.println("Packing message for PoW solicitude confirmation");
+  }
+  if (type_m == 0x03)
+  {
+    Serial.println("Packing message for PoW solution");
+  }
+  if (type_m == 0x04)
+  {
+    Serial.println("Packing message for consensus");
+  }
 }
 
 void storageRSSI(char IDE, char type, int rssi)
@@ -147,19 +174,19 @@ void GL_pow()
     gl = n.getGrayList();
     PrintGrayList(gl); // Solamente imprime la lista gris
     tam =gl.size();
+    vector<char> rand_n = {'1','2','3','4'};
+    vector<vector <char>> sol;
     if(tam>0)//primero nos aseguramos que exista la lista gris o que haya almenos un subconjunto
     {
       for(i=0;i<tam;i++) // Recorremos la lista gris y generamos una Pow para cada subconjunto
       {
-          //i++;
           //genPoW
+          sol=n.genPoW(gl[i],rand_n);
           //packtomsg
+          //Pack(0x01);
           //send
-          //remove subset
-          //n.removesubset();
+          sendMessage(n);
           Serial.println("PoW generated : "+String(i));
-          //gl = n.getGrayList();
-          //Serial.println("Size : "+String(gl.size()));
       }
 
       n.removesubset(); // Elimina los subconjuntos que ya fueron generados para Pow

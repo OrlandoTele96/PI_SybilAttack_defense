@@ -69,7 +69,7 @@ public:
     void removesubset();
     int inGraylist(vector<char> subset);
     /*Phase 2 : PoW*/
-    void genPoW(vector<char> subset,vector<char> rand_n);
+    vector<vector <char>> genPoW(vector<char> subset,vector<char> rand_n);
     string ProofOfWork(string input,int dif);
     string toHash(string input,string lhash);
     string GenerateTarget(int difficulty);
