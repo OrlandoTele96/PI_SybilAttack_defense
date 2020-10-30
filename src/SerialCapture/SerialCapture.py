@@ -5,7 +5,7 @@
 import serial
 import time
 
-iport = serial.Serial('',11500)
+iport = serial.Serial('USB0',115200)
 data =[]
 
 while len(data)!=10000:
