@@ -5,15 +5,17 @@
 import serial
 import time
 
-iport = serial.Serial('USB0',115200)
+iport = serial.Serial('/dev/ttyUSB0',115200)
 data =[]
 
-while len(data)!=10000:
+while len(data)!=20000:
     d = iport.readline()
-    d_string = d.decode()
-    datastripped = d_string.rstrip()+"\n"
-    data.append(datastripped)
+    print(d)
+    #d_string = d.decode()
+    #datastripped = d_string.rstrip()+"\n"
+    data.append(d)
     time.sleep(0.1)
+    print(len(data))
 
-with open("test.txt",'a') as file:
+with open("RSSI_results2.txt",'wb') as file:
     file.writelines(data)

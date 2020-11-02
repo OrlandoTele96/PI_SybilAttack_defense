@@ -7,9 +7,9 @@ long lastSendTime = 0;        // last send time
 int interval = 500;
 Node n;
 unsigned char id = 0x00;
-unsigned char sybil[4]={'4','5','6','7'};
+unsigned char sybil[4]={'5','6','7','8'};
 int c=0;
-int counter[4]=[0,0,0,0];
+int counter[4]={0,0,0,0};
 void setup() {
   // put your setup code here, to run once:
     Heltec.begin(true, true, true, true , BAND);
@@ -29,11 +29,11 @@ void loop() {
     if (millis() - lastSendTime > interval)
     {
        // send a message
-      if(counter[c]<=1000)
-      {
+      //if(counter[c]<=100000)
+      //{
         n.setID(sybil[c]);
         sendMessage(n);
-      }
+      //}
       lastSendTime = millis();
       interval = random(500);
       LoRa.receive();
