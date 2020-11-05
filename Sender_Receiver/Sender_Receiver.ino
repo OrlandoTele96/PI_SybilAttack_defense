@@ -8,9 +8,9 @@
 
 #define BAND    433E6
 long lastSendTime = 0;        // last send time
-int interval = 3000;
+int interval = 2000;
 Node n;
-unsigned char id = '2'; //cambiar por cualquier ID
+unsigned char id = '1'; //cambiar por cualquier ID
 unsigned char type = 0x00;
 int isgl=0;
 int counter=0;
@@ -32,14 +32,14 @@ void loop() {
   */
   if (millis() - lastSendTime > interval)
   {
-    if(counter<=1000)
-    {
+    //if(counter<=100000)
+    //{
      // send a message
-    n.setTm(type);
-    sendMessage(n);
-    }
+     n.setTm(type);
+     sendMessage(n);
+    //}
     lastSendTime = millis();
-    interval = random(3000);
+    interval = random(2000);
     LoRa.receive();
 
   }
@@ -78,9 +78,9 @@ void sendMessage(Node n)
 void onReceive(int packetSize)
 {
   if (packetSize == 0) return;
-  Serial.println("**");
-  Serial.println("-----------Receiving-----");
-  unsigned char IDE = LoRa.read(); // Recibe ID
+  //Serial.println("**");
+  //Serial.println("-----------Receiving-----");
+   char IDE = (char)LoRa.read(); // Recibe ID
   unsigned char type = LoRa.read(); // Recibe tipo de mensaje
   String incoming="";
   int rssi = (int )LoRa.packetRssi(); // Obtiene rssi del mensaje
@@ -93,15 +93,15 @@ void onReceive(int packetSize)
     */
     incoming += (char) LoRa.read();
   }
-  storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
-  isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
-  if(isgl==1) // Si se genero la lista gris entonces se genera PoW
-    {
-      GL_pow(); // Genera PoW
-    }
+  //storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
+  //isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
+  //if(isgl==1) // Si se genero la lista gris entonces se genera PoW
+    //{
+      //GL_pow(); // Genera PoW
+    //}
   //Unpack()
-  Serial.println("-----------------------");
-  Serial.println("**");
+  //Serial.println("-----------------------");
+  //Serial.println("**");
 }
 
 void Unpack()
