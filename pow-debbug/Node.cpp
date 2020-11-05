@@ -178,10 +178,10 @@ int Node::Discard()
         this->Hist.at(i).prom = sump/10;
         for (j=0;j<Hist.at(i).end;j++)
         {
-          sumdesv= sumdesv + ((this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom)*(this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom));
+          sumdesv= (this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom)*(this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom);
         }
         var = sumdesv/10;
-        this->Hist.at(i).desv = sqrt(var);
+        this->Hist.at(i).desv = sqrt(var);;
         id_test.push_back(this->Hist.at(i));
       }
     }
@@ -194,8 +194,8 @@ int Node::Discard()
         {
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-(0.25*(id_test.at(i).desv));
-            sup =  id_test.at(i).prom+(0.25*(id_test.at(i).desv));
+            inf = id_test.at(i).prom-(2*(id_test.at(i).desv));
+            sup =  id_test.at(i).prom+(2*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
               suspected.push_back(id_test.at(j).ID);
@@ -260,14 +260,13 @@ int Node::inGraylist(vector<char> subset)
   return ans;
 }
 /*Phase 2 : PoW*/
-vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
+void Node::genPoW(vector<char> subset,vector<char> rand_n)
 {
   int i;
   string number ="";
   string input="";
   string solution;
   int i_t,f_t,t_pow;
-  vector<vector <char>> solutions
   for(i=0;i<rand_n.size();i++)
   {
     number = number + rand_n.at(i);
@@ -282,11 +281,7 @@ vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
     cout<<"mined time"<<t_pow<<endl;
     this->pow_t.push_back(t_pow);
     this->pow_sol.push_back(solution);
-    vector<char> s (solution.begin(),solution.end());
-    //Convert solution in vector<char> format
-    solutions.push_back(s);
   }
-  return solutions;
 }
 string Node::ProofOfWork(string input,int dif)
 {

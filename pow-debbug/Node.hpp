@@ -14,7 +14,7 @@
 #include <math.h>
 #include<iostream>
 #include <time.h>
-#include "SHA256.hpp"
+#include "sha256.hpp"
 
 using namespace std;
 
@@ -69,7 +69,7 @@ public:
     void removesubset();
     int inGraylist(vector<char> subset);
     /*Phase 2 : PoW*/
-    vector<vector <char>> genPoW(vector<char> subset,vector<char> rand_n);
+    void genPoW(vector<char> subset,vector<char> rand_n);
     string ProofOfWork(string input,int dif);
     string toHash(string input,string lhash);
     string GenerateTarget(int difficulty);
