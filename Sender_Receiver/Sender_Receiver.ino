@@ -87,7 +87,6 @@ void onReceive(int packetSize)
     */
     incoming += (char) LoRa.read();
   }
-<<<<<<< HEAD
   storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
   isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
   if(isgl==1) // Si se genero la lista gris entonces se genera PoW
@@ -98,14 +97,14 @@ void onReceive(int packetSize)
   {
     type = 0x00;
   }
-=======
+
   //storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
   //isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
   //if(isgl==1) // Si se genero la lista gris entonces se genera PoW
     //{
       //GL_pow(); // Genera PoW
     //}
->>>>>>> master
+
   //Unpack()
   //Serial.println("-----------------------");
   //Serial.println("**");
