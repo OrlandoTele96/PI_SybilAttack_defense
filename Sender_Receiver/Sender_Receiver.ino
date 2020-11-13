@@ -103,7 +103,7 @@ void onReceive(int packetSize)
   }
   storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
   isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
-  Unpack();
+  Unpack(type);
 }
 
 void Unpack(unsigned char type)
