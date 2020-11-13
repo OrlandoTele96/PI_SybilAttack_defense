@@ -56,5 +56,6 @@ int main()
     }
     cout<<""<<endl;
   }
+  rand.insert(0,'2');
   return 0;
 }

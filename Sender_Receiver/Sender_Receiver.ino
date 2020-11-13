@@ -189,6 +189,8 @@ void GL_pow()
     gl = n.getGrayList();
     PrintGrayList(gl); // Solamente imprime la lista gris
     tam =gl.size();
+    int rnd;
+    String rn;
     vector<char> rand_n = {'1','2','3','4'};
     vector<vector <char>> sol;
     unsigned char type = 0x01;
@@ -196,6 +198,13 @@ void GL_pow()
     {
       for(i=0;i<tam;i++) // Recorremos la lista gris y generamos una Pow para cada subconjunto
       {
+        /*Generating random number*/
+          rnd = random(1000);
+          rn = String(rnd);
+          rand_n.push_back(rn.charAt(0));//insert(0,)
+          rand_n.push_back(rn.charAt(1));
+          rand_n.push_back(rn.charAt(2));
+          rand_n.push_back(rn.charAt(3));
           //genPoW
           sol=n.genPoW(gl[i],rand_n);
           Serial.println("PoW generated : "+String(i));
