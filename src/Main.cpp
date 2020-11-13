@@ -22,7 +22,7 @@ int main()
   int j,k;
   int ans;
   int siz;
-  vector<vector<char>> gl;
+  vector<vector<char>> gl,solutions;
   vector<char> subset;
   subset.push_back('1');
   subset.push_back('2');
@@ -44,13 +44,17 @@ int main()
   }
 
   vector<char> rand = {'1','2','2','3'};
-  n.genPoW(subset,rand);
-  string st = "Te amo mucho mucho mucho mucho mucho mucho maaaaas <3";
-  vector<char> s (st.begin(),st.end());
-  for (const char &c:s)
+  solutions = n.genPoW(subset,rand);
+  for (i=0;i<solutions.size();i++)
   {
-    cout<<c;
+    cout<<"# solution : "<<i<<endl;
+    cout<<"solution size : "<<solutions.at(i).size()<<endl;
+    for (j=0;j<solutions.at(i).size();j++)
+    {
+      cout<<solutions.at(i).at(j);
+
+    }
+    cout<<""<<endl;
   }
-  cout<<""<<endl;
   return 0;
 }

@@ -267,7 +267,7 @@ vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
   string input="";
   string solution;
   int i_t,f_t,t_pow;
-  vector<vector <char>> solutions
+  vector<vector <char>> solutions;
   for(i=0;i<rand_n.size();i++)
   {
     number = number + rand_n.at(i);
@@ -302,7 +302,7 @@ string Node::ProofOfWork(string input,int dif)
     to_hash = toHash(to_hash,hash);
   }while(hash.substr(0,dif)!=target);
   //cout<<"Mined"<<endl;
-  return solution;
+  return hash;
 }
 string Node::toHash(string input,string lhash)
 {

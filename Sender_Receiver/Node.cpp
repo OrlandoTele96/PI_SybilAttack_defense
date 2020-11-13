@@ -12,11 +12,15 @@
 */
 #include "Node.hpp"
 /*------------------------------Constructors----------------------------------*/
-Node::Node(unsigned char Id,unsigned char tm):id(Id),type(tm)
+Node::Node() : SHA256()
+{
+
+}
+Node::Node(unsigned char Id,unsigned char tm):id(Id),type(tm),SHA256()
 {
   //
 }
-Node::Node(const Node &n)
+Node::Node(const Node &n) : SHA256()
 {
   this->id = n.id;
   this->type = n.type;
@@ -52,6 +56,10 @@ void Node::setPayload(vector<char> p)
 }
 void Node::clearhist(){
   this->Hist.clear();
+}
+void Node::setGrayList(vector<vector <char>> gl)
+{
+  this->graylist = gl;
 }
 /*-----------------------------Queue function---------------------------------*/
 queue Node::create(unsigned char id)
@@ -170,10 +178,10 @@ int Node::Discard()
         this->Hist.at(i).prom = sump/10;
         for (j=0;j<Hist.at(i).end;j++)
         {
-          sumdesv=sumdesv+(this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom)*(this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom);
+          sumdesv= sumdesv + ((this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom)*(this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom));
         }
         var = sumdesv/10;
-        this->Hist.at(i).desv = sqrt(var);;
+        this->Hist.at(i).desv = sqrt(var);
         id_test.push_back(this->Hist.at(i));
       }
     }
@@ -196,7 +204,11 @@ int Node::Discard()
         }
         if(suspected.size()>0){
           suspected.push_back(id_test.at(i).ID);
-          this->graylist.push_back(suspected);
+          if(inGraylist(suspected)!=1)
+          {
+            this->graylist.push_back(suspected);
+          }
+
         }
 
       }
@@ -213,4 +225,101 @@ int Node::Discard()
 void Node::removesubset()
 {
   this->graylist.clear();
+}
+int Node::inGraylist(vector<char> subset)
+{
+  /*This function return 1 if a subset is already in graylist,
+  return 0 if it is not in graylist*/
+  int ans =0;
+  int i=0;
+  int j=0;
+  int k =0;
+  int counter;
+  for (i=0;i<this->graylist.size();i++)
+  {
+      if(this->graylist.at(i).size()==subset.size())
+      {
+        counter =0;
+        for (j=0;j<subset.size();j++)
+        {
+          for (k=0;k<this->graylist.at(i).size();k++)
+          {
+            if(subset.at(j)==this->graylist.at(i).at(k))
+            {
+              counter ++;
+            }
+          }
+        }
+        if(counter==subset.size())
+        {
+          //cout<<counter<<endl;
+          ans =1;
+        }
+      }
+  }
+  return ans;
+}
+/*Phase 2 : PoW*/
+vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
+{
+  int i;
+  string number ="";
+  string input="";
+  string solution;
+  int i_t,f_t,t_pow;
+  vector<vector <char>> solutions;
+  for(i=0;i<rand_n.size();i++)
+  {
+    number = number + rand_n.at(i);
+  }
+  for (i=0;i<subset.size();i++)
+  {
+    input = number + subset.at(i);
+    i_t = clock();
+    solution=ProofOfWork(input,3);
+    f_t = clock();
+    t_pow = f_t-i_t;
+    //cout<<"mined time"<<t_pow<<endl;
+    this->pow_t.push_back(t_pow);
+    this->pow_sol.push_back(solution);
+    vector<char> s (solution.begin(),solution.end());
+    //Convert solution in vector<char> format
+    solutions.push_back(s);
+  }
+  return solutions;
+}
+string Node::ProofOfWork(string input,int dif)
+{
+  string to_hash;
+  string target;
+  string hash="";
+  //string solution;
+  to_hash = toHash(input,hash);
+  target = GenerateTarget(dif);
+  do
+  {
+    hash = sha256(to_hash);
+    to_hash = toHash(to_hash,hash);
+  }while(hash.substr(0,dif)!=target);
+  //cout<<"Mined"<<endl;
+  return hash;
+}
+string Node::toHash(string input,string lhash)
+{
+  string to_hash;
+  string key = "#Telecom123";
+  to_hash = input+ lhash.substr(0,5);
+  return to_hash;
+}
+string Node::GenerateTarget(int difficulty)
+{
+  char ctos[difficulty+1];
+  int i =0;
+  for (i=0;i<difficulty;i++)
+  {
+    ctos[i]='0';
+  }
+  ctos[difficulty]='\0';
+  string str(ctos);
+  return str;
 }

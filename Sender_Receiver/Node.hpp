@@ -2,20 +2,19 @@
 //  Node.hpp
 //  PI_SybilAttack_defense
 //
-//  Created by <Jorge O. Gonzalez> on 05/09/2020.
+//  Created by <author> on 05/09/2020.
 //
 //
-/*
---------------------------------------------------------------------------------
-                            Class Node Definition
---------------------------------------------------------------------------------
-*/
+
 #ifndef Node_hpp
 #define Node_hpp
 
 #include <stdio.h>
 #include <vector>
 #include <math.h>
+#include<iostream>
+#include <time.h>
+#include "SHA256.hpp"
 
 using namespace std;
 
@@ -31,7 +30,7 @@ struct data
   int desv=0;
 };
 typedef struct data queue;
-class Node {
+class Node:public SHA256 {
 private:
   unsigned char id = 0x00;  //id by default
   unsigned char type = 0x00; // message type by default
@@ -39,9 +38,11 @@ private:
   vector<queue> Hist;
   vector<vector<char>> graylist;
   int r;
+  vector<int> pow_t;
+  vector<string> pow_sol;
 public:
     /*Constructor*/
-    Node()=default;
+    Node();
     Node (unsigned char Id,unsigned char tm);
     Node (const Node &n);
     /*Getters & Setters*/
@@ -53,6 +54,7 @@ public:
     void setTm(unsigned char tm);
     void setPayload(vector<char> p);
     void clearhist();
+    void setGrayList(vector<vector <char>> gl);
     /*Queue function*/
     queue create(unsigned char id);
     /*RSSI Storage*/
@@ -65,5 +67,11 @@ public:
     /*Phase 1: RSSI*/
     int Discard();
     void removesubset();
+    int inGraylist(vector<char> subset);
+    /*Phase 2 : PoW*/
+    vector<vector <char>> genPoW(vector<char> subset,vector<char> rand_n);
+    string ProofOfWork(string input,int dif);
+    string toHash(string input,string lhash);
+    string GenerateTarget(int difficulty);
 };
 #endif /* Node_hpp */
