@@ -10,7 +10,8 @@
 long lastSendTime = 0;        // last send time
 int interval = 2000;
 Node n;
-unsigned char id = '1'; //cambiar por cualquier ID
+vector<char> payload{'1','2'};
+unsigned char id = '2'; //cambiar por cualquier ID
 unsigned char type = 0x00;
 int isgl=0;
 int counter=0;
@@ -31,7 +32,7 @@ void loop() {
   colisiones en la transmision de paquetes
   */
   unsigned char dst;
-  vector<char> payload{'1','2'};
+
   if (millis() - lastSendTime > interval)
   {
     if(isgl==1) // Si se genero la lista gris entonces se genera PoW
@@ -64,8 +65,8 @@ void sendMessage(Node n)
   Tipo 4 : mensaje de consenso
   */
   int i=0;
-  vector<char> payload;
-  payload = n.getPayload();
+  //vector<char> payload;
+  //payload = n.getPayload();
   LoRa.beginPacket();
   /*ID src*/
   LoRa.write(n.getID());
@@ -78,6 +79,7 @@ void sendMessage(Node n)
     LoRa.print(payload.at(i));
   }
   LoRa.endPacket();
+  payload.clear();
   counter ++;
   //Serial.println("Message was sent!");
 }
@@ -93,7 +95,7 @@ void onReceive(int packetSize)
   String incoming="";
   int rssi = (int )LoRa.packetRssi(); // Obtiene rssi del mensaje
   Serial.println("Received from : "+String(IDE));
-  Serial.println("RSSI: "+String(rssi));
+  //Serial.println("RSSI: "+String(rssi));
   while(LoRa.available())
   {
     /*
@@ -111,7 +113,7 @@ void Unpack(unsigned char type)
   /*Desempaqueta mensajes*/
   if(type ==0x00)
   {
-    Serial.println("Message 0 received");
+    //Serial.println("Message 0 received");
   }
   if(type ==0x01)
   {
@@ -119,16 +121,17 @@ void Unpack(unsigned char type)
   }
 }
 
-void Pack(unsigned char type_m,unsigned char id_dest,vector<char> payload)
+void Pack(unsigned char type_m,unsigned char id_dest,vector<char> pa)
 {
   if(type_m ==0x00)
   {
-    Serial.println("Packing message for temperature");
+    //Serial.println("Packing message for temperature");
+    payload.push_back('1');
   }
   if(type_m == 0x01)
   {
     Serial.println("Packing message for PoW solicitude");
-    
+
   }
   if (type_m == 0x02)
   {
@@ -144,7 +147,7 @@ void Pack(unsigned char type_m,unsigned char id_dest,vector<char> payload)
   }
   n.setTm(type_m);
   //n.setIDdst(id_dest);
-  n.setPayload(payload);
+  //n.setPayload(payload);
 }
 
 void storageRSSI(char IDE, char type, int rssi)
@@ -187,11 +190,11 @@ void GL_pow()
     int i=0;
     int tam;
     gl = n.getGrayList();
-    PrintGrayList(gl); // Solamente imprime la lista gris
+    //PrintGrayList(gl); // Solamente imprime la lista gris
     tam =gl.size();
     int rnd;
     String rn;
-    vector<char> rand_n = {'1','2','3','4'};
+    vector<char> rand_n;
     vector<vector <char>> sol;
     unsigned char type = 0x01;
     if(tam>0)//primero nos aseguramos que exista la lista gris o que haya almenos un subconjunto
@@ -199,21 +202,24 @@ void GL_pow()
       for(i=0;i<tam;i++) // Recorremos la lista gris y generamos una Pow para cada subconjunto
       {
         /*Generating random number*/
-          rnd = random(1000);
+          rnd = random(1000,2000);
           rn = String(rnd);
+          //Serial.println(rn);
           rand_n.push_back(rn.charAt(0));//insert(0,)
           rand_n.push_back(rn.charAt(1));
           rand_n.push_back(rn.charAt(2));
           rand_n.push_back(rn.charAt(3));
           //genPoW
           sol=n.genPoW(gl[i],rand_n);
-          Serial.println("PoW generated : "+String(i));
+
+          //Serial.println("PoW generated : "+String(i));
           //packtomsg
           MakePayload(gl[i],rand_n);
           Pack(type,0x00,n.getPayload());
           //sending
-          Serial.println("Sending a PoW");
+          //Serial.println("Sending a PoW");
           sendMessage(n);
+          rand_n.clear();
       }
 
       n.removesubset(); // Elimina los subconjuntos que ya fueron generados para Pow
@@ -222,10 +228,19 @@ void GL_pow()
 
 void MakePayload(vector<char> ID,vector<char> randnum)
 {
-  vector<char> payload;
-  /*Add payload :  
-  [+]   4 bytes : rand_num 
+  //vector<char> payload;
+  int i;
+  /*Add payload :
+  [+]   4 bytes : rand_num
   [+]   n bytes : IDs*/
+  for(i=0;i<ID.size();i++)
+  {
+    payload.push_back(ID.at(i));
+  }
+  payload.push_back(randnum.at(0));
+  payload.push_back(randnum.at(1));
+  payload.push_back(randnum.at(2));
+  payload.push_back(randnum.at(3));
   n.setPayload(payload);
 }
 

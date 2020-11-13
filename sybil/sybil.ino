@@ -1,10 +1,9 @@
-
 #include "heltec.h"
 #include "Node.hpp"
 
 #define BAND    433E6
 long lastSendTime = 0;        // last send time
-int interval = 500;
+int interval = 2000;
 Node n;
 unsigned char id = 0x00;
 unsigned char sybil[4]={'5','6','7','8'};
@@ -35,7 +34,7 @@ void loop() {
         sendMessage(n);
       //}
       lastSendTime = millis();
-      interval = random(500);
+      interval = random(2000);
       LoRa.receive();
     }
   }
@@ -83,7 +82,7 @@ void onReceive(int packetSize)
   if (packetSize == 0) return;
   Serial.print("Message Received");
   vector<vector<char>> gl;
-  unsigned char IDE = LoRa.read();
+  char IDE = LoRa.read();
   unsigned char type = LoRa.read();
   String incoming="";
   int rssi = LoRa.packetRssi();
@@ -93,6 +92,7 @@ void onReceive(int packetSize)
   {
     incoming += (char) LoRa.read();
   }
+  Serial.println(incoming);
   /*
   int a =n.IsinHist(IDE);
   if (a==1)

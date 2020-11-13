@@ -14,7 +14,7 @@
 #include <math.h>
 #include<iostream>
 #include <time.h>
-#include "SHA256.hpp"
+#include "sha256.hpp"
 
 using namespace std;
 
