@@ -105,19 +105,36 @@ void onReceive(int packetSize)
   }
   storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
   isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
-  Unpack(type);
+  Unpack(type,'0',incoming);
 }
 
-void Unpack(unsigned char type)
+void Unpack(unsigned char type,char dst,String payload)
 {
   /*Desempaqueta mensajes*/
+  vector<char> rnum,i;
+  vector<char> id_dst;
+  int n_id_dst;
+  int pay_len;
   if(type ==0x00)
   {
-    //Serial.println("Message 0 received");
+    Serial.println("Message 0 received");
+    Serial.println("Do nothing");
   }
   if(type ==0x01)
   {
     Serial.println("Message 1 received");
+    Serial.prinln(payload);
+    pay_len = payload.length();
+    rnum.push_back(payload.charAt(pay_len-4));
+    rnum.push_back(payload.charAt(pay_len-3));
+    rnum.push_back(payload.charAt(pay_len-2));
+    rnum.push_back(payload.charAt(pay_len-1));
+    n_id_dst = pay_len-4;
+    for(i=0;i<n_id_dst;i++)
+    {
+      
+    }
+    Serial.println("A pow must be solved");
   }
 }
 
