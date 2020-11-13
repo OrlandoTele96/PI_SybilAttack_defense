@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 2000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '2'; //cambiar por cualquier ID
+unsigned char id = '1'; //cambiar por cualquier ID
 unsigned char type = 0x00;
 int isgl=0;
 int counter=0;
@@ -111,9 +111,9 @@ void onReceive(int packetSize)
 void Unpack(unsigned char type,char dst,String payload)
 {
   /*Desempaqueta mensajes*/
-  vector<char> rnum,i;
+  vector<char> rnum;
   vector<char> id_dst;
-  int n_id_dst;
+  int n_id_dst,i;
   int pay_len;
   if(type ==0x00)
   {
@@ -123,7 +123,7 @@ void Unpack(unsigned char type,char dst,String payload)
   if(type ==0x01)
   {
     Serial.println("Message 1 received");
-    Serial.prinln(payload);
+    Serial.println(payload);
     pay_len = payload.length();
     rnum.push_back(payload.charAt(pay_len-4));
     rnum.push_back(payload.charAt(pay_len-3));
@@ -132,9 +132,13 @@ void Unpack(unsigned char type,char dst,String payload)
     n_id_dst = pay_len-4;
     for(i=0;i<n_id_dst;i++)
     {
-      
+      if(payload.charAt(i)==n.getID())
+      {
+        Serial.println("A pow must be solved");
+        //PoW
+      }
     }
-    Serial.println("A pow must be solved");
+    
   }
 }
 
