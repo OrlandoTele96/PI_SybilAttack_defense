@@ -136,6 +136,7 @@ void Unpack(unsigned char type,char dst,String payload)
       {
         Serial.println("A pow must be solved");
         //PoW
+        n.solvePoW(rnum);
       }
     }
     
