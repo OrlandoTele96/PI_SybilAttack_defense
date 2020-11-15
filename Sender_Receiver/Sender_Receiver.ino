@@ -115,6 +115,8 @@ void Unpack(unsigned char type,char dst,String payload)
   vector<char> id_dst;
   int n_id_dst,i;
   int pay_len;
+  vector<char> solution;
+  int pow_t;
   if(type ==0x00)
   {
     Serial.println("Message 0 received");
@@ -136,7 +138,9 @@ void Unpack(unsigned char type,char dst,String payload)
       {
         Serial.println("A pow must be solved");
         //PoW
-        n.solvePoW(rnum);
+        solution = n.solvePoW(rnum);
+        //pow_t = n.getPoW_timed();
+        //Send reply
       }
     }
     

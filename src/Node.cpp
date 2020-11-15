@@ -348,7 +348,6 @@ vector<char> Node::solvePoW(vector<char> rand_n)
 {
   string number,input,sol;
   char tested;
-  int t_i,t_f,total;
   tested = getID();
   number = randNumAdapter(rand_n);
   input = number + tested;
