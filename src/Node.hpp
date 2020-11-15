@@ -34,6 +34,7 @@ class Node:public SHA256 {
 private:
   unsigned char id = 0x00;  //id by default
   unsigned char type = 0x00; // message type by default
+  unsigned char id_dst;
   vector<char> payload;
   vector<queue> Hist;
   vector<vector<char>> graylist;
@@ -50,11 +51,13 @@ public:
     unsigned char getTm()const;
     vector<char> getPayload()const;
     vector<vector<char>> getGrayList()const;
+    unsigned char getIDdst()const;
     void setID(unsigned char id);
     void setTm(unsigned char tm);
     void setPayload(vector<char> p);
     void clearhist();
     void setGrayList(vector<vector <char>> gl);
+    void setIDdst(unsigned char dst);
     /*Queue function*/
     queue create(unsigned char id);
     /*RSSI Storage*/
@@ -73,5 +76,7 @@ public:
     string ProofOfWork(string input,int dif);
     string toHash(string input,string lhash);
     string GenerateTarget(int difficulty);
+    string randNumAdapter(vector<char> randnum);
+    vector<char> solvePoW(vector<char> rand_n);
 };
 #endif /* Node_hpp */

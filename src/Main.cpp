@@ -45,7 +45,7 @@ int main()
 
   vector<char> rand = {'1','2','2','3'};
   solutions = n.genPoW(subset,rand);
-  for (i=0;i<solutions.size();i++)
+  /*for (i=0;i<solutions.size();i++)
   {
     cout<<"# solution : "<<i<<endl;
     cout<<"solution size : "<<solutions.at(i).size()<<endl;
@@ -55,6 +55,8 @@ int main()
 
     }
     cout<<""<<endl;
-  }
+  }*/
+  n.setID('1');
+  n.solvePoW(rand);
   return 0;
 }

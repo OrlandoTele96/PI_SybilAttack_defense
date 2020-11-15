@@ -42,6 +42,10 @@ vector<vector<char>> Node::getGrayList()const
 {
   return this->graylist;
 }
+unsigned char Node::getIDdst()const
+{
+  return this->id_dst;
+}
 void Node::setID(unsigned char id)
 {
   this->id = id;
@@ -60,6 +64,10 @@ void Node::clearhist(){
 void Node::setGrayList(vector<vector <char>> gl)
 {
   this->graylist = gl;
+}
+void Node::setIDdst(unsigned char dst)
+{
+  this->id_dst = dst;
 }
 /*-----------------------------Queue function---------------------------------*/
 queue Node::create(unsigned char id)
@@ -259,7 +267,7 @@ int Node::inGraylist(vector<char> subset)
   }
   return ans;
 }
-/*Phase 2 : PoW*/
+/*---------------------------Phase 2 : PoW------------------------------------*/
 vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
 {
   int i;
@@ -268,10 +276,11 @@ vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
   string solution;
   int i_t,f_t,t_pow;
   vector<vector <char>> solutions;
-  for(i=0;i<rand_n.size();i++)
+  /*for(i=0;i<rand_n.size();i++)
   {
     number = number + rand_n.at(i);
-  }
+  }*/
+  number = randNumAdapter(rand_n);
   for (i=0;i<subset.size();i++)
   {
     input = number + subset.at(i);
@@ -322,4 +331,28 @@ string Node::GenerateTarget(int difficulty)
   ctos[difficulty]='\0';
   string str(ctos);
   return str;
+}
+
+string Node::randNumAdapter(vector<char> randnum)
+{
+  string number = "";
+  int i;
+  for(i=0;i<randnum.size();i++)
+  {
+    number = number + randnum.at(i);
+  }
+  return number;
+}
+
+vector<char> Node::solvePoW(vector<char> rand_n)
+{
+  string number,input,sol;
+  char tested;
+  int t_i,t_f,total;
+  tested = getID();
+  number = randNumAdapter(rand_n);
+  input = number + tested;
+  sol = ProofOfWork(input,2);
+  vector<char> s (sol.begin(),sol.end());
+  return s;
 }
