@@ -352,6 +352,7 @@ vector<char> Node::solvePoW(vector<char> rand_n)
   number = randNumAdapter(rand_n);
   input = number + tested;
   sol = ProofOfWork(input,2);
+  sol =sol.substr(0,32);
   vector<char> s (sol.begin(),sol.end());
   return s;
 }
