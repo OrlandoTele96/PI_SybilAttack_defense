@@ -353,7 +353,7 @@ vector<char> Node::solvePoW(vector<char> rand_n)
   number = randNumAdapter(rand_n);
   input = number + tested;
   sol = ProofOfWork(input,2);
-  //cout<<"solution\t"<<sol<<endl;
+  sol =sol.substr(0,31);
   vector<char> s (sol.begin(),sol.end());
   return s;
 }

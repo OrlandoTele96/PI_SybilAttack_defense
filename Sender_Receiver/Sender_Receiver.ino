@@ -73,6 +73,7 @@ void sendMessage(Node n)
   /*Type message*/
   LoRa.write(n.getTm());
   /*ID dst*/
+  LoRa.write(n.getIDdst());
   /*Payload*/
   for (i=0;i<payload.size();i++)
   {
@@ -90,8 +91,17 @@ void onReceive(int packetSize)
   if (packetSize == 0) return;
   //Serial.println("**");
   //Serial.println("-----------Receiving-----");
+  char dst;
    char IDE = (char)LoRa.read(); // Recibe ID
   unsigned char type = LoRa.read(); // Recibe tipo de mensaje
+  if(type == 0x02)
+  {
+    dst = (char)LoRa.read();
+  }
+  else
+  {
+    dst = '0';
+  }
   String incoming="";
   int rssi = (int )LoRa.packetRssi(); // Obtiene rssi del mensaje
   Serial.println("Received from : "+String(IDE));
@@ -105,10 +115,10 @@ void onReceive(int packetSize)
   }
   storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
   isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
-  Unpack(type,'0',incoming);
+  Unpack(type,dst,incoming,IDE);
 }
 
-void Unpack(unsigned char type,char dst,String payload)
+void Unpack(unsigned char type,char dst,String payload,char src)
 {
   /*Desempaqueta mensajes*/
   vector<char> rnum;
@@ -141,9 +151,17 @@ void Unpack(unsigned char type,char dst,String payload)
         solution = n.solvePoW(rnum);
         //pow_t = n.getPoW_timed();
         //Send reply
+        Pack(0x02,src,solution);
+        sendMessage(n);
       }
     }
-    
+  }
+  if(type==0x02)
+  {
+    if(dst == n.getID())
+    {
+      Serial.print("Node "+String(src)+"has replied a Pow");
+    }  
   }
 }
 
@@ -162,6 +180,10 @@ void Pack(unsigned char type_m,unsigned char id_dest,vector<char> pa)
   if (type_m == 0x02)
   {
     Serial.println("Packing message for PoW solicitude confirmation");
+    //set dst
+    //set payload
+    payload = pa;
+    n.setIDdst(id_dest);
   }
   if (type_m == 0x03)
   {
