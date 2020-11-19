@@ -12,9 +12,9 @@ int interval = 2000;
 Node n;
 vector<char> payload{'1','2'};
 unsigned char id = '1'; //cambiar por cualquier ID
-unsigned char type = 0x00;
+unsigned char dst='d';//default
+unsigned char type = 0x00;//Default generic message
 int isgl=0;
-int counter=0;
 int isPoW=0;
 vector<char> rnum;
 void setup() {
@@ -23,8 +23,7 @@ void setup() {
     LoRa.onReceive(onReceive);//Interrupcion para recepcion
     LoRa.receive();
     Serial.println("Heltec.LoRa init succeeded.");
-    //Configuramos la clase nodo
-    n.setID(id);
+    n.setID(id);//Configuramos la clase nodo
 }
 
 void loop() {
@@ -33,25 +32,15 @@ void loop() {
   Solo ejecutamos el main cada intervalo de tiempo aleatorio para evitar
   colisiones en la transmision de paquetes
   */
-  char dst;
+  unsigned char dst;
   vector<char> solution;
   int j;
-        type = 0x00;
-      //dst = '2';
   if (millis() - lastSendTime > interval)
   {
-    if (isPoW==1)
+    /*if (isPoW==1)
     {
       Serial.println("Solving a PoW");
-      /*Serial.println(rnum.at(0));
-      Serial.println(rnum.at(1));
-      Serial.println(rnum.at(2));
-      Serial.println(rnum.at(3));*/
       solution = n.solvePoW(rnum);
-      /*for (j=0;j<solution.size();j++)
-      {
-        Serial.println(solution.at(j));
-      }*/
       //pow_t = n.getPoW_timed();
       //Send reply
       Pack(0x02,dst,solution);
@@ -66,6 +55,14 @@ void loop() {
     else
     {
       //n.setTm(type);
+      Pack(type,dst,payload);
+      sendMessage(n);
+    }*/
+    if(isgl==0 && isPoW==0)
+    {
+      //Send a temperature
+      type=0x00;
+      dst = 'd';
       Pack(type,dst,payload);
       sendMessage(n);
     }
@@ -87,22 +84,13 @@ void sendMessage(Node n)
   Tipo 4 : mensaje de consenso
   */
   int i=0;
-  //vector<char> payload;
-  //payload = n.getPayload();
   LoRa.beginPacket();
   /*ID src*/
   LoRa.write(n.getID());
   /*Type message*/
   LoRa.write(n.getTm());
   /*ID dst*/
-  if (n.getTm()==0x02)
-  {
-    LoRa.write('2');
-  }
-  else
-  {
-    LoRa.write(n.getIDdst());
-  }
+  LoRa.write(n.getIDdst());
   /*Payload*/
   for (i=0;i<payload.size();i++)
   {
@@ -110,8 +98,6 @@ void sendMessage(Node n)
   }
   LoRa.endPacket();
   payload.clear();
-  counter ++;
-  //Serial.println("Message was sent!");
 }
 
 
@@ -120,19 +106,17 @@ void onReceive(int packetSize)
   if (packetSize == 0) return;
   //Serial.println("**");
   //Serial.println("-----------Receiving-----");
-  char dst;
-   char IDE = (char)LoRa.read(); // Recibe ID
+  /*char dst;
+  /*ID src*/
+  char IDE = (char)LoRa.read(); // Recibe ID
+  Serial.println("Received from : "+String(IDE));
+  /*Type message*/
   unsigned char type = LoRa.read(); // Recibe tipo de mensaje
-    dst = (char)LoRa.read();
-    Serial.println(dst);
-  /*else
-  {
-    dst = '0';
-  }*/
+  /*ID dst*/
+  char dst = (char)LoRa.read();
+  Serial.println("Destination ID : "+String(dst));
+  /*Payload*/
   String incoming="";
-  int rssi = (int )LoRa.packetRssi(); // Obtiene rssi del mensaje
-  //Serial.println("Received from : "+String(IDE));
-  //Serial.println("RSSI: "+String(rssi));
   while(LoRa.available())
   {
     /*
@@ -140,8 +124,14 @@ void onReceive(int packetSize)
     */
     incoming += (char) LoRa.read();
   }
-  storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
-  isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
+  /*Reading RSSI*/
+  int rssi = (int )LoRa.packetRssi(); // Obtiene rssi del mensaje
+  Serial.println("RSSI: "+String(rssi));
+  /*Storage RSSI*/
+  //storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
+  /*Phase 1*/
+  //isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
+  /*Unpack content*/
   Unpack(type,dst,incoming,IDE);
 }
 
@@ -156,41 +146,28 @@ void Unpack(unsigned char type,char dst,String payload,char src)
   int pow_t;
   if(type ==0x00)
   {
-    //Serial.println("Message 0 received");
-    //Serial.println("Do nothing");
+    Serial.println("Message 0 received");
   }
   if(type ==0x01)
   {
-    //Serial.println("Message 1 received");
-    //Serial.println(payload);
+    Serial.println("Message 1 received");
     pay_len = payload.length();
     n_id_dst = pay_len-4;
     for(i=0;i<n_id_dst;i++)
     {
       if(payload.charAt(i)==n.getID())
       {
-        //Serial.println("A pow must be solved");
-        //PoW
         isPoW =1;
         rnum.push_back(payload.charAt(pay_len-4));
         rnum.push_back(payload.charAt(pay_len-3));
         rnum.push_back(payload.charAt(pay_len-2));
         rnum.push_back(payload.charAt(pay_len-1));
-        /*solution = n.solvePoW(rnum);
-        for (j=0;j<solution.size();j++)
-        {
-          Serial.println(solution.at(j));
-        }
-        //pow_t = n.getPoW_timed();
-        //Send reply
-        Pack(0x02,src,solution);
-        //sendMessage(n);*/
       }
     }
   }
   if(type==0x02)
   {
-    Serial.println("Reply"+String(dst));
+    Serial.println("Message 2 received");
     if(dst == n.getID())
     {
       Serial.print("Node "+String(src)+"has replied a Pow");
@@ -229,8 +206,8 @@ void Pack(unsigned char type_m,unsigned char id_dest,vector<char> pa)
     Serial.println("Packing message for consensus");
   }
   n.setTm(type_m);
-  //n.setIDdst(id_dest);
-  //n.setPayload(payload);
+  n.setIDdst(id_dest);
+  n.setPayload(payload);
 }
 
 void storageRSSI(char IDE, char type, int rssi)
