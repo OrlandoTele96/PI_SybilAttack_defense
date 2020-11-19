@@ -16,6 +16,7 @@ unsigned char dst='d';//default
 unsigned char type = 0x00;//Default generic message
 int isgl=0;
 int isPoW=0;
+int i_t,f_t;
 vector<char> rnum;
 void setup() {
   // Inicializamos LoRa
@@ -37,13 +38,18 @@ void loop() {
   int j;
   if (millis() - lastSendTime > interval)
   {
-    /*if (isPoW==1)
+    if (isPoW==1)
     {
       Serial.println("Solving a PoW");
+      i_t = millis();
       solution = n.solvePoW(rnum);
+      f_t = millis();
+      int total = (f_t-i_t);
+      Serial.println(String(total));
       //pow_t = n.getPoW_timed();
       //Send reply
-      Pack(0x02,dst,solution);
+      type=0x02;
+      Pack(type,dst,solution);
       sendMessage(n);
       rnum.clear();
       isPoW=0;
@@ -52,12 +58,6 @@ void loop() {
     {
       GL_pow(); // Genera PoW
     }
-    else
-    {
-      //n.setTm(type);
-      Pack(type,dst,payload);
-      sendMessage(n);
-    }*/
     if(isgl==0 && isPoW==0)
     {
       //Send a temperature
@@ -90,7 +90,7 @@ void sendMessage(Node n)
   /*Type message*/
   LoRa.write(n.getTm());
   /*ID dst*/
-  LoRa.write(n.getIDdst());
+  LoRa.write(dst);
   /*Payload*/
   for (i=0;i<payload.size();i++)
   {
@@ -128,14 +128,14 @@ void onReceive(int packetSize)
   int rssi = (int )LoRa.packetRssi(); // Obtiene rssi del mensaje
   Serial.println("RSSI: "+String(rssi));
   /*Storage RSSI*/
-  //storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
+  storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
   /*Phase 1*/
-  //isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
+  isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
   /*Unpack content*/
   Unpack(type,dst,incoming,IDE);
 }
 
-void Unpack(unsigned char type,char dst,String payload,char src)
+void Unpack(unsigned char type,char i_dst,String payload,char src)
 {
   /*Desempaqueta mensajes*/
   
@@ -162,15 +162,19 @@ void Unpack(unsigned char type,char dst,String payload,char src)
         rnum.push_back(payload.charAt(pay_len-3));
         rnum.push_back(payload.charAt(pay_len-2));
         rnum.push_back(payload.charAt(pay_len-1));
+        dst=src;
       }
     }
   }
   if(type==0x02)
   {
     Serial.println("Message 2 received");
-    if(dst == n.getID())
+    if(i_dst == n.getID())
     {
-      Serial.print("Node "+String(src)+"has replied a Pow");
+      Serial.println("Node "+String(src)+"\thas replied a Pow");
+      f_t = clock();
+      int total = f_t - i_t;
+      Serial.println("Timed at"+String(total));
     }  
   }
 }
@@ -256,7 +260,8 @@ void GL_pow()
     String rn;
     vector<char> rand_n;
     vector<vector <char>> sol;
-    unsigned char type = 0x01;
+    type=0x01;
+    dst ='d';
     if(tam>0)//primero nos aseguramos que exista la lista gris o que haya almenos un subconjunto
     {
       for(i=0;i<tam;i++) // Recorremos la lista gris y generamos una Pow para cada subconjunto
@@ -275,10 +280,12 @@ void GL_pow()
           //Serial.println("PoW generated : "+String(i));
           //packtomsg
           MakePayload(gl[i],rand_n);
-          Pack(type,0x00,n.getPayload());
+          Pack(type,dst,n.getPayload());
           //sending
           //Serial.println("Sending a PoW");
           sendMessage(n);
+          
+          //Serial.println("Time"+String(i_t));
           rand_n.clear();
       }
 
