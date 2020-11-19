@@ -202,8 +202,8 @@ int Node::Discard()
         {
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-(3*(id_test.at(i).desv));
-            sup =  id_test.at(i).prom+(3*(id_test.at(i).desv));
+            inf = id_test.at(i).prom-(2*(id_test.at(i).desv));
+            sup =  id_test.at(i).prom+(2*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
               suspected.push_back(id_test.at(j).ID);
