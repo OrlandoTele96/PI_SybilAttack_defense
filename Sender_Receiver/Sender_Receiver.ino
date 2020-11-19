@@ -15,6 +15,8 @@ unsigned char id = '1'; //cambiar por cualquier ID
 unsigned char type = 0x00;
 int isgl=0;
 int counter=0;
+int isPoW=0;
+vector<char> rnum;
 void setup() {
   // Inicializamos LoRa
     Heltec.begin(true, true, true, true , BAND);
@@ -31,18 +33,38 @@ void loop() {
   Solo ejecutamos el main cada intervalo de tiempo aleatorio para evitar
   colisiones en la transmision de paquetes
   */
-  unsigned char dst;
-
+  char dst;
+  vector<char> solution;
+  int j;
+        type = 0x00;
+      //dst = '2';
   if (millis() - lastSendTime > interval)
   {
+    if (isPoW==1)
+    {
+      Serial.println("Solving a PoW");
+      /*Serial.println(rnum.at(0));
+      Serial.println(rnum.at(1));
+      Serial.println(rnum.at(2));
+      Serial.println(rnum.at(3));*/
+      solution = n.solvePoW(rnum);
+      /*for (j=0;j<solution.size();j++)
+      {
+        Serial.println(solution.at(j));
+      }*/
+      //pow_t = n.getPoW_timed();
+      //Send reply
+      Pack(0x02,dst,solution);
+      sendMessage(n);
+      rnum.clear();
+      isPoW=0;
+    }
     if(isgl==1) // Si se genero la lista gris entonces se genera PoW
     {
       GL_pow(); // Genera PoW
     }
     else
     {
-      type = 0x00;
-      dst = 0x00;
       //n.setTm(type);
       Pack(type,dst,payload);
       sendMessage(n);
@@ -73,7 +95,14 @@ void sendMessage(Node n)
   /*Type message*/
   LoRa.write(n.getTm());
   /*ID dst*/
-  LoRa.write(n.getIDdst());
+  if (n.getTm()==0x02)
+  {
+    LoRa.write('2');
+  }
+  else
+  {
+    LoRa.write(n.getIDdst());
+  }
   /*Payload*/
   for (i=0;i<payload.size();i++)
   {
@@ -94,17 +123,15 @@ void onReceive(int packetSize)
   char dst;
    char IDE = (char)LoRa.read(); // Recibe ID
   unsigned char type = LoRa.read(); // Recibe tipo de mensaje
-  if(type == 0x02)
-  {
     dst = (char)LoRa.read();
-  }
-  else
+    Serial.println(dst);
+  /*else
   {
     dst = '0';
-  }
+  }*/
   String incoming="";
   int rssi = (int )LoRa.packetRssi(); // Obtiene rssi del mensaje
-  Serial.println("Received from : "+String(IDE));
+  //Serial.println("Received from : "+String(IDE));
   //Serial.println("RSSI: "+String(rssi));
   while(LoRa.available())
   {
@@ -121,43 +148,49 @@ void onReceive(int packetSize)
 void Unpack(unsigned char type,char dst,String payload,char src)
 {
   /*Desempaqueta mensajes*/
-  vector<char> rnum;
+  
   vector<char> id_dst;
-  int n_id_dst,i;
+  int n_id_dst,i,j;
   int pay_len;
   vector<char> solution;
   int pow_t;
   if(type ==0x00)
   {
-    Serial.println("Message 0 received");
-    Serial.println("Do nothing");
+    //Serial.println("Message 0 received");
+    //Serial.println("Do nothing");
   }
   if(type ==0x01)
   {
-    Serial.println("Message 1 received");
-    Serial.println(payload);
+    //Serial.println("Message 1 received");
+    //Serial.println(payload);
     pay_len = payload.length();
-    rnum.push_back(payload.charAt(pay_len-4));
-    rnum.push_back(payload.charAt(pay_len-3));
-    rnum.push_back(payload.charAt(pay_len-2));
-    rnum.push_back(payload.charAt(pay_len-1));
     n_id_dst = pay_len-4;
     for(i=0;i<n_id_dst;i++)
     {
       if(payload.charAt(i)==n.getID())
       {
-        Serial.println("A pow must be solved");
+        //Serial.println("A pow must be solved");
         //PoW
-        solution = n.solvePoW(rnum);
+        isPoW =1;
+        rnum.push_back(payload.charAt(pay_len-4));
+        rnum.push_back(payload.charAt(pay_len-3));
+        rnum.push_back(payload.charAt(pay_len-2));
+        rnum.push_back(payload.charAt(pay_len-1));
+        /*solution = n.solvePoW(rnum);
+        for (j=0;j<solution.size();j++)
+        {
+          Serial.println(solution.at(j));
+        }
         //pow_t = n.getPoW_timed();
         //Send reply
         Pack(0x02,src,solution);
-        sendMessage(n);
+        //sendMessage(n);*/
       }
     }
   }
   if(type==0x02)
   {
+    Serial.println("Reply"+String(dst));
     if(dst == n.getID())
     {
       Serial.print("Node "+String(src)+"has replied a Pow");
@@ -183,7 +216,9 @@ void Pack(unsigned char type_m,unsigned char id_dest,vector<char> pa)
     //set dst
     //set payload
     payload = pa;
+    Serial.println(id_dest);
     n.setIDdst(id_dest);
+    Serial.println(n.getIDdst());
   }
   if (type_m == 0x03)
   {
