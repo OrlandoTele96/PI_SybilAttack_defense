@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 2000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '1'; //cambiar por cualquier ID
+unsigned char id = '2'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default generic message
 int isgl=0;
@@ -40,14 +40,8 @@ void loop() {
   {
     if (isPoW==1)
     {
-      Serial.println("Solving a PoW");
-      i_t = millis();
+      //Serial.println("Solving a PoW");
       solution = n.solvePoW(rnum);
-      f_t = millis();
-      int total = (f_t-i_t);
-      Serial.println(String(total));
-      //pow_t = n.getPoW_timed();
-      //Send reply
       type=0x02;
       Pack(type,dst,solution);
       sendMessage(n);
@@ -109,12 +103,12 @@ void onReceive(int packetSize)
   /*char dst;
   /*ID src*/
   char IDE = (char)LoRa.read(); // Recibe ID
-  Serial.println("Received from : "+String(IDE));
+  //Serial.println("Received from : "+String(IDE));
   /*Type message*/
   unsigned char type = LoRa.read(); // Recibe tipo de mensaje
   /*ID dst*/
   char dst = (char)LoRa.read();
-  Serial.println("Destination ID : "+String(dst));
+  //Serial.println("Destination ID : "+String(dst));
   /*Payload*/
   String incoming="";
   while(LoRa.available())
@@ -126,7 +120,7 @@ void onReceive(int packetSize)
   }
   /*Reading RSSI*/
   int rssi = (int )LoRa.packetRssi(); // Obtiene rssi del mensaje
-  Serial.println("RSSI: "+String(rssi));
+  //Serial.println("RSSI: "+String(rssi));
   /*Storage RSSI*/
   storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
   /*Phase 1*/
@@ -197,9 +191,9 @@ void Pack(unsigned char type_m,unsigned char id_dest,vector<char> pa)
     //set dst
     //set payload
     payload = pa;
-    Serial.println(id_dest);
+    //Serial.println(id_dest);
     n.setIDdst(id_dest);
-    Serial.println(n.getIDdst());
+    //Serial.println(n.getIDdst());
   }
   if (type_m == 0x03)
   {
@@ -284,8 +278,6 @@ void GL_pow()
           //sending
           //Serial.println("Sending a PoW");
           sendMessage(n);
-          
-          //Serial.println("Time"+String(i_t));
           rand_n.clear();
       }
 
