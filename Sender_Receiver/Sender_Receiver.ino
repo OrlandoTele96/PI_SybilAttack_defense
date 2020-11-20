@@ -17,6 +17,7 @@ unsigned char type = 0x00;//Default generic message
 int isgl=0;
 int isPoW=0;
 int i_t,f_t;
+int counter;
 vector<char> rnum;
 void setup() {
   // Inicializamos LoRa
@@ -36,8 +37,14 @@ void loop() {
   unsigned char dst;
   vector<char> solution;
   int j;
+  int T=10;// Threshold
   if (millis() - lastSendTime > interval)
   {
+    if(counter>=T)
+    {
+      //n.SybilDetection()
+      counter=0;
+    }
     if (isPoW==1)
     {
       //Serial.println("Solving a PoW");
@@ -129,7 +136,7 @@ void onReceive(int packetSize)
   Unpack(type,dst,incoming,IDE);
 }
 
-void Unpack(unsigned char type,char i_dst,String payload,char src)
+void Unpack(unsigned char type,char i_dst,String pay,char src)
 {
   /*Desempaqueta mensajes*/
   
@@ -145,17 +152,17 @@ void Unpack(unsigned char type,char i_dst,String payload,char src)
   if(type ==0x01)
   {
     Serial.println("Message 1 received");
-    pay_len = payload.length();
+    pay_len = pay.length();
     n_id_dst = pay_len-4;
     for(i=0;i<n_id_dst;i++)
     {
-      if(payload.charAt(i)==n.getID())
+      if(pay.charAt(i)==n.getID())
       {
         isPoW =1;
-        rnum.push_back(payload.charAt(pay_len-4));
-        rnum.push_back(payload.charAt(pay_len-3));
-        rnum.push_back(payload.charAt(pay_len-2));
-        rnum.push_back(payload.charAt(pay_len-1));
+        rnum.push_back(pay.charAt(pay_len-4));
+        rnum.push_back(pay.charAt(pay_len-3));
+        rnum.push_back(pay.charAt(pay_len-2));
+        rnum.push_back(pay.charAt(pay_len-1));
         dst=src;
       }
     }
@@ -169,6 +176,14 @@ void Unpack(unsigned char type,char i_dst,String payload,char src)
       f_t = clock();
       int total = f_t - i_t;
       Serial.println("Timed at"+String(total));
+      String pow_s="";
+      for (i=0;i<pow_s.length();i++)
+      {
+        Serial.println(pow_s.charAt(i));
+        solution.push_back(pow_s.charAt(i));
+        //n.AddAnswer(solution);
+        //n.AddPowTime(total);
+      }
     }  
   }
 }
@@ -279,6 +294,7 @@ void GL_pow()
           //Serial.println("Sending a PoW");
           sendMessage(n);
           rand_n.clear();
+          counter++;
       }
 
       n.removesubset(); // Elimina los subconjuntos que ya fueron generados para Pow

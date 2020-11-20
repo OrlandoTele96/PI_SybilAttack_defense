@@ -43,6 +43,7 @@ private:
   vector<int> pow_ti;
   vector<string> pow_ans;
   vector<int> pow_tf;
+  vector<char> id_tested;
 public:
     /*Constructor*/
     Node();
@@ -80,9 +81,8 @@ public:
     string GenerateTarget(int difficulty);
     string randNumAdapter(vector<char> randnum);
     vector<char> solvePoW(vector<char> rand_n);
-    void AddAnswer(string ans);
+    void AddAnswer(vector<char> ans);
     void AddPowTime(int pow_t);
-    int getPoWsize();
-    int Detection(); 
+    int SybilDetection();
 };
 #endif /* Node_hpp */

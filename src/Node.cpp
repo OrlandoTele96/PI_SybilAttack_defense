@@ -285,8 +285,10 @@ vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
     f_t = clock();
     t_pow = f_t-i_t;
     //cout<<"mined time"<<t_pow<<endl;
+    solution=solution.substr(0,32);
     this->pow_ti.push_back(t_pow);
     this->pow.push_back(solution);
+    this->id_tested.push_back(subset.at(i));
     vector<char> s (solution.begin(),solution.end());
     //Convert solution in vector<char> format
     solutions.push_back(s);
@@ -351,4 +353,51 @@ vector<char> Node::solvePoW(vector<char> rand_n)
   sol =sol.substr(0,32);
   vector<char> s (sol.begin(),sol.end());
   return s;
+}
+void Node::AddAnswer(vector<char> ans)
+{
+  /*String adapter*/
+  int i;
+  string solution="";
+  for (i=0;i<ans.size();i++)
+  {
+    solution = solution+ans.at(i);
+  }
+  this->pow_ans.push_back(solution);
+}
+void Node::AddPowTime(int pow_t)
+{
+  this->pow_tf.push_back(pow_t);
+}
+int Node::SybilDetection()
+{
+  int thresh_t;
+  int i,j,k;
+  int inans;
+  int sup,inf;
+  for(i=0;i<this->pow.size();i++)
+  {
+    inans=0;
+    sup=this->pow_ti.at(i)+thresh_t;
+    inf=this->pow_ti.at(i)-thresh_t;
+    for (j=0;j<this->pow_ans.size();j++)
+    {
+      if(pow.at(i)==pow_ans.at(j))
+      {
+        //check time
+
+        cout<<"ID :"<<id_tested.at(i)<<"answered"<<endl;
+        if(pow_tf.at(j)>=inf && pow_tf.at(j)<=sup)
+        {
+          inans=1;
+        }
+      }
+    }
+    if(inans==0)
+    {
+      cout<<"ID : "<<id_tested.at(i)<<"never answered"<<endl;
+      //Add to blacklist
+      this->blacklist.push_back(id_tested.at(i));
+    }
+  }
 }
