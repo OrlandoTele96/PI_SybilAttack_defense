@@ -39,8 +39,10 @@ private:
   vector<queue> Hist;
   vector<vector<char>> graylist;
   int r;
-  vector<int> pow_t;
-  vector<string> pow_sol;
+  vector<string> pow;
+  vector<int> pow_ti;
+  vector<string> pow_ans;
+  vector<int> pow_tf;
 public:
     /*Constructor*/
     Node();
@@ -78,5 +80,9 @@ public:
     string GenerateTarget(int difficulty);
     string randNumAdapter(vector<char> randnum);
     vector<char> solvePoW(vector<char> rand_n);
+    void AddAnswer(string ans);
+    void AddPowTime(int pow_t);
+    int getPoWsize();
+    int Detection(); 
 };
 #endif /* Node_hpp */
