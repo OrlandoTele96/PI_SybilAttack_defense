@@ -44,6 +44,7 @@ private:
   vector<string> pow_ans;
   vector<int> pow_tf;
   vector<char> id_tested;
+  vector<char> blacklist;
 public:
     /*Constructor*/
     Node();
