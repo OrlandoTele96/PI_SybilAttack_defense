@@ -39,8 +39,13 @@ private:
   vector<queue> Hist;
   vector<vector<char>> graylist;
   int r;
-  vector<int> pow_t;
-  vector<string> pow_sol;
+  vector<string> pow;
+  vector<int> pow_ti;
+  vector<string> pow_ans;
+  vector<int> pow_tf;
+  vector<char> id_tested;
+  vector<char> blacklist;
+  vector<char> bl_hashes;
 public:
     /*Constructor*/
     Node();
@@ -52,6 +57,7 @@ public:
     vector<char> getPayload()const;
     vector<vector<char>> getGrayList()const;
     unsigned char getIDdst()const;
+    vector<char> getBlackList()const;
     void setID(unsigned char id);
     void setTm(unsigned char tm);
     void setPayload(vector<char> p);
@@ -78,5 +84,9 @@ public:
     string GenerateTarget(int difficulty);
     string randNumAdapter(vector<char> randnum);
     vector<char> solvePoW(vector<char> rand_n);
+    void AddAnswer(vector<char> ans);
+    void AddPowTime(int pow_t);
+    int SybilDetection();
+    void clearBlackList();
 };
 #endif /* Node_hpp */

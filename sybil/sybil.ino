@@ -3,12 +3,15 @@
 
 #define BAND    433E6
 long lastSendTime = 0;        // last send time
-int interval = 2000;
+int interval = 3000;
 Node n;
 unsigned char id = 0x00;
 unsigned char sybil[4]={'2','6','7','8'};
 int c=0;
 int counter[4]={0,0,0,0};
+int isPow=0;
+unsigned char type=0x00;
+unsigned char dst;
 void setup() {
   // put your setup code here, to run once:
     Heltec.begin(true, true, true, true , BAND);
@@ -28,13 +31,27 @@ void loop() {
     if (millis() - lastSendTime > interval)
     {
        // send a message
+           if (isPoW==1)
+    {
+      //Serial.println("Solving a PoW");
+      ti = millis();
+      solution = n.solvePoW(rnum);
+      tf=millis();
+      tt = tf-ti;
+      Serial.println("Time : "+String(tt));
+      type=0x02;
+      Pack(type,dst,solution);
+      sendMessage(n);
+      rnum.clear();
+      isPoW=0;
+    }
       //if(counter[c]<=100000)
       //{
         n.setID(sybil[c]);
         sendMessage(n);
       //}
       lastSendTime = millis();
-      interval = random(2000);
+      interval = random(3000);
       LoRa.receive();
     }
   }
@@ -114,6 +131,92 @@ void onReceive(int packetSize)
   }*/
 }
 
+void Unpack(unsigned char type,char i_dst,String pay,char src)
+{
+  /*Desempaqueta mensajes*/
+  
+  vector<char> id_dst;
+  int n_id_dst,i,j;
+  int pay_len;
+  vector<char> solution;
+  int pow_t;
+  if(type ==0x00)
+  {
+    //Serial.println("Message 0 received");
+  }
+  if(type ==0x01)
+  {
+    //Serial.println("Message 1 received");
+    pay_len = pay.length();
+    n_id_dst = pay_len-4;
+    for(i=0;i<n_id_dst;i++)
+    {
+      if(pay.charAt(i)==n.getID())
+      {
+        isPoW =1;
+        rnum.push_back(pay.charAt(pay_len-4));
+        rnum.push_back(pay.charAt(pay_len-3));
+        rnum.push_back(pay.charAt(pay_len-2));
+        rnum.push_back(pay.charAt(pay_len-1));
+        dst=src;
+      }
+    }
+  }
+  if(type==0x02)
+  {
+    Serial.println("Message 2 received");
+    if(i_dst == n.getID())
+    {
+      Serial.println("Node "+String(src)+"\thas replied a Pow");
+      f_t = millis();
+      int total = f_t - i_t;
+      Serial.println("Timed at"+String(total));
+      String pow_s=pay;
+      for (i=0;i<pow_s.length();i++)
+      {
+        //Serial.println(pow_s.charAt(i));
+        //solution.push_back(pow_s.charAt(i));
+      }
+      //n.AddAnswer(solution);
+      //n.AddPowTime(total);
+    }  
+  }
+}
+
+void Pack(unsigned char type_m,unsigned char id_dest,vector<char> pa)
+{
+  if(type_m ==0x00)
+  {
+    //Serial.println("Packing message for temperature");
+    payload.push_back('1');
+  }
+  if(type_m == 0x01)
+  {
+    Serial.println("Packing message for PoW solicitude");
+
+  }
+  if (type_m == 0x02)
+  {
+    Serial.println("Packing message for PoW solicitude confirmation");
+    //set dst
+    //set payload
+    payload = pa;
+    //Serial.println(id_dest);
+    n.setIDdst(id_dest);
+    //Serial.println(n.getIDdst());
+  }
+  if (type_m == 0x03)
+  {
+    Serial.println("Packing message for PoW solution");
+  }
+  if (type_m == 0x04)
+  {
+    Serial.println("Packing message for consensus");
+  }
+  n.setTm(type_m);
+  n.setIDdst(id_dest);
+  n.setPayload(payload);
+}
 void PrintGrayList(vector<vector<char>> gl)
 {
   int i,j;

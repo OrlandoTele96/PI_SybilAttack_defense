@@ -8,10 +8,10 @@
 
 #define BAND    433E6
 long lastSendTime = 0;        // last send time
-int interval = 2000;
+int interval = 3000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '2'; //cambiar por cualquier ID
+unsigned char id = '1'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default generic message
 int isgl=0;
@@ -36,19 +36,29 @@ void loop() {
   */
   unsigned char dst;
   vector<char> solution;
+  vector<char> bl;
   int j;
   int T=10;// Threshold
+  int ti,tf,tt;
   if (millis() - lastSendTime > interval)
   {
     if(counter>=T)
     {
-      //n.SybilDetection()
+      n.SybilDetection();
+      Serial.println("Black list...");
+      bl = n.getBlackList();
+      PrintBlackList(bl);
       counter=0;
+      n.clearBlackList();
     }
     if (isPoW==1)
     {
       //Serial.println("Solving a PoW");
+      ti = millis();
       solution = n.solvePoW(rnum);
+      tf=millis();
+      tt = tf-ti;
+      Serial.println("Time : "+String(tt));
       type=0x02;
       Pack(type,dst,solution);
       sendMessage(n);
@@ -68,7 +78,7 @@ void loop() {
       sendMessage(n);
     }
     lastSendTime = millis();
-    interval = random(2000);
+    interval = random(3000);
     LoRa.receive();
 
   }
@@ -147,11 +157,11 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
   int pow_t;
   if(type ==0x00)
   {
-    Serial.println("Message 0 received");
+    //Serial.println("Message 0 received");
   }
   if(type ==0x01)
   {
-    Serial.println("Message 1 received");
+    //Serial.println("Message 1 received");
     pay_len = pay.length();
     n_id_dst = pay_len-4;
     for(i=0;i<n_id_dst;i++)
@@ -173,17 +183,17 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
     if(i_dst == n.getID())
     {
       Serial.println("Node "+String(src)+"\thas replied a Pow");
-      f_t = clock();
+      f_t = millis();
       int total = f_t - i_t;
       Serial.println("Timed at"+String(total));
-      String pow_s="";
+      String pow_s=pay;
       for (i=0;i<pow_s.length();i++)
       {
-        Serial.println(pow_s.charAt(i));
+        //Serial.println(pow_s.charAt(i));
         solution.push_back(pow_s.charAt(i));
-        //n.AddAnswer(solution);
-        //n.AddPowTime(total);
       }
+      n.AddAnswer(solution);
+      n.AddPowTime(total);
     }  
   }
 }
@@ -263,7 +273,7 @@ void GL_pow()
     int i=0;
     int tam;
     gl = n.getGrayList();
-    //PrintGrayList(gl); // Solamente imprime la lista gris
+    PrintGrayList(gl); // Solamente imprime la lista gris
     tam =gl.size();
     int rnd;
     String rn;
@@ -293,6 +303,7 @@ void GL_pow()
           //sending
           //Serial.println("Sending a PoW");
           sendMessage(n);
+          i_t = millis();
           rand_n.clear();
           counter++;
       }
@@ -334,4 +345,14 @@ void PrintGrayList(vector<vector<char>> gl)
     }
   }
   Serial.println("**");
+}
+
+void PrintBlackList(vector<char> bl)
+{
+  int i;
+  Serial.println("**---BlackList--**");
+  for(i=0;i<bl.size();i++)
+  {
+    Serial.println("ID : "+String(bl.at(i)));
+  }
 }

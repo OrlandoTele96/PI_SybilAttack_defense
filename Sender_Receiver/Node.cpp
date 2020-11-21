@@ -46,6 +46,10 @@ unsigned char Node::getIDdst()const
 {
   return this->id_dst;
 }
+vector<char> Node::getBlackList()const
+{
+  return this->blacklist;
+}
 void Node::setID(unsigned char id)
 {
   this->id = id;
@@ -202,9 +206,9 @@ int Node::Discard()
         {
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-(2*(id_test.at(i).desv));
-            sup =  id_test.at(i).prom+(2*(id_test.at(i).desv));
-            if(id_test.at(j).prom>=inf && id_test.at(j).prom<=sup)
+            inf = id_test.at(i).prom-((id_test.at(i).desv));
+            sup =  id_test.at(i).prom+((id_test.at(i).desv));
+            if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
               suspected.push_back(id_test.at(j).ID);
             }
@@ -276,10 +280,6 @@ vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
   string solution;
   int i_t,f_t,t_pow;
   vector<vector <char>> solutions;
-  /*for(i=0;i<rand_n.size();i++)
-  {
-    number = number + rand_n.at(i);
-  }*/
   number = randNumAdapter(rand_n);
   for (i=0;i<subset.size();i++)
   {
@@ -289,8 +289,10 @@ vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
     f_t = clock();
     t_pow = f_t-i_t;
     //cout<<"mined time"<<t_pow<<endl;
-    this->pow_t.push_back(t_pow);
-    this->pow_sol.push_back(solution);
+    solution=solution.substr(0,32);
+    this->pow_ti.push_back(t_pow);
+    this->pow.push_back(solution);
+    this->id_tested.push_back(subset.at(i));
     vector<char> s (solution.begin(),solution.end());
     //Convert solution in vector<char> format
     solutions.push_back(s);
@@ -316,8 +318,8 @@ string Node::ProofOfWork(string input,int dif)
 string Node::toHash(string input,string lhash)
 {
   string to_hash;
-  string key = "#Telecom123";
-  to_hash = input+lhash.substr(0,15);
+  string key = "#Telecom";
+  to_hash = input+key +lhash.substr(0,5);
   return to_hash;
 }
 string Node::GenerateTarget(int difficulty)
@@ -348,13 +350,78 @@ vector<char> Node::solvePoW(vector<char> rand_n)
 {
   string number,input,sol;
   char tested;
-  int t_i,t_f,total;
   tested = getID();
   number = randNumAdapter(rand_n);
   input = number + tested;
-  //sol=input;
   sol = ProofOfWork(input,2);
   sol =sol.substr(0,32);
   vector<char> s (sol.begin(),sol.end());
   return s;
+}
+void Node::AddAnswer(vector<char> ans)
+{
+  /*String adapter*/
+  int i;
+  string solution="";
+  for (i=0;i<ans.size();i++)
+  {
+    solution = solution+ans.at(i);
+  }
+  this->pow_ans.push_back(solution);
+}
+void Node::AddPowTime(int pow_t)
+{
+  this->pow_tf.push_back(pow_t);
+}
+int Node::SybilDetection()
+{
+  int thresh_t;
+  int i,j,k;
+  int inans;
+  int sup,inf;
+  thresh_t = 10000;
+      int tam;
+      tam = pow.size();
+  if(tam>0)
+  {
+  for(i=0;i<this->pow.size();i++)
+  {
+    inans=0;
+    sup=this->pow_ti.at(i)+thresh_t;
+    inf=this->pow_ti.at(i)-thresh_t;
+
+    
+    for (j=0;j<this->pow_ans.size();j++)
+    {
+      if(pow.at(i)==pow_ans.at(j))
+      {
+        //check time
+
+        //cout<<"ID :"<<id_tested.at(i)<<"answered"<<endl;
+        /*if(pow_tf.at(j)>=inf && pow_tf.at(j)<=sup)
+        {
+          inans=1;
+        }*/
+        inans=1;
+      }
+    }
+    if(inans==0)
+    {
+      //cout<<"ID : "<<id_tested.at(i)<<"never answered"<<endl;
+      //Add to blacklist
+      this->blacklist.push_back(id_tested.at(i));
+    }
+  }
+    this->pow.clear();
+  this->pow_ti.clear();
+  this->pow_ans.clear();
+  this->pow_tf.clear();
+  this->id_tested.clear();    
+  }
+    return 0;
+}
+
+void Node::clearBlackList()
+{
+  this->blacklist.clear();
 }
