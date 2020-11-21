@@ -206,8 +206,8 @@ int Node::Discard()
         {
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-((id_test.at(i).desv));
-            sup =  id_test.at(i).prom+((id_test.at(i).desv));
+            inf = id_test.at(i).prom-(2.5*(id_test.at(i).desv));
+            sup =  id_test.at(i).prom+(2.5*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
               suspected.push_back(id_test.at(j).ID);
@@ -306,12 +306,12 @@ string Node::ProofOfWork(string input,int dif)
   string hash="";
   //string solution;
   to_hash = toHash(input,hash);
-  target = GenerateTarget(dif);
+  target = GenerateTarget(dif)+"b";
   do
   {
     hash = sha256(to_hash);
     to_hash = toHash(to_hash,hash);
-  }while(hash.substr(0,dif)!=target);
+  }while(hash.substr(0,dif+1)!=target);
   //cout<<"Mined"<<endl;
   return hash;
 }
@@ -319,7 +319,8 @@ string Node::toHash(string input,string lhash)
 {
   string to_hash;
   string key = "#Telecom";
-  to_hash = input+key +lhash.substr(0,5);
+  //input.substr(0,3)+
+  to_hash = lhash.substr(0,3)+input;
   return to_hash;
 }
 string Node::GenerateTarget(int difficulty)

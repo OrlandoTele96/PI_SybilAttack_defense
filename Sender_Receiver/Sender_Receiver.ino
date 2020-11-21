@@ -8,10 +8,10 @@
 
 #define BAND    433E6
 long lastSendTime = 0;        // last send time
-int interval = 3000;
+int interval = 2000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '1'; //cambiar por cualquier ID
+unsigned char id = '2'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default generic message
 int isgl=0;
@@ -42,7 +42,7 @@ void loop() {
   int ti,tf,tt;
   if (millis() - lastSendTime > interval)
   {
-    if(counter>=T)
+    /*if(counter>=T)
     {
       n.SybilDetection();
       Serial.println("Black list...");
@@ -50,10 +50,10 @@ void loop() {
       PrintBlackList(bl);
       counter=0;
       n.clearBlackList();
-    }
+    }*/
     if (isPoW==1)
     {
-      //Serial.println("Solving a PoW");
+      Serial.println("Solving a PoW");
       ti = millis();
       solution = n.solvePoW(rnum);
       tf=millis();
@@ -68,6 +68,7 @@ void loop() {
     if(isgl==1) // Si se genero la lista gris entonces se genera PoW
     {
       GL_pow(); // Genera PoW
+      isgl=0;
     }
     if(isgl==0 && isPoW==0)
     {
@@ -120,12 +121,12 @@ void onReceive(int packetSize)
   /*char dst;
   /*ID src*/
   char IDE = (char)LoRa.read(); // Recibe ID
-  //Serial.println("Received from : "+String(IDE));
+  Serial.println("Received from : "+String(IDE));
   /*Type message*/
   unsigned char type = LoRa.read(); // Recibe tipo de mensaje
   /*ID dst*/
   char dst = (char)LoRa.read();
-  //Serial.println("Destination ID : "+String(dst));
+  Serial.println("Destination ID : "+String(dst));
   /*Payload*/
   String incoming="";
   while(LoRa.available())
@@ -139,7 +140,10 @@ void onReceive(int packetSize)
   int rssi = (int )LoRa.packetRssi(); // Obtiene rssi del mensaje
   //Serial.println("RSSI: "+String(rssi));
   /*Storage RSSI*/
-  storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
+  if(isgl==0)
+  {
+    storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
+  }
   /*Phase 1*/
   isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
   /*Unpack content*/
@@ -157,11 +161,11 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
   int pow_t;
   if(type ==0x00)
   {
-    //Serial.println("Message 0 received");
+    Serial.println("Message 0 received");
   }
   if(type ==0x01)
   {
-    //Serial.println("Message 1 received");
+    Serial.println("Message 1 received");
     pay_len = pay.length();
     n_id_dst = pay_len-4;
     for(i=0;i<n_id_dst;i++)
@@ -208,7 +212,7 @@ void Pack(unsigned char type_m,unsigned char id_dest,vector<char> pa)
   if(type_m == 0x01)
   {
     Serial.println("Packing message for PoW solicitude");
-
+    isgl=0;
   }
   if (type_m == 0x02)
   {
@@ -294,9 +298,13 @@ void GL_pow()
           rand_n.push_back(rn.charAt(2));
           rand_n.push_back(rn.charAt(3));
           //genPoW
+          Serial.println("Pow");
+          i_t = millis();          
           sol=n.genPoW(gl[i],rand_n);
-
-          //Serial.println("PoW generated : "+String(i));
+          f_t = millis();
+          int to = f_t-i_t;
+          Serial.println("Timed"+String(to));
+          Serial.println("PoW generated : "+String(i));
           //packtomsg
           MakePayload(gl[i],rand_n);
           Pack(type,dst,n.getPayload());
