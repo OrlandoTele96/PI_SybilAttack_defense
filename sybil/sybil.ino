@@ -6,7 +6,7 @@ long lastSendTime = 0;        // last send time
 int interval = 500;
 Node n;
 unsigned char id = 0x00;
-unsigned char sybil[4]={'5','6','7','8'};
+unsigned char sybil[4]={'2','6','7','8'};
 int c=0;
 int counter[4]={0,0,0,0};
 int isPow=0;

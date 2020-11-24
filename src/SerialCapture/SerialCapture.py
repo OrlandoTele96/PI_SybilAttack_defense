@@ -8,7 +8,7 @@ import time
 iport = serial.Serial('/dev/ttyUSB3',115200)
 data =[]
 
-while len(data)!=20000:
+while len(data)!=5000:
     d = iport.readline()
     print(d)
     #d_string = d.decode()

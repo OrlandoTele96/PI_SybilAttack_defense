@@ -206,8 +206,8 @@ int Node::Discard()
         {
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-(2.5*(id_test.at(i).desv));
-            sup =  id_test.at(i).prom+(2.5*(id_test.at(i).desv));
+            inf = id_test.at(i).prom-(0.25*(id_test.at(i).desv));
+            sup =  id_test.at(i).prom+(0.25*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
               suspected.push_back(id_test.at(j).ID);
@@ -285,7 +285,7 @@ vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
   {
     input = number + subset.at(i);
     i_t = clock();
-    solution=ProofOfWork(input,1);
+    solution=ProofOfWork(input,2);
     f_t = clock();
     t_pow = f_t-i_t;
     //cout<<"mined time"<<t_pow<<endl;
@@ -354,7 +354,7 @@ vector<char> Node::solvePoW(vector<char> rand_n)
   tested = getID();
   number = randNumAdapter(rand_n);
   input = number + tested;
-  sol = ProofOfWork(input,1);
+  sol = ProofOfWork(input,2);
   sol =sol.substr(0,32);
   vector<char> s (sol.begin(),sol.end());
   return s;

@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 3000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '1'; //cambiar por cualquier ID
+unsigned char id = '2'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default generic message
 int isgl=0;
@@ -20,6 +20,8 @@ int issolved =1 ;
 int i_t,f_t;
 int counter;
 vector<char> rnum;
+vector<vector<char>> proofs;
+
 void setup() {
   // Inicializamos LoRa
     Heltec.begin(true, true, true, true , BAND);
@@ -81,14 +83,18 @@ void loop() {
       GL_pow(); // Genera PoW
       //delay(10000);
       lastgl =millis();
-      vector<char> pay ={'2','1','1','1','1'};
-      payload = pay;
+      //vector<char> pay ={'2','1','1','1','1'};
       dst = 'd';
       type =0x01;
-      Pack(type,dst,pay);
-      sendMessage(n);
+      for (j=0;j<proofs.size();j++)
+      {
+        payload = proofs.at(j);
+        Pack(type,dst,proofs.at(j));
+        sendMessage(n);
+      }
       isgl=0;
       issolved =0;
+      proofs.clear();
     }
     if( isgl==0 && isPoW==0)
     {
@@ -97,6 +103,7 @@ void loop() {
       dst = 'd';
       Pack(type,dst,payload);
       sendMessage(n);
+      
     }
     lastSendTime = millis();
     interval = random(3000);
@@ -139,7 +146,7 @@ void sendMessage(Node n)
     delay(100);
   }
   payload.clear();
-  Serial.println("Message : "+String(n.getTm())+String(dst));
+  //Serial.println("Message : "+String(n.getTm())+String(dst));
 }
 
 
@@ -170,12 +177,9 @@ void onReceive(int packetSize)
   int rssi = (int )LoRa.packetRssi(); // Obtiene rssi del mensaje
   //Serial.println("RSSI: "+String(rssi));
   /*Storage RSSI*/
-  if(isgl==0)
-  {
-    /*Phase 1*/
-    storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
-    isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
-  }
+  storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
+  /*Phase 1*/
+  isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
   /*Unpack content*/
   Unpack(type,dst,incoming,IDE);
 }
@@ -298,7 +302,24 @@ void storageRSSI(char IDE, char type, int rssi)
   }
   n.AddRSSI(IDE,rssi); //Agregamos el rssi del mensaje a sus correspondiente ID
 }
-
+vector<char> MakePayload(vector<char> ID,vector<char> randnum)
+{
+  vector<char> pay;
+  int i;
+  /*Add payload :
+  [+]   4 bytes : rand_num
+  [+]   n bytes : IDs*/
+  for(i=0;i<ID.size();i++)
+  {
+    pay.push_back(ID.at(i));
+  }
+  pay.push_back(randnum.at(0));
+  pay.push_back(randnum.at(1));
+  pay.push_back(randnum.at(2));
+  pay.push_back(randnum.at(3));
+  //n.setPayload(pay);
+  return pay;
+}
 void GL_pow()
 {
   /*
@@ -308,16 +329,16 @@ void GL_pow()
     vector<vector<char>> gl;
     int i=0;
     int tam;
-    //gl = n.getGrayList();
-    vector<char> d = {'2','7'};
+    gl = n.getGrayList();
+    /*vector<char> d = {'2','7'};
     vector<char> f = {'6','7'};
     gl.push_back(d);
-    gl.push_back(f);
-    //PrintGrayList(gl); // Solamente imprime la lista gris
+    gl.push_back(f);*/
+    PrintGrayList(gl); // Solamente imprime la lista gris
     tam =gl.size();
     int rnd;
     String rn;
-    vector<char> rand_n;
+    vector<char> rand_n,proof;
     vector<vector <char>> sol;
     type=0x01;
     dst ='d';
@@ -343,8 +364,9 @@ void GL_pow()
           //Serial.println("Timed"+String(to));
           //Serial.println("PoW generated : "+String(i));
           //packtomsg
-          MakePayload(gl[i],rand_n);
-          Pack(type,dst,n.getPayload());
+          proof = MakePayload(gl[i],rand_n);
+          proofs.push_back(proof);
+          //Pack(type,dst,n.getPayload());
           //sending
           //Serial.println("Sending a PoW");
           //sendMessage(n);
@@ -357,23 +379,6 @@ void GL_pow()
     }
 }
 
-void MakePayload(vector<char> ID,vector<char> randnum)
-{
-  //vector<char> payload;
-  int i;
-  /*Add payload :
-  [+]   4 bytes : rand_num
-  [+]   n bytes : IDs*/
-  for(i=0;i<ID.size();i++)
-  {
-    payload.push_back(ID.at(i));
-  }
-  payload.push_back(randnum.at(0));
-  payload.push_back(randnum.at(1));
-  payload.push_back(randnum.at(2));
-  payload.push_back(randnum.at(3));
-  n.setPayload(payload);
-}
 
 void PrintGrayList(vector<vector<char>> gl)
 {
