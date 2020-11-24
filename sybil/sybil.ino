@@ -3,10 +3,10 @@
 
 #define BAND    433E6
 long lastSendTime = 0;        // last send time
-int interval = 3000;
+int interval = 500;
 Node n;
 unsigned char id = 0x00;
-unsigned char sybil[4]={'2','6','7','8'};
+unsigned char sybil[4]={'5','6','7','8'};
 int c=0;
 int counter[4]={0,0,0,0};
 int isPow=0;
@@ -16,6 +16,8 @@ void setup() {
   // put your setup code here, to run once:
     Heltec.begin(true, true, true, true , BAND);
     LoRa.onReceive(onReceive);
+    LoRa.setCodingRate4(6);
+    LoRa.setSpreadingFactor(7);
     LoRa.receive();
     Serial.println("Heltec.LoRa init succeeded.");
     n.setID(id);
@@ -37,7 +39,7 @@ void loop() {
         sendMessage(n);
       //}
       lastSendTime = millis();
-      interval = random(3000);
+      interval = random(500);
       LoRa.receive();
     }
   }

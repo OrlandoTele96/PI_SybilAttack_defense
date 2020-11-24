@@ -285,7 +285,7 @@ vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
   {
     input = number + subset.at(i);
     i_t = clock();
-    solution=ProofOfWork(input,2);
+    solution=ProofOfWork(input,1);
     f_t = clock();
     t_pow = f_t-i_t;
     //cout<<"mined time"<<t_pow<<endl;
@@ -354,7 +354,7 @@ vector<char> Node::solvePoW(vector<char> rand_n)
   tested = getID();
   number = randNumAdapter(rand_n);
   input = number + tested;
-  sol = ProofOfWork(input,2);
+  sol = ProofOfWork(input,1);
   sol =sol.substr(0,32);
   vector<char> s (sol.begin(),sol.end());
   return s;
