@@ -46,6 +46,10 @@ unsigned char Node::getIDdst()const
 {
   return this->id_dst;
 }
+vector<char> Node::getBlackList()const
+{
+  return this->blacklist;
+}
 void Node::setID(unsigned char id)
 {
   this->id = id;
@@ -202,8 +206,8 @@ int Node::Discard()
         {
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-(2*(id_test.at(i).desv));
-            sup =  id_test.at(i).prom+(2*(id_test.at(i).desv));
+            inf = id_test.at(i).prom-(0.25*(id_test.at(i).desv));
+            sup =  id_test.at(i).prom+(0.25*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
               suspected.push_back(id_test.at(j).ID);
@@ -302,20 +306,21 @@ string Node::ProofOfWork(string input,int dif)
   string hash="";
   //string solution;
   to_hash = toHash(input,hash);
-  target = GenerateTarget(dif);
+  target = GenerateTarget(dif)+"b";
   do
   {
     hash = sha256(to_hash);
     to_hash = toHash(to_hash,hash);
-  }while(hash.substr(0,dif)!=target);
+  }while(hash.substr(0,dif+1)!=target);
   //cout<<"Mined"<<endl;
   return hash;
 }
 string Node::toHash(string input,string lhash)
 {
   string to_hash;
-  string key = "#Telecom123";
-  to_hash = input+ lhash.substr(0,5);
+  string key = "#Telecom";
+  //input.substr(0,3)+
+  to_hash = lhash.substr(0,3)+input;
   return to_hash;
 }
 string Node::GenerateTarget(int difficulty)
@@ -375,29 +380,49 @@ int Node::SybilDetection()
   int i,j,k;
   int inans;
   int sup,inf;
+  thresh_t = 10000;
+      int tam;
+      tam = pow.size();
+  if(tam>0)
+  {
   for(i=0;i<this->pow.size();i++)
   {
     inans=0;
     sup=this->pow_ti.at(i)+thresh_t;
     inf=this->pow_ti.at(i)-thresh_t;
+
+
     for (j=0;j<this->pow_ans.size();j++)
     {
       if(pow.at(i)==pow_ans.at(j))
       {
         //check time
 
-        cout<<"ID :"<<id_tested.at(i)<<"answered"<<endl;
-        if(pow_tf.at(j)>=inf && pow_tf.at(j)<=sup)
+        //cout<<"ID :"<<id_tested.at(i)<<"answered"<<endl;
+        /*if(pow_tf.at(j)>=inf && pow_tf.at(j)<=sup)
         {
           inans=1;
-        }
+        }*/
+        inans=1;
       }
     }
     if(inans==0)
     {
-      cout<<"ID : "<<id_tested.at(i)<<"never answered"<<endl;
+      //cout<<"ID : "<<id_tested.at(i)<<"never answered"<<endl;
       //Add to blacklist
       this->blacklist.push_back(id_tested.at(i));
     }
   }
+    this->pow.clear();
+  this->pow_ti.clear();
+  this->pow_ans.clear();
+  this->pow_tf.clear();
+  this->id_tested.clear();
+  }
+    return 0;
+}
+
+void Node::clearBlackList()
+{
+  this->blacklist.clear();
 }

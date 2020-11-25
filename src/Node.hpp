@@ -45,6 +45,7 @@ private:
   vector<int> pow_tf;
   vector<char> id_tested;
   vector<char> blacklist;
+  vector<char> bl_hashes;
 public:
     /*Constructor*/
     Node();
@@ -56,6 +57,7 @@ public:
     vector<char> getPayload()const;
     vector<vector<char>> getGrayList()const;
     unsigned char getIDdst()const;
+    vector<char> getBlackList()const;
     void setID(unsigned char id);
     void setTm(unsigned char tm);
     void setPayload(vector<char> p);
@@ -85,5 +87,6 @@ public:
     void AddAnswer(vector<char> ans);
     void AddPowTime(int pow_t);
     int SybilDetection();
+    void clearBlackList();
 };
 #endif /* Node_hpp */
