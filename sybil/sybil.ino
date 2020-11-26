@@ -14,6 +14,7 @@ unsigned char type=0x00;
 unsigned char dst;
 vector<vector<char>> proofs;
 vector<char> tested;
+int inpow=0;
 void setup() {
   // put your setup code here, to run once:
     Heltec.begin(true, true, true, true , BAND);
@@ -40,8 +41,15 @@ void loop() {
       {
         for(i=0;i<tam;i++)
         {
-          Serial.println("ID + "+String(tested.at(i)+"Proof"));
+          inpow = 1;
+          Serial.println("ID + "+String(tested.at(i))+" Proof");
+          n.setID(tested.at(i));
+          n.solvePoW(proofs.at(i));
         }
+        inpow=0;
+        Serial.println("All proofs were solved for dst : "+String(dst));
+        tested.clear();
+        proofs.clear();
       }
         n.setID(sybil[c]);
         sendMessage(n);
@@ -77,7 +85,7 @@ void sendMessage(Node n)
 void onReceive(int packetSize)
 {
   if (packetSize == 0) return;
-  Serial.print("Message Received");
+  //Serial.print("Message Received");
   //vector<vector<char>> gl;
   /*ID src*/
   char IDE = LoRa.read();
@@ -110,9 +118,9 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
   {
     //Serial.println("Message 0 received");
   }
-  if(type ==0x01)
+  if(type ==0x01 && inpow ==0)
   {
-    
+    Serial.println("Payload : "+pay);
     pay_len = pay.length();
     n_id_dst = pay_len-4;
     for(i=0;i<n_id_dst;i++)
@@ -120,7 +128,7 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
       if(pay.charAt(i)==sybil[0])
       {
         
-        Serial.println("Message 1 received");
+        //Serial.println("Message 1 received : "+sybil[0]);
         rnum.push_back(pay.charAt(pay_len-4));
         rnum.push_back(pay.charAt(pay_len-3));
         rnum.push_back(pay.charAt(pay_len-2));
@@ -133,7 +141,7 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
       if(pay.charAt(i)==sybil[1])
       {
         
-        Serial.println("Message 1 received");
+        //Serial.println("Message 1 received: "+sybil[1]);
         rnum.push_back(pay.charAt(pay_len-4));
         rnum.push_back(pay.charAt(pay_len-3));
         rnum.push_back(pay.charAt(pay_len-2));
@@ -146,7 +154,7 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
       if(pay.charAt(i)==sybil[2])
       {
         
-        Serial.println("Message 1 received");
+        //Serial.println("Message 1 received"+sybil[2]);
         rnum.push_back(pay.charAt(pay_len-4));
         rnum.push_back(pay.charAt(pay_len-3));
         rnum.push_back(pay.charAt(pay_len-2));
@@ -159,7 +167,7 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
       if(pay.charAt(i)==sybil[3])
       {
         
-        Serial.println("Message 1 received");
+        //Serial.println("Message 1 received"+sybil[3]);
         rnum.push_back(pay.charAt(pay_len-4));
         rnum.push_back(pay.charAt(pay_len-3));
         rnum.push_back(pay.charAt(pay_len-2));

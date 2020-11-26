@@ -426,3 +426,21 @@ void Node::clearBlackList()
 {
   this->blacklist.clear();
 }
+
+int Node::calcThreshold()
+{
+  int i;
+  int act,last;
+  int threshold;
+  last=0;
+  for(i=0;i<this->pow_ti.size();i++)
+  {
+    act =this->pow_ti.at(i);
+    if(act>last)
+    {
+      last = act;
+    }
+  }
+  threshold = last + 500+(2500);
+  return last;
+}
