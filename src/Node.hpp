@@ -88,5 +88,6 @@ public:
     void AddPowTime(int pow_t);
     int SybilDetection();
     void clearBlackList();
+    int calcThreshold();
 };
 #endif /* Node_hpp */
