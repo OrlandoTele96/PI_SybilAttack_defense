@@ -5,10 +5,10 @@
 import serial
 import time
 
-iport = serial.Serial('/dev/ttyUSB2',115200)
+iport = serial.Serial('/dev/ttyUSB0',115200)
 data =[]
 
-while len(data)!=5000:
+while len(data)!=6000:
     d = iport.readline()
     print(d)
     #d_string = d.decode()

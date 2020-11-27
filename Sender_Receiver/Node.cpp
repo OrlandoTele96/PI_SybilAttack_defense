@@ -206,8 +206,8 @@ int Node::Discard()
         {
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-(3*(id_test.at(i).desv));
-            sup =  id_test.at(i).prom+(3*(id_test.at(i).desv));
+            inf = id_test.at(i).prom-(0.5*(id_test.at(i).desv));
+            sup =  id_test.at(i).prom+(0.5*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
               suspected.push_back(id_test.at(j).ID);
@@ -287,19 +287,12 @@ void Node::genPoW(vector<char> subset,vector<char> rand_n)
   {
     input = number + subset.at(i);
     i_t = clock();
-    solution=ProofOfWork(input,2);
+    solution=ProofOfWork(input,1);
     f_t = clock();
     t_pow = f_t-i_t;
-    cout<<"mined time"<<t_pow<<endl;
-    cout<<input<<endl;
     solution=solution.substr(0,32);
-    cout<<"Mined hash : "<<solution<<endl;
     pow_time.push_back(t_pow);
     pow_solutions.push_back(solution);
-    //this->id_tested.push_back(subset.at(i));
-    //vector<char> s (solution.begin(),solution.end());
-    //Convert solution in vector<char> format
-    //solutions.push_back(s);
   }
   this->pow.push_back(pow_solutions);
   this->pow_ti.push_back(pow_time);
@@ -361,10 +354,8 @@ vector<char> Node::solvePoW(vector<char> rand_n)
   tested = getID();
   number = randNumAdapter(rand_n);
   input = number + tested;
-  cout<<"input"<<input<<endl;
-  sol = ProofOfWork(input,2);
+  sol = ProofOfWork(input,1);
   sol =sol.substr(0,32);
-  cout<<"solution"<<sol<<endl;
   vector<char> s (sol.begin(),sol.end());
   return s;
 }
@@ -385,50 +376,48 @@ void Node::AddPowTime(int pow_t)
 }
 int Node::SybilDetection()
 {
-  /*int thresh_t;
-  int i,j,k;
-  int inans;
-  int sup,inf;
-  thresh_t = 10000;
-      int tam;
-      tam = pow.size();
+  int i,j;
+  int tam,tamsol;
+  int issybil;
+  vector<string> solutions;
+  vector<char> id;
+  vector<int> pow_time;
+  solutions = this->pow.back();
+  pow_time = this->pow_ti.back();
+  id = this->id_tested.back();
+  tam = solutions.size();
+  tamsol = this->pow_ans.size();
+  int ans=0;
   if(tam>0)
   {
-  for(i=0;i<this->pow.size();i++)
-  {
-    inans=0;
-    sup=this->pow_ti.at(i)+thresh_t;
-    inf=this->pow_ti.at(i)-thresh_t;
-
-
-    for (j=0;j<this->pow_ans.size();j++)
+    for (i=0;i<tam;i++)
     {
-      if(pow.at(i)==pow_ans.at(j))
-      {*/
-        //check time
-
-        //cout<<"ID :"<<id_tested.at(i)<<"answered"<<endl;
-        /*if(pow_tf.at(j)>=inf && pow_tf.at(j)<=sup)
+      issybil=1;
+      cout<<"Comparing ID : "<<id.at(i)<<"with pow : "<<solutions.at(i)<<"timed at :"<<pow_time.at(i)<<endl;
+      if(tamsol>0)
+      {
+        for(j=0;j<tamsol;j++)
         {
-          inans=1;
-        }*/
-        /*inans=1;
+          if(solutions.at(i)==this->pow_ans.at(j))
+          {
+            issybil=0;
+            cout<<"ID : "<<id.at(i)<<" is not sybil"<<endl;
+          }
+        }
+      }
+      if(issybil==1)
+      {
+        this->blacklist.push_back(id.at(i));
+        ans =1;
       }
     }
-    if(inans==0)
-    {
-      //cout<<"ID : "<<id_tested.at(i)<<"never answered"<<endl;
-      //Add to blacklist
-      this->blacklist.push_back(id_tested.at(i));
-    }
   }
-    this->pow.clear();
-  this->pow_ti.clear();
+  this->pow.pop_back();
+  this->pow_ti.pop_back();
+  this->id_tested.pop_back();
   this->pow_ans.clear();
   this->pow_tf.clear();
-  this->id_tested.clear();
-}*/
-    return 0;
+  return ans;
 }
 
 void Node::clearBlackList()
@@ -447,14 +436,13 @@ vector<int> Node::calcThreshold()
     last=0;
     for(j=0;j<this->pow_ti.at(i).size();j++)
     {
-      cout<<this->pow_ti.at(i).at(j)<<endl;
       act =this->pow_ti.at(i).at(j);
       if(act>last)
       {
         last = act;
       }
     }
-    threshold = last + 1500+(2500);
+    threshold = last + 500+(1500);
     thresholds.push_back(threshold);
   }
   return thresholds;
