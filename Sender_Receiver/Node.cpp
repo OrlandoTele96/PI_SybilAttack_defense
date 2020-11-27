@@ -288,8 +288,10 @@ vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
     solution=ProofOfWork(input,2);
     f_t = clock();
     t_pow = f_t-i_t;
-    //cout<<"mined time"<<t_pow<<endl;
+    cout<<"mined time"<<t_pow<<endl;
+    cout<<input<<endl;
     solution=solution.substr(0,32);
+    cout<<"Mined hash : "<<solution<<endl;
     this->pow_ti.push_back(t_pow);
     this->pow.push_back(solution);
     this->id_tested.push_back(subset.at(i));
@@ -350,12 +352,15 @@ string Node::randNumAdapter(vector<char> randnum)
 vector<char> Node::solvePoW(vector<char> rand_n)
 {
   string number,input,sol;
+  
   char tested;
   tested = getID();
   number = randNumAdapter(rand_n);
   input = number + tested;
+  cout<<"input"<<input<<endl;
   sol = ProofOfWork(input,2);
   sol =sol.substr(0,32);
+  cout<<"solution"<<sol<<endl;
   vector<char> s (sol.begin(),sol.end());
   return s;
 }
@@ -441,6 +446,6 @@ int Node::calcThreshold()
       last = act;
     }
   }
-  threshold = last + 500+(2500);
+  threshold = last + 1500+(2500);
   return last;
 }

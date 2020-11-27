@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 3000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '3'; //cambiar por cualquier ID
+unsigned char id = '1'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default generic message
 int isgl=0;
@@ -22,6 +22,9 @@ int i_t,f_t;
 int counter;
 vector<char> rnum;
 vector<vector<char>> proofs;
+int T=10;// Threshold
+int lastbl;
+int isbl=0;
 
 void setup() {
   // Inicializamos LoRa
@@ -44,20 +47,20 @@ void loop() {
   vector<char> solution;
   vector<char> bl;
   int j,i;
-  int T=10;// Threshold
+  
   int ti,tf,tt,f;
   int lastgl=0;
   if (millis() - lastSendTime > interval)
   {
-    /*if(counter>=T)
+    if((millis()-lastbl)>T && isbl ==1)
     {
       n.SybilDetection();
       Serial.println("Black list...");
       bl = n.getBlackList();
       PrintBlackList(bl);
-      counter=0;
       n.clearBlackList();
-    }*/
+      lastbl=millis();
+    }
     if (isPoW==1)
     {
       Serial.println("Solving a PoW");
@@ -79,24 +82,36 @@ void loop() {
       isPoW=0;
       isgl=0;
     }
-    if(isgl==1 && isPoW !=1 ) // Si se genero la lista gris entonces se genera PoW
-    {
-      GL_pow(); // Genera PoW
-      //delay(10000);
-      lastgl =millis();
-      //vector<char> pay ={'2','1','1','1','1'};
-      dst = 'd';
-      type =0x01;
-      T = n.calcThreshold();
-      int proof_tam = proofs.size();
-      j=0;
-      i=0;
-      lastpow=0;
-      int lastbl=millis();
-      Serial.println("Pow time : "+String(T)+" , time"+String(millis()-lastpow));
-      while(i<proof_tam)
+    else{
+      if(proofs.size()>0)
       {
-        if(millis()-lastbl>T)
+        dst = 'd';
+        type =0x01;
+        int proof_tam = proofs.size();
+        if(millis()-lastpow>T)
+        {
+          Serial.println("Proof timed at: "+String(millis()-lastpow)+"thesh"+String(T));
+          payload = proofs.back();
+          Pack(type,dst,payload);
+          sendMessage(n);
+          lastpow=millis();
+          proofs.pop_back();
+          lastbl=millis();
+          isbl=1;
+        }
+      }
+    }
+    if(isgl==1 && proofs.size()==0 ) // Si se genero la lista gris entonces se genera PoW
+    {
+      proofs.clear();
+      GL_pow(); // Genera PoW
+      T = n.calcThreshold();
+      lastpow=0;
+      lastbl=millis();
+      Serial.println("Pow time : "+String(T)+" , time"+String(millis()-lastpow));
+      //while(j<proof_tam)
+      //{
+        /*if(millis()-lastbl>T)
         {
           n.SybilDetection();
           Serial.println("Black list...");
@@ -105,8 +120,8 @@ void loop() {
           n.clearBlackList();
           lastbl=millis();
           i++;         
-        }
-        if(millis()-lastpow>T)
+        }*/
+        /*if(millis()-lastpow>T)
         {
           Serial.println("Pow time : "+String(T)+" , time"+String(millis()-lastpow));
           Serial.println("Sending a pow to subset  "+String(j));
@@ -116,17 +131,10 @@ void loop() {
           lastpow=millis();
           i_t = lastpow;
           j++;
-        }
-      }
-      /*for (j=0;j<proofs.size();j++)
-      {
-        payload = proofs.at(j);
-        Pack(type,dst,proofs.at(j));
-        sendMessage(n);
-      }*/
+        } */
+      //}
       isgl=0;
-      issolved =0;
-      proofs.clear();
+      //proofs.clear();
     }
     if( isgl==0 && isPoW==0)
     {
@@ -155,6 +163,8 @@ void sendMessage(Node n)
   */
   int j=0;
   int i=0;
+  //for(j=0;j<5;j++)
+  //{
   LoRa.beginPacket();
   /*ID src*/
   LoRa.write(n.getID());
@@ -169,6 +179,7 @@ void sendMessage(Node n)
   }
   LoRa.endPacket(); 
   delay(100);
+  //}
   payload.clear();
   //Serial.println("Message : "+String(n.getTm())+String(dst));
 }
@@ -250,9 +261,9 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
       int total = f_t - i_t;
       Serial.println("Timed at"+String(total));
       String pow_s=pay;
-      for (i=0;i<pow_s.length();i++)
+      for (i=0;i<(pow_s.length()-4);i++)
       {
-        //Serial.println(pow_s.charAt(i));
+        Serial.print(pow_s.charAt(i));
         solution.push_back(pow_s.charAt(i));
       }
       n.AddAnswer(solution);
@@ -353,11 +364,11 @@ void GL_pow()
     vector<vector<char>> gl;
     int i=0;
     int tam;
-    gl = n.getGrayList();
-    /*vector<char> d = {'2','7'};
-    vector<char> f = {'6','7'};
+    //gl = n.getGrayList();
+    vector<char> d = {'1','7'};
+    vector<char> f = {'1','7'};
     gl.push_back(d);
-    gl.push_back(f);*/
+    gl.push_back(f);
     PrintGrayList(gl); // Solamente imprime la lista gris
     tam =gl.size();
     int rnd;
@@ -379,22 +390,11 @@ void GL_pow()
           rand_n.push_back(rn.charAt(1));
           rand_n.push_back(rn.charAt(2));
           rand_n.push_back(rn.charAt(3));
-          //genPoW
-          //Serial.println("Pow");
-          i_t = millis();          
           sol=n.genPoW(gl[i],rand_n);
-          f_t = millis();
-          int to = f_t-i_t;
-          //Serial.println("Timed"+String(to));
-          //Serial.println("PoW generated : "+String(i));
-          //packtomsg
           proof = MakePayload(gl[i],rand_n);
           proofs.push_back(proof);
-          //Pack(type,dst,n.getPayload());
-          //sending
           //Serial.println("Sending a PoW");
           //sendMessage(n);
-          i_t = millis();
           rand_n.clear();
           counter++;
       }

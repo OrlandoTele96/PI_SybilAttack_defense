@@ -5,7 +5,7 @@
 import serial
 import time
 
-iport = serial.Serial('/dev/ttyUSB0',115200)
+iport = serial.Serial('/dev/ttyUSB2',115200)
 data =[]
 
 while len(data)!=5000:
