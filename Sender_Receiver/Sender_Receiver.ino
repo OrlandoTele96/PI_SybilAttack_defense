@@ -22,7 +22,8 @@ int i_t,f_t;
 int counter;
 vector<char> rnum;
 vector<vector<char>> proofs;
-int T=10;// Threshold
+vector<int> thresholds;
+int T=0;
 int lastbl;
 int isbl=0;
 
@@ -47,7 +48,6 @@ void loop() {
   vector<char> solution;
   vector<char> bl;
   int j,i;
-  
   int ti,tf,tt,f;
   int lastgl=0;
   if (millis() - lastSendTime > interval)
@@ -60,6 +60,7 @@ void loop() {
       PrintBlackList(bl);
       n.clearBlackList();
       lastbl=millis();
+      thresholds.pop_back();
     }
     if (isPoW==1)
     {
@@ -88,15 +89,16 @@ void loop() {
         dst = 'd';
         type =0x01;
         int proof_tam = proofs.size();
-        if(millis()-lastpow>T)
+        if(millis()-lastpow>thresholds.back())
         {
-          Serial.println("Proof timed at: "+String(millis()-lastpow)+"thesh"+String(T));
           payload = proofs.back();
           Pack(type,dst,payload);
           sendMessage(n);
           lastpow=millis();
           proofs.pop_back();
           lastbl=millis();
+          T = thresholds.back();
+          Serial.println("Proof timed at: "+String(millis()-lastpow)+" thesh "+String(T));
           isbl=1;
         }
       }
@@ -104,37 +106,13 @@ void loop() {
     if(isgl==1 && proofs.size()==0 ) // Si se genero la lista gris entonces se genera PoW
     {
       proofs.clear();
+      thresholds.clear();
       GL_pow(); // Genera PoW
-      T = n.calcThreshold();
+      thresholds = n.calcThreshold();
       lastpow=0;
       lastbl=millis();
-      Serial.println("Pow time : "+String(T)+" , time"+String(millis()-lastpow));
-      //while(j<proof_tam)
-      //{
-        /*if(millis()-lastbl>T)
-        {
-          n.SybilDetection();
-          Serial.println("Black list...");
-          bl = n.getBlackList();
-          PrintBlackList(bl);
-          n.clearBlackList();
-          lastbl=millis();
-          i++;         
-        }*/
-        /*if(millis()-lastpow>T)
-        {
-          Serial.println("Pow time : "+String(T)+" , time"+String(millis()-lastpow));
-          Serial.println("Sending a pow to subset  "+String(j));
-          payload = proofs.at(j);
-          Pack(type,dst,proofs.at(j));
-          sendMessage(n);
-          lastpow=millis();
-          i_t = lastpow;
-          j++;
-        } */
-      //}
+      //Serial.println("Pow time : "+String(T)+" , time"+String(millis()-lastpow));
       isgl=0;
-      //proofs.clear();
     }
     if( isgl==0 && isPoW==0)
     {
@@ -266,9 +244,9 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
         Serial.print(pow_s.charAt(i));
         solution.push_back(pow_s.charAt(i));
       }
-      n.AddAnswer(solution);
-      n.AddPowTime(total);
-      issolved =1;
+      //n.AddAnswer(solution);
+      //n.AddPowTime(total);
+      //issolved =1;
     }  
   }
 }
@@ -369,14 +347,12 @@ void GL_pow()
     vector<char> f = {'1','7'};
     gl.push_back(d);
     gl.push_back(f);
-    PrintGrayList(gl); // Solamente imprime la lista gris
+    //PrintGrayList(gl); // Solamente imprime la lista gris
     tam =gl.size();
     int rnd;
     String rn;
     vector<char> rand_n,proof;
     vector<vector <char>> sol;
-    type=0x01;
-    dst ='d';
     if(tam>0)//primero nos aseguramos que exista la lista gris o que haya almenos un subconjunto
     {
       for(i=0;i<tam;i++) // Recorremos la lista gris y generamos una Pow para cada subconjunto
@@ -385,18 +361,14 @@ void GL_pow()
           rnd = random(1000,2000);
           rn = String(rnd);
           Serial.println("Random number : "+rn);
-          //Serial.println(rn);
           rand_n.push_back(rn.charAt(0));//insert(0,)
           rand_n.push_back(rn.charAt(1));
           rand_n.push_back(rn.charAt(2));
           rand_n.push_back(rn.charAt(3));
-          sol=n.genPoW(gl[i],rand_n);
+          n.genPoW(gl[i],rand_n);
           proof = MakePayload(gl[i],rand_n);
           proofs.push_back(proof);
-          //Serial.println("Sending a PoW");
-          //sendMessage(n);
           rand_n.clear();
-          counter++;
       }
 
       n.removesubset(); // Elimina los subconjuntos que ya fueron generados para Pow

@@ -39,11 +39,11 @@ private:
   vector<queue> Hist;
   vector<vector<char>> graylist;
   int r;
-  vector<string> pow;
-  vector<int> pow_ti;
+  vector<vector<string>> pow;
+  vector<vector<int>> pow_ti;
+  vector<vector<char>> id_tested;
   vector<string> pow_ans;
   vector<int> pow_tf;
-  vector<char> id_tested;
   vector<char> blacklist;
   vector<char> bl_hashes;
 public:
@@ -78,7 +78,7 @@ public:
     void removesubset();
     int inGraylist(vector<char> subset);
     /*Phase 2 : PoW*/
-    vector<vector <char>> genPoW(vector<char> subset,vector<char> rand_n);
+    void genPoW(vector<char> subset,vector<char> rand_n);
     string ProofOfWork(string input,int dif);
     string toHash(string input,string lhash);
     string GenerateTarget(int difficulty);
@@ -88,6 +88,6 @@ public:
     void AddPowTime(int pow_t);
     int SybilDetection();
     void clearBlackList();
-    int calcThreshold();
+    vector<int> calcThreshold();
 };
 #endif /* Node_hpp */

@@ -44,26 +44,20 @@ int main()
   }
 
   vector<char> rand = {'1','2','2','3'};
-  solutions = n.genPoW(subset,rand);
-  for (i=0;i<solutions.size();i++)
-  {
-    cout<<"# solution : "<<i<<endl;
-    cout<<"solution size : "<<solutions.at(i).size()<<endl;
-    for (j=0;j<solutions.at(i).size();j++)
-    {
-      cout<<solutions.at(i).at(j);
-
-    }
-    cout<<""<<endl;
-  }
+  n.genPoW(subset,rand);
+  subset.pop_back();
+  rand.pop_back();
+  rand.push_back('6');
+  n.genPoW(subset,rand);
   n.setID('1');
   n.solvePoW(rand);
-  n.AddAnswer(solutions.at(3));
+  /*n.AddAnswer(solutions.at(3));
   n.AddPowTime(0);
   n.AddAnswer(solutions.at(2));
   n.AddPowTime(0);
   n.AddAnswer(solutions.at(0));
   n.AddPowTime(0);
-  n.SybilDetection();
+  n.SybilDetection();*/
+  n.calcThreshold();
   return 0;
 }

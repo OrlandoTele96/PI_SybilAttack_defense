@@ -272,14 +272,16 @@ int Node::inGraylist(vector<char> subset)
   return ans;
 }
 /*---------------------------Phase 2 : PoW------------------------------------*/
-vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
+void Node::genPoW(vector<char> subset,vector<char> rand_n)
 {
-  int i;
+  int i,j;
   string number ="";
   string input="";
   string solution;
   int i_t,f_t,t_pow;
   vector<vector <char>> solutions;
+  vector<string> pow_solutions;
+  vector<int> pow_time;
   number = randNumAdapter(rand_n);
   for (i=0;i<subset.size();i++)
   {
@@ -292,14 +294,16 @@ vector<vector <char>> Node::genPoW(vector<char> subset,vector<char> rand_n)
     cout<<input<<endl;
     solution=solution.substr(0,32);
     cout<<"Mined hash : "<<solution<<endl;
-    this->pow_ti.push_back(t_pow);
-    this->pow.push_back(solution);
-    this->id_tested.push_back(subset.at(i));
-    vector<char> s (solution.begin(),solution.end());
+    pow_time.push_back(t_pow);
+    pow_solutions.push_back(solution);
+    //this->id_tested.push_back(subset.at(i));
+    //vector<char> s (solution.begin(),solution.end());
     //Convert solution in vector<char> format
-    solutions.push_back(s);
+    //solutions.push_back(s);
   }
-  return solutions;
+  this->pow.push_back(pow_solutions);
+  this->pow_ti.push_back(pow_time);
+  this->id_tested.push_back(subset);
 }
 string Node::ProofOfWork(string input,int dif)
 {
@@ -381,7 +385,7 @@ void Node::AddPowTime(int pow_t)
 }
 int Node::SybilDetection()
 {
-  int thresh_t;
+  /*int thresh_t;
   int i,j,k;
   int inans;
   int sup,inf;
@@ -400,7 +404,7 @@ int Node::SybilDetection()
     for (j=0;j<this->pow_ans.size();j++)
     {
       if(pow.at(i)==pow_ans.at(j))
-      {
+      {*/
         //check time
 
         //cout<<"ID :"<<id_tested.at(i)<<"answered"<<endl;
@@ -408,7 +412,7 @@ int Node::SybilDetection()
         {
           inans=1;
         }*/
-        inans=1;
+        /*inans=1;
       }
     }
     if(inans==0)
@@ -423,7 +427,7 @@ int Node::SybilDetection()
   this->pow_ans.clear();
   this->pow_tf.clear();
   this->id_tested.clear();
-  }
+}*/
     return 0;
 }
 
@@ -432,20 +436,26 @@ void Node::clearBlackList()
   this->blacklist.clear();
 }
 
-int Node::calcThreshold()
+vector<int> Node::calcThreshold()
 {
-  int i;
+  int i,j;
   int act,last;
   int threshold;
-  last=0;
+  vector<int>thresholds;
   for(i=0;i<this->pow_ti.size();i++)
   {
-    act =this->pow_ti.at(i);
-    if(act>last)
+    last=0;
+    for(j=0;j<this->pow_ti.at(i).size();j++)
     {
-      last = act;
+      cout<<this->pow_ti.at(i).at(j)<<endl;
+      act =this->pow_ti.at(i).at(j);
+      if(act>last)
+      {
+        last = act;
+      }
     }
+    threshold = last + 1500+(2500);
+    thresholds.push_back(threshold);
   }
-  threshold = last + 1500+(2500);
-  return last;
+  return thresholds;
 }
