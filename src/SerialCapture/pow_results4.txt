@@ -1,0 +1,1000 @@
+**---BlackList--**
+2678**
+**
+**--Gray List--**
+Subconjunto : 0
+
+36Subconjunto : 1
+
+2678Subconjunto : 2
+
+386Subconjunto : 3
+
+26378Subconjunto : 4
+
+3876**
+**---BlackList--**
+3876**
+Message 2 received
+Node 3	has replied a Pow with : 00996353c484bf42a0b9eb77f35f76f7
+**---BlackList--**
+2678**
+**---BlackList--**
+386**
+**---BlackList--**
+2678**
+**---BlackList--**
+36**
+**
+**--Gray List--**
+Subconjunto : 0
+
+86Subconjunto : 1
+
+632Subconjunto : 2
+
+26Subconjunto : 3
+
+6872Subconjunto : 4
+
+638Subconjunto : 5
+
+6382Subconjunto : 6
+
+286Subconjunto : 7
+
+382Subconjunto : 8
+
+38Subconjunto : 9
+
+672**
+**---BlackList--**
+672**
+**---BlackList--**
+38**
+Message 2 received
+Node 3	has replied a Pow with : 00fe63721080011a3a178ad44bdd649a
+**---BlackList--**
+82**
+**---BlackList--**
+286**
+**---BlackList--**
+6382**
+**---BlackList--**
+638**
+**---BlackList--**
+6872**
+**---BlackList--**
+26**
+**---BlackList--**
+632**
+**---BlackList--**
+86**
+**
+**--Gray List--**
+Subconjunto : 0
+
+83Subconjunto : 1
+
+26873Subconjunto : 2
+
+386Subconjunto : 3
+
+86Subconjunto : 4
+
+36Subconjunto : 5
+
+78Subconjunto : 6
+
+82**
+**---BlackList--**
+82**
+**---BlackList--**
+78**
+**---BlackList--**
+36**
+**---BlackList--**
+86**
+**---BlackList--**
+386**
+Message 2 received
+Node 3	has replied a Pow with : 00edaddbca0e38bb64ff166486c1d48d
+**---BlackList--**
+2687**
+**---BlackList--**
+83**
+**
+**--Gray List--**
+Subconjunto : 0
+
+86Subconjunto : 1
+
+82Subconjunto : 2
+
+36**
+**---BlackList--**
+36**
+**---BlackList--**
+82**
+**---BlackList--**
+86**
+**
+**--Gray List--**
+Subconjunto : 0
+
+26873**
+**---BlackList--**
+26873**
+**
+**--Gray List--**
+Subconjunto : 0
+
+26873Subconjunto : 1
+
+83**
+**---BlackList--**
+83**
+**---BlackList--**
+26873**
+**
+**--Gray List--**
+Subconjunto : 0
+
+83**
+**---BlackList--**
+83**
+**
+**--Gray List--**
+Subconjunto : 0
+
+38**
+**---BlackList--**
+38**
+**
+**--Gray List--**
+Subconjunto : 0
+
+82**
+**---BlackList--**
+82**
+**
+**--Gray List--**
+Subconjunto : 0
+
+82Subconjunto : 1
+
+682Subconjunto : 2
+
+62**
+**---BlackList--**
+62**
+**---BlackList--**
+682**
+**---BlackList--**
+82**
+**
+**--Gray List--**
+Subconjunto : 0
+
+62Subconjunto : 1
+
+632Subconjunto : 2
+
+26873Subconjunto : 3
+
+6372Subconjunto : 4
+
+372Subconjunto : 5
+
+86Subconjunto : 6
+
+682**
+**---BlackList--**
+682**
+**---BlackList--**
+86**
+Message 2 received
+Node 3	has replied a Pow with : 00aef58922ed8b3503ae2caa87e43d8a
+**---BlackList--**
+72**
+**---BlackList--**
+6372**
+**---BlackList--**
+26873**
+**---BlackList--**
+632**
+**---BlackList--**
+62**
+**
+**--Gray List--**
+Subconjunto : 0
+
+62Subconjunto : 1
+
+2673Subconjunto : 2
+
+78Subconjunto : 3
+
+673Subconjunto : 4
+
+37Subconjunto : 5
+
+6873Subconjunto : 6
+
+378Subconjunto : 7
+
+678Subconjunto : 8
+
+83Subconjunto : 9
+
+26873**
+**---BlackList--**
+26873**
+**---BlackList--**
+83**
+**---BlackList--**
+678**
+Message 2 received
+Node 3	has replied a Pow with : 0007b89247a8053b1b442fbf464d856f
+**---BlackList--**
+78**
+**---BlackList--**
+6873**
+Message 2 received
+Node 3	has replied a Pow with : 005a2136c256f520869b2f153f94015e
+**---BlackList--**
+7**
+**---BlackList--**
+673**
+**---BlackList--**
+78**
+Message 2 received
+Node 3	has replied a Pow with : 002c76d6dde89593b8d6a8b77e912706
+**---BlackList--**
+267**
+**---BlackList--**
+62**
+**
+**--Gray List--**
+Subconjunto : 0
+
+26873Subconjunto : 1
+
+2673Subconjunto : 2
+
+2678Subconjunto : 3
+
+6382**
+**---BlackList--**
+6382**
+**---BlackList--**
+2678**
+**---BlackList--**
+2673**
+**---BlackList--**
+26873**
+**
+**--Gray List--**
+Subconjunto : 0
+
+6382Subconjunto : 1
+
+26873Subconjunto : 2
+
+37**
+**---BlackList--**
+37**
+Message 2 received
+Node 3	has replied a Pow with : 0024077bcf16cf230a57c7b9fdeba26f
+**---BlackList--**
+2687**
+Message 2 received
+Node 3	has replied a Pow with : 001eedecd53c204600326da8117d1d79
+**---BlackList--**
+682**
+**
+**--Gray List--**
+Subconjunto : 0
+
+37Subconjunto : 1
+
+26873Subconjunto : 2
+
+2683**
+**---BlackList--**
+2683**
+Message 2 received
+Node 3	has replied a Pow with : 001f7a2c31f4356813053608d9787693
+**---BlackList--**
+2687**
+Message 2 received
+Node 3	has replied a Pow with : 00a9c154b95037b0a61bcb6b33301af1
+**---BlackList--**
+7**
+**
+**--Gray List--**
+Subconjunto : 0
+
+26873**
+Message 2 received
+Node 3	has replied a Pow with : 00facc51245468ef181f0b9c3f9766fc
+**---BlackList--**
+2687**
+**
+**--Gray List--**
+Subconjunto : 0
+
+36Subconjunto : 1
+
+287Subconjunto : 2
+
+26873Subconjunto : 3
+
+2387**
+**---BlackList--**
+2387**
+**---BlackList--**
+26873**
+**---BlackList--**
+287**
+Message 2 received
+Node 3	has replied a Pow with : 00ab09048f3af84c693d3446aa05103a
+**---BlackList--**
+6**
+**
+**--Gray List--**
+Subconjunto : 0
+
+876Subconjunto : 1
+
+2876Subconjunto : 2
+
+286Subconjunto : 3
+
+37Subconjunto : 4
+
+26873Subconjunto : 5
+
+2638**
+**---BlackList--**
+2638**
+**---BlackList--**
+26873**
+**---BlackList--**
+37**
+**---BlackList--**
+286**
+**---BlackList--**
+2876**
+**---BlackList--**
+876**
+**
+**--Gray List--**
+Subconjunto : 0
+
+26873Subconjunto : 1
+
+238Subconjunto : 2
+
+67Subconjunto : 3
+
+38Subconjunto : 4
+
+2673Subconjunto : 5
+
+637Subconjunto : 6
+
+63Subconjunto : 7
+
+632Subconjunto : 8
+
+32Subconjunto : 9
+
+678Subconjunto : 10
+
+78Subconjunto : 11
+
+62Subconjunto : 12
+
+378Subconjunto : 13
+
+672Subconjunto : 14
+
+2873Subconjunto : 15
+
+27Subconjunto : 16
+
+237**
+**---BlackList--**
+237**
+**---BlackList--**
+27**
+**---BlackList--**
+2873**
+**---BlackList--**
+672**
+Message 2 received
+Node 3	has replied a Pow with : 00907e896c449edf51c8863bbca8f152
+**---BlackList--**
+78**
+**---BlackList--**
+62**
+**---BlackList--**
+78**
+**---BlackList--**
+678**
+**---BlackList--**
+32**
+Message 2 received
+Node 3	has replied a Pow with : 0016a70a8011fac20c260a31cdf839a9
+**---BlackList--**
+62**
+Message 2 received
+Node 3	has replied a Pow with : 002a02523030dfda9858d3307559732c
+**---BlackList--**
+6**
+**---BlackList--**
+637**
+Message 2 received
+Node 3	has replied a Pow with : 001f7a2c31f4356813053608d9787693
+**---BlackList--**
+267**
+**---BlackList--**
+38**
+**---BlackList--**
+67**
+**---BlackList--**
+238**
+**---BlackList--**
+26873**
+**
+**--Gray List--**
+Subconjunto : 0
+
+268Subconjunto : 1
+
+72Subconjunto : 2
+
+68Subconjunto : 3
+
+678Subconjunto : 4
+
+76Subconjunto : 5
+
+87Subconjunto : 6
+
+26Subconjunto : 7
+
+32Subconjunto : 8
+
+63Subconjunto : 9
+
+26873**
+**---BlackList--**
+26873**
+**---BlackList--**
+63**
+**---BlackList--**
+32**
+**---BlackList--**
+26**
+**---BlackList--**
+87**
+**---BlackList--**
+76**
+**---BlackList--**
+678**
+**---BlackList--**
+68**
+**---BlackList--**
+72**
+**---BlackList--**
+268**
+**
+**--Gray List--**
+Subconjunto : 0
+
+36Subconjunto : 1
+
+637Subconjunto : 2
+
+37**
+Message 2 received
+Node 3	has replied a Pow with : 00168fbc4113a6dc57106dd513370c6f
+**---BlackList--**
+7**
+**---BlackList--**
+637**
+Message 2 received
+Node 3	has replied a Pow with : 00df7a3fda2769a3fbf774ab90ac5e5f
+**---BlackList--**
+6**
+**
+**--Gray List--**
+Subconjunto : 0
+
+2687**
+**---BlackList--**
+2687**
+**
+**--Gray List--**
+Subconjunto : 0
+
+2687**
+**---BlackList--**
+2687**
+**
+**--Gray List--**
+Subconjunto : 0
+
+32Subconjunto : 1
+
+687**
+**---BlackList--**
+687**
+**---BlackList--**
+32**
+**
+**--Gray List--**
+Subconjunto : 0
+
+32Subconjunto : 1
+
+687Subconjunto : 2
+
+67**
+**---BlackList--**
+67**
+**---BlackList--**
+687**
+**---BlackList--**
+32**
+**
+**--Gray List--**
+Subconjunto : 0
+
+32Subconjunto : 1
+
+678**
+**---BlackList--**
+678**
+**---BlackList--**
+32**
+**
+**--Gray List--**
+Subconjunto : 0
+
+32Subconjunto : 1
+
+687**
+**---BlackList--**
+687**
+**---BlackList--**
+32**
+**
+**--Gray List--**
+Subconjunto : 0
+
+83**
+**---BlackList--**
+83**
+**
+**--Gray List--**
+Subconjunto : 0
+
+2678**
+**---BlackList--**
+2678**
+**
+**--Gray List--**
+Subconjunto : 0
+
+78**
+**---BlackList--**
+78**
+**
+**--Gray List--**
+Subconjunto : 0
+
+78**
+**---BlackList--**
+78**
+**
+**--Gray List--**
+Subconjunto : 0
+
+38**
+**---BlackList--**
+38**
+**
+**--Gray List--**
+Subconjunto : 0
+
+38**
+Message 2 received
+Node 3	has replied a Pow with : 00699abf761c7effbe8b1e5117e97973
+**---BlackList--**
+8**
+**
+**--Gray List--**
+Subconjunto : 0
+
+38**
+**---BlackList--**
+38**
+**
+**--Gray List--**
+Subconjunto : 0
+
+38Subconjunto : 1
+
+82Subconjunto : 2
+
+238**
+Message 2 received
+Node 3	has replied a Pow with : 006cf6bcd33f73554db4de1396d30880
+**---BlackList--**
+28**
+**---BlackList--**
+82**
+**---BlackList--**
+38**
+**
+**--Gray List--**
+Subconjunto : 0
+
+82Subconjunto : 1
+
+238Subconjunto : 2
+
+3872Subconjunto : 3
+
+372Subconjunto : 4
+
+32**
+Message 2 received
+Node 3	has replied a Pow with : 00ea8d7ec79388299c2e97b686bab809
+**---BlackList--**
+32**
+Message 2 received
+Node 3	has replied a Pow with : 00548120503cea95d6a652417e2b8364
+**---BlackList--**
+72**
+**---BlackList--**
+3872**
+Message 2 received
+Node 3	has replied a Pow with : 00371e68df0c6932fe306d58bdc19be0
+**---BlackList--**
+28**
+**---BlackList--**
+82**
+**
+**--Gray List--**
+Subconjunto : 0
+
+26873Subconjunto : 1
+
+73Subconjunto : 2
+
+268Subconjunto : 3
+
+2678Subconjunto : 4
+
+2673**
+**---BlackList--**
+2673**
+**---BlackList--**
+2678**
+**---BlackList--**
+268**
+**---BlackList--**
+73**
+**---BlackList--**
+26873**
+**
+**--Gray List--**
+Subconjunto : 0
+
+2673Subconjunto : 1
+
+2638Subconjunto : 2
+
+26873Subconjunto : 3
+
+2378Subconjunto : 4
+
+273**
+**---BlackList--**
+273**
+**---BlackList--**
+2378**
+**---BlackList--**
+26873**
+**---BlackList--**
+2638**
+**---BlackList--**
+2673**
+**
+**--Gray List--**
+Subconjunto : 0
+
+62Subconjunto : 1
+
+672Subconjunto : 2
+
+72Subconjunto : 3
+
+76Subconjunto : 4
+
+32**
+**---BlackList--**
+32**
+**---BlackList--**
+76**
+**---BlackList--**
+72**
+**---BlackList--**
+672**
+**---BlackList--**
+62**
+**
+**--Gray List--**
+Subconjunto : 0
+
+32Subconjunto : 1
+
+76Subconjunto : 2
+
+672Subconjunto : 3
+
+378Subconjunto : 4
+
+78**
+**---BlackList--**
+78**
+**---BlackList--**
+378**
+**---BlackList--**
+672**
+**---BlackList--**
+76**
+**---BlackList--**
+32**
+**
+**--Gray List--**
+Subconjunto : 0
+
+83Subconjunto : 1
+
+2687**
+**---BlackList--**
+2687**
+**---BlackList--**
+83**
+**
+**--Gray List--**
+Subconjunto : 0
+
+267Subconjunto : 1
+
+27Subconjunto : 2
+
+63**
+Message 2 received
+Node 3	has replied a Pow with : 000482ba9e7c670a1f386c3dc67c9cea
+**---BlackList--**
+6**
+**---BlackList--**
+27**
+**---BlackList--**
+267**
+**
+**--Gray List--**
+Subconjunto : 0
+
+63Subconjunto : 1
+
+278Subconjunto : 2
+
+2678Subconjunto : 3
+
+73Subconjunto : 4
+
+268**
+**---BlackList--**
+268**
+Message 2 received
+Node 3	has replied a Pow with : 000d3ad79934d767f1c05cccdaa45f82
+**---BlackList--**
+7**
+**---BlackList--**
+2678**
+**---BlackList--**
+278**
+**---BlackList--**
+63**
+**
+**--Gray List--**
+Subconjunto : 0
+
+73Subconjunto : 1
+
+26873Subconjunto : 2
+
+273**
+**---BlackList--**
+273**
+**---BlackList--**
+26873**
+Message 2 received
+Node 3	has replied a Pow with : 009b824e54c7cc842e2c41111c26be67
+**---BlackList--**
+7**
+**
+**--Gray List--**
+Subconjunto : 0
+
+278Subconjunto : 1
+
+28**
+**---BlackList--**
+28**
+**---BlackList--**
+278**
+**
+**--Gray List--**
+Subconjunto : 0
+
+78**
+**---BlackList--**
+78**
+**
+**--Gray List--**
+Subconjunto : 0
+
+76**
+**---BlackList--**
+76**
+**
+**--Gray List--**
+Subconjunto : 0
+
+76**
+**---BlackList--**
+76**
+**
+**--Gray List--**
+Subconjunto : 0
+
+78**
+**---BlackList--**
+78**
+**
+**--Gray List--**
+Subconjunto : 0
+
+78**
+**---BlackList--**
+78**
+**
+**--Gray List--**
+Subconjunto : 0
+
+2678**
+**---BlackList--**
+2678**
+**
+**--Gray List--**
+Subconjunto : 0
+
+67**
+**---BlackList--**
+67**
+**
+**--Gray List--**
+Subconjunto : 0
+
+67**
+**---BlackList--**
+67**
+**
+**--Gray List--**
+Subconjunto : 0
+
+67Subconjunto : 1
+
+73**
+**---BlackList--**
+73**
+**---BlackList--**
+67**
+**
+**--Gray List--**
+Subconjunto : 0
+
+32Subconjunto : 1
+
+632Subconjunto : 2
+
+26**
+**---BlackList--**
+26**
+**---BlackList--**
+632**
+Message 2 received
+Node 3	has replied a Pow with : 005850e7a70a5cc90246ce9b1d9ae27a
+**---BlackList--**
+2**
+**
+**--Gray List--**
+Subconjunto : 0
+
+632Subconjunto : 1
+
+26Subconjunto : 2
+
+32**
+**---BlackList--**
+32**
+**---BlackList--**
+26**
+**---BlackList--**
+632**
+**
+**--Gray List--**
+Subconjunto : 0
+
+632Subconjunto : 1
+
+32**
+Message 2 received
+Node 3	has replied a Pow with : 003356a3f37e18efcefd60af27b115d3
+**---BlackList--**
+2**
+**---BlackList--**
+632**
+**
+**--Gray List--**
+Subconjunto : 0
+
+26873Subconjunto : 1
+
+73**
+Message 2 received
+Node 3	has replied a Pow with : 005a420b8ad7b62f0306b1a435fcb331
+**---BlackList--**
+7**
+**---BlackList--**
+26873**
+**
+**--Gray List--**
+Subconjunto : 0
+
+26873Subconjunto : 1
+
+2683**
+**---BlackList--**
+2683**
+**---BlackList--**
+26873**
+**
+**--Gray List--**
+Subconjunto : 0
+
+26873Subconjunto : 1
+
+73Subconjunto : 2
+
+2683**
+**---BlackList--**
+2683**
+**---BlackList--**
+73**
+Message 2 received
+Node 3	has replied a Pow with : 00d9b93b0497028fdc05f06663555457
+**---BlackList--**
+2687**
+**
+**--Gray List--**
+Subconjunto : 0
+

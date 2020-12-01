@@ -1,0 +1,5000 @@
+Received from : 2:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2007
+Sending temperatue
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2004
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 2
+ID : 8
+ID : 1
+ID : 7
+ID : 6
+Subconjunto : 1
+ID : 2
+ID : 7
+ID : 8
+Subconjunto : 2
+ID : 2
+ID : 1
+ID : 7
+ID : 8
+Subconjunto : 3
+ID : 2
+ID : 6
+ID : 7
+ID : 8
+**
+Random number : 1131
+Random number : 1409
+Random number : 1664
+Random number : 1053
+proofs of work generated!
+Sending temperatue
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Solving a PoW
+Time : 1
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2004
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 3
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2003
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 1:1
+Message 2 received
+Node 1	has replied a Pow with : 0839199e29cd9851c1e6e213afdcaac61664
+Timed at255610
+Received from : 1:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 1:1
+Message 1 received
+Received from : 1:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Solving a PoW
+Time : 0
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2009
+Sending temperatue
+Sending temperatue
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2005
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 091c7a7f1149a7bacb70e391d62af99e1131
+Timed at263138
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 2
+ID : 8
+ID : 1
+ID : 7
+ID : 6
+Subconjunto : 1
+ID : 1
+ID : 6
+Subconjunto : 2
+ID : 8
+ID : 7
+ID : 2
+Subconjunto : 3
+ID : 6
+ID : 8
+ID : 7
+ID : 1
+Subconjunto : 4
+ID : 8
+ID : 2
+Subconjunto : 5
+ID : 6
+ID : 1
+ID : 7
+Subconjunto : 6
+ID : 1
+ID : 7
+**
+Random number : 1965
+Received from : 2:0
+Message 0 received
+Random number : 1851
+Random number : 1041
+Random number : 1618
+Random number : 1225
+Received from : 8:0
+Message 0 received
+Random number : 1167
+Random number : 1507
+proofs of work generated!
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2001
+Sending temperatue
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 06586a812d8dec2df6a86311256f29241507
+Timed at266399
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 6
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2003
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 1:1
+Message 2 received
+Node 1	has replied a Pow with : 0147b07264506de90e4bc9ce2eeca6251167
+Timed at270718
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 5
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2014
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Solving a PoW
+Time : 1
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 4
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2002
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 3
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2003
+Sending temperatue
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2005
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 0384bbdf6d825cf34e5962c682cdaee71851
+Timed at280588
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2012
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 8
+ID : 2
+Subconjunto : 1
+ID : 2
+ID : 8
+ID : 1
+ID : 7
+ID : 6
+Subconjunto : 2
+ID : 1
+ID : 7
+**
+Random number : 1459
+Random number : 1137
+Random number : 1233
+proofs of work generated!
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2004
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 1:1
+Message 2 received
+Node 1	has replied a Pow with : 0264fb5baad140dfb61e51ab3b907fa11233
+Timed at289215
+Received from : 2:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2016
+Sending temperatue
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 0d9afe3e77490cd323e2d5626b98d1f01137
+Timed at289838
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2008
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 2
+ID : 8
+ID : 1
+ID : 7
+ID : 6
+Subconjunto : 1
+ID : 2
+ID : 8
+ID : 7
+Subconjunto : 2
+ID : 8
+ID : 7
+Subconjunto : 3
+ID : 8
+ID : 1
+ID : 7
+**
+Random number : 1864
+Random number : 1538
+Random number : 1665
+Random number : 1614
+proofs of work generated!
+Sending temperatue
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2008
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 1:1
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 3
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2002
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 1:1
+Message 1 received
+Received from : 1:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Solving a PoW
+Time : 5
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2007
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:1
+Message 1 received
+Received from : 1:1
+Message 0 received
+Solving a PoW
+Time : 0
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 2:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2018
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 01bcabde72561ad73db097cd3210cfd11864
+Timed at308763
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 6
+ID : 8
+ID : 1
+ID : 7
+ID : 2
+**
+Random number : 1800
+proofs of work generated!
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2006
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Solving a PoW
+Time : 6
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 2
+ID : 8
+ID : 1
+ID : 7
+ID : 6
+**
+Random number : 1532
+proofs of work generated!
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2008
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 088ad304cf3def0cbb48ba209b623c3b1532
+Timed at320054
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 2
+ID : 8
+ID : 1
+ID : 7
+ID : 6
+**
+Random number : 1895
+proofs of work generated!
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Solving a PoW
+Time : 2
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2005
+Sending temperatue
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 2
+ID : 8
+ID : 1
+ID : 7
+ID : 6
+Subconjunto : 1
+ID : 6
+ID : 2
+Subconjunto : 2
+ID : 2
+ID : 8
+ID : 1
+ID : 6
+**
+Random number : 1993
+Random number : 1933
+Random number : 1310
+proofs of work generated!
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2010
+Sending temperatue
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 053b075a48bf6c4d35802998897534a11310
+Timed at332933
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2000
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Message 1 received
+Received from : 1:1
+Message 0 received
+Solving a PoW
+Time : 0
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 16
+Sending temperatue
+blacklist generation
+abort() was called at PC 0x400fd90f on core 1
+
+Backtrace: 0x4008b744:0x3ffb19e0 0x4008b975:0x3ffb1a00 0x400fd90f:0x3ffb1a20 0x400fd956:0x3ffb1a40 0x400efa2b:0x3ffb1a60 0x400f0b23:0x3ffb1a80 0x400d1939:0x3ffb1aa0 0x400d2557:0x3ffb1ac0 0x400d362e:0x3ffb1af0 0x400d4689:0x3ffb1b60 0x400d6ce9:0x3ffb1fb0 0x40088385:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 7
+ID : 2
+**
+Random number : 1240
+proofs of work generated!
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2003
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 7
+ID : 2
+Subconjunto : 1
+ID : 2
+ID : 7
+ID : 6
+**
+Random number : 1877
+Random number : 1564
+proofs of work generated!
+Sending temperatue
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Solving a PoW
+Time : 1
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2004
+Sending temperatue
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 1:1
+Message 1 received
+Received from : 1:1
+Message 0 received
+Solving a PoW
+Time : 8
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2008
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 2
+ID : 7
+ID : 6
+Subconjunto : 1
+ID : 2
+ID : 6
+Subconjunto : 2
+ID : 6
+ID : 7
+ID : 1
+ID : 2
+**
+Random number : 1428
+Random number : 1867
+Random number : 1156
+proofs of work generated!
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Solving a PoW
+Time : 1
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2005
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 1:1
+Message 2 received
+Node 1	has replied a Pow with : 0411f6276058f843a1e2bfb3658c5ef61156
+Timed at30454
+Received from : 8:1
+Message 0 received
+Received from : 1:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2004
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2004
+Sending temperatue
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 6
+ID : 7
+ID : 1
+ID : 2
+Subconjunto : 1
+ID : 2
+ID : 6
+ID : 8
+ID : 7
+ID : 1
+**
+Random number : 1294
+Random number : 1667
+Received from : 6:0
+Message 0 received
+proofs of work generated!
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Solving a PoW
+Time : 0
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Solving a PoW
+Time : 0
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2008
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Message 2 received
+Node 1	has replied a Pow with : 06a75ebfda74663927c0cf7b225a594c1667
+Timed at47569
+Received from : 6:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2006
+Sending temperatue
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 02015dabfc8def448c3296f450aa96231294
+Timed at49291
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Solving a PoW
+Time : 0
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+Sending temperatue
+Received from : 1:0
+Message 0 received
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 2
+ID : 6
+ID : 8
+ID : 7
+ID : 1
+Subconjunto : 1
+ID : 1
+ID : 6
+Subconjunto : 2
+ID : 7
+ID : 8
+Subconjunto : 3
+ID : 6
+ID : 7
+ID : 8
+Subconjunto : 4
+ID : 6
+ID : 7
+ID : 1
+ID : 8
+Subconjunto : 5
+ID : 7
+ID : 1
+ID : 8
+**
+Random number : 1725
+Random number : 1162
+Random number : 1324
+Random number : 1742
+Random number : 1786
+Random number : 1843
+proofs of work generated!
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2009
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Message 1 received
+Solving a PoW
+Time : 1
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 5
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2012
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 4
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2008
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 3
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2007
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2005
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2009
+Sending temperatue
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 0072cf9e102b32538003d4453d8ceb5a1725
+Timed at71225
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 6
+ID : 8
+ID : 7
+ID : 1
+ID : 2
+Subconjunto : 1
+ID : 7
+ID : 8
+Subconjunto : 2
+ID : 6
+ID : 7
+ID : 1
+ID : 2
+Subconjunto : 3
+ID : 1
+ID : 6
+Subconjunto : 4
+ID : 6
+ID : 7
+ID : 8
+Subconjunto : 5
+ID : 6
+ID : 7
+Subconjunto : 6
+ID : 6
+ID : 7
+ID : 1
+ID : 8
+Subconjunto : 7
+ID : 2
+ID : 7
+ID : 1
+Subconjunto : 8
+ID : 2
+ID : 1
+**
+Random number : 1458
+Random number : 1175
+Random number : 1324
+Random number : 1376
+Random number : 1171
+Random number : 1167
+Random number : 1733
+Random number : 1611
+Random number : 1868
+proofs of work generated!
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2001
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Message 2 received
+Node 1	has replied a Pow with : 0a43f8e15c261eee252d73d508a1d8d41868
+Timed at75760
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+blacklist generation
+Generated!
+Received from : 6:1
+Message 0 received
+Received from : 1:1
+Message 2 received
+Node 1	has replied a Pow with : 0a0d1270543f664ee4697cdec6cbe6481324
+Timed at94620
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2002
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2008
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 6
+ID : 8
+ID : 7
+ID : 1
+ID : 2
+Subconjunto : 1
+ID : 6
+ID : 7
+ID : 8
+Subconjunto : 2
+ID : 2
+ID : 1
+Subconjunto : 3
+ID : 6
+ID : 7
+ID : 1
+ID : 2
+Subconjunto : 4
+ID : 6
+ID : 7
+ID : 1
+ID : 8
+Subconjunto : 5
+ID : 8
+ID : 7
+ID : 1
+ID : 2
+Subconjunto : 6
+ID : 6
+ID : 8
+ID : 1
+ID : 2
+**
+Random number : 1694
+Random number : 1530
+Random number : 1198
+Random number : 1449
+Random number : 1312
+Random number : 1996
+Random number : 1115
+Received from : 7:0
+Message 0 received
+proofs of work generated!
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Solving a PoW
+Time : 1
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2005
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 1:1
+Message 1 received
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Solving a PoW
+Time : 3
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 6
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2006
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 1:1
+Received from : 1:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 5
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2009
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 4
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2020
+Sending temperatue
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 3
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2004
+Sending temperatue
+Received from : 1:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 1:1
+Message 1 received
+Received from : 1:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Solving a PoW
+Time : 18
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2008
+Sending temperatue
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2001
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 0638d04a38de1c7461cb4fd0d3d518c31694
+Timed at130313
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 6
+ID : 8
+ID : 7
+ID : 1
+ID : 2
+Subconjunto : 1
+ID : 8
+ID : 7
+Subconjunto : 2
+ID : 6
+ID : 8
+ID : 7
+Subconjunto : 3
+ID : 6
+ID : 7
+ID : 1
+Subconjunto : 4
+ID : 6
+ID : 8
+ID : 2
+**
+Random number : 1255
+Random number : 1218
+Random number : 1615
+Random number : 1443
+Received from : 7:0
+Message 0 received
+Random number : 1964
+proofs of work generated!
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2003
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 4
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2011
+Sending temperatue
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 044b56008832137eedbd23cc5945f8b81443
+Timed at138340
+Received from : 1:0
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 1:1
+Message 1 received
+Received from : 1:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Solving a PoW
+Time : 1
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Solving a PoW
+Time : 1
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 3
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2004
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 1:1
+Message 1 received
+Received from : 1:1
+Message 0 received
+Solving a PoW
+Time : 4
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2009
+Sending temperatue
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2013
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 09f3d3d0ccb57c6d26eb4ac9246da94b1255
+Timed at158924
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 6
+ID : 8
+ID : 2
+Subconjunto : 1
+ID : 2
+ID : 8
+ID : 7
+ID : 1
+ID : 6
+Subconjunto : 2
+ID : 6
+ID : 8
+ID : 7
+ID : 2
+Subconjunto : 3
+ID : 2
+ID : 7
+ID : 8
+Subconjunto : 4
+ID : 8
+ID : 7
+ID : 1
+ID : 2
+Subconjunto : 5
+ID : 7
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a866  PS      : 0x00060034  A0      : 0x80089c53  A1      : 0x3ffbe620  
+A2      : 0x3ffb81f0  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060023  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060021  A15     : 0x00000000  SAR     : 0x00000010  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c28c  LEND    : 0x4000c296  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x400890da  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a866
+
+Backtrace: 0x4008a866:0x3ffbe620 0x40089c50:0x3ffbe640 0x4008818b:0x3ffbe660 0x400d73d1:0x3ffbe6a0 0x400d62e5:0x3ffbe6c0 0x400d64d9:0x3ffbe6e0 0x400d6511:0x3ffbe700 0x400d4bd5:0x3ffbe720 0x400d57f0:0x3ffbe770 0x400d5806:0x3ffbe790 0x40080f49:0x3ffbe7b0 0x40084711:0x3ffbe7d0 0x400d73dd:0x3ffb19d0 0x400d62e5:0x3ffb19f0 0x400d64d9:0x3ffb1a10 0x400d6511:0x3ffb1a30 0x400d3967:0x3ffb1a50 0x400d3f32:0x3ffb1a90 0x400d4919:0x3ffb1b60 0x400d6ce9:0x3ffb1fb0 0x40088385:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x400890da  PS      : 0x00060034  A0      : 0x80089901  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000abab  A9      : 0x3ffc069c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001d  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x400890da:0x3ffbe150 0x400898fe:0x3ffbe180 0x40088473:0x3ffbe1a0 0x4008a6d9:0x3ffbe1c0 0x4008471a:0x3ffbe1d0 0x4010f663:0x3ffbc060 0x400d96e3:0x3ffbc080 0x400898c9:0x3ffbc0a0 0x40088385:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Solving a PoW
+Time : 1
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Sending temperatue
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Solving a PoW
+Time : 0
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Solving a PoW
+Time : 4
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 6
+ID : 7
+**
+Random number : 1212
+proofs of work generated!
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2022
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 6
+ID : 7
+Subconjunto : 1
+ID : 7
+ID : 6
+ID : 2
+ID : 1
+Subconjunto : 2
+ID : 6
+ID : 8
+ID : 7
+Subconjunto : 3
+ID : 7
+ID : 6
+ID : 2
+ID : 8
+ID : 1
+**
+Random number : 1347
+Random number : 1450
+Random number : 1955
+Random number : 1912
+proofs of work generated!
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2010
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 3
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2009
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2007
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 1:1
+Received from : 1:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2002
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 6
+ID : 8
+ID : 7
+Subconjunto : 1
+ID : 7
+ID : 6
+ID : 2
+ID : 8
+ID : 1
+Subconjunto : 2
+ID : 7
+ID : 6
+Subconjunto : 3
+ID : 8
+ID : 2
+Subconjunto : 4
+ID : 7
+ID : 2
+ID : 8
+ID : 6
+Subconjunto : 5
+ID : 6
+ID : 1
+**
+Random number : 1845
+Random number : 1130
+Random number : 1401
+Random number : 1035
+Random number : 1311
+Random number : 1215
+proofs of work generated!
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2012
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 0c4af0c904d2cf31dc1992738b9b49c01215
+Timed at38118
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 5
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2008
+Sending temperatue
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 4
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2006
+Sending temperatue
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 1:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 3
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2006
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2007
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 0de8e21140642dcbba71e1219afc6f421130
+Timed at49587
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2010
+Sending temperatue
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 7
+ID : 2
+ID : 8
+ID : 6
+Subconjunto : 1
+ID : 8
+ID : 2
+Subconjunto : 2
+ID : 2
+ID : 8
+ID : 7
+**
+Random number : 1310
+Random number : 1618
+Random number : 1760
+proofs of work generated!
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2001
+Sending temperatue
+Sending temperatue
+Received from : 1:0
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2001
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2010
+Sending temperatue
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Sending temperatue
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Solving a PoW
+Time : 13
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 1:0
+Message 0 received
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 6
+ID : 2
+ID : 8
+Subconjunto : 1
+ID : 7
+ID : 1
+**
+Random number : 1300
+Random number : 1842
+proofs of work generated!
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2011
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2003
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Solving a PoW
+Time : 4
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 6
+ID : 2
+ID : 8
+Subconjunto : 1
+ID : 7
+ID : 1
+Subconjunto : 2
+ID : 7
+ID : 6
+ID : 2
+ID : 8
+ID : 1
+**
+Random number : 1226
+Random number : 1868
+Random number : 1642
+proofs of work generated!
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Solving a PoW
+Time : 6
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2015
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 1:1
+Received from : 1:1
+Message 0 received
+Received from : 1:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2002
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 0a43f8e15c261eee252d73d508a1d8d41868
+Timed at90634
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2014
+Sending temperatue
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Solving a PoW
+Time : 3
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 7
+ID : 1
+Subconjunto : 1
+ID : 2
+ID : 8
+ID : 6
+Subconjunto : 2
+ID : 8
+ID : 7
+Subconjunto : 3
+ID : 7
+ID : 8
+ID : 1
+Subconjunto : 4
+ID : 2
+ID : 6
+Subconjunto : 5
+ID : 6
+ID : 2
+ID : 8
+ID : 7
+Subconjunto : 6
+ID : 8
+ID : 1
+Subconjunto : 7
+ID : 7
+ID : 2
+ID : 6
+Subconjunto : 8
+ID : 2
+ID : 8
+ID : 7
+Subconjunto : 9
+ID : 6
+ID : 1
+Subconjunto : 10
+ID : 7
+ID : 6
+ID : 1
+Subconjunto : 11
+ID : 8
+ID : 2
+**
+Random number : 1696
+Random number : 1175
+Random number : 1974
+Random number : 1466
+Random number : 1883
+Random number : 1782
+Random number : 1665
+Random number : 1436
+Random number : 1370
+Random number : 1011
+Random number : 1310
+Random number : 1309
+proofs of work generated!
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2008
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 11
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2003
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 053b075a48bf6c4d35802998897534a11310
+Timed at102398
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Solving a PoW
+Time : 1
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 10
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2005
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Message 2 received
+Node 1	has replied a Pow with : 085640e90d909a996251c7b2c66219b31011
+Timed at106095
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 9
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2005
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 8
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2005
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 1:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 1:1
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 7
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2007
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 03891dfb975767603fff40c9561a26e51665
+Timed at114848
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 1:1
+Message 1 received
+Received from : 1:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Solving a PoW
+Time : 1
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 6
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2010
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 5
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2015
+Sending temperatue
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 4
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2005
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 0ce106e22a41033fa331dc626a4e1c511466
+Timed at124535
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 3
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2002
+Sending temperatue
+Received from : 1:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2003
+Sending temperatue
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 1:1
+Message 1 received
+Received from : 1:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 1:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Solving a PoW
+Time : 1
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2008
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 6
+ID : 1
+Subconjunto : 1
+ID : 7
+ID : 8
+ID : 2
+Subconjunto : 2
+ID : 7
+ID : 6
+ID : 8
+ID : 2
+Subconjunto : 3
+ID : 7
+ID : 1
+Subconjunto : 4
+ID : 7
+ID : 6
+ID : 1
+Subconjunto : 5
+ID : 6
+ID : 7
+Subconjunto : 6
+ID : 1
+ID : 6
+ID : 2
+ID : 8
+ID : 7
+**
+Random number : 1384
+Random number : 1298
+Received from : 2:0
+Message 0 received
+Random number : 1144
+Random number : 1103
+Random number : 1844
+Random number : 1798
+Random number : 1908
+proofs of work generated!
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2017
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Message 2 received
+Node 1	has replied a Pow with : 04af6ac0886a2f6ee6f889fc34e9a1fe1908
+Timed at142255
+Received from : 1:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 6
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2005
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Message 1 received
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Solving a PoW
+Time : 7
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 5
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2012
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:1
+Message 2 received
+Node 1	has replied a Pow with : 0bb9fdf6b8493aba9cb007b716c6130a1844
+Timed at147989
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 4
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2002
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 1:1
+Message 2 received
+Node 1	has replied a Pow with : 0d529c07cc61d00a1fc58e65dd8ceab61103
+Timed at151234
+Received from : 1:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Message 0 received
+Received from : 6:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 3
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2006
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2010
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2007
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 2
+ID : 8
+ID : 7
+Subconjunto : 1
+ID : 6
+ID : 1
+Subconjunto : 2
+ID : 7
+ID : 2
+ID : 8
+ID : 6
+Subconjunto : 3
+ID : 7
+ID : 6
+ID : 2
+ID : 8
+ID : 1
+Subconjunto : 4
+ID : 7
+ID : 6
+ID : 1
+Subconjunto : 5
+ID : 7
+ID : 6
+**
+Random number : 1215
+Random number : 1007
+Random number : 1771
+Random number : 1899
+Random number : 1262
+Random number : 1183
+proofs of work generated!
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2006
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 6:0
+Mes
+aSolving a PoW
+Time : 5
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 6:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 7
+ID : 2
+ID : 8
+ID : 6
+Subconjunto : 1
+ID : 7
+ID : 6
+ID : 2
+ID : 8
+ID : 1
+**
+Random number : 1875
+Random number : 1370
+proofs of work generated!
+Sending temperatue
+Received from : 1:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2012
+Sending temperatue
+Sending temperatue
+Received from : 6:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Message 2 received
+Node 1	has replied a Pow with : 0035be12102ff78ac1437782b9d0b5681370
+Timed at185529
+Received from : 1:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2005
+Sending temperatue
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Solving a PoW
+Time : 0
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 7
+ID : 6
+ID : 2
+ID : 8
+Subconjunto : 1
+ID : 6
+ID : 1
+Subconjunto : 2
+ID : 7
+ID : 2
+ID : 8
+Subconjunto : 3
+ID : 6
+ID : 7
+Subconjunto : 4
+ID : 7
+ID : 6
+ID : 1
+Subconjunto : 5
+ID : 2
+ID : 8
+Subconjunto : 6
+ID : 7
+ID : 6
+ID : 2
+ID : 8
+ID : 1
+**
+Random number : 1171
+Random number : 1253
+Random number : 1095
+Received from : 2:0
+Message 0 received
+Random number : 1248
+Random number : 1674
+Random number : 1698
+Random number : 1690
+proofs of work generated!
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2015
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 04e763826b0666a6c51c9884b164e9a01690
+Timed at195620
+Received from : 1:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 6
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2006
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 5
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2004
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 1:0
+Message 2 received
+Node 1	has replied a Pow with : 0ac440d2e7c1f7c509cc2a9f9a22566e1674
+Timed at199885
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 4
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2005
+Sending temperatue
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Message 1 received
+Received from : 1:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Solving a PoW
+Time : 6
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Solving a PoW
+Time : 2
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Solving a PoW
+Time : 3
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Solving a PoW
+Time : 11
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 1:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 3
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2015
+Sending temperatue
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 1:1
+Message 1 received
+Received from : 1:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Solving a PoW
+Time : 3
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 2
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2002
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 1:1
+Message 2 received
+Node 1	has replied a Pow with : 023d5742e810bacf61b31ee57e991c7c1253
+Timed at221361
+Received from : 1:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 8:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+Received from : 2:1
+Message 0 received
+Received from : 7:1
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 1
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2002
+Sending temperatue
+Sending temperatue
+Received from : 1:0
+Message 1 received
+Received from : 1:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Solving a PoW
+Time : 0
+Packing message for PoW solicitude confirmation
+Sending proofs of work solution
+Sending temperatue
+Received from : 8:0
+Message 0 received
+Received from : 1:0
+Message 0 received
+Received from : 8:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+blacklist generation
+Generated!!
+Generated
+size : 0
+cleaning
+proofs of work
+**
+----------Gray List : 
+Subconjunto : 0
+ID : 6
+ID : 2
+ID : 8
+ID : 7
+Subconjunto : 1
+ID : 6
+ID : 1
+Subconjunto : 2
+ID : 7
+ID : 6
+Subconjunto : 3
+ID : 7
+ID : 6
+ID : 1
+Subconjunto : 4
+ID : 2
+ID : 8
+Subconjunto : 5
+ID : 7
+ID : 2
+ID : 8
+Subconjunto : 6
+ID : 7
+ID : 6
+ID : 2
+ID : 8
+ID : 1
+**
+Random number : 1444
+Random number : 1797
+Random number : 1632
+Random number : 1981
+Random number : 1817
+Random number : 1034
+Random number : 1709
+proofs of work generated!
+Sending temperatue
+Received from : 1:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Sending proofs of work
+Packing message for PoW solicitude
+Proof timed at: 0 thresh 2004
+Sending temperatue
+Received from : 2:0
+Message 0 received
+Received from : 2:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
+Message 0 received
+Received from : 7:0
