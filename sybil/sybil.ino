@@ -3,7 +3,7 @@
 
 #define BAND    433E6
 long lastSendTime = 0;        // last send time
-int interval = 500;
+int interval = 2500;
 Node n;
 unsigned char id = 0x00;
 unsigned char sybil[4]={'2','6','7','8'};
@@ -14,6 +14,9 @@ unsigned char type=0x00;
 unsigned char dst;
 vector<vector<char>> proofs;
 vector<char> tested;
+vector<char> solution;
+vector<char> payload;
+char desti;
 int inpow=0;
 void setup() {
   // put your setup code here, to run once:
@@ -31,7 +34,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   unsigned char type = 0x00;
   int i;
-  n.setTm(type);
+  
   for(c=0;c<4;c++)
   {
     if (millis() - lastSendTime > interval)
@@ -39,22 +42,31 @@ void loop() {
       int tam = proofs.size();
       if(tam>0)
       {
+        type =0x02;
+         desti = dst;
         for(i=0;i<tam;i++)
         {
           inpow = 1;
-          Serial.println("ID + "+String(tested.at(i))+" Proof");
+          Serial.println("ID  "+String(tested.at(i))+" Proof");
           n.setID(tested.at(i));
-          n.solvePoW(proofs.at(i));
+          solution=n.solvePoW(proofs.at(i));
+          Pack(type,desti,solution);
+          payload = solution;
+          sendMessage(n);
+          payload.clear();
+          solution.clear();    
         }
         inpow=0;
-        Serial.println("All proofs were solved for dst : "+String(dst));
+        Serial.println("All proofs were solved for dst : "+String(desti));
         tested.clear();
         proofs.clear();
       }
+      type=0x00;
+      n.setTm(type);
         n.setID(sybil[c]);
         sendMessage(n);
       lastSendTime = millis();
-      interval = random(500);
+      interval = random(2500);
       LoRa.receive();
     }
   }
@@ -62,19 +74,20 @@ void loop() {
 
 void sendMessage(Node n)
 {
-  vector<char> payload;
+  /*vector<char> payload;
   //payload = n.getPayload();
   payload.push_back('2');
   payload.push_back('6');
   payload.push_back('0');
-  payload.push_back('2');
+  payload.push_back('2');*/
   int i=0;
   LoRa.beginPacket();
   LoRa.write(n.getID());
   LoRa.write(n.getTm());
-  LoRa.write('s');
+  LoRa.write(desti);
   for (i=0;i<payload.size();i++)
   {
+    //Serial.println(payload.at(i));
     LoRa.print(payload.at(i));
   }
   LoRa.endPacket();
@@ -88,11 +101,11 @@ void onReceive(int packetSize)
   //Serial.print("Message Received");
   //vector<vector<char>> gl;
   /*ID src*/
-  char IDE = LoRa.read();
+  char IDE =(char) LoRa.read();
   /*Type*/
   unsigned char type = LoRa.read();
   /*ID dst*/
-  char dst = LoRa.read();
+  char dst_id =(char) LoRa.read();
   /*Payload*/
   String incoming="";
   while(LoRa.available())
@@ -101,7 +114,7 @@ void onReceive(int packetSize)
   }
   /*Read RSSI*/
   int rssi = LoRa.packetRssi();
-  Unpack(type,dst,incoming,IDE);
+  Unpack(type,dst_id,incoming,IDE);
 }
 
 void Unpack(unsigned char type,char i_dst,String pay,char src)
@@ -180,6 +193,36 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
     }
   }
 }
+
+void Pack(unsigned char type_m,unsigned char id_dest,vector<char> pa)
+{
+  if(type_m ==0x00)
+  {
+    //Serial.println("Packing message for temperature");
+    payload.push_back('1');
+  }
+  if(type_m == 0x01)
+  {
+    //Serial.println("Packing message for PoW solicitude");
+    //isgl=0;
+  }
+  if (type_m == 0x02)
+  {
+    Serial.println("Packing message for PoW solicitude confirmation");
+  }
+  if (type_m == 0x03)
+  {
+    Serial.println("Packing message for PoW solution");
+  }
+  if (type_m == 0x04)
+  {
+    Serial.println("Packing message for consensus");
+  }
+  n.setTm(type_m);
+  n.setIDdst(id_dest);
+  n.setPayload(payload);
+}
+
 
 void PrintGrayList(vector<vector<char>> gl)
 {

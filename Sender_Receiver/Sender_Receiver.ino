@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 3000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '1'; //cambiar por cualquier ID
+unsigned char id = '3'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default generic message
 int isgl=0;
@@ -76,8 +76,12 @@ void loop() {
         if (isblist==1)
         {
           //Serial.println("Generated");
-          PrintBlackList(bl);
-          n.clearBlackList();
+        PrintBlackList(bl);
+        n.clearBlackList();
+        }
+        else{
+          Serial.println("**--BlackList--**");
+          Serial.println("No blacklist");
         }
         lastbl=millis();
         thresholds.pop_back();
@@ -234,10 +238,10 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
   }
   if(type==0x02)
   {
-    Serial.println("Message 2 received");
+    //Serial.println("Message 2 received from : "+String(i_dst)+": "+String(src));
     if(i_dst == n.getID())
     {
-      Serial.println("Node "+String(src)+"\thas replied a Pow with : "+pay);
+      //Serial.println("Node "+String(src)+"\thas replied a Pow with : "+pay);
       //f_t = millis();
       //int total = f_t - i_t;
       //Serial.println("Timed at"+String(total));
@@ -351,7 +355,7 @@ void GL_pow()
     vector<char> f = {'1','7'};
     gl.push_back(d);
     gl.push_back(f);*/
-    PrintGrayList(gl); // Solamente imprime la lista gris
+    //PrintGrayList(gl); // Solamente imprime la lista gris
     tam =gl.size();
     int rnd;
     String rn;
