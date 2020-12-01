@@ -8,7 +8,7 @@ import time
 iport = serial.Serial('/dev/ttyUSB0',115200)
 data =[]
 
-while len(data)!=6000:
+while len(data)!=1000:
     d = iport.readline()
     print(d)
     #d_string = d.decode()
@@ -17,5 +17,5 @@ while len(data)!=6000:
     time.sleep(0.1)
     print(len(data))
 
-with open("RSSI_results2.txt",'wb') as file:
+with open("pow_results4.txt",'wb') as file:
     file.writelines(data)

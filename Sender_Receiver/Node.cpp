@@ -287,7 +287,8 @@ void Node::genPoW(vector<char> subset,vector<char> rand_n)
   {
     input = number + subset.at(i);
     i_t = clock();
-    solution=ProofOfWork(input,1);
+    solution=ProofOfWork(input,2);
+    //cout<<solution<<endl;
     f_t = clock();
     t_pow = f_t-i_t;
     solution=solution.substr(0,32);
@@ -305,12 +306,12 @@ string Node::ProofOfWork(string input,int dif)
   string hash="";
   //string solution;
   to_hash = toHash(input,hash);
-  target = GenerateTarget(dif)+"b";
+  target = GenerateTarget(dif);
   do
   {
     hash = sha256(to_hash);
     to_hash = toHash(to_hash,hash);
-  }while(hash.substr(0,dif+1)!=target);
+  }while(hash.substr(0,dif)!=target);
   //cout<<"Mined"<<endl;
   return hash;
 }
@@ -319,7 +320,7 @@ string Node::toHash(string input,string lhash)
   string to_hash;
   string key = "#Telecom";
   //input.substr(0,3)+
-  to_hash = lhash.substr(0,3)+input;
+  to_hash = input+lhash.substr(0,8);
   return to_hash;
 }
 string Node::GenerateTarget(int difficulty)
@@ -354,7 +355,7 @@ vector<char> Node::solvePoW(vector<char> rand_n)
   tested = getID();
   number = randNumAdapter(rand_n);
   input = number + tested;
-  sol = ProofOfWork(input,1);
+  sol = ProofOfWork(input,2);
   sol =sol.substr(0,32);
   vector<char> s (sol.begin(),sol.end());
   return s;
@@ -393,16 +394,13 @@ int Node::SybilDetection()
     for (i=0;i<tam;i++)
     {
       issybil=1;
-      cout<<"Comparing ID : "<<id.at(i)<<"with pow : "<<solutions.at(i)<<"timed at :"<<pow_time.at(i)<<endl;
-      if(tamsol>0)
+      //cout<<"Comparing ID : "<<id.at(i)<<"with pow : "<<solutions.at(i)<<"timed at :"<<pow_time.at(i)<<endl;
+      for(j=0;j<tamsol;j++)
       {
-        for(j=0;j<tamsol;j++)
+        if(solutions.at(i)==this->pow_ans.at(j))
         {
-          if(solutions.at(i)==this->pow_ans.at(j))
-          {
-            issybil=0;
-            cout<<"ID : "<<id.at(i)<<" is not sybil"<<endl;
-          }
+          issybil=0;
+          //cout<<"ID : "<<id.at(i)<<" is not sybil"<<endl;
         }
       }
       if(issybil==1)
@@ -428,7 +426,7 @@ void Node::clearBlackList()
 vector<int> Node::calcThreshold()
 {
   int i,j;
-  int act,last;
+  int act,last,men;
   int threshold;
   vector<int>thresholds;
   for(i=0;i<this->pow_ti.size();i++)
@@ -442,7 +440,7 @@ vector<int> Node::calcThreshold()
         last = act;
       }
     }
-    threshold = last + 500+(1500);
+    threshold = last + 1+(100);
     thresholds.push_back(threshold);
   }
   return thresholds;
