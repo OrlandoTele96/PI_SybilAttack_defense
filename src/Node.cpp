@@ -206,8 +206,8 @@ int Node::Discard()
         {
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-(0.5*(id_test.at(i).desv));
-            sup =  id_test.at(i).prom+(0.5*(id_test.at(i).desv));
+            inf = id_test.at(i).prom-(0.25*(id_test.at(i).desv));
+            sup =  id_test.at(i).prom+(0.25*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
               suspected.push_back(id_test.at(j).ID);
@@ -320,7 +320,7 @@ string Node::toHash(string input,string lhash)
   string to_hash;
   string key = "#Telecom";
   //input.substr(0,3)+
-  to_hash = input+lhash.substr(0,8);
+  to_hash = lhash.substr(0,3)+input;
   return to_hash;
 }
 string Node::GenerateTarget(int difficulty)
@@ -391,10 +391,11 @@ int Node::SybilDetection()
   int ans=0;
   if(tam>0)
   {
+    cout<<"**--subset--**"<<endl;
     for (i=0;i<tam;i++)
     {
       issybil=1;
-      //cout<<"Comparing ID : "<<id.at(i)<<"with pow : "<<solutions.at(i)<<"timed at :"<<pow_time.at(i)<<endl;
+      cout<<id.at(i);
       for(j=0;j<tamsol;j++)
       {
         if(solutions.at(i)==this->pow_ans.at(j))
@@ -408,7 +409,9 @@ int Node::SybilDetection()
         this->blacklist.push_back(id.at(i));
         ans =1;
       }
+
     }
+    cout<<"--"<<endl;
   }
   this->pow.pop_back();
   this->pow_ti.pop_back();
@@ -440,7 +443,7 @@ vector<int> Node::calcThreshold()
         last = act;
       }
     }
-    threshold = last + 1+(100);
+    threshold = last +1;
     thresholds.push_back(threshold);
   }
   return thresholds;

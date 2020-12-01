@@ -16,8 +16,7 @@ unsigned char dst='d';//default
 unsigned char type = 0x00;//Default generic message
 int isgl=0;
 int isPoW=0;
-int issolved =1 ;
-//int i_t,f_t;
+//int issolved =1 ;
 int lastpow=0;
 //int counter;
 vector<char> rnum;
@@ -213,6 +212,7 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
   int pay_len;
   vector<char> solution;
   int pow_t;
+  int pow_f;
   if(type ==0x00)
   {
     //Serial.println("Message 0 received");
@@ -242,8 +242,9 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
     if(i_dst == n.getID())
     {
       //Serial.println("Node "+String(src)+"\thas replied a Pow with : "+pay);
-      //f_t = millis();
-      //int total = f_t - i_t;
+      pow_f = millis();
+      pow_t = pow_f-lastpow;
+      n.AddPowTime(pow_t);
       //Serial.println("Timed at"+String(total));
       String pow_s=pay;
       for (i=0;i<(pow_s.length());i++)
@@ -252,8 +253,6 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
         solution.push_back(pow_s.charAt(i));
       }
       n.AddAnswer(solution);
-      //n.AddPowTime(total);
-      //issolved =1;
       solution.clear();
     }  
   }
