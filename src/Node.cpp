@@ -383,6 +383,8 @@ int Node::SybilDetection()
   vector<string> solutions;
   vector<char> id;
   vector<int> pow_time;
+  int sup,inf;
+  int T=10;
   solutions = this->pow.back();
   pow_time = this->pow_ti.back();
   id = this->id_tested.back();
@@ -396,12 +398,16 @@ int Node::SybilDetection()
     {
       issybil=1;
       cout<<id.at(i);
+      inf = pow_time.at(i) - T;
+      sup = pow_time.at(i) + T;
       for(j=0;j<tamsol;j++)
       {
         if(solutions.at(i)==this->pow_ans.at(j))
         {
-          issybil=0;
-          //cout<<"ID : "<<id.at(i)<<" is not sybil"<<endl;
+          if(this->pow_tf.at(j)>inf && this->pow_tf.at(j)<sup )
+          {
+            issybil = 0;
+          }
         }
       }
       if(issybil==1)
