@@ -480,7 +480,7 @@ void Node::calcTmin()
       }
     }
     
-    tole = 10 + tmin/2;
+    tole =500+tmin/2;
     this->tol.push_back(tole);
   }
 }

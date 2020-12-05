@@ -8,7 +8,7 @@
 
 #define BAND    433E6
 long lastSendTime = 0;        // last send time
-int interval = 3000;
+int interval = 1000;
 Node n;
 vector<char> payload{'1','2'};
 unsigned char id = '1'; //cambiar por cualquier ID
@@ -130,7 +130,7 @@ void loop() {
         sendMessage(n);  
       }
       lastSendTime = millis();
-      interval = random(3000);
+      interval = random(1000);
       LoRa.receive(); 
     }
   }
@@ -350,11 +350,11 @@ void GL_pow()
     vector<vector<char>> gl;
     int i=0;
     int tam;
-    gl = n.getGrayList();
-    /*vector<char> d = {'6','7'};
+    //gl = n.getGrayList();
+    vector<char> d = {'6','7'};
     vector<char> f = {'3','7'};
     gl.push_back(d);
-    gl.push_back(f);*/
+    gl.push_back(f);
     //PrintGrayList(gl); // Solamente imprime la lista gris
     tam =gl.size();
     int rnd;
