@@ -46,6 +46,7 @@ private:
   vector<int> pow_tf;
   vector<char> blacklist;
   vector<char> bl_hashes;
+  vector<int> tol;
 public:
     /*Constructor*/
     Node();
@@ -89,5 +90,6 @@ public:
     int SybilDetection();
     void clearBlackList();
     vector<int> calcThreshold();
+    void calcTmin();
 };
 #endif /* Node_hpp */

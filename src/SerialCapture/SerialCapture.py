@@ -5,17 +5,17 @@
 import serial
 import time
 
-iport = serial.Serial('/dev/ttyUSB3',115200)
+iport = serial.Serial('/dev/ttyUSB0',115200)
 data =[]
-
-while len(data)!=1000:
+i=0
+while len(data)<=10000:
     d = iport.readline()
     print(d)
-    #d_string = d.decode()
+    d_string = d.decode()
     #datastripped = d_string.rstrip()+"\n"
     data.append(d)
     time.sleep(0.1)
-    print(len(data))
+    #print(len(data))
 
-with open("pow_node3.txt",'wb') as file:
+with open("pow_node1_test.txt",'wb') as file:
     file.writelines(data)

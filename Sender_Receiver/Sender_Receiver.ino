@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 3000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '3'; //cambiar por cualquier ID
+unsigned char id = '1'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default generic message
 int isgl=0;
@@ -113,6 +113,7 @@ void loop() {
         //Serial.println("proofs of work");
         GL_pow(); // Genera PoW
         thresholds = n.calcThreshold();
+        n.calcTmin();
         lastpow=0;
         lastbl=millis();
         //Serial.println("Pow time : "+String(T)+" , time"+String(millis()-lastpow));
@@ -350,8 +351,8 @@ void GL_pow()
     int i=0;
     int tam;
     gl = n.getGrayList();
-    /*vector<char> d = {'1','7'};
-    vector<char> f = {'1','7'};
+    /*vector<char> d = {'6','7'};
+    vector<char> f = {'3','7'};
     gl.push_back(d);
     gl.push_back(f);*/
     //PrintGrayList(gl); // Solamente imprime la lista gris
