@@ -3,7 +3,7 @@
 
 #define BAND    433E6
 long lastSendTime = 0;        // last send time
-int interval = 2500;
+int interval = 1000;
 Node n;
 unsigned char id = 0x00;
 unsigned char sybil[4]={'2','6','7','8'};
@@ -66,7 +66,7 @@ void loop() {
         n.setID(sybil[c]);
         sendMessage(n);
       lastSendTime = millis();
-      interval = random(2500);
+      interval = random(1000);
       LoRa.receive();
     }
   }

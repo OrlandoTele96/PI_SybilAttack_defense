@@ -8,10 +8,11 @@
 
 #define BAND    433E6
 long lastSendTime = 0;        // last send time
-int interval = 1000;
+int interval = 3000;
 Node n;
 vector<char> payload{'1','2'};
 unsigned char id = '1'; //cambiar por cualquier ID
+vector<char> sybil {'2','7','5','6'}
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default generic message
 int isgl=0;
@@ -38,9 +39,6 @@ void setup() {
     LoRa.receive();
     Serial.println("Heltec.LoRa init succeeded.");
     n.setID(id);//Configuramos la clase nodo
-    n.setFactor(0.25);
-    n.setDifficulty(3);
-    n.setTime_interval(interval);
 }
 
 void loop() {
@@ -133,7 +131,7 @@ void loop() {
         sendMessage(n);  
       }
       lastSendTime = millis();
-      interval = random(1000);
+      interval = random(3000);
       LoRa.receive(); 
     }
   }
@@ -353,11 +351,11 @@ void GL_pow()
     vector<vector<char>> gl;
     int i=0;
     int tam;
-    gl = n.getGrayList();
-    /*vector<char> d = {'6','7'};
+    //gl = n.getGrayList();
+    vector<char> d = {'6','7'};
     vector<char> f = {'3','7'};
     gl.push_back(d);
-    gl.push_back(f);*/
+    gl.push_back(f);
     //PrintGrayList(gl); // Solamente imprime la lista gris
     tam =gl.size();
     int rnd;

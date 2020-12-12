@@ -476,7 +476,7 @@ vector<int> Node::calcThreshold()
         last = act;
       }
     }
-    threshold = last +100;
+    threshold = last +this->time_interval+10;
     thresholds.push_back(threshold);
   }
   return thresholds;

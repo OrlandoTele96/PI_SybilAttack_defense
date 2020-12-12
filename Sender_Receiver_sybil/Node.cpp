@@ -206,8 +206,8 @@ int Node::Discard()
         {
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-(0.5*(id_test.at(i).desv));
-            sup =  id_test.at(i).prom+(0.5*(id_test.at(i).desv));
+            inf = id_test.at(i).prom-(0.25*(id_test.at(i).desv));
+            sup =  id_test.at(i).prom+(0.25*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
               suspected.push_back(id_test.at(j).ID);
@@ -288,7 +288,6 @@ void Node::genPoW(vector<char> subset,vector<char> rand_n)
     input = number + subset.at(i);
     i_t = clock();
     solution=ProofOfWork(input,2);
-    //cout<<solution<<endl;
     f_t = clock();
     t_pow = f_t-i_t;
     solution=solution.substr(0,32);
@@ -355,7 +354,7 @@ vector<char> Node::solvePoW(vector<char> rand_n)
   tested = getID();
   number = randNumAdapter(rand_n);
   input = number + tested;
-  sol = ProofOfWork(input,3);
+  sol = ProofOfWork(input,2);
   sol =sol.substr(0,32);
   vector<char> s (sol.begin(),sol.end());
   return s;
@@ -383,6 +382,9 @@ int Node::SybilDetection()
   vector<string> solutions;
   vector<char> id;
   vector<int> pow_time;
+  vector<int> tol;
+  int sup,inf;
+  int T;
   solutions = this->pow.back();
   pow_time = this->pow_ti.back();
   id = this->id_tested.back();
@@ -391,16 +393,23 @@ int Node::SybilDetection()
   int ans=0;
   if(tam>0)
   {
+    cout<<"**--subset--**"<<endl;
+    T = this->tol.back();
     for (i=0;i<tam;i++)
     {
+      
       issybil=1;
-      //cout<<"Comparing ID : "<<id.at(i)<<"with pow : "<<solutions.at(i)<<"timed at :"<<pow_time.at(i)<<endl;
+      cout<<id.at(i);
+      sup = pow_time.at(i) + T;
       for(j=0;j<tamsol;j++)
       {
         if(solutions.at(i)==this->pow_ans.at(j))
         {
-          issybil=0;
-          //cout<<"ID : "<<id.at(i)<<" is not sybil"<<endl;
+          cout<<"timed"<<this->pow_tf.at(j)<<","<<sup<<endl;
+          if(this->pow_tf.at(j) < sup)
+          {
+            issybil = 0;
+          }
         }
       }
       if(issybil==1)
@@ -408,11 +417,14 @@ int Node::SybilDetection()
         this->blacklist.push_back(id.at(i));
         ans =1;
       }
+
     }
+    cout<<"--"<<endl;
   }
   this->pow.pop_back();
   this->pow_ti.pop_back();
   this->id_tested.pop_back();
+  this->tol.pop_back();
   this->pow_ans.clear();
   this->pow_tf.clear();
   return ans;
@@ -440,8 +452,35 @@ vector<int> Node::calcThreshold()
         last = act;
       }
     }
-    threshold = last + 1+(100);
+    threshold = last +100;
     thresholds.push_back(threshold);
   }
   return thresholds;
+}
+
+void Node::calcTmin()
+{
+  int i,j;
+  int tmin,act,tole;
+  for(i=0;i<this->pow_ti.size();i++)
+  {
+    tmin =0;
+    for(j=0;j<this->pow_ti.at(i).size();j++)
+    {
+      if(j==0)
+      {
+        tmin = this->pow_ti.at(i).at(j);
+      }
+      else{
+        act = this->pow_ti.at(i).at(j);
+        if(tmin>act)
+        {
+          tmin = act;
+        }
+      }
+    }
+    
+    tole = 1000+10*tmin;
+    this->tol.push_back(tole);
+  }
 }
