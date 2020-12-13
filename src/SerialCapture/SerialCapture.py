@@ -21,7 +21,7 @@ while len(data)<=6500:
     if i == 10:
 	#print(i)
 	i=0
-	with open('pow_node1_05_dif2.txt','a') as file:
+	with open('pow_node1_1_dif2.txt','a') as file:
 		for j in range(len(data)-10,len(data)):
 			#print(j)
 			file.writelines(data[j])
