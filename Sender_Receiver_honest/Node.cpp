@@ -476,7 +476,7 @@ vector<int> Node::calcThreshold()
         last = act;
       }
     }
-    threshold = last +10;
+    threshold = last +this->time_interval+1000;
     thresholds.push_back(threshold);
   }
   return thresholds;
@@ -504,8 +504,7 @@ void Node::calcTmin()
       }
     }
     
-    tole =this->time_interval/2+(10+tmin/2)*0.1;
-    //cout<<tole<<endl;
+    tole =10+tmin/2;
     this->tol.push_back(tole);
   }
 }

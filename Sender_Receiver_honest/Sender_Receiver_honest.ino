@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 1000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '1'; //cambiar por cualquier ID
+unsigned char id = '4'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default generic message
 int isgl=0;
@@ -40,7 +40,7 @@ void setup() {
     n.setID(id);//Configuramos la clase nodo
     n.setFactor(1);
     n.setDifficulty(2);
-    n.setTime_interval(1000);
+    n.setTime_interval(500);
 }
 
 void loop() {
@@ -68,61 +68,9 @@ void loop() {
       solution.clear();
       isPoW=0;
       isgl=0;
+      Serial.println("pow");
     }
     else{
-      if((millis()-lastbl)>T && isbl ==1)
-      {
-        int isblist = n.SybilDetection();
-        //Serial.println("Generated!!");
-        bl = n.getBlackList();
-        if (isblist==1)
-        {
-          //Serial.println("Generated");
-        PrintBlackList(bl);
-        n.clearBlackList();
-        }
-        else{
-          Serial.println("**--BlackList--**");
-          Serial.println("No blacklist");
-        }
-        lastbl=millis();
-        thresholds.pop_back();
-        //Serial.println("size : "+String(thresholds.size()));
-          //Serial.println("cleaning");
-        //thresholds.clear();
-        isbl=0;
-      }
-      if(proofs.size()>0)
-      {
-        dst = 'd';
-        type =0x01;
-        int proof_tam = proofs.size();
-        if(millis()-lastpow>thresholds.back())
-        {
-          payload = proofs.back();
-          Pack(type,dst,payload);
-          sendMessage(n);
-          lastpow=millis();
-          proofs.pop_back();
-          lastbl=millis();
-          T = thresholds.back();
-          isbl=1;
-        }
-      }
-      if(isgl==1 && thresholds.size()==0 ) // Si se genero la lista gris entonces se genera PoW
-      {
-        proofs.clear();
-        //thresholds.clear();
-        //Serial.println("proofs of work");
-        GL_pow(); // Genera PoW
-        thresholds = n.calcThreshold();
-        n.calcTmin();
-        lastpow=0;
-        lastbl=millis();
-        //Serial.println("Pow time : "+String(T)+" , time"+String(millis()-lastpow));
-        //Serial.println("proofs of work generated!");
-        isgl=0;
-      }
       if( isgl==0 && isPoW==0)
       {
         //Serial.println("Sending temperatue");
@@ -133,7 +81,7 @@ void loop() {
         sendMessage(n);  
       }
       lastSendTime = millis();
-      interval = 1000;
+      interval = 600;
       LoRa.receive(); 
     }
   }
@@ -200,9 +148,9 @@ void onReceive(int packetSize)
   int rssi = (int )LoRa.packetRssi(); // Obtiene rssi del mensaje
   //Serial.println("RSSI: "+String(rssi));
   /*Storage RSSI*/
-  storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
+  //storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
   /*Phase 1*/
-  isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
+  //isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
   /*Unpack content*/
   Unpack(type,dst,incoming,IDE);
 }
@@ -282,6 +230,7 @@ void Pack(unsigned char type_m,unsigned char id_dest,vector<char> pa)
     payload = pa;
     //Serial.println(id_dest);
     n.setIDdst(id_dest);
+    lastSendTime=millis();
     //Serial.println(n.getIDdst());
   }
   if (type_m == 0x03)
