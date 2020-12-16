@@ -39,7 +39,7 @@ void setup() {
     Serial.println("Heltec.LoRa init succeeded.");
     n.setID(id);//Configuramos la clase nodo
     n.setFactor(1);
-    n.setDifficulty(2);
+    n.setDifficulty(3);
     n.setTime_interval(1000);
 }
 
@@ -103,6 +103,7 @@ void loop() {
           Pack(type,dst,payload);
           sendMessage(n);
           lastpow=millis();
+          //Serial.println(String(lastpow-lastbl));
           proofs.pop_back();
           lastbl=millis();
           T = thresholds.back();
@@ -119,6 +120,7 @@ void loop() {
         n.calcTmin();
         lastpow=0;
         lastbl=millis();
+        //Serial.println(lastbl);
         //Serial.println("Pow time : "+String(T)+" , time"+String(millis()-lastpow));
         //Serial.println("proofs of work generated!");
         isgl=0;
@@ -166,7 +168,7 @@ void sendMessage(Node n)
     LoRa.print(payload.at(i));
   }
   LoRa.endPacket(); 
-  delay(100);
+  //delay(100);
   //}
   payload.clear();
   //Serial.println("Message : "+String(n.getTm())+String(dst));
@@ -248,6 +250,7 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
       //Serial.println("Node "+String(src)+"\thas replied a Pow with : "+pay);
       pow_f = millis();
       pow_t = pow_f-lastpow;
+      //Serial.println(pow_t);
       n.AddPowTime(pow_t);
       //Serial.println("Timed at"+String(total));
       String pow_s=pay;

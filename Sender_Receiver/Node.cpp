@@ -504,7 +504,7 @@ void Node::calcTmin()
       }
     }
     
-    tole =(this->time_interval/2+10+tmin/2)*1;
+    tole =(this->time_interval+10+tmin)*0.25;
     //cout<<tole<<endl;
     this->tol.push_back(tole);
   }

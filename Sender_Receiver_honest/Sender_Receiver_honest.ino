@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 1000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '4'; //cambiar por cualquier ID
+unsigned char id = '3'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default generic message
 int isgl=0;
@@ -39,7 +39,7 @@ void setup() {
     Serial.println("Heltec.LoRa init succeeded.");
     n.setID(id);//Configuramos la clase nodo
     n.setFactor(1);
-    n.setDifficulty(2);
+    n.setDifficulty(3);
     n.setTime_interval(500);
 }
 
@@ -81,7 +81,7 @@ void loop() {
         sendMessage(n);  
       }
       lastSendTime = millis();
-      interval = 600;
+      interval = 300;
       LoRa.receive(); 
     }
   }
@@ -114,7 +114,7 @@ void sendMessage(Node n)
     LoRa.print(payload.at(i));
   }
   LoRa.endPacket(); 
-  delay(100);
+  //delay(100);
   //}
   payload.clear();
   //Serial.println("Message : "+String(n.getTm())+String(dst));
