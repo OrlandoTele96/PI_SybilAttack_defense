@@ -6288,3 +6288,203 @@ Heltec.LoRa init succeeded.
 **
 **--subset--**
 48672--
+abort() was called at PC 0x400fdac3 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb1610 0x4008bad1:0x3ffb1630 0x400fdac3:0x3ffb1650 0x400fdb0a:0x3ffb1670 0x400ef85f:0x3ffb1690 0x400ef94e:0x3ffb16b0 0x400f0e99:0x3ffb16d0 0x400f100e:0x3ffb16f0 0x400f13b1:0x3ffb1730 0x400f13cd:0x3ffb1750 0x400d1a6b:0x3ffb1770 0x400d1f3d:0x3ffb17e0 0x400d33f2:0x3ffb1940 0x400d3f55:0x3ffb1a70 0x400d46fd:0x3ffb1b30 0x400d6b41:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+**--subset--**
+67--
+**---BlackList--**
+67
+**
+abort() was called at PC 0x400fdac3 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb1610 0x4008bad1:0x3ffb1630 0x400fdac3:0x3ffb1650 0x400fdb0a:0x3ffb1670 0x400ef85f:0x3ffb1690 0x400ef94e:0x3ffb16b0 0x400f0e99:0x3ffb16d0 0x400f100e:0x3ffb16f0 0x400f13b1:0x3ffb1730 0x400f13cd:0x3ffb1750 0x400d1a6b:0x3ffb1770 0x400d1f3d:0x3ffb17e0 0x400d33f2:0x3ffb1940 0x400d3f55:0x3ffb1a70 0x400d46fd:0x3ffb1b30 0x400d6b41:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+**--subset--**
+74--
+**--BlackList--**
+No blacklist
+**--subset--**
+4327--
+**---BlackList--**
+4327
+**
+**--subset--**
+42--
+**---BlackList--**
+42
+**
+**--subset--**
+427--
+**---BlackList--**
+427
+**
+**--subset--**
+4672--
+**---BlackList--**
+4672
+**
+**--subset--**
+783--
+**---BlackList--**
+78
+**
+**--subset--**
+624--
+**---BlackList--**
+624
+**
+**--subset--**
+684--
+**---BlackList--**
+84
+**
+**--subset--**
+64--
+**---BlackList--**
+64
+**
+**--subset--**
+6783--
+**---BlackList--**
+6783
+**
+**--subset--**
+284--
+**---BlackList--**
+284
+**
+**--subset--**
+687--
+**---BlackList--**
+687
+**
+**--subset--**
+24--
+**---BlackList--**
+24
+**
+**--subset--**
+724--
+**---BlackList--**
+724
+**
+**--subset--**
+7284--
+**---BlackList--**
+7284
+**
+**--subset--**
+63--
+**---BlackList--**
+63
+**
+**--subset--**
+74--
+**---BlackList--**
+74
+**
+**--subset--**
+784--
+**---BlackList--**
+84
+**
+**--subset--**
+6784--
+**---BlackList--**
+6784
+**
+**--subset--**
+674--
+**---BlackList--**
+674
+**
+**--subset--**
+436287--
+**---BlackList--**
+436287
+**
+**--subset--**
+46728--
+**---BlackList--**
+46728
+**
+**--subset--**
+36287--
+**---BlackList--**
+36287
+**
+**--subset--**
+7286--
+**---BlackList--**
+7286
+**
+abort() was called at PC 0x400fdac3 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb1610 0x4008bad1:0x3ffb1630 0x400fdac3:0x3ffb1650 0x400fdb0a:0x3ffb1670 0x400ef85f:0x3ffb1690 0x400ef94e:0x3ffb16b0 0x400f0e99:0x3ffb16d0 0x400f100e:0x3ffb16f0 0x400f13b1:0x3ffb1730 0x400f13cd:0x3ffb1750 0x400d1a6b:0x3ffb1770 0x400d1f3d:0x3ffb17e0 0x400d33f2:0x3ffb1940 0x400d3f55:0x3ffb1a70 0x400d46fd:0x3ffb1b30 0x400d6b41:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+**--subset--**
+42--
+**---BlackList--**
+42
+**
+**--subset--**
+8672--
+**---BlackList--**
+8672
+**
+**--subset--**
+84672--
+**---BlackList--**
+8672
+**
+**--subset--**
