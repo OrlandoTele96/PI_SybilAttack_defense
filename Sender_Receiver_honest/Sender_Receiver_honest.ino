@@ -55,9 +55,22 @@ void loop() {
   int j,i;
   int ti,tf,tt,f;
   int lastgl=0;
+  if (isPoW==1)
+  {
+    solution = n.solvePoW(rnum);
+    type=0x02;
+    Pack(type,dst,solution);
+    sendMessage(n);
+    //delay(1000);
+    rnum.clear();
+    solution.clear();
+    isPoW=0;
+    isgl=0;
+    Serial.println("pow");
+  }
   if (millis() - lastSendTime > interval)
   {
-    if (isPoW==1)
+    /*if (isPoW==1)
     {
       solution = n.solvePoW(rnum);
       type=0x02;
@@ -70,7 +83,8 @@ void loop() {
       isgl=0;
       Serial.println("pow");
     }
-    else{
+    else{*/
+    if(isPoW==0){
       if( isgl==0 && isPoW==0)
       {
         //Serial.println("Sending temperatue");

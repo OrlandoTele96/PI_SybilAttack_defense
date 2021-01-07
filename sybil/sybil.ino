@@ -34,12 +34,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   unsigned char type = 0x00;
   int i;
-  
-  for(c=0;c<4;c++)
-  {
-    if (millis() - lastSendTime > interval)
-    {
-      int tam = proofs.size();
+  int tam = proofs.size();
       if(tam>0)
       {
         type =0x02;
@@ -61,6 +56,32 @@ void loop() {
         tested.clear();
         proofs.clear();
       }
+  for(c=0;c<4;c++)
+  {
+    if (millis() - lastSendTime > interval)
+    {
+      int tam = proofs.size();
+      /*if(tam>0)
+      {
+        type =0x02;
+         desti = dst;
+        for(i=0;i<tam;i++)
+        {
+          inpow = 1;
+          Serial.println("ID  "+String(tested.at(i))+" Proof");
+          n.setID(tested.at(i));
+          solution=n.solvePoW(proofs.at(i));
+          Pack(type,desti,solution);
+          payload = solution;
+          sendMessage(n);
+          payload.clear();
+          solution.clear();    
+        }
+        inpow=0;
+        Serial.println("All proofs were solved for dst : "+String(desti));
+        tested.clear();
+        proofs.clear();
+      }*/
       type=0x00;
       n.setTm(type);
         n.setID(sybil[c]);
