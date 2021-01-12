@@ -430,7 +430,7 @@ int Node::SybilDetection()
         if(solutions.at(i)==this->pow_ans.at(j))
         {
           //cout<<"timed"<<this->pow_tf.at(j)<<","<<sup<<endl;
-          if(this->pow_tf.at(j) < sup)
+          if(this->pow_tf.at(j) <= sup)
           {
             issybil = 0;
           }
@@ -504,7 +504,7 @@ void Node::calcTmin()
       }
     }
     
-    tole =(20+tmin)*1;
+    tole =(40+tmin)*1;
     //cout<<tole<<endl;
     this->tol.push_back(tole);
   }
