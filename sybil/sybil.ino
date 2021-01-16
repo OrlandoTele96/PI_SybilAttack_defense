@@ -87,7 +87,7 @@ void loop() {
         n.setID(sybil[c]);
         sendMessage(n);
       lastSendTime = millis();
-      interval = 500;
+      interval = 1000;
       LoRa.receive();
     }
   }
