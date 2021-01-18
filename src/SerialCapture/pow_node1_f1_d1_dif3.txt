@@ -6528,3 +6528,113 @@ Heltec.LoRa init succeeded.
 **
 **--subset--**
 862--
+**--subset--**
+728--
+**---BlackList--**
+728
+**
+**--subset--**
+728--
+**---BlackList--**
+728
+**
+**--subset--**
+728--
+**---BlackList--**
+728
+**
+**--subset--**
+27--
+**---BlackList--**
+27
+**
+**--subset--**
+7826--
+**---BlackList--**
+7826
+**
+**--subset--**
+68--
+**---BlackList--**
+68
+**
+**--subset--**
+26--
+**---BlackList--**
+26
+**
+**--subset--**
+7826--
+**---BlackList--**
+7826
+**
+abort() was called at PC 0x400fdaa3 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb1610 0x4008bad1:0x3ffb1630 0x400fdaa3:0x3ffb1650 0x400fdaea:0x3ffb1670 0x400ef83f:0x3ffb1690 0x400ef92e:0x3ffb16b0 0x400f0e79:0x3ffb16d0 0x400f0fee:0x3ffb16f0 0x400f1391:0x3ffb1730 0x400f13ad:0x3ffb1750 0x400d1a6b:0x3ffb1770 0x400d1f3d:0x3ffb17e0 0x400d33d2:0x3ffb1940 0x400d3f35:0x3ffb1a70 0x400d46dd:0x3ffb1b30 0x400d6b21:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+**--subset--**
+26--
+**---BlackList--**
+26
+**
+**--subset--**
+8672--
+**---BlackList--**
+8672
+**
+**--subset--**
+876--
+**---BlackList--**
+876
+**
+**--subset--**
+8672--
+**---BlackList--**
+8672
+**
+**--subset--**
+8672--
+**---BlackList--**
+8672
+**
+**--subset--**
+2867--
+**---BlackList--**
+2867
+**
+**--subset--**
+286--
+**---BlackList--**
+286
+**
+**--subset--**
+2867--
+**---BlackList--**
+2867
+**
+**--subset--**
+286--
+**---BlackList--**
+286
+**
+**--subset--**
+2867--
+**---BlackList--**
+2867
+**
