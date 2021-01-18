@@ -95,7 +95,7 @@ void loop() {
         sendMessage(n);  
       }
       lastSendTime = millis();
-      interval = 300;
+      interval = 500;
       LoRa.receive(); 
     }
   }
