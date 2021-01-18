@@ -5,7 +5,7 @@
 import serial
 import time
 
-iport = serial.Serial('/dev/ttyUSB1',115200)
+iport = serial.Serial('/dev/ttyUSB0',115200)
 data =[]
 i=0
 j=0
