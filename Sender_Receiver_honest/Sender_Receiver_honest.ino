@@ -40,7 +40,7 @@ void setup() {
     n.setID(id);//Configuramos la clase nodo
     n.setFactor(1);
     n.setDifficulty(2);
-    n.setTime_interval(500);
+    n.setTime_interval(300);
 }
 
 void loop() {
@@ -95,7 +95,7 @@ void loop() {
         sendMessage(n);  
       }
       lastSendTime = millis();
-      interval = 500;
+      interval = 400;
       LoRa.receive(); 
     }
   }

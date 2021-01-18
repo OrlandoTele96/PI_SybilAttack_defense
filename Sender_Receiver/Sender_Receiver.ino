@@ -38,7 +38,7 @@ void setup() {
     LoRa.receive();
     Serial.println("Heltec.LoRa init succeeded.");
     n.setID(id);//Configuramos la clase nodo
-    n.setFactor(2);
+    n.setFactor(3);
     n.setDifficulty(2);
     n.setTime_interval(1000);
 }
