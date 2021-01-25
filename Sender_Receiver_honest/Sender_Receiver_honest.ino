@@ -39,7 +39,7 @@ void setup() {
     Serial.println("Heltec.LoRa init succeeded.");
     n.setID(id);//Configuramos la clase nodo
     n.setFactor(1);
-    n.setDifficulty(2);
+    n.setDifficulty(3);
     n.setTime_interval(300);
 }
 
@@ -316,11 +316,11 @@ void GL_pow()
     vector<vector<char>> gl;
     int i=0;
     int tam;
-    gl = n.getGrayList();
-    /*vector<char> d = {'6','7'};
-    vector<char> f = {'3','7'};
+    //gl = n.getGrayList();
+    vector<char> d = {'6','7','8','2','3'};
+    vector<char> f = {'3','7','8','6','2'};
     gl.push_back(d);
-    gl.push_back(f);*/
+    gl.push_back(f);
     //PrintGrayList(gl); // Solamente imprime la lista gris
     tam =gl.size();
     int rnd;
