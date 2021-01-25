@@ -58,7 +58,7 @@ protected:
     unsigned int m_tot_len;
     unsigned int m_len;
     unsigned char m_block[2*SHA224_256_BLOCK_SIZE];
-    uint32 m_h[8];
+    uint32 m_h[8];//dsfa
 };
 
 std::string sha256(std::string input);

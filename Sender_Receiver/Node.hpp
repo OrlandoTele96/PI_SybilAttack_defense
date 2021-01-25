@@ -22,7 +22,6 @@ using namespace std;
 struct data
 {
   unsigned char ID;
-  //vector<int> RSSI;
   int RSSI[10];
   int start,end;
   int prom=0;

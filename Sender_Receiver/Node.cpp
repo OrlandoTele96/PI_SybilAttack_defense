@@ -505,7 +505,6 @@ void Node::calcTmin()
     }
     
     tole =(40+tmin)*1;
-    //cout<<tole<<endl;
     this->tol.push_back(tole);
   }
 }
