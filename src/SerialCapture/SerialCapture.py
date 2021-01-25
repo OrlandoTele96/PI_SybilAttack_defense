@@ -7,15 +7,21 @@ import time
 
 iport = serial.Serial('/dev/ttyUSB0',115200)
 data =[]
-
-while len(data)!=20000:
+i=0
+j=0
+while len(data)<=10000:
     d = iport.readline()
     print(d)
-    #d_string = d.decode()
+    d_string = d.decode()
     #datastripped = d_string.rstrip()+"\n"
     data.append(d)
     time.sleep(0.1)
     print(len(data))
-
-with open("RSSI_results2.txt",'wb') as file:
-    file.writelines(data)
+    i+=1
+    if i == 10:
+	#print(i)
+	i=0
+	with open('pow_node1_f1_dN_dif2.txt','a') as file:
+		for j in range(len(data)-10,len(data)):
+			#print(j)
+			file.writelines(data[j])

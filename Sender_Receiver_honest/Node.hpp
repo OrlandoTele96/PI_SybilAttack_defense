@@ -39,6 +39,9 @@ private:
   vector<queue> Hist;
   vector<vector<char>> graylist;
   int r;
+  int time_interval;
+  int difficulty;
+  double fact;
   vector<vector<string>> pow;
   vector<vector<int>> pow_ti;
   vector<vector<char>> id_tested;
@@ -46,6 +49,7 @@ private:
   vector<int> pow_tf;
   vector<char> blacklist;
   vector<char> bl_hashes;
+  vector<int> tol;
 public:
     /*Constructor*/
     Node();
@@ -64,6 +68,12 @@ public:
     void clearhist();
     void setGrayList(vector<vector <char>> gl);
     void setIDdst(unsigned char dst);
+    int getTime_interval()const;
+    int getDifficulty()const;
+    double getFactor()const;
+    void setTime_interval(int interval);
+    void setDifficulty(int dif);
+    void setFactor(double factor);
     /*Queue function*/
     queue create(unsigned char id);
     /*RSSI Storage*/
@@ -89,5 +99,6 @@ public:
     int SybilDetection();
     void clearBlackList();
     vector<int> calcThreshold();
+    void calcTmin();
 };
 #endif /* Node_hpp */

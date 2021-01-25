@@ -421,7 +421,7 @@ int Node::SybilDetection()
     T = this->tol.back();
     for (i=0;i<tam;i++)
     {
-
+      
       issybil=1;
       cout<<id.at(i);
       sup = pow_time.at(i) + T;
@@ -476,7 +476,7 @@ vector<int> Node::calcThreshold()
         last = act;
       }
     }
-    threshold = last +10;
+    threshold = last +this->time_interval+1000;
     thresholds.push_back(threshold);
   }
   return thresholds;
@@ -503,9 +503,8 @@ void Node::calcTmin()
         }
       }
     }
-
-    tole =(this->time_interval+10+tmin)*1;
-    //cout<<tole<<endl;
+    
+    tole =10+tmin/2;
     this->tol.push_back(tole);
   }
 }

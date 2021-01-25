@@ -2,22 +2,30 @@
 //  Node.cpp
 //  PI_SybilAttack_defense
 //
-//  Created by <author> on 05/09/2020.
+//  Created by <Jorge O. Gonzalez> on 05/09/2020.
 //
 //
-
+/*
+--------------------------------------------------------------------------------
+                            Class Node implementation
+--------------------------------------------------------------------------------
+*/
 #include "Node.hpp"
-/*Constructors*/
-Node::Node(unsigned char Id,unsigned char tm):id(Id),type(tm)
+/*------------------------------Constructors----------------------------------*/
+Node::Node() : SHA256()
+{
+
+}
+Node::Node(unsigned char Id,unsigned char tm):id(Id),type(tm),SHA256()
 {
   //
 }
-Node::Node(const Node &n)
+Node::Node(const Node &n) : SHA256()
 {
   this->id = n.id;
   this->type = n.type;
 }
-/*Getter & Setter*/
+/*----------------------------Getter & Setter---------------------------------*/
 unsigned char Node::getID()const
 {
   return this->id;
@@ -34,6 +42,14 @@ vector<vector<char>> Node::getGrayList()const
 {
   return this->graylist;
 }
+unsigned char Node::getIDdst()const
+{
+  return this->id_dst;
+}
+vector<char> Node::getBlackList()const
+{
+  return this->blacklist;
+}
 void Node::setID(unsigned char id)
 {
   this->id = id;
@@ -49,7 +65,15 @@ void Node::setPayload(vector<char> p)
 void Node::clearhist(){
   this->Hist.clear();
 }
-/*Queue function*/
+void Node::setGrayList(vector<vector <char>> gl)
+{
+  this->graylist = gl;
+}
+void Node::setIDdst(unsigned char dst)
+{
+  this->id_dst = dst;
+}
+/*-----------------------------Queue function---------------------------------*/
 queue Node::create(unsigned char id)
 {
   queue q;
@@ -58,31 +82,6 @@ queue Node::create(unsigned char id)
   q.ID = id;
   return q;
 }
-/*RSSI Storage*/
-void Node::AddIDtoHist(unsigned char id)
-{
-  queue q;
-  q= create(id);
-  this->Hist.push_back(q);
-}
-int Node::IsinHist(unsigned char id)
-{
-  int i=0;
-  int ans=0;
-  if(this->Hist.size()>0)
-  {
-
-    for(i=0;i<this->Hist.size();i++)
-    {
-      if(this->Hist.at(i).ID==id)
-      {
-        ans = 1;
-      }
-    }
-  }
-  return ans;
-}
-
 bool Node::isQueueFull(unsigned char id)
 {
   bool ans;
@@ -120,7 +119,6 @@ int Node::RemoveRSSI(unsigned char id)
         }
         this->Hist.at(i).end--;
       }
-      //PrintQueue(&this->received_mjs.at(i));
     }
   }
   return rssi;
@@ -137,45 +135,38 @@ void Node::AddRSSI(unsigned char id,int rssi)
         this->Hist.at(i).RSSI[this->Hist.at(i).end]=rssi;
         this->Hist.at(i).end++;
       }
-      //PrintQueue(&this->received_mjs.at(i));
     }
   }
+}
+/*-----------------------------RSSI Storage-----------------------------------*/
+void Node::AddIDtoHist(unsigned char id)
+{
+  queue q;
+  q= create(id);
+  this->Hist.push_back(q);
+}
+int Node::IsinHist(unsigned char id)
+{
+  int i=0;
+  int ans=0;
+  if(this->Hist.size()>0)
+  {
+
+    for(i=0;i<this->Hist.size();i++)
+    {
+      if(this->Hist.at(i).ID==id)
+      {
+        ans = 1;
+      }
+    }
+  }
+  return ans;
 }
 int Node::getHistSize()
 {
   return this->Hist.size();
 }
-/*Phase 1 : RSSI*/
-int Node::getP()
-{
-  return 0;
-}
-int Node::getV()
-{
-  return 0;
-}
-void Node::computeProm(queue *q)
-{
-  int i=0;
-  int aux;
-  //float n=10;
-  for(i=0;i<q->end;i++)
-  {
-    aux += q->RSSI[i];
-  }
-  q->prom = aux/10;
-}
-void Node::computeVar(queue *q)
-{
-  int i=0;
-  int aux;
-  //float n = 10;
-  for (i=0;i<q->end;i++)
-  {
-    aux += (q->RSSI[i]-q->prom)*(q->RSSI[i]-q->prom);
-  }
-  q->var=aux/10;
-}
+/*-----------------------------Phase 1 : RSSI---------------------------------*/
 int Node::Discard()
 {
     int i,j;
@@ -183,40 +174,55 @@ int Node::Discard()
     vector<char> suspected;
     int sup,inf;
     int ans;
+    int resp;
+    int sump,sumdesv,var;
     for (i=0;i<this->Hist.size();i++)
     {
       if (this->Hist.at(i).end>9)
       {
-        //compute average
-        computeProm(&this->Hist.at(i));
-        //calcVar
-        computeVar(&this->Hist.at(i));
-        //Add to list
+        sump =0;
+        sumdesv=0;
+        var=0;
+        for (j=0;j<Hist.at(i).end;j++)
+        {
+          sump = sump + this->Hist.at(i).RSSI[j];
+        }
+        this->Hist.at(i).prom = sump/10;
+        for (j=0;j<Hist.at(i).end;j++)
+        {
+          sumdesv= sumdesv + ((this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom)*(this->Hist.at(i).RSSI[j]-this->Hist.at(i).prom));
+        }
+        var = sumdesv/10;
+        this->Hist.at(i).desv = sqrt(var);
         id_test.push_back(this->Hist.at(i));
       }
     }
     if(id_test.size()>1)
     {
-      //If size >= discard algorithm
       for(i=0;i<id_test.size();i++)
       {
         suspected.clear();
         for(j=0; j<id_test.size();j++)
         {
-          inf = 0;
-          sup = 0;
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-id_test.at(i).var;
-            sup =  id_test.at(i).prom+id_test.at(i).var;
+            inf = id_test.at(i).prom-(0.5*(id_test.at(i).desv));
+            sup =  id_test.at(i).prom+(0.5*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
-              suspected.push_back(id_test.at(i).ID);
               suspected.push_back(id_test.at(j).ID);
             }
           }
         }
-        this->graylist.push_back(suspected);
+        if(suspected.size()>0){
+          suspected.push_back(id_test.at(i).ID);
+          if(inGraylist(suspected)!=1)
+          {
+            this->graylist.push_back(suspected);
+          }
+
+        }
+
       }
     }
     if(this->graylist.size()>0)
@@ -228,18 +234,214 @@ int Node::Discard()
     }
     return ans;
 }
-int Node::inGraylist(char id)
+void Node::removesubset()
 {
+  this->graylist.clear();
+}
+int Node::inGraylist(vector<char> subset)
+{
+  /*This function return 1 if a subset is already in graylist,
+  return 0 if it is not in graylist*/
+  int ans =0;
   int i=0;
   int j=0;
-  int ans=0;
+  int k =0;
+  int counter;
   for (i=0;i<this->graylist.size();i++)
   {
-    for(j=0;j<this->graylist.at(i).size();j++)
-    {
-      if(this->graylist.at(i).at(j)==id)
-        ans=1;
-    }
+      if(this->graylist.at(i).size()==subset.size())
+      {
+        counter =0;
+        for (j=0;j<subset.size();j++)
+        {
+          for (k=0;k<this->graylist.at(i).size();k++)
+          {
+            if(subset.at(j)==this->graylist.at(i).at(k))
+            {
+              counter ++;
+            }
+          }
+        }
+        if(counter==subset.size())
+        {
+          //cout<<counter<<endl;
+          ans =1;
+        }
+      }
   }
   return ans;
+}
+/*---------------------------Phase 2 : PoW------------------------------------*/
+void Node::genPoW(vector<char> subset,vector<char> rand_n)
+{
+  int i,j;
+  string number ="";
+  string input="";
+  string solution;
+  int i_t,f_t,t_pow;
+  vector<vector <char>> solutions;
+  vector<string> pow_solutions;
+  vector<int> pow_time;
+  number = randNumAdapter(rand_n);
+  for (i=0;i<subset.size();i++)
+  {
+    input = number + subset.at(i);
+    i_t = clock();
+    solution=ProofOfWork(input,2);
+    //cout<<solution<<endl;
+    f_t = clock();
+    t_pow = f_t-i_t;
+    solution=solution.substr(0,32);
+    pow_time.push_back(t_pow);
+    pow_solutions.push_back(solution);
+  }
+  this->pow.push_back(pow_solutions);
+  this->pow_ti.push_back(pow_time);
+  this->id_tested.push_back(subset);
+}
+string Node::ProofOfWork(string input,int dif)
+{
+  string to_hash;
+  string target;
+  string hash="";
+  //string solution;
+  to_hash = toHash(input,hash);
+  target = GenerateTarget(dif);
+  do
+  {
+    hash = sha256(to_hash);
+    to_hash = toHash(to_hash,hash);
+  }while(hash.substr(0,dif)!=target);
+  //cout<<"Mined"<<endl;
+  return hash;
+}
+string Node::toHash(string input,string lhash)
+{
+  string to_hash;
+  string key = "#Telecom";
+  //input.substr(0,3)+
+  to_hash = lhash.substr(0,3)+input;
+  return to_hash;
+}
+string Node::GenerateTarget(int difficulty)
+{
+  char ctos[difficulty+1];
+  int i =0;
+  for (i=0;i<difficulty;i++)
+  {
+    ctos[i]='0';
+  }
+  ctos[difficulty]='\0';
+  string str(ctos);
+  return str;
+}
+
+string Node::randNumAdapter(vector<char> randnum)
+{
+  string number = "";
+  int i;
+  for(i=0;i<randnum.size();i++)
+  {
+    number = number + randnum.at(i);
+  }
+  return number;
+}
+
+vector<char> Node::solvePoW(vector<char> rand_n)
+{
+  string number,input,sol;
+
+  char tested;
+  tested = getID();
+  number = randNumAdapter(rand_n);
+  input = number + tested;
+  sol = ProofOfWork(input,2);
+  sol =sol.substr(0,32);
+  vector<char> s (sol.begin(),sol.end());
+  return s;
+}
+void Node::AddAnswer(vector<char> ans)
+{
+  /*String adapter*/
+  int i;
+  string solution="";
+  for (i=0;i<ans.size();i++)
+  {
+    solution = solution+ans.at(i);
+  }
+  this->pow_ans.push_back(solution);
+}
+void Node::AddPowTime(int pow_t)
+{
+  this->pow_tf.push_back(pow_t);
+}
+int Node::SybilDetection()
+{
+  int i,j;
+  int tam,tamsol;
+  int issybil;
+  vector<string> solutions;
+  vector<char> id;
+  vector<int> pow_time;
+  solutions = this->pow.back();
+  pow_time = this->pow_ti.back();
+  id = this->id_tested.back();
+  tam = solutions.size();
+  tamsol = this->pow_ans.size();
+  int ans=0;
+  if(tam>0)
+  {
+    for (i=0;i<tam;i++)
+    {
+      issybil=1;
+      //cout<<"Comparing ID : "<<id.at(i)<<"with pow : "<<solutions.at(i)<<"timed at :"<<pow_time.at(i)<<endl;
+      for(j=0;j<tamsol;j++)
+      {
+        if(solutions.at(i)==this->pow_ans.at(j))
+        {
+          issybil=0;
+          //cout<<"ID : "<<id.at(i)<<" is not sybil"<<endl;
+        }
+      }
+      if(issybil==1)
+      {
+        this->blacklist.push_back(id.at(i));
+        ans =1;
+      }
+    }
+  }
+  this->pow.pop_back();
+  this->pow_ti.pop_back();
+  this->id_tested.pop_back();
+  this->pow_ans.clear();
+  this->pow_tf.clear();
+  return ans;
+}
+
+void Node::clearBlackList()
+{
+  this->blacklist.clear();
+}
+
+vector<int> Node::calcThreshold()
+{
+  int i,j;
+  int act,last,men;
+  int threshold;
+  vector<int>thresholds;
+  for(i=0;i<this->pow_ti.size();i++)
+  {
+    last=0;
+    for(j=0;j<this->pow_ti.at(i).size();j++)
+    {
+      act =this->pow_ti.at(i).at(j);
+      if(act>last)
+      {
+        last = act;
+      }
+    }
+    threshold = last + 1+(100);
+    thresholds.push_back(threshold);
+  }
+  return thresholds;
 }

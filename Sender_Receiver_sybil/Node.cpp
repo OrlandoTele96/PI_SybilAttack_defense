@@ -73,30 +73,6 @@ void Node::setIDdst(unsigned char dst)
 {
   this->id_dst = dst;
 }
-int Node::getTime_interval()const
-{
-  return this->time_interval;
-}
-int Node::getDifficulty()const
-{
-  return this->difficulty;
-}
-double Node::getFactor()const
-{
-  return this->fact;
-}
-void Node::setTime_interval(int interval)
-{
-  this->time_interval = interval;
-}
-void Node::setDifficulty(int dif)
-{
-  this->difficulty = dif;
-}
-void Node::setFactor(double factor)
-{
-  this->fact = factor;
-}
 /*-----------------------------Queue function---------------------------------*/
 queue Node::create(unsigned char id)
 {
@@ -230,8 +206,8 @@ int Node::Discard()
         {
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-(this->fact*(id_test.at(i).desv));
-            sup =  id_test.at(i).prom+(this->fact*(id_test.at(i).desv));
+            inf = id_test.at(i).prom-(0.25*(id_test.at(i).desv));
+            sup =  id_test.at(i).prom+(0.25*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
               suspected.push_back(id_test.at(j).ID);
@@ -311,7 +287,7 @@ void Node::genPoW(vector<char> subset,vector<char> rand_n)
   {
     input = number + subset.at(i);
     i_t = clock();
-    solution=ProofOfWork(input,this->difficulty);
+    solution=ProofOfWork(input,2);
     f_t = clock();
     t_pow = f_t-i_t;
     solution=solution.substr(0,32);
@@ -378,7 +354,7 @@ vector<char> Node::solvePoW(vector<char> rand_n)
   tested = getID();
   number = randNumAdapter(rand_n);
   input = number + tested;
-  sol = ProofOfWork(input,this->difficulty);
+  sol = ProofOfWork(input,2);
   sol =sol.substr(0,32);
   vector<char> s (sol.begin(),sol.end());
   return s;
@@ -421,7 +397,7 @@ int Node::SybilDetection()
     T = this->tol.back();
     for (i=0;i<tam;i++)
     {
-
+      
       issybil=1;
       cout<<id.at(i);
       sup = pow_time.at(i) + T;
@@ -429,7 +405,7 @@ int Node::SybilDetection()
       {
         if(solutions.at(i)==this->pow_ans.at(j))
         {
-          //cout<<"timed"<<this->pow_tf.at(j)<<","<<sup<<endl;
+          cout<<"timed"<<this->pow_tf.at(j)<<","<<sup<<endl;
           if(this->pow_tf.at(j) < sup)
           {
             issybil = 0;
@@ -476,7 +452,7 @@ vector<int> Node::calcThreshold()
         last = act;
       }
     }
-    threshold = last +10;
+    threshold = last +100;
     thresholds.push_back(threshold);
   }
   return thresholds;
@@ -503,9 +479,8 @@ void Node::calcTmin()
         }
       }
     }
-
-    tole =(this->time_interval+10+tmin)*1;
-    //cout<<tole<<endl;
+    
+    tole = 1000+10*tmin;
     this->tol.push_back(tole);
   }
 }

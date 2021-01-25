@@ -8,12 +8,13 @@
 
 #define BAND    433E6
 long lastSendTime = 0;        // last send time
-int interval = 1000;
+int interval = 3000;
 Node n;
 vector<char> payload{'1','2'};
 unsigned char id = '1'; //cambiar por cualquier ID
+vector<char> sybil {'2','7','5','6'}
 unsigned char dst='d';//default
-unsigned char type = 0x00;//Default message
+unsigned char type = 0x00;//Default generic message
 int isgl=0;
 int isPoW=0;
 //int issolved =1 ;
@@ -30,14 +31,14 @@ void setup() {
   // Inicializamos LoRa
     Heltec.begin(true, true, true, true , BAND);
     LoRa.setSpreadingFactor(7);
-    LoRa.setCodingRate4(6);    
+    LoRa.setCodingRate4(6);
+    //LoRa.setSignalBandwidth();
+    //LoRa.dumpRegisters(Serial);
+    
     LoRa.onReceive(onReceive);//Interrupcion para recepcion
     LoRa.receive();
     Serial.println("Heltec.LoRa init succeeded.");
     n.setID(id);//Configuramos la clase nodo
-    n.setFactor(3);
-    n.setDifficulty(2);
-    n.setTime_interval(1000);
 }
 
 void loop() {
@@ -100,7 +101,6 @@ void loop() {
           Pack(type,dst,payload);
           sendMessage(n);
           lastpow=millis();
-          //Serial.println(String(lastpow-lastbl));
           proofs.pop_back();
           lastbl=millis();
           T = thresholds.back();
@@ -117,7 +117,6 @@ void loop() {
         n.calcTmin();
         lastpow=0;
         lastbl=millis();
-        //Serial.println(lastbl);
         //Serial.println("Pow time : "+String(T)+" , time"+String(millis()-lastpow));
         //Serial.println("proofs of work generated!");
         isgl=0;
@@ -132,7 +131,7 @@ void loop() {
         sendMessage(n);  
       }
       lastSendTime = millis();
-      interval = 1000;
+      interval = random(3000);
       LoRa.receive(); 
     }
   }
@@ -165,7 +164,7 @@ void sendMessage(Node n)
     LoRa.print(payload.at(i));
   }
   LoRa.endPacket(); 
-  //delay(100);
+  delay(100);
   //}
   payload.clear();
   //Serial.println("Message : "+String(n.getTm())+String(dst));
@@ -247,7 +246,6 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
       //Serial.println("Node "+String(src)+"\thas replied a Pow with : "+pay);
       pow_f = millis();
       pow_t = pow_f-lastpow;
-      //Serial.println(pow_t);
       n.AddPowTime(pow_t);
       //Serial.println("Timed at"+String(total));
       String pow_s=pay;
@@ -354,8 +352,8 @@ void GL_pow()
     int i=0;
     int tam;
     //gl = n.getGrayList();
-    vector<char> d = {'6','7','8','2','3'};
-    vector<char> f = {'3','7','8','6','2'};
+    vector<char> d = {'6','7'};
+    vector<char> f = {'3','7'};
     gl.push_back(d);
     gl.push_back(f);
     //PrintGrayList(gl); // Solamente imprime la lista gris
