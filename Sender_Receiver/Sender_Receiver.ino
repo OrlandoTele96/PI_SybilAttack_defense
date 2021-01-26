@@ -36,7 +36,7 @@ void setup() {
     Serial.println("Heltec.LoRa init succeeded.");
     n.setID(id);//Configuramos la clase nodo
     n.setFactor(3);
-    n.setDifficulty(2);
+    n.setDifficulty(3);
     n.setTime_interval(1000);
 }
 
@@ -52,21 +52,21 @@ void loop() {
   int j,i;
   int ti,tf,tt,f;
   int lastgl=0;
+  if (isPoW==1)
+  {
+    solution = n.solvePoW(rnum);
+    type=0x02;
+    Pack(type,dst,solution);
+    sendMessage(n);
+    //delay(1000);
+    rnum.clear();
+    solution.clear();
+    isPoW=0;
+    isgl=0;
+  }
   if (millis() - lastSendTime > interval)
   {
-    if (isPoW==1)
-    {
-      solution = n.solvePoW(rnum);
-      type=0x02;
-      Pack(type,dst,solution);
-      sendMessage(n);
-      //delay(1000);
-      rnum.clear();
-      solution.clear();
-      isPoW=0;
-      isgl=0;
-    }
-    else{
+    if(isPoW==0){
       if((millis()-lastbl)>T && isbl ==1)
       {
         int isblist = n.SybilDetection();
@@ -244,12 +244,12 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
     //Serial.println("Message 2 received from : "+String(i_dst)+": "+String(src));
     if(i_dst == n.getID())
     {
-      //Serial.println("Node "+String(src)+"\thas replied a Pow with : "+pay);
+      Serial.println("Node "+String(src)+"\thas replied a Pow with : "+pay);
       pow_f = millis();
       pow_t = pow_f-lastpow;
       //Serial.println(pow_t);
       n.AddPowTime(pow_t);
-      //Serial.println("Timed at"+String(total));
+      Serial.println("Timed at"+String(pow_t));
       String pow_s=pay;
       for (i=0;i<(pow_s.length());i++)
       {
