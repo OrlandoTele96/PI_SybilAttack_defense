@@ -30,10 +30,7 @@ void setup() {
   // Inicializamos LoRa
     Heltec.begin(true, true, true, true , BAND);
     LoRa.setSpreadingFactor(7);
-    LoRa.setCodingRate4(6);
-    //LoRa.setSignalBandwidth();
-    //LoRa.dumpRegisters(Serial);
-    
+    LoRa.setCodingRate4(6);    
     LoRa.onReceive(onReceive);//Interrupcion para recepcion
     LoRa.receive();
     Serial.println("Heltec.LoRa init succeeded.");
