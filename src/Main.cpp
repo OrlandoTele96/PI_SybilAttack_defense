@@ -42,7 +42,7 @@ int main()
   {
     cout<<"Ya existe en graylist"<<endl;
   }
-
+  n.setDifficulty(6);
   vector<char> rand = {'1','2','2','3'};
   n.genPoW(subset,rand);
   subset.pop_back();
@@ -51,13 +51,13 @@ int main()
   n.genPoW(subset,rand);
   n.setID('1');
   n.solvePoW(rand);
-  /*n.AddAnswer(solutions.at(3));
+  /*n.AddAnswer();
   n.AddPowTime(0);
-  n.AddAnswer(solutions.at(2));
+  n.AddAnswer();
   n.AddPowTime(0);
-  n.AddAnswer(solutions.at(0));
+  n.AddAnswer();
   n.AddPowTime(0);
   n.SybilDetection();*/
-  n.calcThreshold();
+  //n.calcThreshold();
   return 0;
 }

@@ -22,7 +22,6 @@ using namespace std;
 struct data
 {
   unsigned char ID;
-  //vector<int> RSSI;
   int RSSI[10];
   int start,end;
   int prom=0;
@@ -38,7 +37,7 @@ private:
   vector<char> payload;
   vector<queue> Hist;
   vector<vector<char>> graylist;
-  int r;
+  /*int r;------------->*/
   int time_interval;
   int difficulty;
   double fact;

@@ -315,6 +315,7 @@ void Node::genPoW(vector<char> subset,vector<char> rand_n)
     f_t = clock();
     t_pow = f_t-i_t;
     solution=solution.substr(0,32);
+    cout<<solution<<endl;
     pow_time.push_back(t_pow);
     pow_solutions.push_back(solution);
   }
@@ -430,7 +431,7 @@ int Node::SybilDetection()
         if(solutions.at(i)==this->pow_ans.at(j))
         {
           //cout<<"timed"<<this->pow_tf.at(j)<<","<<sup<<endl;
-          if(this->pow_tf.at(j) < sup)
+          if(this->pow_tf.at(j) <= sup)
           {
             issybil = 0;
           }
@@ -504,8 +505,7 @@ void Node::calcTmin()
       }
     }
 
-    tole =(this->time_interval+10+tmin)*1;
-    //cout<<tole<<endl;
+    tole =(40+tmin)*1;
     this->tol.push_back(tole);
   }
 }
