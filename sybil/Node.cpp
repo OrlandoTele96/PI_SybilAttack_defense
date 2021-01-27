@@ -73,6 +73,30 @@ void Node::setIDdst(unsigned char dst)
 {
   this->id_dst = dst;
 }
+int Node::getTime_interval()const
+{
+  return this->time_interval;
+}
+int Node::getDifficulty()const
+{
+  return this->difficulty;
+}
+double Node::getFactor()const
+{
+  return this->fact;
+}
+void Node::setTime_interval(int interval)
+{
+  this->time_interval = interval;
+}
+void Node::setDifficulty(int dif)
+{
+  this->difficulty = dif;
+}
+void Node::setFactor(double factor)
+{
+  this->fact = factor;
+}
 /*-----------------------------Queue function---------------------------------*/
 queue Node::create(unsigned char id)
 {
@@ -206,8 +230,8 @@ int Node::Discard()
         {
           if(id_test.at(i).ID!=id_test.at(j).ID)
           {
-            inf = id_test.at(i).prom-(0.5*(id_test.at(i).desv));
-            sup =  id_test.at(i).prom+(0.5*(id_test.at(i).desv));
+            inf = id_test.at(i).prom-(this->fact*(id_test.at(i).desv));
+            sup =  id_test.at(i).prom+(this->fact*(id_test.at(i).desv));
             if(id_test.at(j).prom>inf && id_test.at(j).prom<sup)
             {
               suspected.push_back(id_test.at(j).ID);
@@ -287,11 +311,12 @@ void Node::genPoW(vector<char> subset,vector<char> rand_n)
   {
     input = number + subset.at(i);
     i_t = clock();
-    solution=ProofOfWork(input,2);
-    //cout<<solution<<endl;
+    solution=ProofOfWork(input,this->difficulty);
     f_t = clock();
     t_pow = f_t-i_t;
     solution=solution.substr(0,32);
+    cout<<subset.at(i)<<endl;
+    cout<<solution<<endl;
     pow_time.push_back(t_pow);
     pow_solutions.push_back(solution);
   }
@@ -355,7 +380,7 @@ vector<char> Node::solvePoW(vector<char> rand_n)
   tested = getID();
   number = randNumAdapter(rand_n);
   input = number + tested;
-  sol = ProofOfWork(input,2);
+  sol = ProofOfWork(input,this->difficulty);
   sol =sol.substr(0,32);
   vector<char> s (sol.begin(),sol.end());
   return s;
@@ -383,6 +408,9 @@ int Node::SybilDetection()
   vector<string> solutions;
   vector<char> id;
   vector<int> pow_time;
+  vector<int> tol;
+  int sup,inf;
+  int T;
   solutions = this->pow.back();
   pow_time = this->pow_ti.back();
   id = this->id_tested.back();
@@ -391,16 +419,23 @@ int Node::SybilDetection()
   int ans=0;
   if(tam>0)
   {
+    cout<<"**--subset--**"<<endl;
+    T = this->tol.back();
     for (i=0;i<tam;i++)
     {
+
       issybil=1;
-      //cout<<"Comparing ID : "<<id.at(i)<<"with pow : "<<solutions.at(i)<<"timed at :"<<pow_time.at(i)<<endl;
+      cout<<id.at(i);
+      sup = pow_time.at(i) + T;
       for(j=0;j<tamsol;j++)
       {
         if(solutions.at(i)==this->pow_ans.at(j))
         {
-          issybil=0;
-          //cout<<"ID : "<<id.at(i)<<" is not sybil"<<endl;
+          cout<<"timed"<<this->pow_tf.at(j)<<","<<sup<<endl;
+          if(this->pow_tf.at(j) <= sup)
+          {
+            issybil = 0;
+          }
         }
       }
       if(issybil==1)
@@ -408,11 +443,14 @@ int Node::SybilDetection()
         this->blacklist.push_back(id.at(i));
         ans =1;
       }
+
     }
+    cout<<"--"<<endl;
   }
   this->pow.pop_back();
   this->pow_ti.pop_back();
   this->id_tested.pop_back();
+  this->tol.pop_back();
   this->pow_ans.clear();
   this->pow_tf.clear();
   return ans;
@@ -440,8 +478,57 @@ vector<int> Node::calcThreshold()
         last = act;
       }
     }
-    threshold = last + 1+(100);
+    threshold = last +10;
     thresholds.push_back(threshold);
   }
   return thresholds;
+}
+
+void Node::calcTmin()
+{
+  int i,j;
+  int tmin,act,tole;
+  for(i=0;i<this->pow_ti.size();i++)
+  {
+    tmin =0;
+    for(j=0;j<this->pow_ti.at(i).size();j++)
+    {
+      if(j==0)
+      {
+        tmin = this->pow_ti.at(i).at(j);
+      }
+      else{
+        act = this->pow_ti.at(i).at(j);
+        if(tmin>act)
+        {
+          tmin = act;
+        }
+      }
+    }
+
+    tole =(this->pow_t+40+tmin)*1;//300 -> dif 2, 20000 -> dif 3
+    this->tol.push_back(tole);
+  }
+}
+
+void Node::setPoW_t()
+{
+  int powtime;
+  int factor;
+  if(this->difficulty==2)
+  {
+    powtime = 100;
+  }
+  else{
+    powtime = 2000;
+  }
+  if(this->fact==0.25 || this->fact ==0.5)
+  {
+    factor = 3;
+  }
+  else{
+    factor = 4;
+  }
+  this->pow_t = powtime*factor;
+  cout<<this->pow_t<<endl;
 }

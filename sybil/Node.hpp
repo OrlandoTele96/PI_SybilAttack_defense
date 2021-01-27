@@ -22,7 +22,6 @@ using namespace std;
 struct data
 {
   unsigned char ID;
-  //vector<int> RSSI;
   int RSSI[10];
   int start,end;
   int prom=0;
@@ -38,7 +37,10 @@ private:
   vector<char> payload;
   vector<queue> Hist;
   vector<vector<char>> graylist;
-  int r;
+  /*int r;------------->*/
+  int time_interval;
+  int difficulty;
+  double fact;
   vector<vector<string>> pow;
   vector<vector<int>> pow_ti;
   vector<vector<char>> id_tested;
@@ -46,6 +48,8 @@ private:
   vector<int> pow_tf;
   vector<char> blacklist;
   vector<char> bl_hashes;
+  vector<int> tol;
+  int pow_t;
 public:
     /*Constructor*/
     Node();
@@ -64,6 +68,12 @@ public:
     void clearhist();
     void setGrayList(vector<vector <char>> gl);
     void setIDdst(unsigned char dst);
+    int getTime_interval()const;
+    int getDifficulty()const;
+    double getFactor()const;
+    void setTime_interval(int interval);
+    void setDifficulty(int dif);
+    void setFactor(double factor);
     /*Queue function*/
     queue create(unsigned char id);
     /*RSSI Storage*/
@@ -89,5 +99,7 @@ public:
     int SybilDetection();
     void clearBlackList();
     vector<int> calcThreshold();
+    void calcTmin();
+    void setPoW_t();
 };
 #endif /* Node_hpp */
