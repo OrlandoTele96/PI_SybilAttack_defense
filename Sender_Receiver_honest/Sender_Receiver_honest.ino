@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 1000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '3'; //cambiar por cualquier ID
+unsigned char id = '1'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default generic message
 int isgl=0;
@@ -143,7 +143,7 @@ void onReceive(int packetSize)
   /*char dst;
   /*ID src*/
   char IDE = (char)LoRa.read(); // Recibe ID
-  //Serial.println("Received from : "+String(IDE)+":"+String(type));
+  Serial.println("Received from : "+String(IDE)+":"+String(type));
   /*Type message*/
   unsigned char type = LoRa.read(); // Recibe tipo de mensaje
   /*ID dst*/
