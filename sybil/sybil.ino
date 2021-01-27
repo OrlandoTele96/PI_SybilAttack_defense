@@ -27,6 +27,7 @@ int lastbl;
 int isbl=0;
 int c;
 int inpow=0;
+int nmsj;
 
 void setup() {
   // Inicializamos LoRa
@@ -217,7 +218,8 @@ void onReceive(int packetSize)
   /*Storage RSSI*/
   storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
   /*Phase 1*/
-  isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
+  if(nmsj==100)
+    isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
   /*Unpack content*/
   Unpack(type,dst,incoming,IDE);
 }
@@ -384,6 +386,7 @@ void storageRSSI(char IDE, char type, int rssi)
     n.AddIDtoHist(IDE);
   }
   n.AddRSSI(IDE,rssi); //Agregamos el rssi del mensaje a sus correspondiente ID
+  nmsj++;
 }
 vector<char> MakePayload(vector<char> ID,vector<char> randnum)
 {

@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 1000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '1'; //cambiar por cualquier ID
+unsigned char id = '3'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default message
 int isgl=0;
@@ -25,6 +25,7 @@ vector<int> thresholds;
 int T=0;
 int lastbl;
 int isbl=0;
+int nmsj=0;
 
 void setup() {
   // Inicializamos LoRa
@@ -202,7 +203,9 @@ void onReceive(int packetSize)
   /*Storage RSSI*/
   storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
   /*Phase 1*/
-  isgl= n.Discard(); // Algoritmo de descarte de nodos maliciosos
+  if(nmsj==100){
+    isgl= n.Discard();// Algoritmo de descarte de nodos maliciosos
+  }
   /*Unpack content*/
   Unpack(type,dst,incoming,IDE);
 }
@@ -326,6 +329,7 @@ void storageRSSI(char IDE, char type, int rssi)
     n.AddIDtoHist(IDE);
   }
   n.AddRSSI(IDE,rssi); //Agregamos el rssi del mensaje a sus correspondiente ID
+  nmsj ++;
 }
 vector<char> MakePayload(vector<char> ID,vector<char> randnum)
 {
