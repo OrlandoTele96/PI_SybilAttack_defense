@@ -42,7 +42,9 @@ int main()
   {
     cout<<"Ya existe en graylist"<<endl;
   }
-  n.setDifficulty(6);
+  n.setDifficulty(3);
+  n.setFactor(5);
+  n.setPoW_t();
   vector<char> rand = {'1','2','2','3'};
   n.genPoW(subset,rand);
   subset.pop_back();

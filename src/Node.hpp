@@ -49,6 +49,7 @@ private:
   vector<char> blacklist;
   vector<char> bl_hashes;
   vector<int> tol;
+  int pow_t;
 public:
     /*Constructor*/
     Node();
@@ -99,5 +100,6 @@ public:
     void clearBlackList();
     vector<int> calcThreshold();
     void calcTmin();
+    void setPoW_t();
 };
 #endif /* Node_hpp */

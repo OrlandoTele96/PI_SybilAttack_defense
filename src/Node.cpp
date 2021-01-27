@@ -506,7 +506,29 @@ void Node::calcTmin()
       }
     }
 
-    tole =(20000+40+tmin)*1;//300 -> dif 2, 20000 -> dif 3
+    tole =(this->pow_t+40+tmin)*1;//300 -> dif 2, 20000 -> dif 3
     this->tol.push_back(tole);
   }
+}
+
+void Node::setPoW_t()
+{
+  int powtime;
+  int factor;
+  if(this->difficulty==2)
+  {
+    powtime = 100;
+  }
+  else{
+    powtime = 1000;
+  }
+  if(this->fact==0.25 || this->fact ==0.5)
+  {
+    factor = 3;
+  }
+  else{
+    factor = 4;
+  }
+  this->pow_t = powtime*factor;
+  cout<<this->pow_t<<endl;
 }
