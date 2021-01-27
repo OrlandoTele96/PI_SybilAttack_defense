@@ -520,7 +520,7 @@ void Node::setPoW_t()
     powtime = 100;
   }
   else{
-    powtime = 1000;
+    powtime = 2000;
   }
   if(this->fact==0.25 || this->fact ==0.5)
   {
