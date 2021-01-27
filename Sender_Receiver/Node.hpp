@@ -37,7 +37,7 @@ private:
   vector<char> payload;
   vector<queue> Hist;
   vector<vector<char>> graylist;
-  int r;
+  /*int r;------------->*/
   int time_interval;
   int difficulty;
   double fact;
@@ -49,6 +49,7 @@ private:
   vector<char> blacklist;
   vector<char> bl_hashes;
   vector<int> tol;
+  int pow_t;
 public:
     /*Constructor*/
     Node();
@@ -99,5 +100,6 @@ public:
     void clearBlackList();
     vector<int> calcThreshold();
     void calcTmin();
+    void setPoW_t();
 };
 #endif /* Node_hpp */

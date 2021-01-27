@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 1000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '1'; //cambiar por cualquier ID
+unsigned char id = '3'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default message
 int isgl=0;
@@ -38,6 +38,7 @@ void setup() {
     n.setFactor(3);
     n.setDifficulty(3);
     n.setTime_interval(1000);
+    n.setPoW_t();
 }
 
 void loop() {
