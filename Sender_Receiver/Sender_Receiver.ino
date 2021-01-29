@@ -75,9 +75,9 @@ void loop() {
         int isblist = n.SybilDetection();
         //Serial.println("Generated!!");
         bl = n.getBlackList();
-        /*type = 0x03;
-        honest = n.getHonest();// get honest
-        pack(type,0x00,bl);
+        type = 0x03;
+        n.HonestList();// get honest
+        pack(type,0x00,bl); // Broadcast
         sendMessage(n);// send*/
         if (isblist==1)
         {

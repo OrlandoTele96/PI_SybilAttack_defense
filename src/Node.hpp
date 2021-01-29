@@ -50,6 +50,7 @@ private:
   vector<char> bl_hashes;
   vector<int> tol;
   int pow_t;
+  vector<char> honest;
 public:
     /*Constructor*/
     Node();
@@ -101,5 +102,7 @@ public:
     vector<int> calcThreshold();
     void calcTmin();
     void setPoW_t();
+    /*Phase 3 : Consensus*/
+    void HonestList();
 };
 #endif /* Node_hpp */

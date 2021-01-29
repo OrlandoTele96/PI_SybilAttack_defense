@@ -532,3 +532,29 @@ void Node::setPoW_t()
   this->pow_t = powtime*factor;
   cout<<this->pow_t<<endl;
 }
+/*---------------------------Phase 3 : PoW------------------------------------*/
+void Node::HonestList()
+{
+  int i,j,inbl;
+  for(i=0;i<this->Hist.size();i++)
+  {
+    cout<<Hist.at(i).ID<<endl;
+    inbl=0;
+    for (j=0;j<this->blacklist.size();j++)
+    {
+      if(this->Hist.at(i).ID == this->blacklist.at(i))
+      {
+        inbl =1;
+      }
+    }
+    if(inbl==0)
+    {
+      cout<<"This ID was honest"<<endl;
+      this->honest.push_back(this->Hist.at(i).ID);
+    }
+  }
+}
+void Node::Consensus(vector<char> bl)
+{
+  //
+}
