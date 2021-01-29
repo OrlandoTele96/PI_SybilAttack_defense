@@ -51,9 +51,10 @@ void loop() {
   unsigned char dst;
   vector<char> solution;
   vector<char> bl;
-  int j,i;
+  int j,i,k;
   int ti,tf,tt,f;
   int lastgl=0;
+  vector<char> honest;
   if (isPoW==1)
   {
     solution = n.solvePoW(rnum);
@@ -74,6 +75,10 @@ void loop() {
         int isblist = n.SybilDetection();
         //Serial.println("Generated!!");
         bl = n.getBlackList();
+        /*type = 0x03;
+        honest = n.getHonest();// get honest
+        pack(type,0x00,bl);
+        sendMessage(n);// send*/
         if (isblist==1)
         {
           //Serial.println("Generated");
@@ -90,6 +95,7 @@ void loop() {
           //Serial.println("cleaning");
         //thresholds.clear();
         isbl=0;
+        /*n.Consensus(bl);*/
       }
       if(proofs.size()>0)
       {
@@ -146,9 +152,8 @@ void sendMessage(Node n)
   Este codigo envia mensajes de diferentes tipos
   Tipo 0 : mensaje generico o de cualquier clase
   Tipo 1 : mensaje de solicitud de PoW
-  Tipo 2 : Confirmacion de PoW
-  Tipo 3 : mensaje de respuesta de PoW
-  Tipo 4 : mensaje de consenso
+  Tipo 2 : mensaje de respuesta de PoW
+  Tipo 3 : mensaje de consenso
   */
   int j=0;
   int i=0;
@@ -264,6 +269,14 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
       solution.clear();
     }  
   }
+  if(type==0x03)
+  {
+    //get honest
+    //if ID in honest
+    //get Sybil
+    //Add blacklist
+    //Add ID src
+  }
 }
 
 void Pack(unsigned char type_m,unsigned char id_dest,vector<char> pa)
@@ -290,11 +303,8 @@ void Pack(unsigned char type_m,unsigned char id_dest,vector<char> pa)
   }
   if (type_m == 0x03)
   {
-    Serial.println("Packing message for PoW solution");
-  }
-  if (type_m == 0x04)
-  {
     Serial.println("Packing message for consensus");
+    payload = pa;
   }
   n.setTm(type_m);
   n.setIDdst(id_dest);
