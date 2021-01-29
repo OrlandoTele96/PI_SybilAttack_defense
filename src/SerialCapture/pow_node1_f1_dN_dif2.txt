@@ -50058,3 +50058,13 @@ Timed at60806
 00030b43d519a56a4aa918f79ab03029
 Node 3	has replied a Pow with : 0002f04470ddc57ca9a779b1b5f3a5eb
 Timed at814
+Consensus received!786
+Consensus received!378
+Consensus received!16783
+Consensus received!32786
+Consensus received!26783
+Consensus received!28
+Consensus received!367852
+Consensus received!26783
+Consensus received!26783
+Consensus received!8352

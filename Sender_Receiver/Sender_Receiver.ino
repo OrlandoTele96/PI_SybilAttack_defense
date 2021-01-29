@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 1000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '3'; //cambiar por cualquier ID
+unsigned char id = '5'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default message
 int isgl=0;
@@ -37,7 +37,7 @@ void setup() {
     Serial.println("Heltec.LoRa init succeeded.");
     n.setID(id);//Configuramos la clase nodo
     n.setFactor(3);
-    n.setDifficulty(3);
+    n.setDifficulty(2);
     n.setTime_interval(1000);
     n.setPoW_t();
 }
@@ -77,7 +77,9 @@ void loop() {
         bl = n.getBlackList();
         type = 0x03;
         n.HonestList();// get honest
-        pack(type,0x00,bl); // Broadcast
+        Serial.println("get honest");
+        Pack(type,0x00,bl); // Broadcast
+        Serial.println("packed");
         sendMessage(n);// send*/
         if (isblist==1)
         {
@@ -169,13 +171,14 @@ void sendMessage(Node n)
   /*Payload*/
   for (i=0;i<payload.size();i++)
   {
+    //Serial.print(payload.at(i));
     LoRa.print(payload.at(i));
   }
   LoRa.endPacket(); 
   //delay(100);
   //}
   payload.clear();
-  //Serial.println("Message : "+String(n.getTm())+String(dst));
+  //Serial.println("Message : "+String(n.getTm())+"::"+String(dst));
 }
 
 
@@ -189,7 +192,7 @@ void onReceive(int packetSize)
   char IDE = (char)LoRa.read(); // Recibe ID
   //Serial.println("Received from : "+String(IDE)+":"+String(type));
   /*Type message*/
-  unsigned char type = LoRa.read(); // Recibe tipo de mensaje
+  unsigned char type_me = LoRa.read(); // Recibe tipo de mensaje
   /*ID dst*/
   char dst = (char)LoRa.read();
   //Serial.println("Destination ID : "+String(dst));
@@ -206,16 +209,16 @@ void onReceive(int packetSize)
   int rssi = (int )LoRa.packetRssi(); // Obtiene rssi del mensaje
   //Serial.println("RSSI: "+String(rssi));
   /*Storage RSSI*/
-  storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
+  storageRSSI(IDE,type_me,rssi); // Almacenamos el ID y rssi recibido
   /*Phase 1*/
-  if(nmsj==100){
+  if(nmsj>=100){
     isgl= n.Discard();// Algoritmo de descarte de nodos maliciosos
   }
   /*Unpack content*/
-  Unpack(type,dst,incoming,IDE);
+  Unpack(type_me,dst,incoming,IDE);
 }
 
-void Unpack(unsigned char type,char i_dst,String pay,char src)
+void Unpack(unsigned char type_m,char i_dst,String pay,char src)
 {
   /*Desempaqueta mensajes*/
   
@@ -225,11 +228,11 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
   vector<char> solution;
   int pow_t;
   int pow_f;
-  if(type ==0x00)
+  if(type_m ==0x00)
   {
     //Serial.println("Message 0 received");
   }
-  if(type ==0x01)
+  if(type_m ==0x01)
   {
     
     pay_len = pay.length();
@@ -248,7 +251,7 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
       }
     }
   }
-  if(type==0x02)
+  if(type_m==0x02)
   {
     //Serial.println("Message 2 received from : "+String(i_dst)+": "+String(src));
     if(i_dst == n.getID())
@@ -269,8 +272,9 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
       solution.clear();
     }  
   }
-  if(type==0x03)
+  if(type_m==0x03)
   {
+    Serial.println("Consensus received!"+String(pay));
     //get honest
     //if ID in honest
     //get Sybil
@@ -368,11 +372,11 @@ void GL_pow()
     vector<vector<char>> gl;
     int i=0;
     int tam;
-    //gl = n.getGrayList();
-    vector<char> d = {'6','7','8','2','3'};
-    vector<char> f = {'3','7','8','6','2'};
-    gl.push_back(d);
-    gl.push_back(f);
+    gl = n.getGrayList();
+    //vector<char> d = {'6','7','8','2','3'};
+    //vector<char> f = {'3','7','8','6','2'};
+    //gl.push_back(d);
+    //gl.push_back(f);
     //PrintGrayList(gl); // Solamente imprime la lista gris
     tam =gl.size();
     int rnd;
