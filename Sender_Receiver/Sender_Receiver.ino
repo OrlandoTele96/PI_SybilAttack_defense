@@ -31,7 +31,7 @@ void setup() {
   // Inicializamos LoRa
     Heltec.begin(true, true, true, true , BAND);
     LoRa.setSpreadingFactor(7);
-    LoRa.setCodingRate4(6);    
+    LoRa.setCodingRate4(6);
     LoRa.onReceive(onReceive);//Interrupcion para recepcion
     LoRa.receive();
     Serial.println("Heltec.LoRa init succeeded.");
@@ -139,11 +139,11 @@ void loop() {
         type=0x00;
         dst = 'd';
         Pack(type,dst,payload);
-        sendMessage(n);  
+        sendMessage(n);
       }
       lastSendTime = millis();
       interval = 1000;
-      LoRa.receive(); 
+      LoRa.receive();
     }
   }
 }
@@ -174,7 +174,7 @@ void sendMessage(Node n)
     //Serial.print(payload.at(i));
     LoRa.print(payload.at(i));
   }
-  LoRa.endPacket(); 
+  LoRa.endPacket();
   //delay(100);
   //}
   payload.clear();
@@ -221,7 +221,7 @@ void onReceive(int packetSize)
 void Unpack(unsigned char type_m,char i_dst,String pay,char src)
 {
   /*Desempaqueta mensajes*/
-  
+
   vector<char> id_dst;
   int n_id_dst,i,j;
   int pay_len;
@@ -234,7 +234,7 @@ void Unpack(unsigned char type_m,char i_dst,String pay,char src)
   }
   if(type_m ==0x01)
   {
-    
+
     pay_len = pay.length();
     n_id_dst = pay_len-4;
     for(i=0;i<n_id_dst;i++)
@@ -270,16 +270,28 @@ void Unpack(unsigned char type_m,char i_dst,String pay,char src)
       }
       n.AddAnswer(solution);
       solution.clear();
-    }  
+    }
   }
   if(type_m==0x03)
   {
     Serial.println("Consensus received!"+String(pay));
-    //get honest
-    //if ID in honest
-    //get Sybil
-    //Add blacklist
-    //Add ID src
+    String sybil = pay;
+    vector<char> sybil_list;
+    int inConsensus=1;
+    for (i=0;i<sybil.length();i++)
+    {
+      if(sybil.charAt(i)==n.getID())
+      {
+        inConsensus =0;
+      }
+      sybil_list.push_back(sybil.charAt(i));
+    }
+    if(inConsensus==1)
+    {
+      /*n.AddIDCons(src);//Add ID src
+      n.AddBlackListCons(sybil_list);//Add blacklist*/
+    }
+    sybil_list.clear();
   }
 }
 

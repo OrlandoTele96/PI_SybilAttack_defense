@@ -104,5 +104,6 @@ public:
     void setPoW_t();
     /*Phase 3 : Consensus*/
     void HonestList();
+    void Consensus(vector<char> bl);
 };
 #endif /* Node_hpp */

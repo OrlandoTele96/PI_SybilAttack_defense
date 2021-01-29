@@ -542,7 +542,7 @@ void Node::HonestList()
     inbl=0;
     for (j=0;j<this->blacklist.size();j++)
     {
-      if(this->Hist.at(i).ID == this->blacklist.at(i))
+      if(this->Hist.at(i).ID == this->blacklist.at(j))
       {
         inbl =1;
       }
