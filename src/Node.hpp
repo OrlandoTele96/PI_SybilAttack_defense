@@ -27,6 +27,7 @@ struct data
   int prom=0;
   int var=0;
   int desv=0;
+  vector<char> bl;
 };
 typedef struct data queue;
 class Node:public SHA256 {
@@ -51,6 +52,8 @@ private:
   vector<int> tol;
   int pow_t;
   vector<char> honest;
+  vector<char> IDcons;
+  vector<vector<char>> BlacklistCons;
 public:
     /*Constructor*/
     Node();
@@ -105,5 +108,6 @@ public:
     /*Phase 3 : Consensus*/
     void HonestList();
     void Consensus(vector<char> bl);
+    void AddBlackListCons(char id,vector<char> bl);
 };
 #endif /* Node_hpp */

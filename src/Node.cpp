@@ -558,3 +558,15 @@ void Node::Consensus(vector<char> bl)
 {
   //
 }
+void Node::AddBlackListCons(char id,vector<char> bl)
+{
+  int i;
+  for(i=0;i<this->Hist.size();i++)
+  {
+    if(this->Hist.at(i).ID==id)
+    {
+      cout<<"ID :\t"<<id<<"\t"<<"Add bl"<<endl;
+      this->Hist.at(i).bl = bl;
+    }
+  }
+}

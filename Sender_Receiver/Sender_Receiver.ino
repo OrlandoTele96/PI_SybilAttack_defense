@@ -288,8 +288,8 @@ void Unpack(unsigned char type_m,char i_dst,String pay,char src)
     }
     if(inConsensus==1)
     {
-      /*n.AddIDCons(src);//Add ID src
-      n.AddBlackListCons(sybil_list);//Add blacklist*/
+      Serial.println("In consensus");
+      n.AddBlackListCons(src,sybil_list);//Add blacklist
     }
     sybil_list.clear();
   }
