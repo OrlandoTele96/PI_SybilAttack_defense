@@ -556,7 +556,32 @@ void Node::HonestList()
 }
 void Node::Consensus(vector<char> bl)
 {
-  //
+  int i,j,k;
+  vector<vector<char>> consensus;
+  for(i=0;i<this->honest.size();i++)
+  {
+    for(j=0;j<this->Hist.size();j++)
+    {
+      if(this->honest.at(i)==this->Hist.at(j).ID)
+      {
+        cout<<"ID cons:"<<this->Hist.at(j).ID<<endl;
+        consensus.push_back(this->Hist.at(j).bl);
+      }
+    }
+  }
+  cout<<"Compare"<<endl;
+  for(i=0;i<this->blacklist.size();i++)
+  {
+    cout<<"ID : "<<this->Blacklist.at(i)<<endl;
+    for(j=0;j<consensus.size();j++)
+    {
+      cout<<"Blacklist1"<<endl;
+      for(k=0;k<consensus.at(j).size();k++)
+      {
+        cout<<"with ID :"<<consensus.at(j).at(k)<<endl;
+      }
+    }
+  }
 }
 void Node::AddBlackListCons(char id,vector<char> bl)
 {
