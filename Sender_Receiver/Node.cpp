@@ -315,8 +315,8 @@ void Node::genPoW(vector<char> subset,vector<char> rand_n)
     f_t = clock();
     t_pow = f_t-i_t;
     solution=solution.substr(0,32);
-    cout<<subset.at(i)<<endl;
-    cout<<solution<<endl;
+    //cout<<subset.at(i)<<endl;
+    //cout<<solution<<endl;
     pow_time.push_back(t_pow);
     pow_solutions.push_back(solution);
   }
@@ -431,7 +431,7 @@ int Node::SybilDetection()
       {
         if(solutions.at(i)==this->pow_ans.at(j))
         {
-          cout<<"timed"<<this->pow_tf.at(j)<<","<<sup<<endl;
+          //cout<<"timed"<<this->pow_tf.at(j)<<","<<sup<<endl;
           if(this->pow_tf.at(j) <= sup)
           {
             issybil = 0;
@@ -517,7 +517,7 @@ void Node::setPoW_t()
   int factor;
   if(this->difficulty==2)
   {
-    powtime = 100;
+    powtime = 50;
   }
   else{
     powtime = 2000;
@@ -538,7 +538,7 @@ void Node::HonestList()
   int i,j,inbl;
   for(i=0;i<this->Hist.size();i++)
   {
-    cout<<Hist.at(i).ID<<endl;
+    //cout<<Hist.at(i).ID<<endl;
     inbl=0;
     for (j=0;j<this->blacklist.size();j++)
     {
@@ -549,7 +549,7 @@ void Node::HonestList()
     }
     if(inbl==0)
     {
-      cout<<"This ID was honest"<<endl;
+      //cout<<"This ID was honest"<<endl;
       this->honest.push_back(this->Hist.at(i).ID);
     }
   }
@@ -557,4 +557,16 @@ void Node::HonestList()
 void Node::Consensus(vector<char> bl)
 {
   //
+}
+void Node::AddBlackListCons(char id,vector<char> bl)
+{
+  int i;
+  for(i=0;i<this->Hist.size();i++)
+  {
+    if(this->Hist.at(i).ID==id)
+    {
+      //cout<<"ID :\t"<<id<<"\t"<<"Add bl"<<endl;
+      this->Hist.at(i).bl = bl;
+    }
+  }
 }
