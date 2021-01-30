@@ -54,6 +54,7 @@ private:
   vector<char> honest;
   vector<char> IDcons;
   vector<vector<char>> BlacklistCons;
+  vector<char> MasterBlackList;
 public:
     /*Constructor*/
     Node();
@@ -74,6 +75,7 @@ public:
     void setIDdst(unsigned char dst);
     int getTime_interval()const;
     int getDifficulty()const;
+    vector<char> getMasterBlackList()const;
     double getFactor()const;
     void setTime_interval(int interval);
     void setDifficulty(int dif);
@@ -109,5 +111,6 @@ public:
     void HonestList();
     void Consensus(vector<char> bl);
     void AddBlackListCons(char id,vector<char> bl);
+    void ClearMaster();
 };
 #endif /* Node_hpp */

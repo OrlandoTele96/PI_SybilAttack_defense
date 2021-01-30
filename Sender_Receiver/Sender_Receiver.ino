@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 1000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '1'; //cambiar por cualquier ID
+unsigned char id = '5'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default message
 int isgl=0;
@@ -51,6 +51,7 @@ void loop() {
   unsigned char dst;
   vector<char> solution;
   vector<char> bl;
+  vector<char> master;
   int j,i,k;
   int ti,tf,tt,f;
   int lastgl=0;
@@ -98,6 +99,9 @@ void loop() {
         //thresholds.clear();
         isbl=0;
         n.Consensus(bl);
+        master=n.getMasterBlackList();
+        PrintMaster(master);
+        n.ClearMaster();
       }
       if(proofs.size()>0)
       {
@@ -445,4 +449,20 @@ void PrintBlackList(vector<char> bl)
     Serial.print(String(bl.at(i)));
   }
   Serial.println("\n**");
+}
+void PrintMaster(vector<char> master)
+{
+  int i;
+  Serial.println("**---MasterBlackList--*");
+  if(master.size()==0)
+  {
+    Serial.println("NoMasterBlackList");
+  }
+  else{
+    for(i=0;i<master.size();i++)
+    {
+      Serial.print(master.at(i));
+    }
+  }
+  Serial.println("\n*-*-*-*");
 }
