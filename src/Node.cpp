@@ -50,6 +50,10 @@ vector<char> Node::getBlackList()const
 {
   return this->blacklist;
 }
+vector<char> Node::getMasterBlackList()const
+{
+  return this->MasterBlackList;
+}
 void Node::setID(unsigned char id)
 {
   this->id = id;
@@ -564,24 +568,32 @@ void Node::Consensus(vector<char> bl)
     {
       if(this->honest.at(i)==this->Hist.at(j).ID)
       {
-        cout<<"ID cons:"<<this->Hist.at(j).ID<<endl;
+        //cout<<"ID cons:"<<this->Hist.at(j).ID<<endl;
         consensus.push_back(this->Hist.at(j).bl);
+        this->Hist.at(j).bl.clear();
       }
     }
   }
-  cout<<"Compare"<<endl;
-  for(i=0;i<this->blacklist.size();i++)
+  //cout<<"Compare"<<endl;
+  for(i=0;i<bl.size();i++)
   {
-    cout<<"ID : "<<this->Blacklist.at(i)<<endl;
+    //cout<<"ID : "<<bl.at(i)<<endl;
     for(j=0;j<consensus.size();j++)
     {
-      cout<<"Blacklist1"<<endl;
+      //cout<<"Blacklist"<<j<<endl;
       for(k=0;k<consensus.at(j).size();k++)
       {
-        cout<<"with ID :"<<consensus.at(j).at(k)<<endl;
+        //cout<<"with ID :"<<consensus.at(j).at(k)<<endl;
+        if(bl.at(i)==consensus.at(j).at(k))
+        {
+          //cout<<"ID:"<<bl.at(i)<<endl;
+          //cout<<"Is sybil!!!!!"<<endl;
+          this->MasterBlackList.push_back(bl.at(i));
+        }
       }
     }
   }
+  this->honest.clear();
 }
 void Node::AddBlackListCons(char id,vector<char> bl)
 {
@@ -594,4 +606,8 @@ void Node::AddBlackListCons(char id,vector<char> bl)
       this->Hist.at(i).bl = bl;
     }
   }
+}
+void Node::ClearMaster()
+{
+  this->MasterBlackList.clear();
 }
