@@ -575,23 +575,30 @@ void Node::Consensus(vector<char> bl)
     }
   }
   //cout<<"Compare"<<endl;
-  for(i=0;i<bl.size();i++)
+  if(consensus.size()==0)
   {
-    //cout<<"ID : "<<bl.at(i)<<endl;
-    for(j=0;j<consensus.size();j++)
+    this->MasterBlackList = bl;
+  }
+  else
+  {
+    for(i=0;i<bl.size();i++)
     {
-      //cout<<"Blacklist"<<j<<endl;
-      for(k=0;k<consensus.at(j).size();k++)
+      //cout<<"ID : "<<bl.at(i)<<endl;
+      for(j=0;j<consensus.size();j++)
       {
-        //cout<<"with ID :"<<consensus.at(j).at(k)<<endl;
-        if(bl.at(i)==consensus.at(j).at(k))
+        //cout<<"Blacklist"<<j<<endl;
+        for(k=0;k<consensus.at(j).size();k++)
         {
-          //cout<<"ID:"<<bl.at(i)<<endl;
-          //cout<<"Is sybil!!!!!"<<endl;
-          this->MasterBlackList.push_back(bl.at(i));
+          //cout<<"with ID :"<<consensus.at(j).at(k)<<endl;
+          if(bl.at(i)==consensus.at(j).at(k))
+          {
+            //cout<<"ID:"<<bl.at(i)<<endl;
+            //cout<<"Is sybil!!!!!"<<endl;
+            this->MasterBlackList.push_back(bl.at(i));
+          }
         }
       }
-    }
+    }  
   }
   this->honest.clear();
 }
