@@ -569,8 +569,11 @@ void Node::Consensus(vector<char> bl)
       if(this->honest.at(i)==this->Hist.at(j).ID)
       {
         //cout<<"ID cons:"<<this->Hist.at(j).ID<<endl;
-        consensus.push_back(this->Hist.at(j).bl);
-        this->Hist.at(j).bl.clear();
+        if(this->Hist.at(j).bl.size()>=0)
+        {  
+          consensus.push_back(this->Hist.at(j).bl);
+          this->Hist.at(j).bl.clear();
+        }
       }
     }
   }
@@ -592,6 +595,11 @@ void Node::Consensus(vector<char> bl)
         }
       }
     }
+  }  
+  if(this->MasterBlackList.size()==0)
+  {
+    //cout<<"Consensus was not reached!!"<<endl;
+    this->MasterBlackList=bl;
   }
   this->honest.clear();
 }
