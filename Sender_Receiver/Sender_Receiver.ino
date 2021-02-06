@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 1000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '3'; //cambiar por cualquier ID
+unsigned char id = '1'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default message
 int isgl=0;
@@ -278,7 +278,7 @@ void Unpack(unsigned char type_m,char i_dst,String pay,char src)
   }
   if(type_m==0x03)
   {
-    Serial.println("Consensus received!"+String(pay)+"from"+String(src));
+    //Serial.println("Consensus received!"+String(pay)+"from"+String(src));
     String sybil = pay;
     vector<char> sybil_list;
     int inConsensus=1;

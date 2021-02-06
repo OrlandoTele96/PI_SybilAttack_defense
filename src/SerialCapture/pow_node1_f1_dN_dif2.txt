@@ -50068,3 +50068,43 @@ Consensus received!367852
 Consensus received!26783
 Consensus received!26783
 Consensus received!8352
+628
+*-*-*-*
+**--subset--**
+7683--
+**---BlackList--**
+68
+**
+**---MasterBlackList--*
+68
+*-*-*-*
+763
+*-*-*-*
+**--subset--**
+63--
+**--BlackList--**
+No blacklist
+**---MasterBlackList--*
+NoMasterBlackList
+*-*-*-*
+abort() was called at PC 0x400fe2c7 on core 1
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+**---BlackList--**
+678
+**
+**---MasterBlackList--*
+678
+*-*-*-*
+**--subset--**
+36782--
+**---BlackList--**
+6782
