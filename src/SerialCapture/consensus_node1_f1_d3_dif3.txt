@@ -1,0 +1,4608 @@
+**--subset--**
+7683--
+**---BlackList--**
+68
+**
+**---MasterBlackList--*
+68
+*-*-*-*
+763
+*-*-*-*
+**--subset--**
+63--
+**--BlackList--**
+No blacklist
+**---MasterBlackList--*
+NoMasterBlackList
+*-*-*-*
+**--subset--**
+267893--
+**---BlackList--**
+26789
+**
+**---MasterBlackList--*
+26789
+*-*-*-*
+**--subset--**
+93--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+687--
+**---BlackList--**
+687
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9c4  PS      : 0x00060834  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060823  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060821  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9c4
+
+Backtrace: 0x4008a9c4:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x400d53d7:0x3ffb1870 0x400d59d3:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x40089142  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000abab  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001b  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x40089142:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+873--
+**---BlackList--**
+873
+**
+**---MasterBlackList--*
+873
+*-*-*-*
+**--subset--**
+73--
+**--BlackList--**
+No blacklist
+**---MasterBlackList--*
+NoMasterBlackList
+*-*-*-*
+**--subset--**
+86723--
+**---BlackList--**
+672
+**
+**---MasterBlackList--*
+672
+*-*-*-*
+**--subset--**
+86723--
+**---BlackList--**
+672
+**
+**---MasterBlackList--*
+672
+*-*-*-*
+**--subset--**
+86723--
+**---BlackList--**
+8672
+**
+**---MasterBlackList--*
+8672
+*-*-*-*
+**--subset--**
+86723--
+**---BlackList--**
+6723
+**
+**---MasterBlackList--*
+6723
+*-*-*-*
+**--subset--**
+78--
+**---BlackList--**
+8
+**
+**---MasterBlackList--*
+8
+*-*-*-*
+**--subset--**
+678--
+**---BlackList--**
+678
+**
+**---MasterBlackList--*
+678
+*-*-*-*
+**--subset--**
+8627--
+**---BlackList--**
+8627
+**
+**---MasterBlackList--*
+8627
+*-*-*-*
+**--subset--**
+867293--
+**---BlackList--**
+867293
+**
+**---MasterBlackList--*
+867293
+*-*-*-*
+**--subset--**
+86723--
+**---BlackList--**
+672
+**
+**---MasterBlackList--*
+672
+*-*-*-*
+**--subset--**
+68--
+**---BlackList--**
+68
+**
+**---MasterBlackList--*
+68
+*-*-*-*
+**--subset--**
+876--
+**---BlackList--**
+76
+**
+**---MasterBlackList--*
+76
+*-*-*-*
+**--subset--**
+76--
+**---BlackList--**
+76
+**
+**---MasterBlackList--*
+76
+*-*-*-*
+**--subset--**
+672--
+**---BlackList--**
+72
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+**--subset--**
+38726--
+**---BlackList--**
+8726
+**
+**---MasterBlackList--*
+8726
+*-*-*-*
+**--subset--**
+867293--
+**---BlackList--**
+6729
+**
+**---MasterBlackList--*
+6729
+*-*-*-*abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+28
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9c4  PS      : 0x00060434  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060423  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060421  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9c4
+
+Backtrace: 0x4008a9c4:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x4000bfed:0x3ffb1790 0x400892b9:0x3ffb17a0 0x4008814f:0x3ffb17c0 0x400d6671:0x3ffb1800 0x400d5c19:0x3ffb1820 0x400d53c8:0x3ffb1850 0x400d5400:0x3ffb1870 0x400d59c5:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x40089142  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000abab  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001d  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x40089142:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+6783--
+**---BlackList--**
+78
+**
+**---MasterBlackList--*
+78
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9be  PS      : 0x00060e34  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060e23  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060e21  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9be
+
+Backtrace: 0x4008a9be:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x400d6795:0x3ffb1810 0x400d5c4a:0x3ffb1830 0x400d53d2:0x3ffb1850 0x400d5400:0x3ffb1870 0x400d59c5:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x40089147  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000cdcd  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001d  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x40089147:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+73--
+**--BlackList--**
+No blacklist
+**---MasterBlackList--*
+NoMasterBlackList
+*-*-*-*
+abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+26783--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+2678
+*-*-*-*
+**--subset--**
+2673--
+**---BlackList--**
+267
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+**--subset--**
+856--
+**---BlackList--**
+56
+**
+**---MasterBlackList--*
+56
+*-*-*-*
+**--subset--**
+7856--
+**---BlackList--**
+7856
+**
+**---MasterBlackList--*
+7856
+*-*-*-*
+**--subset--**
+6752--
+**---BlackList--**
+752
+**
+**---MasterBlackList--*
+752
+*-*-*-*
+**--subset--**
+67852--
+**---BlackList--**
+67852
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+367852--
+**---BlackList--**
+7852
+**
+**---MasterBlackList--*
+7852
+*-*-*-*
+**--subset--**
+2678953--
+**---BlackList--**
+26789
+**
+**---MasterBlackList--*
+678
+*-*-*-*
+**--subset--**
+267893--
+**---BlackList--**
+26789
+**
+**---MasterBlackList--*
+26789
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+678
+**
+**---MasterBlackList--*
+6
+*-*-*-*Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9be  PS      : 0x00060434  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060423  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060421  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9be
+
+Backtrace: 0x4008a9be:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x4000bfed:0x3ffb1790 0x400892b9:0x3ffb17a0 0x4008814f:0x3ffb17c0 0x400d6671:0x3ffb1800 0x400d5c19:0x3ffb1820 0x400d53c8:0x3ffb1850 0x400d5400:0x3ffb1870 0x400d59c5:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x4008914a  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000cdcd  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001d  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x4008914a:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+73--
+**---BlackList--**
+73
+**
+**---MasterBlackList--*
+73
+*-*-*-*
+**--subset--**
+67283--
+**---BlackList--**
+6728
+**
+**---MasterBlackList--*
+6728
+*-*-*-*
+**--subset--**
+67283--
+**---BlackList--**
+283
+**
+**---MasterBlackList--*
+283
+*-*-*-*
+**--subset--**
+67283--
+**---BlackList--**
+83
+**
+**---MasterBlackList--*
+83
+*-*-*-*
+**--subset--**
+67283--
+**---BlackList--**
+67283
+**
+**---MasterBlackList--*
+67283
+*-*-*-*
+**--subset--**
+67283--
+**---BlackList--**
+728
+**
+**---MasterBlackList--*
+728
+*-*-*-*
+**--subset--**
+67283--
+**---BlackList--**
+28
+**
+**---MasterBlackList--*
+28
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9be  PS      : 0x00060e34  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060e23  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060e21  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9be
+
+Backtrace: 0x4008a9be:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x400d6784:0x3ffb1810 0x400d5c4a:0x3ffb1830 0x400d53d2:0x3ffb1850 0x400d5400:0x3ffb1870 0x400d59c5:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x4008914d  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000abab  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001d  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x4008914d:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+7283--
+**---BlackList--**
+8
+**
+**---MasterBlackList--*
+8
+*-*-*-*
+**--subset--**
+723--
+**---BlackList--**
+723
+**
+**---MasterBlackList--*
+723
+*-*-*-*
+**--subset--**
+23--
+**--BlackList--**
+No blacklist
+**---MasterBlackList--*
+NoMasterBlackList
+*-*-*-*
+**--subset--**
+786--
+**---BlackList--**
+86
+**
+**---MasterBlackList--*
+86
+*-*-*-*
+**--subset--**
+7286--
+**---BlackList--**
+7286
+**
+**---MasterBlackList--*
+7286
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9be  PS      : 0x00060c34  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060c23  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060c21  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x400014fd  LEND    : 0x4000150d  LCOUNT  : 0xffffffff  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9be
+
+Backtrace: 0x4008a9be:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x400d672a:0x3ffb1820 0x400d5c19:0x3ffb1840 0x400d53c8:0x3ffb1870 0x400d59d3:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x4008914a  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000cdcd  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001b  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x4008914a:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+6783--
+**---BlackList--**
+8
+**
+**---MasterBlackList--*
+8
+*-*-*-*
+**--subset--**
+673--
+**---BlackList--**
+67
+**
+**---MasterBlackList--*
+6
+*-*-*-*
+**--subset--**
+62783--
+**---BlackList--**
+2783
+**
+**---MasterBlackList--*
+2783
+*-*-*-*
+**--subset--**
+6287--
+**---BlackList--**
+287
+**
+**---MasterBlackList--*
+8877
+*-*-*-*
+**--subset--**
+62783--
+**---BlackList--**
+8
+**
+**---MasterBlackList--*
+8
+*-*-*-*
+**--subset--**
+87--
+**---BlackList--**
+7
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+**--subset--**
+67--
+**---BlackList--**
+7
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+**--subset--**
+627--
+**---BlackList--**
+627
+**
+**---MasterBlackList--*
+627
+*-*-*-*
+**--subset--**
+786--
+**---BlackList--**
+786
+**
+**---MasterBlackList--*
+86
+*-*-*-*
+**--subset--**
+6287--
+**---BlackList--**
+6287
+**
+**---MasterBlackList--*
+6287
+*-*-*-*
+**--subset--**
+36287--
+**---BlackList--**
+6287
+**
+**---MasterBlackList--*
+62
+*-*-*-*
+**--subset--**
+627893--
+**---BlackList--**
+2789
+**
+**---MasterBlackList--*
+2789
+*-*-*-***--subset--**
+26783--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+226678
+*-*-*-*
+**--subset--**
+2673--
+**---BlackList--**
+267
+**
+**---MasterBlackList--*
+267
+*-*-*-*
+**--subset--**
+263--
+**---BlackList--**
+263
+**
+**---MasterBlackList--*
+6
+*-*-*-*
+**--subset--**
+23--
+**--BlackList--**
+No blacklist
+**---MasterBlackList--*
+NoMasterBlackList
+*-*-*-*
+**--subset--**
+2678593--
+**---BlackList--**
+267859
+**
+**---MasterBlackList--*
+267859
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+678
+**
+**---MasterBlackList--*
+678
+*-*-*-*
+**--subset--**
+26758--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+26788
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9be  PS      : 0x00060234  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060223  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060221  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9be
+
+Backtrace: 0x4008a9be:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x400d679a:0x3ffb1850 0x400d5c4a:0x3ffb1870 0x400d53d2:0x3ffb1890 0x400d5a54:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x40089147  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000cdcd  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001b  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x40089147:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+73--
+**---BlackList--**
+73
+**
+**---MasterBlackList--*
+73
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+6783--
+**---BlackList--**
+78
+**
+**---MasterBlackList--*
+78
+*-*-*-*
+**--subset--**
+86--
+**---BlackList--**
+86
+**
+**---MasterBlackList--*
+86
+*-*-*-*
+**--subset--**
+786--
+**---BlackList--**
+786
+**
+**---MasterBlackList--*
+786
+*-*-*-*
+**--subset--**
+76--
+**---BlackList--**
+76
+**
+**---MasterBlackList--*
+76
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+672--
+**---BlackList--**
+62
+**
+**---MasterBlackList--*
+62
+*-*-*-*
+**--subset--**
+62--
+**---BlackList--**
+62
+**
+**---MasterBlackList--*
+62
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+2683--
+**---BlackList--**
+8
+**
+**---MasterBlackList--*
+8
+*-*-*-*
+**--subset--**
+267893--
+**---BlackList--**
+26789
+**
+**---MasterBlackList--*
+26789
+*-*-*-*
+**--subset--**
+67--
+**---BlackList--**
+7
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+**--subset--**
+786--
+**---BlackList--**
+786
+**
+**---MasterBlackList--*
+786
+*-*-*-*
+**--subset--**
+86--
+**---BlackList--**
+6
+**
+**---MasterBlackList--*
+6
+*-*-*-*
+**--subset--**
+286--
+**---BlackList--**
+286
+**
+**---MasterBlackList--*
+286
+*-*-*-*
+**--subset--**
+782--
+**---BlackList--**
+782
+**
+**---MasterBlackList--*
+782
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+782
+**
+**---MasterBlackList--*
+782
+*-*-*-*
+**--subset--**
+72--
+**---BlackList--**
+2
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+672--
+**---BlackList--**
+672
+**
+**---MasterBlackList--*
+672
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+268
+*-*-*-*
+abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+26783--
+**---BlackList--**
+8
+**
+**---MasterBlackList--*
+8
+*-*-*-*
+**--subset--**
+267853--
+**---BlackList--**
+6785
+**
+**---MasterBlackList--*
+6785
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+67852--
+**---BlackList--**
+67852
+**
+**---MasterBlackList--*
+682
+*-*-*-*
+**--subset--**
+6752--
+**---BlackList--**
+672
+**
+**---MasterBlackList--*
+672
+*-*-*-*
+**--subset--**
+267853--
+**---BlackList--**
+783
+**
+**---MasterBlackList--*
+3
+*-*-*-*
+**--subset--**
+36785--
+**---BlackList--**
+678
+**
+**---MasterBlackList--*
+678
+*-*-*-*
+**--subset--**
+6785--
+**---BlackList--**
+678
+**
+**---MasterBlackList--*
+678
+*-*-*-*
+**--subset--**
+685--
+**---BlackList--**
+685
+**
+**---MasterBlackList--*
+685
+*-*-*-*
+**--subset--**
+2678--
+**---BlackList--**
+678
+**
+**---MasterBlackList--*
+6
+*-*-*-*
+**--subset--**
+65--
+**---BlackList--**
+6
+**
+**---MasterBlackList--*
+6
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+2266
+*-*-*-*
+**--subset--**
+2783--
+**---BlackList--**
+278
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+27856--
+**---BlackList--**
+27856
+**
+**---MasterBlackList--*
+27856
+*-*-*-*
+**--subset--**
+267853--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+2678
+*-*-*-*
+abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+83--
+**---BlackList--**
+8
+**
+**---MasterBlackList--*
+8
+*-*-*-*
+**--subset--**
+67832--
+**---BlackList--**
+782
+**
+**---MasterBlackList--*
+782
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+67832--
+**---BlackList--**
+67832
+**
+**---MasterBlackList--*
+67832
+*-*-*-*
+
+**--subset--**
+6782--
+**---BlackList--**
+82
+**
+**---MasterBlackList--*
+82
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+2678
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+678
+**
+**---MasterBlackList--*
+678
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+78
+**
+**---MasterBlackList--*
+78
+*-*-*-*
+**--subset--**
+3672--
+**---BlackList--**
+72
+**
+**---MasterBlackList--*
+72
+*-*-*-*
+**--subset--**
+678--
+**---BlackList--**
+678
+**
+**---MasterBlackList--*
+678
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9be  PS      : 0x00060c34  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060c23  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060c21  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x400014fd  LEND    : 0x4000150d  LCOUNT  : 0xffffffff  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9be
+
+Backtrace: 0x4008a9be:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x4000bfed:0x3ffb1790 0x400892b9:0x3ffb17a0 0x4008814f:0x3ffb17c0 0x400d6671:0x3ffb1800 0x400d5c19:0x3ffb1820 0x400d53c8:0x3ffb1850 0x400d5400:0x3ffb1870 0x400d59c5:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x4008914d  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000abab  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060021  A15     : 0x00000000  SAR     : 0x0000001b  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x4008914d:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+2786--
+**---BlackList--**
+86
+**
+**---MasterBlackList--*
+86
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+6783
+**
+**---MasterBlackList--*
+6783
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+678
+**
+**---MasterBlackList--*
+678
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+678
+**
+**---MasterBlackList--*
+678
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+2678
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+2
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+2678
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9c4  PS      : 0x00060e34  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060e23  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060e21  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9c4
+
+Backtrace: 0x4008a9c4:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x400d6784:0x3ffb1810 0x400d5c4a:0x3ffb1830 0x400d53dd:0x3ffb1850 0x400d5400:0x3ffb1870 0x400d59c5:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x40089142  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000abab  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001b  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x40089142:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+26783--
+**---BlackList--**
+6783
+**
+**---MasterBlackList--*
+6783
+*-*-*-*
+**--subset--**
+326--
+**---BlackList--**
+326
+**
+**---MasterBlackList--*
+326
+*-*-*-*
+**--subset--**
+26--
+**---BlackList--**
+26
+**
+**---MasterBlackList--*
+26
+*-*-*-*
+**--subset--**
+286--
+**---BlackList--**
+86
+**
+**---MasterBlackList--*
+86
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+2678
+*-*-*-*
+**--subset--**
+82673--
+**---BlackList--**
+67
+**
+**---MasterBlackList--*
+67
+*-*-*-*
+**--subset--**
+82673--
+**---BlackList--**
+82673
+**
+**---MasterBlackList--*
+82673
+*-*-*-*
+**--subset--**
+2678--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+2678
+*-*-*-*
+**--subset--**
+32678--
+**---BlackList--**
+32678
+**
+**---MasterBlackList--*
+32678
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9be  PS      : 0x00060434  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060423  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060421  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9be
+
+Backtrace: 0x4008a9be:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x4000bfed:0x3ffb1790 0x400892b9:0x3ffb17a0 0x4008814f:0x3ffb17c0 0x400d6671:0x3ffb1800 0x400d5c19:0x3ffb1820 0x400d53c8:0x3ffb1850 0x400d5400:0x3ffb1870 0x400d59c5:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x4008914a  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000cdcd  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001d  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x4008914a:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+67--
+**---BlackList--**
+7
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+**--subset--**
+673--
+**---BlackList--**
+673
+**
+**---MasterBlackList--*
+673
+*-*-*-*
+**--subset--**
+63--
+**--BlackList--**
+No blacklist
+**---MasterBlackList--*
+NoMasterBlackList
+*-*-*-*
+**--subset--**
+672--
+**---BlackList--**
+2
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+3672--
+**---BlackList--**
+2
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9c2  PS      : 0x00060e34  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060e23  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060e21  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9c2
+
+Backtrace: 0x4008a9c2:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x400d672a:0x3ffb1800 0x400d5c19:0x3ffb1820 0x400d53c8:0x3ffb1850 0x400d5400:0x3ffb1870 0x400d59c5:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x40089142  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000abab  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001d  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x40089142:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+783--
+**---BlackList--**
+8
+**
+**---MasterBlackList--*
+8
+*-*-*-*
+**--subset--**
+73--
+**--BlackList--**
+No blacklist
+**---MasterBlackList--*
+NoMasterBlackList
+*-*-*-*
+**--subset--**
+7862--
+**---BlackList--**
+862
+**
+**---MasterBlackList--*
+862
+*-*-*-*
+**--subset--**
+78263--
+**---BlackList--**
+8263
+**
+**---MasterBlackList--*
+8263
+*-*-*-*
+**--subset--**
+786--
+**---BlackList--**
+6
+**
+**---MasterBlackList--*
+6
+*-*-*-*
+**--subset--**
+3786--
+**---BlackList--**
+3786
+**
+**---MasterBlackList--*
+3786
+*-*-*-*
+**--subset--**
+376--
+**---BlackList--**
+376
+**
+**---MasterBlackList--*
+376
+*-*-*-*
+**--subset--**
+36--
+**---BlackList--**
+36
+**
+**---MasterBlackList--*
+36
+*-*-*-*
+**--subset--**
+7862--
+**---BlackList--**
+7862
+**
+**---MasterBlackList--*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9be  PS      : 0x00060634  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060623  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060621  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9be
+
+Backtrace: 0x4008a9be:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x400d679d:0x3ffb1810 0x400d5c4a:0x3ffb1830 0x400d53d2:0x3ffb1850 0x400d5400:0x3ffb1870 0x400d59c5:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x4008914a  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000cdcd  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001d  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x4008914a:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9be  PS      : 0x00060234  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060223  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060221  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9be
+
+Backtrace: 0x4008a9be:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x4000bfed:0x3ffb17b0 0x400892b9:0x3ffb17c0 0x4008814f:0x3ffb17e0 0x400d6671:0x3ffb1820 0x400d5c19:0x3ffb1840 0x400d53c8:0x3ffb1870 0x400d59d3:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x4008914a  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000cdcd  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001d  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x4008914a:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+63--
+**---BlackList--**
+63
+**
+**---MasterBlackList--*
+63
+*-*-*-*
+**--subset--**
+2786--
+**---BlackList--**
+2786
+**
+**---MasterBlackList--*
+2786
+*-*-*-*
+**--subset--**
+62783--
+**---BlackList--**
+6783
+**
+**---MasterBlackList--*
+6783
+*-*-*-*
+**--subset--**
+276--
+**---BlackList--**
+276
+**
+**---MasterBlackList--*
+276
+*-*-*-*
+**--subset--**
+6273--
+**---BlackList--**
+273
+**
+**---MasterBlackList--*
+273
+*-*-*-*
+**--subset--**
+26--
+**---BlackList--**
+6
+**
+**---MasterBlackList--*
+6
+*-*-*-*
+**--subset--**
+623--
+**---BlackList--**
+62
+**
+**---MasterBlackList--*
+62
+*-*-*-*
+**--subset--**
+63--
+**--BlackList--**
+No blacklist
+**---MasterBlackList--*
+NoMasterBlackList
+*-*-*-*
+**--subset--**
+273--
+**---BlackList--**
+7
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+**--subset--**
+627--
+**---BlackList--**
+27
+**
+**---MasterBlackList--*
+27
+*-*-*-*
+**--subset--**
+687--
+**---BlackList--**
+687
+**
+**---MasterBlackList--*
+687
+*-*-*-*
+**--subset--**
+3672--
+**---BlackList--**
+672
+**
+**---MasterBlackList--*
+672
+*-*-*-*
+**--subset--**
+6783--
+**---BlackList--**
+6783
+**
+**---MasterBlackList--*
+6783
+*-*-*-*
+**--subset--**
+2786--
+**---BlackList--**
+2786
+**
+**---MasterBlackList--*
+2786
+*-*-*-*
+**--subset--**
+62783--
+**---BlackList--**
+62783
+**
+**---MasterBlackList--*
+62783
+*-*-*-*
+**--subset--**
+**--subset--**
+6782--
+**---BlackList--**
+82
+**
+**---MasterBlackList--*
+82
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9be  PS      : 0x00060a34  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060a23  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060a21  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9be
+
+Backtrace: 0x4008a9be:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x4000bfed:0x3ffb17b0 0x400892b9:0x3ffb17c0 0x4008814f:0x3ffb17e0 0x400d6671:0x3ffb1820 0x400d5c19:0x3ffb1840 0x400d53c8:0x3ffb1870 0x400d59d3:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x4008914d  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000abab  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001d  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x4008914d:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+783--
+**--BlackList--**
+No blacklist
+**---MasterBlackList--*
+NoMasterBlackList
+*-*-*-*
+**--subset--**
+73--
+**---BlackList--**
+3
+**
+**---MasterBlackList--*
+3
+*-*-*-*
+**--subset--**
+862--
+**---BlackList--**
+2
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+7862--
+**---BlackList--**
+862
+**
+**---MasterBlackList--*
+862
+*-*-*-*
+**--subset--**
+**--subset--**
+67832--
+**---BlackList--**
+782
+**
+**---MasterBlackList--*
+782
+*-*-*-*
+**--subset--**
+67832--
+**---BlackList--**
+782
+**
+**---MasterBlackList--*
+782
+*-*-*-*
+**--subset--**
+67832--
+**---BlackList--**
+67832
+**--subset--**
+78--
+**---BlackList--**
+8
+**
+**---MasterBlackList--*
+8
+*-*-*-*
+**--subset--**
+783--
+**---BlackList--**
+83
+**
+**---MasterBlackList--*
+83
+*-*-*-*
+**--subset--**
+73--
+**---BlackList--**
+73
+**
+**---MasterBlackList--*
+73
+*-*-*-*
+**--subset--**
+23--
+**---BlackList--**
+23
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+783--
+**---BlackList--**
+8
+**
+**---MasterBlackList--*
+8
+*-*-*-*
+**--subset--**
+83--
+**---BlackList--**
+8
+**
+**---MasterBlackList--*
+8
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9c2  PS      : 0x00060634  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060623  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060621  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9c2
+
+Backtrace: 0x4008a9c2:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x400d679a:0x3ffb1810 0x400d5c4a:0x3ffb1830 0x400d53d2:0x3ffb1850 0x400d5400:0x3ffb1870 0x400d59c5:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x40089142  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000abab  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001d  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x40089142:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+53--
+**---BlackList--**
+53
+**
+**---MasterBlackList--*
+53
+*-*-*-*
+**--subset--**
+53--
+**---BlackList--**
+53
+**
+**---MasterBlackList--*
+53
+*-*-*-*
+abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+6783--
+**---BlackList--**
+678
+**
+**---MasterBlackList--*
+678
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+2678
+*-*-*-*
+**--subset--**
+39--
+**---BlackList--**
+39
+**
+**---MasterBlackList--*
+39
+*-*-*-*
+**--subset--**
+793--
+**---BlackList--**
+793
+**
+**---MasterBlackList--*
+793
+*-*-*-*
+**--subset--**
+267893--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+2678
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+2678
+*-*-*-*
+**--subset--**
+369--
+**---BlackList--**
+39
+**
+**---MasterBlackList--*
+39
+*-*-*-*
+**--subset--**
+329--
+**---BlackList--**
+9
+**
+**---MasterBlackList--*
+9
+*-*-*-*
+**--subset--**
+27893--
+**---BlackList--**
+7893
+**
+**---MasterBlackList--*
+7893
+*-*-*-*
+**--subset--**
+3289--
+**---BlackList--**
+3289
+**
+**---MasterBlackList--*
+3289
+*-*-*-*
+**--subset--**
+389--
+**---BlackList--**
+389
+**
+**---MasterBlackList--*
+389
+*-*-*-*
+**--subset--**
+36782--
+**---BlackList--**
+36782
+**
+**---MasterBlackList--*
+36782
+*-*-*-*
+**--subset--**
+3789--
+**---BlackList--**
+3789
+**
+**---MasterBlackList--*
+3789
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+782
+**
+**---MasterBlackList--*
+782
+*-*-*-*
+**--subset--**
+36789--
+**---BlackList--**
+36789
+**
+**---MasterBlackList--*
+36789
+*-*-*-*
+**--subset--**
+3679--
+**---BlackList--**
+369
+**
+**---MasterBlackList--*
+369
+*-*-*-*
+**--subset--**
+793--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+39--
+**---BlackList--**
+39
+**
+**---MasterBlackList--*
+3
+*-*-*-*
+**--subset--**
+267893--
+**---BlackList--**
+7893
+**
+**---MasterBlackList--*
+7893
+*-*-*-*
+**--subset--**
+687--
+**---BlackList--**
+87
+**
+**---MasterBlackList--*
+87
+*-*-*-*
+**--subset--**
+67--
+**---BlackList--**
+7
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9be  PS      : 0x00060a34  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060a23  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060a21  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9be
+
+Backtrace: 0x4008a9be:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x400d67a3:0x3ffb1850 0x400d5c4a:0x3ffb1870 0x400d53d2:0x3ffb1890 0x400d5a54:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x4008914d  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000abab  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001d  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x4008914d:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+786--
+**---BlackList--**
+786
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+**--subset--**
+6783--
+**---BlackList--**
+783
+**
+**---MasterBlackList--*
+8
+*-*-*-*
+**--subset--**
+76--
+**---BlackList--**
+76
+**
+**---MasterBlackList--*
+76
+*-*-*-*
+**--subset--**
+673--
+**---BlackList--**
+673
+**
+**---MasterBlackList--*
+673
+*-*-*-*
+**--subset--**
+63--
+**---BlackList--**
+3
+**
+**---MasterBlackList--*
+3
+*-*-*-*
+**--subset--**
+7923--
+**---BlackList--**
+7923
+**
+**---MasterBlackList--*
+7923
+*-*-*-*
+**--subset--**
+79823--
+**---BlackList--**
+923
+**
+**---MasterBlackList--*
+923
+*-*-*-*
+**--subset--**
+26--
+**---BlackList--**
+26
+**
+**---MasterBlackList--*
+26
+*-*-*-*
+**--subset--**
+67983--
+**---BlackList--**
+983
+**
+**---MasterBlackList--*
+983
+*-*-*-*
+**--subset--**
+672--
+**---BlackList--**
+672
+**
+**---MasterBlackList--*
+6
+*-*-*-*
+**--subset--**
+9823--
+**---BlackList--**
+923
+**
+**---MasterBlackList--*
+923
+*-*-*-*
+**--subset--**
+6923--
+**---BlackList--**
+9
+**
+**---MasterBlackList--*
+9
+*-*-*-*
+**--subset--**
+678--
+**---BlackList--**
+78
+**
+**---MasterBlackList--*
+78
+*-*-*-*
+**--subset--**
+983--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+69823--
+**---BlackList--**
+9823
+**
+**---MasterBlackList--*
+9823
+*-*-*-*
+**--subset--**
+693--
+**---BlackList--**
+693
+**
+**---MasterBlackList--*
+693
+*-*-*-*
+**--subset--**
+923--
+**---BlackList--**
+9
+**
+**---MasterBlackList--*
+9
+*-*-*-*
+**--subset--**
+93--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+79826--
+**---BlackList--**
+26
+**
+**---MasterBlackList--*
+26
+*-*-*-*
+**--subset--**
+679823--
+**---BlackList--**
+79823
+**
+**---MasterBlackList--*
+79823
+*-*-*-*
+**--subset--**
+7826--
+**---BlackList--**
+7826
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+67823--
+**---BlackList--**
+67823
+**
+**---MasterBlackList--*
+6
+*-*-*-*
+abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+6782--
+**---BlackList--**
+82
+**
+**---MasterBlackList--*
+82
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+67893--
+**---BlackList--**
+893
+**
+**---MasterBlackList--*
+893
+*-*-*-*
+**--subset--**
+693--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+93--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+267893--
+**---BlackList--**
+7893
+**
+**---MasterBlackList--*
+7893
+*-*-*-*
+**--subset--**
+63--
+**---BlackList--**
+3
+**
+**---MasterBlackList--*
+3
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+6783
+**
+**---MasterBlackList--*
+6783
+*-*-*-*
+**--subset--**
+26893--
+**---BlackList--**
+26893
+**
+**---MasterBlackList--*
+26893
+*-*-*-*
+**--subset--**
+893--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+2693--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+286--
+**---BlackList--**
+86
+**
+**---MasterBlackList--*
+86
+*-*-*-*
+**--subset--**
+672--
+**---BlackList--**
+672
+**
+**---MasterBlackList--*
+672
+*-*-*-*
+**--subset--**
+27893--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+36782--
+**---BlackList--**
+36782
+**
+**---MasterBlackList--*
+36782
+*-*-*-*
+**--subset--**
+67892--
+**---BlackList--**
+7892
+**
+**---MasterBlackList--*
+7892
+*-*-*-*
+**--subset--**
+2893--
+**---BlackList--**
+2893
+**
+**---MasterBlackList--*
+2893
+*-*-*-*
+**--subset--**
+87--
+**---BlackList--**
+7
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+**--subset--**
+293--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+786--
+**---BlackList--**
+86
+**
+**---MasterBlackList--*
+86
+*-*-*-*
+**--subset--**
+793--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+93--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+67893--
+**---BlackList--**
+67893
+**
+**---MasterBlackList--*
+67893
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+782
+**
+**---MasterBlackList--*
+782
+*-*-*-*
+**--subset--**
+267893--
+**---BlackList--**
+6789
+**
+**---MasterBlackList--*
+9
+*-*-*-*
+abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+6782--
+**---BlackList--**
+82
+**
+**---MasterBlackList--*
+82
+*-*-*-*
+**--subset--**
+2783--
+**---BlackList--**
+2783
+**
+**---MasterBlackList--*
+2783
+*-*-*-*
+abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+6782--
+**---BlackList--**
+782
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+83--
+**---BlackList--**
+83
+**
+**---MasterBlackList--*
+83
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+23--
+**---BlackList--**
+23
+**
+**---MasterBlackList--*
+23
+*-*-*-*
+**--subset--**
+83--
+**---BlackList--**
+3
+**
+**---MasterBlackList--*
+3
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+782
+**
+**---MasterBlackList--*
+782
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+63--
+**---BlackList--**
+3
+**
+**---MasterBlackList--*
+3
+*-*-*-*
+**--subset--**
+23--
+**---BlackList--**
+3
+**
+**---MasterBlackList--*
+3
+*-*-*-*
+**--subset--**
+83--
+**---BlackList--**
+3
+**
+**---MasterBlackList--*
+3
+*-*-*-*
+**--subset--**
+6783--
+**---BlackList--**
+6783
+**
+**---MasterBlackList--*
+6783
+*-*-*-*
+**--subset--**
+672--
+**---BlackList--**
+2
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+87--
+**---BlackList--**
+7
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+**--subset--**
+687--
+**---BlackList--**
+687
+**
+**---MasterBlackList--*
+687
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+783
+**
+**---MasterBlackList--*
+783
+*-*-*-*
+abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+78263--
+**---BlackList--**
+78263
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+**--subset--**
+8267--
+**---BlackList--**
+8267
+**
+**---MasterBlackList--*
+8267
+*-*-*-*
+**--subset--**
+83--
+**---BlackList--**
+3
+**
+**---MasterBlackList--*
+3
+*-*-*-*
+**--subset--**
+78263--
+**---BlackList--**
+826
+**
+**---MasterBlackList--*
+826
+*-*-*-*
+**--subset--**
+8267--
+**---BlackList--**
+8267
+**
+**---MasterBlackList--*
+8267
+*-*-*-*
+**--subset--**
+83--
+**---BlackList--**
+3
+**
+**---MasterBlackList--*
+3
+*-*-*-*
+**--subset--**
+7823--
+**---BlackList--**
+823
+**
+**---MasterBlackList--*
+823
+*-*-*-*
+**--subset--**
+78263--
+**---BlackList--**
+8263
+**
+**---MasterBlackList--*
+8263
+*-*-*-*
+**--subset--**
+8267--
+**---BlackList--**
+8267
+**
+**---MasterBlackList--*
+8267
+*-*-*-*
+**--subset--**
+863--
+**---BlackList--**
+863
+**
+**---MasterBlackList--*
+863
+*-*-*-*
+**--subset--**
+8263--
+**---BlackList--**
+826
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+823--
+**---BlackList--**
+823
+**
+**---MasterBlackList--*
+823
+*-*-*-*
+**--subset--**
+78263--
+**---BlackList--**
+8263
+**
+**---MasterBlackList--*
+26
+*-*-*-*
+**--subset--**
+8267--
+**---BlackList--**
+8267
+**
+**---MasterBlackList--*
+826677
+*-*-*-*
+**--subset--**
+72693--
+**---BlackList--**
+693
+**
+**---MasterBlackList--*
+693
+*-*-*-*
+**--subset--**
+93--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+293--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+8293--
+**---BlackList--**
+293
+**
+**---MasterBlackList--*
+293
+*-*-*-*
+**--subset--**
+82693--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+78692--
+**---BlackList--**
+8692
+**
+**---MasterBlackList--*
+8692
+*-*-*-*
+**--subset--**
+782693--
+**---BlackList--**
+72693
+**
+**---MasterBlackList--*
+72693
+*-*-*-*
+**--subset--**
+67--
+**---BlackList--**
+6
+**
+**---MasterBlackList--*
+6
+*-*-*-*
+**--subset--**
+726--
+**---BlackList--**
+26
+**
+**---MasterBlackList--*
+26
+*-*-*-*
+**--subset--**
+863--
+**---BlackList--**
+863
+**
+**---MasterBlackList--*
+863
+*-*-*-*
+**--subset--**
+7263--
+**---BlackList--**
+7263
+**
+**---MasterBlackList--*
+7263
+*-*-*-*
+**--subset--**
+83--
+**---BlackList--**
+3
+**
+**---MasterBlackList--*
+3
+*-*-*-*
+**--subset--**
+78263--
+**---BlackList--**
+8263
+**
+**---MasterBlackList--*
+8263
+*-*-*-*
+**--subset--**
+8267--
+**---BlackList--**
+8267
+**
+**---MasterBlackList--*
+8267
+*-*-*-*
+abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+93--
+**---BlackList--**
+9
+**
+**---MasterBlackList--*
+9
+*-*-*-*
+**--subset--**
+36782--
+**---BlackList--**
+382
+**
+**---MasterBlackList--*
+382
+*-*-*-*
+**--subset--**
+67892--
+**---BlackList--**
+67892
+**
+**---MasterBlackList--*
+67892
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+2
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+267893--
+**---BlackList--**
+267893
+**
+**---MasterBlackList--*
+267893
+*-*-*-*
+**--subset--**
+2793--
+**---BlackList--**
+2793
+**
+**---MasterBlackList--*
+2793
+*-*-*-*
+**--subset--**
+27893--
+**---BlackList--**
+893
+**
+**---MasterBlackList--*
+893
+*-*-*-*
+**--subset--**
+27896--
+**---BlackList--**
+896
+**
+**---MasterBlackList--*
+896
+*-*-*-*
+**--subset--**
+93--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+267893--
+**---BlackList--**
+893
+**
+**---MasterBlackList--*
+893
+*-*-*-*
+abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+26783--
+**---BlackList--**
+678
+**
+**---MasterBlackList--*
+678
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+82
+**
+**---MasterBlackList--*
+82
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+6783
+**
+**---MasterBlackList--*
+6783
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+23--
+**---BlackList--**
+23
+**
+**---MasterBlackList--*
+23
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+6782--
+**---BlackList--**
+782
+**
+**---MasterBlackList--*
+782
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+2783--
+**---BlackList--**
+2783
+**
+**---MasterBlackList--*
+2783
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+2678
+**
+**---MasterBlackList--*
+2678
+*-*-*-*
+**--subset--**
+93--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+293--
+**---BlackList--**
+9
+**
+**---MasterBlackList--*
+9
+*-*-*-*
+**--subset--**
+786--
+**---BlackList--**
+86
+**
+**---MasterBlackList--*
+86
+*-*-*-*
+**--subset--**
+76--
+**---BlackList--**
+76
+**
+**---MasterBlackList--*
+76
+*-*-*-*
+**--subset--**
+27893--
+**---BlackList--**
+7893
+**
+**---MasterBlackList--*
+7893
+*-*-*-*
+**--subset--**
+2793--
+**---BlackList--**
+2793
+**
+**---MasterBlackList--*
+2793
+*-*-*-*
+**--subset--**
+26897--
+**---BlackList--**
+6897
+**
+**---MasterBlackList--*
+6897
+*-*-*-*
+**--subset--**
+267893--
+**---BlackList--**
+6783
+**
+**---MasterBlackList--*
+73
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+7782
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+672--
+**---BlackList--**
+672
+**
+**---MasterBlackList--*
+672
+*-*-*-*
+**--subset--**
+2673--
+**---BlackList--**
+67
+**
+**---MasterBlackList--*
+6
+*-*-*-*
+**--subset--**
+62--
+**---BlackList--**
+62
+**
+**---MasterBlackList--*
+62
+*-*-*-*
+**--subset--**
+263--
+**---BlackList--**
+263
+**
+**---MasterBlackList--*
+263
+*-*-*-*
+**--subset--**
+23--
+**---BlackList--**
+23
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+853--
+**---BlackList--**
+53
+**
+**---MasterBlackList--*
+53
+*-*-*-*
+**--subset--**
+67853--
+**---BlackList--**
+7853
+**
+**---MasterBlackList--*
+7853
+*-*-*-*
+**--subset--**
+683--
+**---BlackList--**
+83
+**
+**---MasterBlackList--*
+83
+*-*-*-*
+**--subset--**
+63--
+**---BlackList--**
+63
+**
+**---MasterBlackList--*
+63
+*-*-*-*
+**--subset--**
+653--
+**---BlackList--**
+53
+**
+**---MasterBlackList--*
+53
+*-*-*-*
+**--subset--**
+67852--
+**---BlackList--**
+7852
+**
+**---MasterBlackList--*
+7852
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9be  PS      : 0x00060034  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060023  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060021  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9be
+
+Backtrace: 0x4008a9be:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x4000bfed:0x3ffb17d0 0x400892b9:0x3ffb17e0 0x4008814f:0x3ffb1800 0x400d6671:0x3ffb1840 0x400d5c19:0x3ffb1860 0x400d53c8:0x3ffb1890 0x400d5a54:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x4008914a  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000cdcd  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001b  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x4008914a:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+2683--
+**---BlackList--**
+8
+**
+**---MasterBlackList--*
+8
+*-*-*-*
+**--subset--**
+783--
+**---BlackList--**
+83
+**
+**---MasterBlackList--*
+83
+*-*-*-*
+**--subset--**
+23--
+**---BlackList--**
+23
+**
+**---MasterBlackList--*
+23
+*-*-*-*
+**--subset--**
+2783--
+**---BlackList--**
+2783
+**
+**---MasterBlackList--*
+2783
+*-*-*-*
+**--subset--**
+6783--
+**---BlackList--**
+6783
+**
+**---MasterBlackList--*
+6783
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+23
+*-*-*-*
+abort() was called at PC 0x400fe2c7 on core 1
+
+Backtrace: 0x4008b8a0:0x3ffb13b0 0x4008bad1:0x3ffb13d0 0x400fe2c7:0x3ffb13f0 0x400fe30e:0x3ffb1410 0x400eff5f:0x3ffb1430 0x400f004e:0x3ffb1450 0x400f169d:0x3ffb1470 0x400f1812:0x3ffb1490 0x400f1bb5:0x3ffb14d0 0x400f1bd1:0x3ffb14f0 0x400d1aa7:0x3ffb1510 0x400d20cd:0x3ffb1580 0x400d3226:0x3ffb16e0 0x400d44c1:0x3ffb1810 0x400d4df1:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+6782--
+**---BlackList--**
+782
+**
+**---MasterBlackList--*
+782
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+893--
+**---BlackList--**
+893
+**
+**---MasterBlackList--*
+893
+*-*-*-*
+**--subset--**
+93--
+**--BlackList--**
+No blacklist
+**---MasterBlackList--*
+NoMasterBlackList
+*-*-*-*
+**--subset--**
+267893--
+**---BlackList--**
+267893
+**
+**---MasterBlackList--*
+2678
+*-*-*-*
+**--subset--**
+83--
+**---BlackList--**
+83
+**
+**---MasterBlackList--*
+83
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+**--subset--**
+2786--
+**---BlackList--**
+2786
+**
+**---MasterBlackList--*
+77886
+*-*-*-*
+**--subset--**
+672--
+**---BlackList--**
+72
+**
+**---MasterBlackList--*
+72
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+6783
+*-*-*-*
+**--subset--**
+678592--
+**---BlackList--**
+8592
+**
+**---MasterBlackList--*
+82
+*-*-*-*
+**--subset--**
+367852--
+**---BlackList--**
+367852
+**
+**---MasterBlackList--*
+367852
+*-*-*-*
+**--subset--**
+6752--
+**---BlackList--**
+6752
+**
+**---MasterBlackList--*
+6752
+*-*-*-*
+**--subset--**
+67852--
+**---BlackList--**
+67852
+**
+**---MasterBlackList--*
+67852
+*-*-*-*
+**--subset--**
+2678593--
+**---BlackList--**
+2678593
+**--subset--**
+8672--
+**---BlackList--**
+8672
+**
+**---MasterBlackList--*
+8672
+*-*-*-*
+**--subset--**
+28673--
+**---BlackList--**
+8673
+**
+**---MasterBlackList--*
+8673
+*-*-*-*
+**--subset--**
+8672--
+**---BlackList--**
+8672
+**
+**---MasterBlackList--*
+672
+*-*-*-*
+**--subset--**
+28673--
+**---BlackList--**
+28673
+**
+**---MasterBlackList--*
+28673
+*-*-*-*
+**--subset--**
+8672--
+**---BlackList--**
+8672
+**
+**---MasterBlackList--*
+8672
+*-*-*-*
+**--subset--**
+28673--
+**---BlackList--**
+28673
+**
+**---MasterBlackList--*
+28673
+*-*-*-*
+**--subset--**
+8672--
+**---BlackList--**
+672
+**
+**---MasterBlackList--*
+672
+*-*-*-*
+**--subset--**
+28673--
+**---BlackList--**
+28673
+**
+**---MasterBlackList--*
+28673
+*-*-*-*
+**--subset--**
+8672--
+**---BlackList--**
+672
+**
+**---MasterBlackList--*
+672
+*-*-*-*
+**--subset--**
+28673--
+**---BlackList--**
+673
+**
+**---MasterBlackList--*
+67
+*-*-*-*
+**--subset--**
+8672--
+**---BlackList--**
+8672
+**
+**---MasterBlackList--*
+8
+*-*-*-*
+**--subset--**
+28673--
+**---BlackList--**
+2867
+**
+**---MasterBlackList--*
+2867
+*-*-*-*
+**--subset--**
+86752--
+**---BlackList--**
+86752
+**
+**---MasterBlackList--*
+86752
+*-*-*-*
+**--subset--**
+286753--
+**---BlackList--**
+28673
+**
+**---MasterBlackList--*
+3
+*-*-*-*
+**--subset--**
+8672--
+**---BlackList--**
+8672
+**
+**---MasterBlackList--*
+8672
+*-*-*-*
+**--subset--**
+28673--
+**---BlackList--**
+28673
+**
+**---MasterBlackList--*
+28673
+*-*-*-*
+**--subset--**
+93--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9be  PS      : 0x00060034  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060023  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060021  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9be
+
+Backtrace: 0x4008a9be:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x4000bfed:0x3ffb17d0 0x400892b9:0x3ffb17e0 0x4008814f:0x3ffb1800 0x400d6671:0x3ffb1840 0x400d5c19:0x3ffb1860 0x400d53c8:0x3ffb1890 0x400d5a54:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x4008914d  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000abab  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001d  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x4008914d:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+26783--
+**---BlackList--**
+6783
+**
+**---MasterBlackList--*
+6783
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+26783
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+82
+**
+**---MasterBlackList--*
+82
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+6783
+**
+**---MasterBlackList--*
+6783
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+6782
+*-*-*-*
+**--subset--**
+93--
+**---BlackList--**
+9
+**
+**---MasterBlackList--*
+9
+*-*-*-*
+**--subset--**
+27896--
+**---BlackList--**
+7896
+**
+**---MasterBlackList--*
+7896
+*-*-*-*
+**--subset--**
+267893--
+**---BlackList--**
+267893
+**
+**---MasterBlackList--*
+267893
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+6783
+**
+**---MasterBlackList--*
+6783
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+6782
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+267895--
+**---BlackList--**
+267895
+**
+**---MasterBlackList--*
+267895
+*-*-*-*
+**--subset--**
+2678953--
+**---BlackList--**
+678953
+**
+**---MasterBlackList--*
+678953
+*-*-*-*
+**--subset--**
+67852--
+**---BlackList--**
+67852
+**
+**---MasterBlackList--*
+67852
+*-*-*-*
+**--subset--**
+687--
+**---BlackList--**
+687
+**
+**---MasterBlackList--*
+687
+*-*-*-*
+**--subset--**
+67892--
+**---BlackList--**
+67892
+**
+**---MasterBlackList--*
+67892
+*-*-*-*
+**--subset--**
+672--
+**---BlackList--**
+72
+**
+**---MasterBlackList--*
+72
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9c2  PS      : 0x00060c34  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060c23  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060c21  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9c2
+
+Backtrace: 0x4008a9c2:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x400d6798:0x3ffb1830 0x400d5c4a:0x3ffb1850 0x400d53dd:0x3ffb1870 0x400d59d3:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x40089142  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000abab  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001b  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x40089142:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+26783--
+**---BlackList--**
+26783
+**
+**---MasterBlackList--*
+2778833
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+782
+**
+**---MasterBlackList--*
+782
+*-*-*-*
+**--subset--**
+672--
+**---BlackList--**
+672
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+**--subset--**
+2678--
+**---BlackList--**
+678
+**
+**---MasterBlackList--*
+67
+*-*-*-*
+**--subset--**
+267835--
+**---BlackList--**
+267835
+**
+**---MasterBlackList--*
+267835
+*-*-*-*
+**--subset--**
+2678593--
+**---BlackList--**
+67853
+**
+**---MasterBlackList--*
+68
+*-*-*-*
+**--subset--**
+67852--
+**---BlackList--**
+7852
+**
+**---MasterBlackList--*
+782
+*-*-*-*
+**--subset--**
+8593--
+**---BlackList--**
+8593
+**
+**---MasterBlackList--*
+8593
+*-*-*-*
+**--subset--**
+93--
+**---BlackList--**
+93
+**
+**---MasterBlackList--*
+93
+*-*-*-*
+**--subset--**
+593--
+**---BlackList--**
+593
+**
+**---MasterBlackList--*
+593
+*-*-*-*
+**--subset--**
+2687--
+**---BlackList--**
+687
+**
+**---MasterBlackList--*
+7
+*-*-*-*
+**--subset--**
+672--
+**---BlackList--**
+672
+**
+**---MasterBlackList--*
+672
+*-*-*-*
+**--subset--**
+62--
+**---BlackList--**
+62
+**
+**---MasterBlackList--*
+62
+*-*-*-*
+**--subset--**
+267895--
+**---BlackList--**
+67895
+**
+**---MasterBlackList--*
+67895
+*-*-*-*
+**--subset--**
+267835--
+**---BlackList--**
+267835
+**
+**---MasterBlackList--*
+267835
+*-*-*-*
+**--subset--**
+2678593--
+**---BlackList--**
+678593
+**
+**---MasterBlackList--*
+678593
+*-*-*-*
+**--subset--**
+67852--
+**---BlackList--**
+67852
+**
+**---MasterBlackList--*
+67852
+*-*-*-*
+**--subset--**
+652--
+**---BlackList--**
+52
+**
+**---MasterBlackList--*
+52
+*-*-*-*
+**--subset--**
+2687--
+**---BlackList--**
+2687
+**
+**---MasterBlackList--*
+2687
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9c2  PS      : 0x00060c34  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060c23  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060c21  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9c2
+
+Backtrace: 0x4008a9c2:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x400d5c1c:0x3ffb1820 0x400d53c8:0x3ffb1850 0x400d5400:0x3ffb1870 0x400d59c5:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x40089142  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000abab  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001d  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x40089142:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+76--
+**---BlackList--**
+6
+**
+**---MasterBlackList--*
+6
+*-*-*-*
+**--subset--**
+673--
+**---BlackList--**
+673
+**
+**---MasterBlackList--*
+673
+*-*-*-*
+**--subset--**
+63--
+**---BlackList--**
+3
+**
+**---MasterBlackList--*
+3
+*-*-*-*
+**--subset--**
+7286--
+**---BlackList--**
+286
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+67283--
+**---BlackList--**
+6728
+**
+**---MasterBlackList--*
+6728
+*-*-*-*
+**--subset--**
+7286--
+**---BlackList--**
+7286
+**
+**---MasterBlackList--*
+7286
+*-*-*-*
+**--subset--**
+67283--
+**---BlackList--**
+67283
+**
+**---MasterBlackList--*
+67283
+*-*-*-*
+**--subset--**
+62--
+**---BlackList--**
+2
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+672893--
+**---BlackList--**
+672893
+**
+**---MasterBlackList--*
+672893
+*-*-*-*
+**--subset--**
+6283--
+**---BlackList--**
+6283
+**
+**---MasterBlackList--*
+623
+*-*-*-*
+**--subset--**
+283--
+**---BlackList--**
+283
+**
+**---MasterBlackList--*
+28
+*-*-*-*
+Guru Meditation Error: Core  1 panic'ed (Interrupt wdt timeout on CPU1)
+Core 1 register dump:
+PC      : 0x4008a9be  PS      : 0x00060434  A0      : 0x80089cbb  A1      : 0x3ffbe660  
+A2      : 0x3ffb8460  A3      : 0x3ffb8074  A4      : 0x00000001  A5      : 0x00000001  
+A6      : 0x00060423  A7      : 0x00000000  A8      : 0x3ffb8074  A9      : 0x3ffb8074  
+A10     : 0x00000018  A11     : 0x00000018  A12     : 0x00000001  A13     : 0x00000001  
+A14     : 0x00060421  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c46c  LEND    : 0x4000c477  LCOUNT  : 0x00000000  
+Core 1 was running in ISR context:
+EPC1    : 0x40089142  EPC2    : 0x00000000  EPC3    : 0x00000000  EPC4    : 0x4008a9be
+
+Backtrace: 0x4008a9be:0x3ffbe660 0x40089cb8:0x3ffbe680 0x400881a3:0x3ffbe6a0 0x400d6671:0x3ffbe6e0 0x400d5c19:0x3ffbe700 0x400d53c8:0x3ffbe730 0x400d5400:0x3ffbe750 0x400d5a65:0x3ffbe770 0x400d5abe:0x3ffbe790 0x40080f61:0x3ffbe7b0 0x40084729:0x3ffbe7d0 0x4000bfed:0x3ffb1790 0x400892b9:0x3ffb17a0 0x4008814f:0x3ffb17c0 0x400d6671:0x3ffb1800 0x400d5c19:0x3ffb1820 0x400d53c8:0x3ffb1850 0x400d5400:0x3ffb1870 0x400d59c5:0x3ffb1890 0x400d5a48:0x3ffb18b0 0x400d4cfd:0x3ffb18d0 0x400d7241:0x3ffb1fb0 0x4008839d:0x3ffb1fd0
+
+Core 0 register dump:
+PC      : 0x4008914a  PS      : 0x00060034  A0      : 0x80089969  A1      : 0x3ffbe150  
+A2      : 0x3ffbedf4  A3      : 0x0000cdcd  A4      : 0xb33fffff  A5      : 0x00000001  
+A6      : 0x00060021  A7      : 0x0000abab  A8      : 0x0000cdcd  A9      : 0x3ffc095c  
+A10     : 0x00000003  A11     : 0x00060023  A12     : 0x00060021  A13     : 0x00000001  
+A14     : 0x00060323  A15     : 0x00000000  SAR     : 0x0000001b  EXCCAUSE: 0x00000006  
+EXCVADDR: 0x00000000  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+Backtrace: 0x4008914a:0x3ffbe150 0x40089966:0x3ffbe180 0x4008848b:0x3ffbe1a0 0x4008a835:0x3ffbe1c0 0x40084732:0x3ffbe1d0 0x40110117:0x3ffbc060 0x400d9c03:0x3ffbc080 0x40089931:0x3ffbc0a0 0x4008839d:0x3ffbc0c0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5816
+entry 0x400806ac
+Serial initial done
+The Wireless Stick Lite not have an on board display, Display option must be FALSE!!!
+LoRa Initial success!
+Heltec.LoRa init succeeded.
+8000
+**--subset--**
+26783--
+**---BlackList--**
+783
+**
+**---MasterBlackList--*
+783
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+82
+**
+**---MasterBlackList--*
+82
+*-*-*-*
+**--subset--**
+26783--
+**---BlackList--**
+6783
+**
+**---MasterBlackList--*
+6783
+*-*-*-*
+**--subset--**
+6782--
+**---BlackList--**
+2
+**
+**---MasterBlackList--*
+2
+*-*-*-*
+**--subset--**
+267853--
+**---BlackList--**
+67853
+**
+**---MasterBlackList--*
+67853
+*-*-*-*
+**--subset--**
+67852--
+**---BlackList--**
+67852
+**
+**---MasterBlackList--*
+67852
+*-*-*-*
