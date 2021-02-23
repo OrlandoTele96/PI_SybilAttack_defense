@@ -524,14 +524,14 @@ void Node::setPoW_t()
     powtime = 50;
   }
   else{
-    powtime = 700;
+    powtime = 500;
   }
   if(this->fact==0.25 || this->fact ==0.5)
   {
-    factor = 3;
+    factor = 2;
   }
   else{
-    factor = 4;
+    factor = 3;
   }
   this->pow_t = powtime*factor;
   cout<<this->pow_t<<endl;
