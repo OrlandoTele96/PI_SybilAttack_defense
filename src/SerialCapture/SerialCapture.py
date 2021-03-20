@@ -21,7 +21,7 @@ while len(data)<=10000:
     if i == 10:
 	#print(i)
 	i=0
-	with open('consensus_node1_f1_d105_dif3.txt','a') as file:
+	with open('consensus_node1_f1_d3_dif3.txt','a') as file:
 		for j in range(len(data)-10,len(data)):
 			#print(j)
 			file.writelines(data[j])
