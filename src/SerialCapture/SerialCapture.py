@@ -9,7 +9,7 @@ iport = serial.Serial('/dev/ttyUSB0',115200)
 data =[]
 i=0
 j=0
-while len(data)<=40000:
+while len(data)<=8000:
     d = iport.readline()
     print(d)
     d_string = d.decode()
@@ -21,7 +21,7 @@ while len(data)<=40000:
     if i == 10:
 	#print(i)
 	i=0
-	with open('pow_node1_f1_dN_dif2.txt','a') as file:
+	with open('consensus_node1_f1_d3_dif2.txt','a') as file:
 		for j in range(len(data)-10,len(data)):
 			#print(j)
 			file.writelines(data[j])

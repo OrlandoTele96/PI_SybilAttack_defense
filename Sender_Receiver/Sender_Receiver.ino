@@ -11,7 +11,7 @@ long lastSendTime = 0;        // last send time
 int interval = 1000;
 Node n;
 vector<char> payload{'1','2'};
-unsigned char id = '3'; //cambiar por cualquier ID
+unsigned char id = '5'; //cambiar por cualquier ID
 unsigned char dst='d';//default
 unsigned char type = 0x00;//Default message
 int isgl=0;
@@ -31,13 +31,13 @@ void setup() {
   // Inicializamos LoRa
     Heltec.begin(true, true, true, true , BAND);
     LoRa.setSpreadingFactor(7);
-    LoRa.setCodingRate4(6);    
+    LoRa.setCodingRate4(6);
     LoRa.onReceive(onReceive);//Interrupcion para recepcion
     LoRa.receive();
     Serial.println("Heltec.LoRa init succeeded.");
     n.setID(id);//Configuramos la clase nodo
     n.setFactor(3);
-    n.setDifficulty(3);
+    n.setDifficulty(2);
     n.setTime_interval(1000);
     n.setPoW_t();
 }
@@ -51,9 +51,11 @@ void loop() {
   unsigned char dst;
   vector<char> solution;
   vector<char> bl;
-  int j,i;
+  vector<char> master;
+  int j,i,k;
   int ti,tf,tt,f;
   int lastgl=0;
+  vector<char> honest;
   if (isPoW==1)
   {
     solution = n.solvePoW(rnum);
@@ -74,6 +76,12 @@ void loop() {
         int isblist = n.SybilDetection();
         //Serial.println("Generated!!");
         bl = n.getBlackList();
+        type = 0x03;
+        n.HonestList();// get honest
+        //Serial.println("get honest");
+        Pack(type,0x00,bl); // Broadcast
+        //Serial.println("packed");
+        sendMessage(n);// send*/
         if (isblist==1)
         {
           //Serial.println("Generated");
@@ -90,6 +98,10 @@ void loop() {
           //Serial.println("cleaning");
         //thresholds.clear();
         isbl=0;
+        n.Consensus(bl);
+        master=n.getMasterBlackList();
+        PrintMaster(master);
+        n.ClearMaster();
       }
       if(proofs.size()>0)
       {
@@ -131,11 +143,11 @@ void loop() {
         type=0x00;
         dst = 'd';
         Pack(type,dst,payload);
-        sendMessage(n);  
+        sendMessage(n);
       }
       lastSendTime = millis();
       interval = 1000;
-      LoRa.receive(); 
+      LoRa.receive();
     }
   }
 }
@@ -146,9 +158,8 @@ void sendMessage(Node n)
   Este codigo envia mensajes de diferentes tipos
   Tipo 0 : mensaje generico o de cualquier clase
   Tipo 1 : mensaje de solicitud de PoW
-  Tipo 2 : Confirmacion de PoW
-  Tipo 3 : mensaje de respuesta de PoW
-  Tipo 4 : mensaje de consenso
+  Tipo 2 : mensaje de respuesta de PoW
+  Tipo 3 : mensaje de consenso
   */
   int j=0;
   int i=0;
@@ -164,13 +175,14 @@ void sendMessage(Node n)
   /*Payload*/
   for (i=0;i<payload.size();i++)
   {
+    //Serial.print(payload.at(i));
     LoRa.print(payload.at(i));
   }
-  LoRa.endPacket(); 
+  LoRa.endPacket();
   //delay(100);
   //}
   payload.clear();
-  //Serial.println("Message : "+String(n.getTm())+String(dst));
+  //Serial.println("Message : "+String(n.getTm())+"::"+String(dst));
 }
 
 
@@ -184,7 +196,7 @@ void onReceive(int packetSize)
   char IDE = (char)LoRa.read(); // Recibe ID
   //Serial.println("Received from : "+String(IDE)+":"+String(type));
   /*Type message*/
-  unsigned char type = LoRa.read(); // Recibe tipo de mensaje
+  unsigned char type_me = LoRa.read(); // Recibe tipo de mensaje
   /*ID dst*/
   char dst = (char)LoRa.read();
   //Serial.println("Destination ID : "+String(dst));
@@ -201,32 +213,32 @@ void onReceive(int packetSize)
   int rssi = (int )LoRa.packetRssi(); // Obtiene rssi del mensaje
   //Serial.println("RSSI: "+String(rssi));
   /*Storage RSSI*/
-  storageRSSI(IDE,type,rssi); // Almacenamos el ID y rssi recibido
+  storageRSSI(IDE,type_me,rssi); // Almacenamos el ID y rssi recibido
   /*Phase 1*/
-  if(nmsj==100){
+  if(nmsj>=100){
     isgl= n.Discard();// Algoritmo de descarte de nodos maliciosos
   }
   /*Unpack content*/
-  Unpack(type,dst,incoming,IDE);
+  Unpack(type_me,dst,incoming,IDE);
 }
 
-void Unpack(unsigned char type,char i_dst,String pay,char src)
+void Unpack(unsigned char type_m,char i_dst,String pay,char src)
 {
   /*Desempaqueta mensajes*/
-  
+
   vector<char> id_dst;
   int n_id_dst,i,j;
   int pay_len;
   vector<char> solution;
   int pow_t;
   int pow_f;
-  if(type ==0x00)
+  if(type_m ==0x00)
   {
     //Serial.println("Message 0 received");
   }
-  if(type ==0x01)
+  if(type_m ==0x01)
   {
-    
+
     pay_len = pay.length();
     n_id_dst = pay_len-4;
     for(i=0;i<n_id_dst;i++)
@@ -243,17 +255,17 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
       }
     }
   }
-  if(type==0x02)
+  if(type_m==0x02)
   {
     //Serial.println("Message 2 received from : "+String(i_dst)+": "+String(src));
     if(i_dst == n.getID())
     {
-      Serial.println("Node "+String(src)+"\thas replied a Pow with : "+pay);
+      //Serial.println("Node "+String(src)+"\thas replied a Pow with : "+pay);
       pow_f = millis();
       pow_t = pow_f-lastpow;
       //Serial.println(pow_t);
       n.AddPowTime(pow_t);
-      Serial.println("Timed at"+String(pow_t));
+      //Serial.println("Timed at"+String(pow_t));
       String pow_s=pay;
       for (i=0;i<(pow_s.length());i++)
       {
@@ -262,7 +274,29 @@ void Unpack(unsigned char type,char i_dst,String pay,char src)
       }
       n.AddAnswer(solution);
       solution.clear();
-    }  
+    }
+  }
+  if(type_m==0x03)
+  {
+    //Serial.println("Consensus received!"+String(pay)+"from"+String(src));
+    String sybil = pay;
+    vector<char> sybil_list;
+    int inConsensus=1;
+    for (i=0;i<sybil.length();i++)
+    {
+      if(sybil.charAt(i)==n.getID())
+      {
+        inConsensus =0;
+      }
+      sybil_list.push_back(sybil.charAt(i));
+    }
+    if(inConsensus==1)
+    {
+      //Serial.println("In consensus");
+      n.AddBlackListCons(src,sybil_list);//Add blacklist
+      //Serial.println("Consensus added from : "+String(src));
+    }
+    sybil_list.clear();
   }
 }
 
@@ -290,11 +324,8 @@ void Pack(unsigned char type_m,unsigned char id_dest,vector<char> pa)
   }
   if (type_m == 0x03)
   {
-    Serial.println("Packing message for PoW solution");
-  }
-  if (type_m == 0x04)
-  {
-    Serial.println("Packing message for consensus");
+    //Serial.println("Packing message for consensus");
+    payload = pa;
   }
   n.setTm(type_m);
   n.setIDdst(id_dest);
@@ -358,11 +389,11 @@ void GL_pow()
     vector<vector<char>> gl;
     int i=0;
     int tam;
-    //gl = n.getGrayList();
-    vector<char> d = {'6','7','8','2','3'};
-    vector<char> f = {'3','7','8','6','2'};
-    gl.push_back(d);
-    gl.push_back(f);
+    gl = n.getGrayList();
+    //vector<char> d = {'6','7','8','2','3'};
+    //vector<char> f = {'3','7','8','6','2'};
+    //gl.push_back(d);
+    //gl.push_back(f);
     //PrintGrayList(gl); // Solamente imprime la lista gris
     tam =gl.size();
     int rnd;
@@ -418,4 +449,20 @@ void PrintBlackList(vector<char> bl)
     Serial.print(String(bl.at(i)));
   }
   Serial.println("\n**");
+}
+void PrintMaster(vector<char> master)
+{
+  int i;
+  Serial.println("**---MasterBlackList--*");
+  if(master.size()==0)
+  {
+    Serial.print("NoMasterBlackList");
+  }
+  else{
+    for(i=0;i<master.size();i++)
+    {
+      Serial.print(master.at(i));
+    }
+  }
+  Serial.println("\n*-*-*-*");
 }

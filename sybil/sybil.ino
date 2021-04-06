@@ -38,8 +38,8 @@ void setup() {
     LoRa.receive();
     Serial.println("Heltec.LoRa init succeeded.");
     n.setID(id);//Configuramos la clase nodo
-    n.setFactor(3);
-    n.setDifficulty(3);
+    n.setFactor(2);
+    n.setDifficulty(2);
     n.setTime_interval(1000);
     n.setPoW_t();
 }
@@ -71,7 +71,7 @@ void loop() {
       payload = solution;
       sendMessage(n);
       payload.clear();
-      solution.clear();    
+      solution.clear();
     }
     Serial.println("All proofs were solved for dst : "+String(dst));
     tested.clear();
@@ -152,7 +152,7 @@ void loop() {
         }
       }
       lastSendTime = millis();
-      interval = 1000;
+      interval = 2000;
       LoRa.receive(); 
     }
   }

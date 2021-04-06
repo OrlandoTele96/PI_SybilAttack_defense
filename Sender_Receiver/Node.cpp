@@ -50,6 +50,10 @@ vector<char> Node::getBlackList()const
 {
   return this->blacklist;
 }
+vector<char> Node::getMasterBlackList()const
+{
+  return this->MasterBlackList;
+}
 void Node::setID(unsigned char id)
 {
   this->id = id;
@@ -315,8 +319,8 @@ void Node::genPoW(vector<char> subset,vector<char> rand_n)
     f_t = clock();
     t_pow = f_t-i_t;
     solution=solution.substr(0,32);
-    cout<<subset.at(i)<<endl;
-    cout<<solution<<endl;
+    //cout<<subset.at(i)<<endl;
+    //cout<<solution<<endl;
     pow_time.push_back(t_pow);
     pow_solutions.push_back(solution);
   }
@@ -431,7 +435,7 @@ int Node::SybilDetection()
       {
         if(solutions.at(i)==this->pow_ans.at(j))
         {
-          cout<<"timed"<<this->pow_tf.at(j)<<","<<sup<<endl;
+          //cout<<"timed"<<this->pow_tf.at(j)<<","<<sup<<endl;
           if(this->pow_tf.at(j) <= sup)
           {
             issybil = 0;
@@ -517,18 +521,101 @@ void Node::setPoW_t()
   int factor;
   if(this->difficulty==2)
   {
-    powtime = 100;
+    powtime = 50;
   }
   else{
-    powtime = 2000;
+    powtime = 100;
   }
   if(this->fact==0.25 || this->fact ==0.5)
   {
-    factor = 3;
+    factor = 2;
   }
   else{
-    factor = 4;
+    factor = 3;
   }
   this->pow_t = powtime*factor;
   cout<<this->pow_t<<endl;
+}
+/*---------------------------Phase 3 : PoW------------------------------------*/
+void Node::HonestList()
+{
+  int i,j,inbl;
+  for(i=0;i<this->Hist.size();i++)
+  {
+    //cout<<Hist.at(i).ID<<endl;
+    inbl=0;
+    for (j=0;j<this->blacklist.size();j++)
+    {
+      if(this->Hist.at(i).ID == this->blacklist.at(j))
+      {
+        inbl =1;
+      }
+    }
+    if(inbl==0)
+    {
+      //cout<<"This ID was honest"<<endl;
+      this->honest.push_back(this->Hist.at(i).ID);
+    }
+  }
+}
+void Node::Consensus(vector<char> bl)
+{
+  int i,j,k;
+  vector<vector<char>> consensus;
+  for(i=0;i<this->honest.size();i++)
+  {
+    for(j=0;j<this->Hist.size();j++)
+    {
+      if(this->honest.at(i)==this->Hist.at(j).ID)
+      {
+        //cout<<"ID cons:"<<this->Hist.at(j).ID<<endl;
+        if(this->Hist.at(j).bl.size()>=0)
+        {  
+          consensus.push_back(this->Hist.at(j).bl);
+          this->Hist.at(j).bl.clear();
+        }
+      }
+    }
+  }
+  //cout<<"Compare"<<endl;
+  for(i=0;i<bl.size();i++)
+  {
+    //cout<<"ID : "<<bl.at(i)<<endl;
+    for(j=0;j<consensus.size();j++)
+    {
+      //cout<<"Blacklist"<<j<<endl;
+      for(k=0;k<consensus.at(j).size();k++)
+      {
+        //cout<<"with ID :"<<consensus.at(j).at(k)<<endl;
+        if(bl.at(i)==consensus.at(j).at(k))
+        {
+          //cout<<"ID:"<<bl.at(i)<<endl;
+          //cout<<"Is sybil!!!!!"<<endl;
+          this->MasterBlackList.push_back(bl.at(i));
+        }
+      }
+    }
+  }  
+  if(this->MasterBlackList.size()==0)
+  {
+    //cout<<"Consensus was not reached!!"<<endl;
+    this->MasterBlackList=bl;
+  }
+  this->honest.clear();
+}
+void Node::AddBlackListCons(char id,vector<char> bl)
+{
+  int i;
+  for(i=0;i<this->Hist.size();i++)
+  {
+    if(this->Hist.at(i).ID==id)
+    {
+      //cout<<"ID :\t"<<id<<"\t"<<"Add bl"<<endl;
+      this->Hist.at(i).bl = bl;
+    }
+  }
+}
+void Node::ClearMaster()
+{
+  this->MasterBlackList.clear();
 }
