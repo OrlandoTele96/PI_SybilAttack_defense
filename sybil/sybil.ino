@@ -72,7 +72,6 @@ void loop() {
       sendMessage(n);
       payload.clear();
       solution.clear();
-      delay(1000);    
     }
     Serial.println("All proofs were solved for dst : "+String(dst));
     tested.clear();
